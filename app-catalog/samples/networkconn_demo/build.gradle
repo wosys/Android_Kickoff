@@ -1,0 +1,9 @@
+apply from: "$rootDir/gradle/sample-build.gradle"
+
+android {
+    namespace 'com.wintmain.connectivitynetwork_demo'
+}
+
+dependencies {
+    
+}

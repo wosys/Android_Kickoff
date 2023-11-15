@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2023 wintmain
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:orderInCategory="1"
+        android:title="搜索"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_shuffle"
+        android:orderInCategory="2"
+        android:title="随机列表"
+        android:tooltipText="随机列表"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/recent"
+        android:orderInCategory="3"
+        android:title="最近播放"
+        android:tooltipText="最近播放" />
+
+
+    <item
+        android:id="@+id/create_playlist"
+        android:orderInCategory="4"
+        android:title="添加到我的收藏"
+        android:tooltipText="添加到我的收藏" />
+
+
+    <item
+        android:id="@+id/open_playlist"
+        android:orderInCategory="5"
+        android:title="我的收藏"
+        android:tooltipText="我的收藏"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/edit_playlist"
+        android:orderInCategory="6"
+        android:title="编辑我的收藏"
+        android:tooltipText="编辑我的收藏" />
+
+
+    <item
+        android:id="@+id/open_tracks"
+        android:orderInCategory="7"
+        android:title="所有歌曲"
+        android:tooltipText="所有歌曲" />
+
+    <item
+        android:id="@+id/action_end"
+        android:orderInCategory="7"
+        android:title="退出"
+        android:tooltipText="退出" />
+
+
+</menu>

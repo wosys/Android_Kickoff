@@ -1,0 +1,26 @@
+apply from: "$rootDir/gradle/sample-build.gradle"
+
+android {
+    namespace 'com.wintmain.androidpft'
+}
+
+dependencies {
+    // TODO, 当前用implementation下载的getActivity库无法使用，用aar代替
+    implementation fileTree(include: ['*.jar',"*.aar"], dir: "libs")
+    implementation project(path: ':app-catalog:samples:androidpft:libs:base')
+
+    // 权限请求框架：https://github.com/getActivity/XXPermissions
+    // TBD - replace with self
+//    implementation 'com.github.getActivity:XXPermissions:18.5'
+    // 标题栏框架：https://github.com/getActivity/TitleBar
+    // TBD - replace with self
+//    implementation 'com.github.getActivity:TitleBar:10.2'
+    // 吐司框架：https://github.com/getActivity/Toaster
+    // TBD - replace with self
+//    implementation 'com.github.getActivity:Toaster:12.5'
+
+    // 上拉刷新下拉加载框架：https://github.com/scwang90/SmartRefreshLayout
+    implementation  'io.github.scwang90:refresh-layout-kernel:2.1.0'      //核心必须依赖
+    implementation  'io.github.scwang90:refresh-header-material:2.1.0'    //谷歌刷新头
+
+}

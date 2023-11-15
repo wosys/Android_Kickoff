@@ -1,0 +1,20 @@
+// Signature format: 4.0
+package com.google.android.catalog.framework.annotations {
+
+  @kotlin.annotation.MustBeDocumented @kotlin.annotation.Retention(kotlin.annotation.AnnotationRetention) @kotlin.annotation.Target(allowedTargets={kotlin.annotation.AnnotationTarget, kotlin.annotation.AnnotationTarget}) public @interface Sample {
+    method public abstract String description();
+    method public abstract String documentation();
+    method public abstract String name();
+    method public abstract String[] owners();
+    method public abstract String sourcePath();
+    method public abstract String[] tags();
+    property public abstract String description;
+    property public abstract String documentation;
+    property public abstract String name;
+    property public abstract String![] owners;
+    property public abstract String sourcePath;
+    property public abstract String![] tags;
+  }
+
+}
+

@@ -1,0 +1,11 @@
+apply from: "$rootDir/gradle/sample-build.gradle"
+
+android {
+    namespace 'com.wintmain.xperimissions'
+}
+
+dependencies {
+    implementation project(path: ':app-catalog:samples:xpermissions:libs:xpermissions')
+    implementation project(path: ':app-catalog:samples:toast_demo:libs')
+    implementation libs.core
+}

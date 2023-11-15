@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2023 wintmain
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- for firmware version(android version) -->
+    <Preference
+        android:key="android_version"
+        android:persistent="false"
+        android:summary="@string/device_info_unknown"
+        android:title="@string/android_version" />
+    <!-- for device model version -->
+    <Preference
+        android:key="placeholder1"
+        android:title="@string/placeholder1"
+        android:summary="@string/device_info_unknown"
+        android:persistent="false" />
+    <!-- for hardware version -->
+    <Preference
+        android:key="placeholder2"
+        android:title="@string/placeholder2"
+        android:summary="@string/device_info_unknown"
+        android:persistent="false" />
+    <!-- for meid number -->
+    <Preference
+        android:key="placeholder3"
+        android:title="@string/placeholder3"
+        android:summary="@string/device_info_unknown"
+        android:persistent="false" />
+    <Preference
+        android:key="placeholder4"
+        android:title="@string/placeholder4"
+        android:summary="@string/device_info_unknown"
+        android:persistent="false" />
+    <!-- for baseband version -->
+    <Preference
+        android:key="placeholder5"
+        android:title="@string/placeholder5"
+        android:summary="@string/device_info_unknown"
+        android:persistent="false" />
+    <!-- for PRL version -->
+    <Preference
+        android:key="placeholder6"
+        android:title="@string/placeholder6"
+        android:summary="@string/device_info_unknown"
+        android:persistent="false" />
+</PreferenceScreen>
