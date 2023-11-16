@@ -1,5 +1,6 @@
 #
 # Copyright 2022 Google LLC
+# Copyright 2023 wintmain
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,6 +13,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
+# NOTE: This file has been modified by wintmain
+# Modifications are licensed under the License.
 #
 
 [versions]
@@ -82,8 +86,6 @@ truth = "com.google.truth:truth:1.1.3"
 robolectric = "org.robolectric:robolectric:4.8"
 
 affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetector:0.2.0"
-# core must <1.12.0, cause it needs api34
-core = { group = "androidx.core", name = "core", version = "1.10.0" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
 
-[plugins]
+#[customize] - 将模块需要的库放到这里
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }

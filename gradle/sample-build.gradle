@@ -1,5 +1,6 @@
 /*
  * Copyright 2022 Google LLC
+ * Copyright 2023 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,6 +13,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * NOTE: This file has been modified by wintmain
+ * Modifications are licensed under the License.
  */
 
 apply plugin: 'com.android.library'
@@ -79,12 +83,14 @@ dependencies {
 
     // Some common dependencies between samples
     implementation libs.androidx.core
-    implementation libs.androidx.appcompat
     implementation libs.compose.foundation.foundation
     implementation libs.compose.ui.ui
     implementation libs.compose.material.material3
-    implementation libs.mdc
 
     androidTestImplementation libs.androidx.test.runner
     testImplementation libs.androidx.test.runner
+
+    // [customize] - 将common的依赖放到这里
+    implementation libs.androidx.appcompat
+    implementation libs.mdc
 }
