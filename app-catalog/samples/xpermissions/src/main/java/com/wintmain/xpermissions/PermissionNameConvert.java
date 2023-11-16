@@ -21,8 +21,6 @@ import android.os.Build;
 
 import androidx.annotation.NonNull;
 
-import com.wintmain.xperimissions.R;
-
 import lib.wintmain.xpermissions.Permission;
 
 import java.util.ArrayList;

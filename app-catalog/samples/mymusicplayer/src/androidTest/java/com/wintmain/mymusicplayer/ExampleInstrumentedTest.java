@@ -37,6 +37,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.wintmain.mymusicplayer", appContext.getPackageName());
+        assertEquals("com.wintmain.mymusicplayer.test", appContext.getPackageName());
     }
 }

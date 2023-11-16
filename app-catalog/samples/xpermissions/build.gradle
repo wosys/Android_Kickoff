@@ -1,7 +1,7 @@
 apply from: "$rootDir/gradle/sample-build.gradle"
 
 android {
-    namespace 'com.wintmain.xperimissions'
+    namespace 'com.wintmain.xpermissions'
 }
 
 dependencies {

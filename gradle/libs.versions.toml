@@ -89,3 +89,4 @@ affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetec
 
 #[customize] - 将模块需要的库放到这里
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
+androidx-testext = "androidx.test.ext:junit:1.1.5"

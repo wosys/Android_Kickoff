@@ -36,8 +36,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
-import com.wintmain.xperimissions.R;
-
 import lib.wintmain.toaster.toast.ToastUtils;
 import lib.wintmain.xpermissions.IPermissionInterceptor;
 import lib.wintmain.xpermissions.OnPermissionCallback;

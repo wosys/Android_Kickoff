@@ -41,7 +41,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.catalog.framework.annotations.Sample;
-import com.wintmain.xperimissions.R;
 
 import lib.wintmain.toaster.toast.ToastUtils;
 import lib.wintmain.xpermissions.OnPermissionCallback;
