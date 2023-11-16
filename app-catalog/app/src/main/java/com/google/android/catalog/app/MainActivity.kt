@@ -1,5 +1,6 @@
 /*
  * Copyright 2022 Google LLC
+ * Copyright 2023 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,6 +13,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * NOTE: This file has been modified by wintmain
+ * Modifications are licensed under the License.
  */
 
 package com.google.android.catalog.app
@@ -29,6 +33,7 @@ import dagger.hilt.android.HiltAndroidApp
 class MainApp : Application() {
     override fun onCreate() {
         super.onCreate()
+        // Can add some init here...
     }
 }
 
@@ -43,7 +48,7 @@ class MainActivity : CatalogActivity() {
         order = CatalogOrder.Name(),
         alwaysShowToolbar = true,
         cardAppearance = CatalogCardAppearance(
-            description = 2,
+            description = 3,
             tags = true,
             owners = true
         )
