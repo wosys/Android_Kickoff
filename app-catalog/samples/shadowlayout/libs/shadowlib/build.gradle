@@ -1,0 +1,9 @@
+apply from: "$rootDir/gradle/sample-build.gradle"
+
+android {
+    namespace 'lib.wintmain.shadowlib'
+}
+
+dependencies {
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+}
