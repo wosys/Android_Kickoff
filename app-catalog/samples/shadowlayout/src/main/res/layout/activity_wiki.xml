@@ -19,7 +19,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
     </data>
 
     <RelativeLayout
@@ -54,7 +53,6 @@
             app:hl_shadowHiddenTop="true"
             app:hl_shadowLimit="10dp">
 
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp">
@@ -79,12 +77,11 @@
 
                 </lib.wintmain.shadowlib.ShadowLayout>
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="ShadowLayout成长历史"
+                    android:text="PlaceHolder Webview"
                     android:textColor="#000000"
                     android:textSize="18dp"
                     android:textStyle="bold" />

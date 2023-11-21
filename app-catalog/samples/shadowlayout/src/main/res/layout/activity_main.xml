@@ -98,7 +98,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:text="shape功能的各项使用"
-                android:textColor="#fff" />
+                android:textColor="#fff1" />
 
         </lib.wintmain.shadowlib.ShadowLayout>
 
@@ -123,7 +123,7 @@
                 android:gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="ShadowLayout成长历史"
+                android:text="PlaceHolder Webview"
                 android:textColor="#fff" />
 
         </lib.wintmain.shadowlib.ShadowLayout>

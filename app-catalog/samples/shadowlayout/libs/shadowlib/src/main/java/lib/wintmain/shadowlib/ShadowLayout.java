@@ -43,7 +43,6 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 
 /**
  * 阴影控件
@@ -74,21 +73,21 @@ public class ShadowLayout extends FrameLayout {
     private int topPadding;
     private int rightPadding;
     private int bottomPadding;
-    //阴影布局子空间区域
-    private RectF rectf = new RectF();
+    // 阴影布局子空间区域
+    private final RectF rectf = new RectF();
 
-    //ShadowLayout的样式，是只需要pressed还是selected。默认是pressed.
+    // ShadowLayout的样式，是只需要pressed还是selected。默认是pressed.
     private int selectorType = 1;
     private boolean isShowShadow = true;
     private boolean isSym;
 
-    //增加各个圆角的属性
+    // 增加各个圆角的属性
     private float mCornerRadius_leftTop;
     private float mCornerRadius_rightTop;
     private float mCornerRadius_leftBottom;
     private float mCornerRadius_rightBottom;
 
-    //边框画笔
+    // 边框画笔
     private Paint paint_stroke;
     private float stroke_with;
     private int stroke_color;
@@ -96,33 +95,29 @@ public class ShadowLayout extends FrameLayout {
 
     private boolean isClickable;
 
-
     //关于控件填充渐变色
     private int startColor;
     private int centerColor;
     private int endColor;
     private int angle;
 
-
-    //在普遍情况，在点击或选中按钮时，很可能伴随着textView的字体颜色变化
+    // 在普遍情况，在点击或选中按钮时，很可能伴随着textView的字体颜色变化
     private int mTextViewResId = -1;
     private TextView mTextView;
     private int textColor;
     private int textColor_true;
     private String text;
     private String text_true;
-    //解决xml设置clickable = false时。代码设置true时，点击事件无效的bug
+    // 解决xml设置clickable = false时。代码设置true时，点击事件无效的bug
     private OnClickListener onClickListener;
 
     public ShadowLayout(Context context) {
         this(context, null);
     }
 
-
     public ShadowLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
-
 
     public ShadowLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
@@ -131,11 +126,9 @@ public class ShadowLayout extends FrameLayout {
 
     public static int convertToColorInt(String argb)
             throws IllegalArgumentException {
-
         if (!argb.startsWith("#")) {
             argb = "#" + argb;
         }
-
         return Color.parseColor(argb);
     }
 
@@ -163,30 +156,27 @@ public class ShadowLayout extends FrameLayout {
     }
 
     public void changeSwitchClickable() {
-        //不可点击的状态只在press mode的模式下生效
+        // 不可点击的状态只在press mode的模式下生效
         if (selectorType == 1 && firstView != null) {
-
-            //press mode
+            // press mode
             if (!isClickable) {
-                //不可点击的状态。
+                // 不可点击的状态。
                 if (clickAbleFalseColor != -101) {
-                    //说明设置了颜色
+                    // 说明设置了颜色
                     if (layoutBackground != null) {
-                        //说明此时是设置了图片的模式
+                        // 说明此时是设置了图片的模式
                         firstView.getBackground().setAlpha(0);
                     }
                     paint.setColor(clickAbleFalseColor);
                     postInvalidate();
-
-
                 } else if (clickAbleFalseDrawable != null) {
-                    //说明设置了背景图
+                    // 说明设置了背景图
                     setmBackGround(clickAbleFalseDrawable);
                     paint.setColor(Color.parseColor("#00000000"));
                     postInvalidate();
                 }
             } else {
-                //可点击的状态
+                // 可点击的状态
                 if (layoutBackground != null) {
                     setmBackGround(layoutBackground);
                 } else {
@@ -200,7 +190,7 @@ public class ShadowLayout extends FrameLayout {
         }
     }
 
-    //增加selector样式
+    // 增加selector样式
     @Override
     public void setSelected(boolean selected) {
         super.setSelected(selected);
@@ -210,7 +200,6 @@ public class ShadowLayout extends FrameLayout {
                     if (mBackGroundColor_true != -101) {
                         paint.setColor(mBackGroundColor_true);
                     }
-
                     paint.setShader(null);
                     if (stroke_color_true != -101) {
                         paint_stroke.setColor(stroke_color_true);
@@ -218,42 +207,37 @@ public class ShadowLayout extends FrameLayout {
                     if (layoutBackground_true != null) {
                         setmBackGround(layoutBackground_true);
                     }
-
                     if (mTextView != null) {
                         mTextView.setTextColor(textColor_true);
                         if (!TextUtils.isEmpty(text_true)) {
                             mTextView.setText(text_true);
                         }
                     }
-
                 } else {
                     paint.setColor(mBackGroundColor);
                     if (startColor != -101) {
                         gradient(paint);
                     }
-
                     if (stroke_color != -101) {
                         paint_stroke.setColor(stroke_color);
                     }
-
                     if (layoutBackground != null) {
                         setmBackGround(layoutBackground);
                     }
-
                     if (mTextView != null) {
                         mTextView.setTextColor(textColor);
                         if (!TextUtils.isEmpty(text)) {
                             mTextView.setText(text);
                         }
                     }
-
                 }
                 postInvalidate();
             }
         } else {
             addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
                 @Override
-                public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                public void onLayoutChange(View v, int left, int top, int right, int bottom,
+                                           int oldLeft, int oldTop, int oldRight, int oldBottom) {
                     removeOnLayoutChangeListener(this);
                     setSelected(isSelected());
                 }
@@ -261,7 +245,7 @@ public class ShadowLayout extends FrameLayout {
         }
     }
 
-    //是否隐藏阴影
+    // 是否隐藏阴影
     public void setShadowHidden(boolean isShowShadow) {
         this.isShowShadow = !isShowShadow;
         if (getWidth() != 0 && getHeight() != 0) {
@@ -269,7 +253,7 @@ public class ShadowLayout extends FrameLayout {
         }
     }
 
-    //设置x轴偏移量
+    // 设置x轴偏移量
     public void setShadowOffsetX(float mDx) {
         if (isShowShadow) {
             if (Math.abs(mDx) > mShadowLimit) {
@@ -305,7 +289,7 @@ public class ShadowLayout extends FrameLayout {
         return mCornerRadius;
     }
 
-    //动态设置 圆角属性
+    // 动态设置 圆角属性
     public void setCornerRadius(int mCornerRadius) {
         this.mCornerRadius = mCornerRadius;
         if (getWidth() != 0 && getHeight() != 0) {
@@ -317,15 +301,11 @@ public class ShadowLayout extends FrameLayout {
         return mShadowLimit;
     }
 
-    //动态设置阴影扩散区域
+    // 动态设置阴影扩散区域
     public void setShadowLimit(int mShadowLimit) {
         if (isShowShadow) {
             int dip5 = (int) getContext().getResources().getDimension(R.dimen.dp_5);
-            if (mShadowLimit >= dip5) {
-                this.mShadowLimit = mShadowLimit;
-            } else {
-                this.mShadowLimit = dip5;
-            }
+            this.mShadowLimit = Math.max(mShadowLimit, dip5);
             setPadding();
         }
     }
@@ -348,7 +328,7 @@ public class ShadowLayout extends FrameLayout {
         }
     }
 
-    //是否隐藏阴影的上边部分
+    // 是否隐藏阴影的上边部分
     public void setShadowHiddenTop(boolean topShow) {
         this.topShow = !topShow;
         setPadding();
@@ -371,7 +351,8 @@ public class ShadowLayout extends FrameLayout {
 
     public void setLayoutBackground(int color) {
         if (layoutBackground_true != null) {
-            throw new UnsupportedOperationException("使用了ShadowLayout_hl_layoutBackground_true属性，要与ShadowLayout_hl_layoutBackground属性统一为颜色");
+            throw new UnsupportedOperationException("使用了ShadowLayout_hl_layoutBackground_true" +
+                    "属性，要与ShadowLayout_hl_layoutBackground属性统一为颜色");
         }
         mBackGroundColor = color;
         if (selectorType == 2) {
@@ -387,7 +368,8 @@ public class ShadowLayout extends FrameLayout {
 
     public void setLayoutBackgroundTrue(int color) {
         if (layoutBackground != null) {
-            throw new UnsupportedOperationException("使用了ShadowLayout_hl_layoutBackground属性，要与ShadowLayout_hl_layoutBackground_true属性统一为颜色");
+            throw new UnsupportedOperationException("使用了ShadowLayout_hl_layoutBackground属性，" +
+                    "要与ShadowLayout_hl_layoutBackground_true属性统一为颜色");
         }
         mBackGroundColor_true = color;
         if (selectorType == 2) {
@@ -413,7 +395,6 @@ public class ShadowLayout extends FrameLayout {
     }
 
     public void setStrokeColorTrue(int color) {
-
         stroke_color_true = color;
         if (selectorType == 2) {
             //select模式
@@ -433,24 +414,21 @@ public class ShadowLayout extends FrameLayout {
         postInvalidate();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
         if (mTextViewResId != -1) {
             mTextView = findViewById(mTextViewResId);
             if (mTextView == null) {
-                throw new NullPointerException("ShadowLayout找不到hl_bindTextView，请确保绑定的资源id在ShadowLayout内");
+                throw new NullPointerException("ShadowLayout找不到hl_bindTextView，" +
+                        "请确保绑定的资源id在ShadowLayout内");
             } else {
                 if (textColor == -101) {
                     textColor = mTextView.getCurrentTextColor();
                 }
-
-
                 if (textColor_true == -101) {
                     textColor_true = mTextView.getCurrentTextColor();
                 }
-
                 mTextView.setTextColor(textColor);
                 if (!TextUtils.isEmpty(text)) {
                     mTextView.setText(text);
@@ -465,28 +443,23 @@ public class ShadowLayout extends FrameLayout {
             isShowShadow = false;
         }
 
-        if (firstView != null) {
-
-            //selector样式不受clickable的影响
-
-            if (selectorType == 2) {
-                //if (this.isSelected()) {
+        //selector样式不受clickable的影响
+        if (selectorType == 2) {
+            if (this.isSelected()) {
                 //这个方法内已经判断了是否为空
-                //  setmBackGround(layoutBackground_true);
-                //} else {
-                //  setmBackGround(layoutBackground);
-                //  }
+                setmBackGround(layoutBackground_true);
             } else {
-                if (isClickable) {
-                    setmBackGround(layoutBackground);
-                } else {
-                    setmBackGround(clickAbleFalseDrawable);
-                    if (clickAbleFalseColor != -101) {
-                        paint.setColor(clickAbleFalseColor);
-                    }
+                setmBackGround(layoutBackground);
+            }
+        } else {
+            if (isClickable) {
+                setmBackGround(layoutBackground);
+            } else {
+                setmBackGround(clickAbleFalseDrawable);
+                if (clickAbleFalseColor != -101) {
+                    paint.setColor(clickAbleFalseColor);
                 }
             }
-
         }
 
     }
@@ -508,7 +481,6 @@ public class ShadowLayout extends FrameLayout {
         shadowPaint.setAntiAlias(true);
         shadowPaint.setStyle(Paint.Style.FILL);
 
-
         paint_stroke = new Paint();
         paint_stroke.setAntiAlias(true);
         paint_stroke.setStyle(Paint.Style.STROKE);
@@ -517,89 +489,88 @@ public class ShadowLayout extends FrameLayout {
             paint_stroke.setColor(stroke_color);
         }
 
-
-        //矩形画笔
+        // 矩形画笔
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
-        //打个标记
+        // 打个标记
         paint.setColor(mBackGroundColor);
 
         setPadding();
-
-
     }
 
-    //将画笔附上 渐变色
+    // 将画笔附上 渐变色
     public void gradient(Paint paint) {
         if (!isClickable) {
             paint.setShader(null);
             return;
         }
-
-        //左上 x,y   leftPadding, topPadding,
-        //右下 x,y   getWidth() - rightPadding, getHeight() - bottomPadding
+        // 左上 x,y   leftPadding, topPadding,
+        // 右下 x,y   getWidth() - rightPadding, getHeight() - bottomPadding
         int[] colors;
         if (centerColor == -101) {
             colors = new int[]{startColor, endColor};
         } else {
             colors = new int[]{startColor, centerColor, endColor};
         }
-
         if (angle < 0) {
             int trueAngle = angle % 360;
             angle = trueAngle + 360;
         }
-
-        //当设置的角度大于0的时候
-        //这个要算出每隔45度
+        // 当设置的角度大于0的时候
+        // 这个要算出每隔45度
         int trueAngle = angle % 360;
         int angleFlag = trueAngle / 45;
         LinearGradient linearGradient;
         switch (angleFlag) {
-            case 0://0°
-                linearGradient = new LinearGradient(leftPadding, topPadding, getWidth() - rightPadding, topPadding, colors, null, Shader.TileMode.CLAMP);
+            case 0: // 0°
+                linearGradient = new LinearGradient(leftPadding, topPadding,
+                        getWidth() - rightPadding, topPadding, colors, null, Shader.TileMode.CLAMP);
                 paint.setShader(linearGradient);
                 break;
 
-            case 1://45°
-                linearGradient = new LinearGradient(leftPadding, getHeight() - bottomPadding, getWidth() - rightPadding, topPadding, colors, null, Shader.TileMode.CLAMP);
+            case 1: // 45°
+                linearGradient = new LinearGradient(leftPadding, getHeight() - bottomPadding,
+                        getWidth() - rightPadding, topPadding, colors, null, Shader.TileMode.CLAMP);
                 paint.setShader(linearGradient);
                 break;
 
-            case 2://90°
+            case 2: // 90°
                 int x_ = (getWidth() - rightPadding - leftPadding) / 2 + leftPadding;
-                linearGradient = new LinearGradient(x_, getHeight() - bottomPadding, x_, topPadding, colors, null, Shader.TileMode.CLAMP);
+                linearGradient = new LinearGradient(x_, getHeight() - bottomPadding, x_, topPadding,
+                        colors, null, Shader.TileMode.CLAMP);
                 paint.setShader(linearGradient);
                 break;
 
-            case 3://135°
-                linearGradient = new LinearGradient(getWidth() - rightPadding, getHeight() - bottomPadding, leftPadding, topPadding, colors, null, Shader.TileMode.CLAMP);
+            case 3: // 135°
+                linearGradient = new LinearGradient(getWidth() - rightPadding, getHeight() - bottomPadding,
+                        leftPadding, topPadding, colors, null, Shader.TileMode.CLAMP);
                 paint.setShader(linearGradient);
                 break;
-            case 4://180°
-                linearGradient = new LinearGradient(getWidth() - rightPadding, topPadding, leftPadding, topPadding, colors, null, Shader.TileMode.CLAMP);
-                paint.setShader(linearGradient);
-                break;
-
-            case 5://225°
-                linearGradient = new LinearGradient(getWidth() - rightPadding, topPadding, leftPadding, getHeight() - bottomPadding, colors, null, Shader.TileMode.CLAMP);
+            case 4: // 180°
+                linearGradient = new LinearGradient(getWidth() - rightPadding, topPadding,
+                        leftPadding, topPadding, colors, null, Shader.TileMode.CLAMP);
                 paint.setShader(linearGradient);
                 break;
 
-            case 6://270°
+            case 5: // 225°
+                linearGradient = new LinearGradient(getWidth() - rightPadding, topPadding,
+                        leftPadding, getHeight() - bottomPadding, colors, null, Shader.TileMode.CLAMP);
+                paint.setShader(linearGradient);
+                break;
+
+            case 6: // 270°
                 int x = (getWidth() - rightPadding - leftPadding) / 2 + leftPadding;
-                linearGradient = new LinearGradient(x, topPadding, x, getHeight() - bottomPadding, colors, null, Shader.TileMode.CLAMP);
+                linearGradient = new LinearGradient(x, topPadding, x, getHeight() - bottomPadding,
+                        colors, null, Shader.TileMode.CLAMP);
                 paint.setShader(linearGradient);
                 break;
 
-            case 7://315°
-                linearGradient = new LinearGradient(leftPadding, topPadding, getWidth() - rightPadding, getHeight() - bottomPadding, colors, null, Shader.TileMode.CLAMP);
+            case 7: // 315°
+                linearGradient = new LinearGradient(leftPadding, topPadding, getWidth() - rightPadding,
+                        getHeight() - bottomPadding, colors, null, Shader.TileMode.CLAMP);
                 paint.setShader(linearGradient);
                 break;
-
         }
-
-
     }
 
     public int dip2px(float dipValue) {
@@ -609,30 +580,25 @@ public class ShadowLayout extends FrameLayout {
 
     public void setPadding() {
         if (isShowShadow && mShadowLimit > 0) {
-            //控件区域是否对称，默认是对称。不对称的话，那么控件区域随着阴影区域走
+            // 控件区域是否对称，默认是对称。不对称的话，那么控件区域随着阴影区域走
             if (isSym) {
                 int xPadding = (int) (mShadowLimit + Math.abs(mDx));
                 int yPadding = (int) (mShadowLimit + Math.abs(mDy));
-
                 if (leftShow) {
                     leftPadding = xPadding;
                 } else {
                     leftPadding = 0;
                 }
-
                 if (topShow) {
                     topPadding = yPadding;
                 } else {
                     topPadding = 0;
                 }
-
-
                 if (rightShow) {
                     rightPadding = xPadding;
                 } else {
                     rightPadding = 0;
                 }
-
                 if (bottomShow) {
                     bottomPadding = yPadding;
                 } else {
@@ -646,8 +612,6 @@ public class ShadowLayout extends FrameLayout {
                         mDy = 0 - mShadowLimit;
                     }
                 }
-
-
                 if (Math.abs(mDx) > mShadowLimit) {
                     if (mDx > 0) {
                         mDx = mShadowLimit;
@@ -655,27 +619,21 @@ public class ShadowLayout extends FrameLayout {
                         mDx = 0 - mShadowLimit;
                     }
                 }
-
                 if (topShow) {
                     topPadding = (int) (mShadowLimit - mDy);
                 } else {
                     topPadding = 0;
                 }
-
                 if (bottomShow) {
                     bottomPadding = (int) (mShadowLimit + mDy);
                 } else {
                     bottomPadding = 0;
                 }
-
-
                 if (rightShow) {
                     rightPadding = (int) (mShadowLimit - mDx);
                 } else {
                     rightPadding = 0;
                 }
-
-
                 if (leftShow) {
                     leftPadding = (int) (mShadowLimit + mDx);
                 } else {
@@ -689,15 +647,12 @@ public class ShadowLayout extends FrameLayout {
     @SuppressWarnings("deprecation")
     private void setBackgroundCompat(int w, int h) {
         if (isShowShadow) {
-            //判断传入的颜色值是否有透明度
+            // 判断传入的颜色值是否有透明度
             isAddAlpha(mShadowColor);
-            Bitmap bitmap = createShadowBitmap(w, h, mCornerRadius, mShadowLimit, mDx, mDy, mShadowColor, Color.TRANSPARENT);
+            Bitmap bitmap = createShadowBitmap(w, h, mCornerRadius, mShadowLimit, mDx, mDy,
+                    mShadowColor);
             BitmapDrawable drawable = new BitmapDrawable(bitmap);
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN) {
-                setBackgroundDrawable(drawable);
-            } else {
-                setBackground(drawable);
-            }
+            setBackground(drawable);
         } else {
             if (getChildAt(0) == null) {
                 if (layoutBackground != null) {
@@ -708,26 +663,21 @@ public class ShadowLayout extends FrameLayout {
                         changeSwitchClickable();
                     }
                 } else {
-                    //解决不执行onDraw方法的bug就是给其设置一个透明色
+                    // 解决不执行onDraw方法的bug就是给其设置一个透明色
                     this.setBackgroundColor(Color.parseColor("#00000000"));
                 }
             } else {
                 this.setBackgroundColor(Color.parseColor("#00000000"));
             }
-
-
         }
 
     }
 
     private void initAttributes(AttributeSet attrs) {
         TypedArray attr = getContext().obtainStyledAttributes(attrs, R.styleable.ShadowLayout);
-        if (attr == null) {
-            return;
-        }
 
         try {
-            //默认是显示
+            // 默认是显示
             isShowShadow = !attr.getBoolean(R.styleable.ShadowLayout_hl_shadowHidden, false);
             leftShow = !attr.getBoolean(R.styleable.ShadowLayout_hl_shadowHiddenLeft, false);
             rightShow = !attr.getBoolean(R.styleable.ShadowLayout_hl_shadowHiddenRight, false);
@@ -739,7 +689,7 @@ public class ShadowLayout extends FrameLayout {
             mCornerRadius_rightTop = attr.getDimension(R.styleable.ShadowLayout_hl_cornerRadius_rightTop, -1);
             mCornerRadius_rightBottom = attr.getDimension(R.styleable.ShadowLayout_hl_cornerRadius_rightBottom, -1);
 
-            //默认扩散区域宽度
+            // 默认扩散区域宽度
             mShadowLimit = attr.getDimension(R.styleable.ShadowLayout_hl_shadowLimit, 0);
             if (mShadowLimit == 0) {
                 //如果阴影没有设置阴影扩散区域，那么默认隐藏阴影
@@ -751,16 +701,17 @@ public class ShadowLayout extends FrameLayout {
                 }
             }
 
-            //x轴偏移量
+            // x轴偏移量
             mDx = attr.getDimension(R.styleable.ShadowLayout_hl_shadowOffsetX, 0);
-            //y轴偏移量
+            // y轴偏移量
             mDy = attr.getDimension(R.styleable.ShadowLayout_hl_shadowOffsetY, 0);
-            mShadowColor = attr.getColor(R.styleable.ShadowLayout_hl_shadowColor, getResources().getColor(R.color.default_shadow_color));
+            mShadowColor = attr.getColor(R.styleable.ShadowLayout_hl_shadowColor, getResources().
+                    getColor(R.color.default_shadow_color));
 
             selectorType = attr.getInt(R.styleable.ShadowLayout_hl_shapeMode, 1);
             isSym = attr.getBoolean(R.styleable.ShadowLayout_hl_shadowSymmetry, true);
 
-            //背景颜色的点击(默认颜色为白色)
+            // 背景颜色的点击(默认颜色为白色)
             mBackGroundColor = getResources().getColor(R.color.default_shadowback_color);
 
             Drawable background = attr.getDrawable(R.styleable.ShadowLayout_hl_layoutBackground);
@@ -786,27 +737,29 @@ public class ShadowLayout extends FrameLayout {
             }
 
             if (mBackGroundColor_true != -101 && layoutBackground != null) {
-                throw new UnsupportedOperationException("使用了ShadowLayout_hl_layoutBackground_true属性，必须先设置ShadowLayout_hl_layoutBackground属性。且设置颜色时，必须保持都为颜色");
+                throw new UnsupportedOperationException("使用了ShadowLayout_hl_layoutBackground_true" +
+                        "属性，必须先设置ShadowLayout_hl_layoutBackground属性。且设置颜色时，必须保持都为颜色");
             }
 
             if (layoutBackground == null && layoutBackground_true != null) {
-                throw new UnsupportedOperationException("使用了ShadowLayout_hl_layoutBackground_true属性，必须先设置ShadowLayout_hl_layoutBackground属性。且设置图片时，必须保持都为图片");
+                throw new UnsupportedOperationException("使用了ShadowLayout_hl_layoutBackground_true" +
+                        "属性，必须先设置ShadowLayout_hl_layoutBackground属性。且设置图片时，必须保持都为图片");
             }
 
-            //边框颜色的点击
+            // 边框颜色的点击
             stroke_color = attr.getColor(R.styleable.ShadowLayout_hl_strokeColor, -101);
             stroke_color_true = attr.getColor(R.styleable.ShadowLayout_hl_strokeColor_true, -101);
 
             if (stroke_color == -101 && stroke_color_true != -101) {
-                throw new UnsupportedOperationException("使用了ShadowLayout_hl_strokeColor_true属性，必须先设置ShadowLayout_hl_strokeColor属性");
+                throw new UnsupportedOperationException("使用了ShadowLayout_hl_strokeColor_true属性，" +
+                        "必须先设置ShadowLayout_hl_strokeColor属性");
             }
 
             stroke_with = attr.getDimension(R.styleable.ShadowLayout_hl_strokeWith, dip2px(1));
-            //规定边框长度最大不错过7dp
+            // 规定边框长度最大不错过7dp
             if (stroke_with > dip2px(7)) {
                 stroke_with = dip2px(5);
             }
-
 
             Drawable clickAbleFalseBackground = attr.getDrawable(R.styleable.ShadowLayout_hl_layoutBackground_clickFalse);
             if (clickAbleFalseBackground != null) {
@@ -818,37 +771,34 @@ public class ShadowLayout extends FrameLayout {
                 }
             }
 
-
             startColor = attr.getColor(R.styleable.ShadowLayout_hl_startColor, -101);
             centerColor = attr.getColor(R.styleable.ShadowLayout_hl_centerColor, -101);
             endColor = attr.getColor(R.styleable.ShadowLayout_hl_endColor, -101);
             if (startColor != -101) {
-                //说明设置了渐变色的起始色
+                // 说明设置了渐变色的起始色
                 if (endColor == -101) {
-                    throw new UnsupportedOperationException("使用了ShadowLayout_hl_startColor渐变起始色，必须搭配终止色ShadowLayout_hl_endColor");
+                    throw new UnsupportedOperationException("使用了ShadowLayout_hl_startColor渐变" +
+                            "起始色，必须搭配终止色ShadowLayout_hl_endColor");
                 }
             }
-
 
             angle = attr.getInt(R.styleable.ShadowLayout_hl_angle, 0);
             if (angle % 45 != 0) {
-                throw new IllegalArgumentException("Linear gradient requires 'angle' attribute to be a multiple of 45");
+                throw new IllegalArgumentException("Linear gradient requires 'angle' attribute " +
+                        "to be a multiple of 45");
             }
-
-
             if (selectorType == 3) {
-                //如果是ripple的话
+                // 如果是ripple的话
                 if (mBackGroundColor == -101 || mBackGroundColor_true == -101) {
-                    throw new NullPointerException("使用了ShadowLayout的水波纹，必须设置使用了ShadowLayout_hl_layoutBackground和使用了ShadowLayout_hl_layoutBackground_true属性，且为颜色值");
+                    throw new NullPointerException("使用了ShadowLayout的水波纹，" +
+                            "必须设置使用了ShadowLayout_hl_layoutBackground和使用了" +
+                            "ShadowLayout_hl_layoutBackground_true属性，且为颜色值");
                 }
-
-                //如果是设置了图片的话，那么也不支持水波纹
+                // 如果是设置了图片的话，那么也不支持水波纹
                 if (layoutBackground != null) {
                     selectorType = 1;
                 }
             }
-
-
             mTextViewResId = attr.getResourceId(R.styleable.ShadowLayout_hl_bindTextView, -1);
             textColor = attr.getColor(R.styleable.ShadowLayout_hl_textColor, -101);
             textColor_true = attr.getColor(R.styleable.ShadowLayout_hl_textColor_true, -101);
@@ -857,16 +807,14 @@ public class ShadowLayout extends FrameLayout {
 
             isClickable = attr.getBoolean(R.styleable.ShadowLayout_clickable, true);
             setClickable(isClickable);
-
-
         } finally {
             attr.recycle();
         }
     }
 
     private Bitmap createShadowBitmap(int shadowWidth, int shadowHeight, float cornerRadius, float shadowRadius,
-                                      float dx, float dy, int shadowColor, int fillColor) {
-        //优化阴影bitmap大小,将尺寸缩小至原来的1/4。
+                                      float dx, float dy, int shadowColor) {
+        // 优化阴影bitmap大小,将尺寸缩小至原来的1/4。
         dx = dx / 4;
         dy = dy / 4;
         shadowWidth = shadowWidth / 4 == 0 ? 1 : shadowWidth / 4;
@@ -877,9 +825,8 @@ public class ShadowLayout extends FrameLayout {
         Bitmap output = Bitmap.createBitmap(shadowWidth, shadowHeight, Bitmap.Config.ARGB_4444);
         Canvas canvas = new Canvas(output);
 
-        //这里缩小limit的是因为，setShadowLayer后会将bitmap扩散到shadowWidth，shadowHeight
-        //同时也要根据某边的隐藏情况去改变
-
+        // 这里缩小limit的是因为，setShadowLayer后会将bitmap扩散到shadowWidth，shadowHeight
+        // 同时也要根据某边的隐藏情况去改变
         float rect_left = 0;
         float rect_right = 0;
         float rect_top = 0;
@@ -887,27 +834,22 @@ public class ShadowLayout extends FrameLayout {
         if (leftShow) {
             rect_left = shadowRadius;
         } else {
-//            rect_left = 0;
             float maxLeftTop = Math.max(cornerRadius, mCornerRadius_leftTop);
             float maxLeftBottom = Math.max(cornerRadius, mCornerRadius_leftBottom);
-            float maxLeft = Math.max(maxLeftTop, maxLeftBottom);
-            rect_left = maxLeft;
+            rect_left = Math.max(maxLeftTop, maxLeftBottom);
         }
 
         if (topShow) {
             rect_top = shadowRadius;
         } else {
-//            rect_top = 0;
             float maxLeftTop = Math.max(cornerRadius, mCornerRadius_leftTop);
             float maxRightTop = Math.max(cornerRadius, mCornerRadius_rightTop);
-            float maxTop = Math.max(maxLeftTop, maxRightTop);
-            rect_top = maxTop;
+            rect_top = Math.max(maxLeftTop, maxRightTop);
         }
 
         if (rightShow) {
             rect_right = shadowWidth - shadowRadius;
         } else {
-//            rect_right = shadowWidth;
             float maxRightTop = Math.max(cornerRadius, mCornerRadius_rightTop);
             float maxRightBottom = Math.max(cornerRadius, mCornerRadius_rightBottom);
             float maxRight = Math.max(maxRightTop, maxRightBottom);
@@ -917,14 +859,11 @@ public class ShadowLayout extends FrameLayout {
         if (bottomShow) {
             rect_bottom = shadowHeight - shadowRadius;
         } else {
-//            rect_bottom = shadowHeight;
             float maxLeftBottom = Math.max(cornerRadius, mCornerRadius_leftBottom);
             float maxRightBottom = Math.max(cornerRadius, mCornerRadius_rightBottom);
             float maxBottom = Math.max(maxLeftBottom, maxRightBottom);
             rect_bottom = shadowHeight - maxBottom;
         }
-
-
         RectF shadowRect = new RectF(
                 rect_left,
                 rect_top,
@@ -955,23 +894,21 @@ public class ShadowLayout extends FrameLayout {
             shadowRect.left -= dx;
         }
 
-
-        shadowPaint.setColor(fillColor);
+        shadowPaint.setColor(Color.TRANSPARENT);
         if (!isInEditMode()) {//dx  dy
             shadowPaint.setShadowLayer(shadowRadius / 2, dx, dy, shadowColor);
         }
 
-        if (mCornerRadius_leftBottom == -1 && mCornerRadius_leftTop == -1 && mCornerRadius_rightTop == -1 && mCornerRadius_rightBottom == -1) {
-            //如果没有设置整个属性，那么按原始去画
+        if (mCornerRadius_leftBottom == -1 && mCornerRadius_leftTop == -1 && mCornerRadius_rightTop == -1
+                && mCornerRadius_rightBottom == -1) {
+            // 如果没有设置整个属性，那么按原始去画
             canvas.drawRoundRect(shadowRect, cornerRadius, cornerRadius, shadowPaint);
         } else {
-            //目前最佳的解决方案
+            // 目前最佳的解决方案
             rectf.left = leftPadding;
             rectf.top = topPadding;
             rectf.right = getWidth() - rightPadding;
             rectf.bottom = getHeight() - bottomPadding;
-
-
             shadowPaint.setAntiAlias(true);
             int leftTop;
             if (mCornerRadius_leftTop == -1) {
@@ -1000,23 +937,22 @@ public class ShadowLayout extends FrameLayout {
                 rightBottom = (int) mCornerRadius_rightBottom / 4;
             }
 
-            float[] outerR = new float[]{leftTop, leftTop, rightTop, rightTop, rightBottom, rightBottom, leftBottom, leftBottom};//左上，右上，右下，左下
+            float[] outerR = new float[]{leftTop, leftTop, rightTop, rightTop, rightBottom,
+                    rightBottom, leftBottom, leftBottom}; // 左上，右上，右下，左下
             Path path = new Path();
             path.addRoundRect(shadowRect, outerR, Path.Direction.CW);
             canvas.drawPath(path, shadowPaint);
         }
-
         return output;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void dispatchDraw(Canvas canvas) {
-
         int trueHeight = (int) (rectf.bottom - rectf.top);
         if (getChildAt(0) != null) {
-            if (mCornerRadius_leftTop == -1 && mCornerRadius_leftBottom == -1 && mCornerRadius_rightTop == -1 && mCornerRadius_rightBottom == -1) {
-                //说明没有设置过任何特殊角、且是半圆。
+            if (mCornerRadius_leftTop == -1 && mCornerRadius_leftBottom == -1 && mCornerRadius_rightTop == -1
+                    && mCornerRadius_rightBottom == -1) {
+                // 说明没有设置过任何特殊角、且是半圆。
                 if (mCornerRadius > trueHeight / 2) {
                     Path path = new Path();
                     path.addRoundRect(rectf, trueHeight / 2, trueHeight / 2, Path.Direction.CW);
@@ -1029,13 +965,13 @@ public class ShadowLayout extends FrameLayout {
             } else {
                 float[] outerR = getCornerValue(trueHeight);
                 Path path = new Path();
-                path.addRoundRect(leftPadding, topPadding, getWidth() - rightPadding, getHeight() - bottomPadding,outerR,Path.Direction.CW);
+                path.addRoundRect(leftPadding, topPadding, getWidth() - rightPadding,
+                        getHeight() - bottomPadding, outerR, Path.Direction.CW);
                 canvas.clipPath(path);
             }
 
         }
         super.dispatchDraw(canvas);
-
     }
 
     @Override
@@ -1046,9 +982,10 @@ public class ShadowLayout extends FrameLayout {
         rectf.right = getWidth() - rightPadding;
         rectf.bottom = getHeight() - bottomPadding;
         int trueHeight = (int) (rectf.bottom - rectf.top);
-        //如果都为0说明，没有设置特定角，那么按正常绘制
+        // 如果都为0说明，没有设置特定角，那么按正常绘制
         if (getChildAt(0) != null) {
-            if (mCornerRadius_leftTop == -1 && mCornerRadius_leftBottom == -1 && mCornerRadius_rightTop == -1 && mCornerRadius_rightBottom == -1) {
+            if (mCornerRadius_leftTop == -1 && mCornerRadius_leftBottom == -1 && mCornerRadius_rightTop == -1
+                    && mCornerRadius_rightBottom == -1) {
                 if (mCornerRadius > trueHeight / 2) {
                     if (selectorType != 3) {
                         if (layoutBackground == null && layoutBackground_true == null) {
@@ -1058,9 +995,11 @@ public class ShadowLayout extends FrameLayout {
                             if (stroke_color != -101) {
                                 int the_height = (int) (rectf.bottom - rectf.top);
                                 int the_height_stoke = (int) (rectf.bottom - stroke_with / 2 - rectf.top - stroke_with / 2);
-                                int trueCorner = (int) (trueHeight * the_height_stoke / 2 / the_height);
+                                int trueCorner = trueHeight * the_height_stoke / 2 / the_height;
 
-                                RectF rectFStroke = new RectF(rectf.left + stroke_with / 2, rectf.top + stroke_with / 2, rectf.right - stroke_with / 2, rectf.bottom - stroke_with / 2);
+                                RectF rectFStroke = new RectF(rectf.left + stroke_with / 2,
+                                        rectf.top + stroke_with / 2,
+                                        rectf.right - stroke_with / 2, rectf.bottom - stroke_with / 2);
                                 canvas.drawRoundRect(rectFStroke, trueCorner, trueCorner, paint_stroke);
 
                             }
@@ -1084,20 +1023,18 @@ public class ShadowLayout extends FrameLayout {
                                 int trueCorner = (int) (mCornerRadius * the_height_stoke / the_height);
 
 
-                                RectF rectFStroke = new RectF(rectf.left + stroke_with / 2, rectf.top + stroke_with / 2, rectf.right - stroke_with / 2, rectf.bottom - stroke_with / 2);
+                                RectF rectFStroke = new RectF(rectf.left + stroke_with / 2,
+                                        rectf.top + stroke_with / 2,
+                                        rectf.right - stroke_with / 2, rectf.bottom - stroke_with / 2);
                                 canvas.drawRoundRect(rectFStroke, trueCorner, trueCorner, paint_stroke);
 
                             }
 
                         }
                     } else {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                            float[] outerR = getCornerValue(trueHeight);
-                            ripple(outerR);
-                        }
+                        float[] outerR = getCornerValue(trueHeight);
+                        ripple(outerR);
                     }
-
-
                 }
             } else {
                 if (layoutBackground == null && layoutBackground_true == null) {
@@ -1105,7 +1042,6 @@ public class ShadowLayout extends FrameLayout {
                 }
             }
         }
-
     }
 
     public float[] getCornerValue(int trueHeight) {
@@ -1154,11 +1090,12 @@ public class ShadowLayout extends FrameLayout {
             leftBottom = trueHeight / 2;
         }
 
-        float[] outerR = new float[]{leftTop, leftTop, rightTop, rightTop, rightBottom, rightBottom, leftBottom, leftBottom};//左上，右上，右下，左下
+        float[] outerR = new float[]{leftTop, leftTop, rightTop, rightTop, rightBottom,
+                rightBottom, leftBottom, leftBottom}; // 左上，右上，右下，左下
         return outerR;
     }
 
-    //这里是为了解决stokeWith很大时，圆角盖不住底部四个角的bug(issues #86)
+    // 这里是为了解决stokeWith很大时，圆角盖不住底部四个角的bug
     public float[] getCornerValueOther(int trueHeight, int stokeWith) {
         trueHeight = trueHeight - stokeWith * 2;
         int leftTop;
@@ -1210,7 +1147,8 @@ public class ShadowLayout extends FrameLayout {
         leftBottom = leftBottom - stokeWith;
         rightBottom = rightBottom - stokeWith;
 
-        float[] outerR = new float[]{leftTop, leftTop, rightTop, rightTop, rightBottom, rightBottom, leftBottom, leftBottom};//左上，右上，右下，左下
+        float[] outerR = new float[]{leftTop, leftTop, rightTop, rightTop, rightBottom,
+                rightBottom, leftBottom, leftBottom}; // 左上，右上，右下，左下
         return outerR;
     }
 
@@ -1231,20 +1169,18 @@ public class ShadowLayout extends FrameLayout {
                 mDrawables.draw(canvas);
 
                 float[] outerR_stroke = getCornerValueOther(trueHeight, (int) stroke_with);
-                ShapeDrawable mDrawablesStroke = new ShapeDrawable(new RoundRectShape(outerR_stroke, null, null));
+                ShapeDrawable mDrawablesStroke = new ShapeDrawable(new RoundRectShape(outerR_stroke,
+                        null, null));
                 mDrawablesStroke.getPaint().setColor(paint_stroke.getColor());
                 mDrawablesStroke.getPaint().setStyle(Paint.Style.STROKE);
                 mDrawablesStroke.getPaint().setStrokeWidth(stroke_with);
-                mDrawablesStroke.setBounds((int) (leftPadding + stroke_with / 2), (int) (topPadding + stroke_with / 2), (int) (getWidth() - rightPadding - stroke_with / 2), (int) (getHeight() - bottomPadding - stroke_with / 2));
-
-
+                mDrawablesStroke.setBounds((int) (leftPadding + stroke_with / 2),
+                        (int) (topPadding + stroke_with / 2), (int) (getWidth() - rightPadding - stroke_with / 2),
+                        (int) (getHeight() - bottomPadding - stroke_with / 2));
                 mDrawablesStroke.draw(canvas);
             } else {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    ripple(outerR);
-                }
+                ripple(outerR);
             }
-
         } else {
             if (selectorType != 3) {
                 ShapeDrawable mDrawables = new ShapeDrawable(new RoundRectShape(outerR, null, null));
@@ -1256,27 +1192,21 @@ public class ShadowLayout extends FrameLayout {
                 mDrawables.setBounds(leftPadding, topPadding, getWidth() - rightPadding, getHeight() - bottomPadding);
                 mDrawables.draw(canvas);
             } else {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    ripple(outerR);
-                }
+                ripple(outerR);
             }
         }
-
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void ripple(float[] outRadius) {
-
         int[][] stateList = new int[][]{
                 new int[]{android.R.attr.state_pressed},
                 new int[]{android.R.attr.state_focused},
                 new int[]{android.R.attr.state_activated},
                 new int[]{}
         };
-
-        //深蓝
+        // 深蓝
         int normalColor = mBackGroundColor;
-        //玫瑰红
+        // 玫瑰红
         int pressedColor = mBackGroundColor_true;
         int[] stateColorList = new int[]{
                 pressedColor,
@@ -1291,43 +1221,37 @@ public class ShadowLayout extends FrameLayout {
         maskDrawable.setShape(roundRectShape);
         maskDrawable.getPaint().setStyle(Paint.Style.FILL);
         if (startColor != -101) {
-            //如果设置了渐变色的话
+            // 如果设置了渐变色的话
             gradient(maskDrawable.getPaint());
         } else {
             maskDrawable.getPaint().setColor(normalColor);
         }
-
         ShapeDrawable contentDrawable = new ShapeDrawable();
         contentDrawable.setShape(roundRectShape);
         contentDrawable.getPaint().setStyle(Paint.Style.FILL);
-
         if (startColor != -101) {
-            //如果设置了渐变色的话
+            // 如果设置了渐变色的话
             gradient(contentDrawable.getPaint());
         } else {
             contentDrawable.getPaint().setColor(normalColor);
         }
-
-        //contentDrawable实际是默认初始化时展示的；maskDrawable 控制了rippleDrawable的范围
+        // contentDrawable实际是默认初始化时展示的；maskDrawable 控制了rippleDrawable的范围
         RippleDrawable rippleDrawable = new RippleDrawable(colorStateList, contentDrawable, maskDrawable);
         firstView.setBackground(rippleDrawable);
     }
 
     public void isAddAlpha(int color) {
-        //获取单签颜色值的透明度，如果没有设置透明度，默认加上#2a
+        // 获取单签颜色值的透明度，如果没有设置透明度，默认加上#2a
         if (Color.alpha(color) == 255) {
             String red = Integer.toHexString(Color.red(color));
             String green = Integer.toHexString(Color.green(color));
             String blue = Integer.toHexString(Color.blue(color));
-
             if (red.length() == 1) {
                 red = "0" + red;
             }
-
             if (green.length() == 1) {
                 green = "0" + green;
             }
-
             if (blue.length() == 1) {
                 blue = "0" + blue;
             }
@@ -1339,7 +1263,7 @@ public class ShadowLayout extends FrameLayout {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (selectorType == 3) {
-            //如果是水波纹模式，那么不需要进行下面的渲染，采用系统ripper即可
+            // 如果是水波纹模式，那么不需要进行下面的渲染，采用系统ripper即可
             if (isClickable) {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
@@ -1352,7 +1276,6 @@ public class ShadowLayout extends FrameLayout {
                             }
                         }
                         break;
-
                     case MotionEvent.ACTION_CANCEL:
                     case MotionEvent.ACTION_UP:
                         if (selectorType == 3) {
@@ -1364,8 +1287,6 @@ public class ShadowLayout extends FrameLayout {
                             }
                         }
                         break;
-
-
                 }
             }
             return super.onTouchEvent(event);
@@ -1378,7 +1299,7 @@ public class ShadowLayout extends FrameLayout {
                         if (selectorType == 1) {
                             if (mBackGroundColor_true != -101) {
                                 paint.setColor(mBackGroundColor_true);
-                                //打个标记
+                                // 打个标记
                                 paint.setShader(null);
                             }
                             if (stroke_color_true != -101) {
@@ -1398,11 +1319,10 @@ public class ShadowLayout extends FrameLayout {
                             }
                         }
                         break;
-
                     case MotionEvent.ACTION_CANCEL:
                     case MotionEvent.ACTION_UP:
                         if (selectorType == 1) {
-                            //打个标记
+                            // 打个标记
                             paint.setColor(mBackGroundColor);
                             if (startColor != -101) {
                                 gradient(paint);
@@ -1448,21 +1368,18 @@ public class ShadowLayout extends FrameLayout {
                 } else {
                     leftBottom = (int) mCornerRadius_leftBottom;
                 }
-
                 int rightTop;
                 if (mCornerRadius_rightTop == -1) {
                     rightTop = (int) mCornerRadius;
                 } else {
                     rightTop = (int) mCornerRadius_rightTop;
                 }
-
                 int rightBottom;
                 if (mCornerRadius_rightBottom == -1) {
                     rightBottom = (int) mCornerRadius;
                 } else {
                     rightBottom = (int) mCornerRadius_rightBottom;
                 }
-
                 GlideRoundUtils.setCorners(firstView, drawable, leftTop, leftBottom, rightTop, rightBottom);
             }
         }

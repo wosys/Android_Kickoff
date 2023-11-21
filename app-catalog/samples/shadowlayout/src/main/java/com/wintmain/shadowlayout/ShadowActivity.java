@@ -32,14 +32,12 @@ public class ShadowActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_shadow);
-        binding.shadowLayoutBarLeft.setOnClickListener(
-                v -> {
-                    finish();
-                });
 
-        binding.ShadowLayoutIntent.setOnClickListener(
-                v -> {
-                    startActivity(new Intent(ShadowActivity.this, StarShowActivity.class));
-                });
+        binding.shadowLayoutBarLeft.setOnClickListener(v -> {
+            finish();
+        });
+        binding.ShadowLayoutIntent.setOnClickListener(v -> {
+            startActivity(new Intent(ShadowActivity.this, StarShowActivity.class));
+        });
     }
 }

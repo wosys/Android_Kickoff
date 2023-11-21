@@ -30,7 +30,6 @@ import com.wintmain.shadowlayout.databinding.ActivityMainBinding;
         name = "shadowlayout",
         description = "阴影布局",
         documentation = "",
-//    owners = ["wintmain"],
         tags = "A-Self_demos"
 )
 public class ShadowMainActivity extends AppCompatActivity {
@@ -40,14 +39,13 @@ public class ShadowMainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
         binding.ShadowLayoutShadow.setOnClickListener(v -> {
             startActivity(new Intent(ShadowMainActivity.this, ShadowActivity.class));
         });
-
         binding.ShadowLayoutShape.setOnClickListener(v -> {
             startActivity(new Intent(ShadowMainActivity.this, ShapeActivity.class));
         });
-
         binding.ShadowLayoutWiki.setOnClickListener(v ->{
             startActivity(new Intent(ShadowMainActivity.this, WikiActivity.class));
         });
