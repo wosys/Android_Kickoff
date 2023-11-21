@@ -22,7 +22,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: "com.google.devtools.ksp"
 apply plugin: 'dagger.hilt.android.plugin'
-apply plugin: 'kotlin-kapt'
 
 android {
     compileSdk 34
@@ -79,7 +78,7 @@ dependencies {
 
     // Required by CASA to generate the wiring logic
     implementation libs.hilt.android
-    kapt libs.hilt.compiler
+    ksp libs.hilt.compiler
 
     // Some common dependencies between samples
     implementation libs.androidx.core
