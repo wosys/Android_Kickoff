@@ -42,7 +42,7 @@ public class PlaceHolderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.pft_activity_main);
 
         // 初始化一些三方库
         initLibs(getApplication());
