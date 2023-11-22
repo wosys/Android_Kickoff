@@ -56,7 +56,10 @@ include(*samples)
 gradle.ext.samples = samples
 
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        google()
+        mavenCentral()
         // JitPack 远程仓库：https://jitpack.io, 用来解析Github上的三方库
         maven { url 'https://jitpack.io' }
     }

@@ -81,8 +81,11 @@ affectedModuleDetector {
 
 allprojects {
     repositories {
-        google()
-        mavenCentral()
+        // 在settings.gradle里添加
+        // Build was configured to prefer settings repositories over project repositories
+        // but repository 'Google' was added by build file 'build.gradle'
+//        google()
+//        mavenCentral()
 
         def composeSnapshot = libs.versions.composesnapshot.get()
         if (composeSnapshot.length() > 1) {
