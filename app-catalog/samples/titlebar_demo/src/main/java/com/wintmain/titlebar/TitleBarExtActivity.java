@@ -27,17 +27,11 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.google.android.catalog.framework.annotations.Sample;
 
 import lib.wintmain.titlebar.OnTitleBarListener;
-import lib.wintmain.titlebar.TitleBar;
+import lib.wintmain.titlebar.TitleBarExt;
 import lib.wintmain.titlebar.style.LightBarStyle;
 
-@Sample(
-        name = "Titlebar_demo",
-        description = "标题栏例子",
-        documentation = "",
-//    owners = ["wintmain"],
-        tags = "A-Self_demos"
-)
-public class TitleBarActivity extends AppCompatActivity {
+@Sample(name = "Titlebar_demo", description = "标题栏例子", documentation = "", tags = "A-Self_demos" )
+public class TitleBarExtActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,21 +41,21 @@ public class TitleBarActivity extends AppCompatActivity {
         // 初始化
         initLibs();
 
-        TitleBar titleBar = findViewById(R.id.tb_main_bar_click);
-        titleBar.setOnTitleBarListener(new OnTitleBarListener() {
+        TitleBarExt titleBarExt = findViewById(R.id.tb_main_bar_click);
+        titleBarExt.setOnTitleBarListener(new OnTitleBarListener() {
 
             @Override
-            public void onLeftClick(TitleBar titleBar) {
+            public void onLeftClick(TitleBarExt titleBarExt) {
                 Toast.makeText(getApplicationContext(),"左项 View 被点击", Toast.LENGTH_LONG).show();
             }
 
             @Override
-            public void onTitleClick(TitleBar titleBar) {
+            public void onTitleClick(TitleBarExt titleBarExt) {
                 Toast.makeText(getApplicationContext(),"中间 View 被点击", Toast.LENGTH_LONG).show();
             }
 
             @Override
-            public void onRightClick(TitleBar titleBar) {
+            public void onRightClick(TitleBarExt titleBarExt) {
                 Toast.makeText(getApplicationContext(),"右项 View 被点击", Toast.LENGTH_LONG).show();
             }
         });
@@ -69,7 +63,7 @@ public class TitleBarActivity extends AppCompatActivity {
 
     private void initLibs() {
         // 初始化 TitleBar 默认样式
-        TitleBar.setDefaultStyle(new LightBarStyle() {
+        TitleBarExt.setDefaultStyle(new LightBarStyle() {
             @Override
             public TextView newTitleView(Context context) {
                 return new AppCompatTextView(context);

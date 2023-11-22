@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ Copyright 2023 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,7 @@
 
 <resources>
 
-    <style name="TitleBarStyle">
+    <style name="TitleBarStyleExt">
         <item name="android:background">@drawable/bar_drawable_placeholder</item>
         <item name="leftIcon">@drawable/bar_drawable_placeholder</item>
         <item name="leftBackground">@drawable/bar_drawable_placeholder</item>

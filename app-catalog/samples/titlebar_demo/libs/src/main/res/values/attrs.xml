@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ Copyright 2023 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,13 +16,13 @@
   -->
 
 <resources>
-    <declare-styleable name="TitleBar">
+    <declare-styleable name="TitleBarExt">
 
         <!-- 标题栏背景 -->
         <attr name="android:background" />
 
         <!-- 标题栏样式 -->
-        <attr name="barStyle">
+        <attr name="barStyleExt">
             <enum name="light" value="0x10" />
             <enum name="night" value="0x20" />
             <enum name="transparent" value="0x30" />
@@ -35,14 +36,14 @@
         <attr name="title" format="string" />
         <attr name="titleColor" format="reference|color" />
         <attr name="titleSize" format="dimension" />
-        <attr name="titleGravity">
+        <attr name="titleGravityExt">
             <flag name="left" value="0x03" />
             <flag name="right" value="0x05" />
             <flag name="center" value="0x11" />
             <flag name="start" value="0x00800003" />
             <flag name="end" value="0x00800005" />
         </attr>
-        <attr name="titleStyle">
+        <attr name="titleStyleExt">
             <flag name="normal" value="0" />
             <flag name="bold" value="1" />
             <flag name="italic" value="2" />
@@ -52,7 +53,7 @@
         <attr name="titleIconHeight" format="dimension" />
         <attr name="titleIconPadding" format="dimension" />
         <attr name="titleIconTint" format="color" />
-        <attr name="titleIconGravity">
+        <attr name="titleIconGravityExt">
             <flag name="top" value="0x30" />
             <flag name="bottom" value="0x50" />
             <flag name="left" value="0x03" />
@@ -66,7 +67,7 @@
         <attr name="leftTitle" format="string" />
         <attr name="leftTitleColor" format="reference|color" />
         <attr name="leftTitleSize" format="dimension" />
-        <attr name="leftTitleStyle">
+        <attr name="leftTitleStyleExt">
             <flag name="normal" value="0" />
             <flag name="bold" value="1" />
             <flag name="italic" value="2" />
@@ -76,7 +77,7 @@
         <attr name="leftIconHeight" format="dimension" />
         <attr name="leftIconPadding" format="dimension" />
         <attr name="leftIconTint" format="color" />
-        <attr name="leftIconGravity">
+        <attr name="leftIconGravityExt">
             <flag name="top" value="0x30" />
             <flag name="bottom" value="0x50" />
             <flag name="left" value="0x03" />
@@ -92,7 +93,7 @@
         <attr name="rightTitle" format="string" />
         <attr name="rightTitleColor" format="reference|color" />
         <attr name="rightTitleSize" format="dimension" />
-        <attr name="rightTitleStyle">
+        <attr name="rightTitleStyleExt">
             <flag name="normal" value="0" />
             <flag name="bold" value="1" />
             <flag name="italic" value="2" />
@@ -102,7 +103,7 @@
         <attr name="rightIconHeight" format="dimension" />
         <attr name="rightIconPadding" format="dimension" />
         <attr name="rightIconTint" format="color" />
-        <attr name="rightIconGravity">
+        <attr name="rightIconGravityExt">
             <flag name="top" value="0x30" />
             <flag name="bottom" value="0x50" />
             <flag name="left" value="0x03" />
