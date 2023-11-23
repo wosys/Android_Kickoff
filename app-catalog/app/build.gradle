@@ -89,4 +89,7 @@ dependencies {
 
     androidTestImplementation libs.androidx.test.runner
     testImplementation libs.androidx.test.runner
+
+    // App中集成CodeLocator: https://github.com/bytedance/CodeLocator
+    debugImplementation "com.bytedance.tools.codelocator:codelocator-core:2.0.3"
 }
