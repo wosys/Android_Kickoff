@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.connectivitynetwork_demo;
+package com.wintmain.networkconn;
 
 import android.net.NetworkInfo;
 

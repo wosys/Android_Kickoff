@@ -12,7 +12,7 @@ dynamically including all available samples into a single activity.
 * [AndroidPfT](app-catalog/samples/androidpft)
 * [DeviceInfo](app-catalog/samples/deviceinfo)
 * [MyMusicPlayer](app-catalog/samples/mymusicplayer)
-* [NetworkConn_demo](app-catalog/samples/networkconn_demo)
+* [NetworkConn](app-catalog/samples/networkconn)
 * [ShadowLayout](app-catalog/samples/shadowlayout)
 * [Titlebar_demo](app-catalog/samples/titlebar_demo)
 * [Toast_demo](app-catalog/samples/toast_demo)
