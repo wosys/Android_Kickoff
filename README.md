@@ -15,5 +15,5 @@ dynamically including all available samples into a single activity.
 * [NetworkConn](app-catalog/samples/networkconn)
 * [ShadowLayout](app-catalog/samples/shadowlayout)
 * [Titlebar_demo](app-catalog/samples/titlebar_demo)
-* [Toast_demo](app-catalog/samples/toast_demo)
+* [Toaster](app-catalog/samples/toaster)
 * [Xperimissions](app-catalog/samples/xpermissions)
