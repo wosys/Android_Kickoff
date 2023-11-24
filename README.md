@@ -13,6 +13,7 @@ dynamically including all available samples into a single activity.
 * [DeviceInfo](app-catalog/samples/deviceinfo)
 * [MyMusicPlayer](app-catalog/samples/mymusicplayer)
 * [NetworkConn_demo](app-catalog/samples/networkconn_demo)
+* [ShadowLayout](app-catalog/samples/shadowlayout)
 * [Titlebar_demo](app-catalog/samples/titlebar_demo)
 * [Toast_demo](app-catalog/samples/toast_demo)
 * [Xperimissions](app-catalog/samples/xpermissions)
