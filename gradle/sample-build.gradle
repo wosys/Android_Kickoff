@@ -92,5 +92,6 @@ dependencies {
     // [customize] - 将common的依赖放到这里
     implementation libs.androidx.appcompat
     implementation libs.mdc
-    implementation libs.androidx.testext // AS自动创建的'androidTest'会用到
+    androidTestImplementation libs.androidx.testext // AS自动创建的'androidTest'会用到
+    testImplementation libs.androidx.testext
 }
