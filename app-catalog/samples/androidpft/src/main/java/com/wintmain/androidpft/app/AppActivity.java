@@ -16,13 +16,11 @@
 
 package com.wintmain.androidpft.app;
 
-import com.wintmain.base.BaseActivity;
+import lib.wintmain.base.BaseActivity;
 
 /**
- * @Description
- * @Author wintmain
+ * @Description @Author wintmain
  *
- * @mailto wosintmain@gmail.com
- * @Date 2023-10-26 23:10:54
+ * @mailto wosintmain@gmail.com @Date 2023-10-26 23:10:54
  */
 public abstract class AppActivity extends BaseActivity {}

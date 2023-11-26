@@ -14,13 +14,11 @@
  * limitations under the License.
  */
 
-package com.wintmain.base.action;
+package lib.wintmain.base.action;
 
-import com.wintmain.base.R;
+import lib.wintmain.base.R;
 
-/**
- * desc : 动画样式
- */
+/** desc : 动画样式 */
 public interface AnimAction {
 
     /** 默认动画效果 */

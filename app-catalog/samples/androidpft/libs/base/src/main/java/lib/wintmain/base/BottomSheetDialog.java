@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.base;
+package lib.wintmain.base;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -224,8 +224,8 @@ public final class BottomSheetDialog extends BaseDialog
     private class BehaviorAccessibilityDelegate extends AccessibilityDelegateCompat {
 
         @Override
-        public void onInitializeAccessibilityNodeInfo(@NonNull View host,
-                                                      @NonNull AccessibilityNodeInfoCompat info) {
+        public void onInitializeAccessibilityNodeInfo(
+                @NonNull View host, @NonNull AccessibilityNodeInfoCompat info) {
             super.onInitializeAccessibilityNodeInfo(host, info);
             if (mCancelable) {
                 info.addAction(AccessibilityNodeInfoCompat.ACTION_DISMISS);

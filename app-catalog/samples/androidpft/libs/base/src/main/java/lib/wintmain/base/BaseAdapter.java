@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.base;
+package lib.wintmain.base;
 
 import android.content.Context;
 import android.util.SparseArray;
@@ -28,7 +28,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.wintmain.base.action.ResourcesAction;
+import lib.wintmain.base.action.ResourcesAction;
 
 /** desc : RecyclerView 适配器技术基类 */
 public abstract class BaseAdapter<VH extends BaseAdapter<?>.ViewHolder>

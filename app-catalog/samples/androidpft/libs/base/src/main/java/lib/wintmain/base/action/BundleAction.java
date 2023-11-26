@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.base.action;
+package lib.wintmain.base.action;
 
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -24,9 +24,7 @@ import androidx.annotation.Nullable;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/**
- * desc : 参数意图
- */
+/** desc : 参数意图 */
 public interface BundleAction {
 
     @Nullable

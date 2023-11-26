@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.base;
+package lib.wintmain.base;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -53,12 +53,12 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleRegistry;
 
-import com.wintmain.base.action.ActivityAction;
-import com.wintmain.base.action.AnimAction;
-import com.wintmain.base.action.ClickAction;
-import com.wintmain.base.action.HandlerAction;
-import com.wintmain.base.action.KeyboardAction;
-import com.wintmain.base.action.ResourcesAction;
+import lib.wintmain.base.action.ActivityAction;
+import lib.wintmain.base.action.AnimAction;
+import lib.wintmain.base.action.ClickAction;
+import lib.wintmain.base.action.HandlerAction;
+import lib.wintmain.base.action.KeyboardAction;
+import lib.wintmain.base.action.ResourcesAction;
 
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
@@ -67,12 +67,12 @@ import java.util.List;
 /** desc : Dialog 技术基类 */
 public class BaseDialog extends AppCompatDialog
         implements LifecycleOwner,
-                ActivityAction,
-                ResourcesAction,
-                HandlerAction,
-                ClickAction,
-                AnimAction,
-                KeyboardAction,
+        ActivityAction,
+        ResourcesAction,
+        HandlerAction,
+        ClickAction,
+        AnimAction,
+        KeyboardAction,
                 DialogInterface.OnShowListener,
                 DialogInterface.OnCancelListener,
                 DialogInterface.OnDismissListener {

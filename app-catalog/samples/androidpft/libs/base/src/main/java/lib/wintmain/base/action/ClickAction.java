@@ -14,16 +14,14 @@
  * limitations under the License.
  */
 
-package com.wintmain.base.action;
+package lib.wintmain.base.action;
 
 import android.view.View;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
 
-/**
- * desc : 点击事件意图
- */
+/** desc : 点击事件意图 */
 public interface ClickAction extends View.OnClickListener {
 
     <V extends View> V findViewById(@IdRes int id);

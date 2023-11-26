@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.base;
+package lib.wintmain.base;
 
 import android.app.Activity;
 import android.content.Context;
@@ -31,11 +31,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
 
-import com.wintmain.base.action.ActivityAction;
-import com.wintmain.base.action.BundleAction;
-import com.wintmain.base.action.ClickAction;
-import com.wintmain.base.action.HandlerAction;
-import com.wintmain.base.action.KeyboardAction;
+import lib.wintmain.base.action.ActivityAction;
+import lib.wintmain.base.action.BundleAction;
+import lib.wintmain.base.action.ClickAction;
+import lib.wintmain.base.action.HandlerAction;
+import lib.wintmain.base.action.KeyboardAction;
 
 import java.util.List;
 import java.util.Random;

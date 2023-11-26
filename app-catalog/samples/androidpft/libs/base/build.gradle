@@ -16,7 +16,7 @@ android {
         }
     }
 
-    namespace 'com.wintmain.base'
+    namespace 'lib.wintmain.base'
 }
 
 dependencies {

@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-package com.wintmain.base.action;
+package lib.wintmain.base.action;
 
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 
-/**
- * desc : Handler 意图处理
- */
+/** desc : Handler 意图处理 */
 public interface HandlerAction {
 
     Handler HANDLER = new Handler(Looper.getMainLooper());

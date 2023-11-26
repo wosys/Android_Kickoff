@@ -14,16 +14,14 @@
  * limitations under the License.
  */
 
-package com.wintmain.base.action;
+package lib.wintmain.base.action;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 
-/**
- * desc : Activity 相关意图
- */
+/** desc : Activity 相关意图 */
 public interface ActivityAction {
 
     /** 获取 Context 对象 */

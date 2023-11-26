@@ -34,9 +34,8 @@ import com.hjq.toast.Toaster;
         name = "Android PfT",
         description = "Android Platform for Technology.",
         documentation = "",
-//    owners = ["wintmain"],
-        tags = "A-Self_demos"
-)
+        //    owners = ["wintmain"],
+        tags = "A-Self_demos")
 public class PlaceHolderActivity extends AppCompatActivity {
 
     @Override
@@ -48,46 +47,47 @@ public class PlaceHolderActivity extends AppCompatActivity {
         initLibs(getApplication());
 
         TitleBar titleBar = findViewById(R.id.tb_main_bar_click);
-        titleBar.setOnTitleBarListener(new OnTitleBarListener() {
+        titleBar.setOnTitleBarListener(
+                new OnTitleBarListener() {
 
-            @Override
-            public void onLeftClick(TitleBar titleBar) {
-                Toaster.show("你点击了返回");
-            }
+                    @Override
+                    public void onLeftClick(TitleBar titleBar) {
+                        Toaster.show("你点击了返回");
+                    }
 
-            @Override
-            public void onTitleClick(TitleBar titleBar) {
-                Toaster.show("你点击了中间");
-            }
+                    @Override
+                    public void onTitleClick(TitleBar titleBar) {
+                        Toaster.show("你点击了中间");
+                    }
 
-            @Override
-            public void onRightClick(TitleBar titleBar) {
-                Toaster.show("你点击了设置");
-            }
-        });
+                    @Override
+                    public void onRightClick(TitleBar titleBar) {
+                        Toaster.show("你点击了设置");
+                    }
+                });
     }
 
     private void initLibs(Application application) {
         // 初始化 TitleBar 默认样式
-        TitleBar.setDefaultStyle(new LightBarStyle() {
-            @Override
-            public TextView newTitleView(Context context) {
-                return new AppCompatTextView(context);
-            }
+        TitleBar.setDefaultStyle(
+                new LightBarStyle() {
+                    @Override
+                    public TextView newTitleView(Context context) {
+                        return new AppCompatTextView(context);
+                    }
 
-            @Override
-            public TextView newLeftView(Context context) {
-                return new AppCompatTextView(context);
-            }
+                    @Override
+                    public TextView newLeftView(Context context) {
+                        return new AppCompatTextView(context);
+                    }
 
-            @Override
-            public TextView newRightView(Context context) {
-                return new AppCompatTextView(context);
-            }
-        });
+                    @Override
+                    public TextView newRightView(Context context) {
+                        return new AppCompatTextView(context);
+                    }
+                });
 
         // 初始化 Toast
         Toaster.init(this.getApplication());
-
     }
 }

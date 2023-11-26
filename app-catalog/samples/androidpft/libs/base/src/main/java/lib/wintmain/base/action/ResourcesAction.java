@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.base.action;
+package lib.wintmain.base.action;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -27,9 +27,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 
-/**
- * desc : Context 意图处理（扩展非 Context 类的方法，请不要用 Context 子类实现此接口）
- */
+/** desc : Context 意图处理（扩展非 Context 类的方法，请不要用 Context 子类实现此接口） */
 public interface ResourcesAction {
 
     Context getContext();

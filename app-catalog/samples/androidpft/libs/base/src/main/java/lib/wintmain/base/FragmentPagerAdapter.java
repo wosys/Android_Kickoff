@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.base;
+package lib.wintmain.base;
 
 import android.view.ViewGroup;
 
@@ -28,9 +28,7 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * desc : FragmentPagerAdapter 封装
- */
+/** desc : FragmentPagerAdapter 封装 */
 public final class FragmentPagerAdapter<F extends Fragment>
         extends androidx.fragment.app.FragmentPagerAdapter {
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.base;
+package lib.wintmain.base;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,9 +24,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 
-/**
- * desc : PagerAdapter 封装
- */
+/** desc : PagerAdapter 封装 */
 @SuppressWarnings("rawtypes")
 public final class RecyclerPagerAdapter extends PagerAdapter {
 
