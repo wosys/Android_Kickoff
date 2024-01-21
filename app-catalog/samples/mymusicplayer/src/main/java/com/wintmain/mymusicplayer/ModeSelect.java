@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.catalog.framework.annotations.Sample;
+import com.wintmain.mymusicplayer.app.InternetActivity;
+import com.wintmain.mymusicplayer.app.LocalActivity;
+import com.wintmain.mymusicplayer.app.StartActivity;
 
 import lib.wintmain.toaster.toast.ToastUtils;
 
@@ -34,6 +37,7 @@ import lib.wintmain.toaster.toast.ToastUtils;
  * @mailto wosintmain@gmail.com
  * @Date 2022-06-01 11:00:03
  */
+@SuppressWarnings("unchecked") // 编译报错的时候可以用这个
 @Sample(name = "MyMusicPlayer", description = "音乐播放器", tags = "A-Self_demos")
 public class ModeSelect extends AppCompatActivity {
 
@@ -44,7 +48,7 @@ public class ModeSelect extends AppCompatActivity {
         setContentView(R.layout.music_mode);
         Button play1 = this.findViewById(R.id.localplay);
         Button play2 = this.findViewById(R.id.internetplay);
-
+        Button play3 = this.findViewById(R.id.placeholderplay);
         play1.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -55,5 +59,8 @@ public class ModeSelect extends AppCompatActivity {
 
         play2.setOnClickListener(
                 v -> startActivity(new Intent().setClass(ModeSelect.this, InternetActivity.class)));
+
+        play3.setOnClickListener(
+                v -> startActivity(new Intent().setClass(ModeSelect.this, StartActivity.class)));
     }
 }

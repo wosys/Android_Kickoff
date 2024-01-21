@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.mymusicplayer;
+package com.wintmain.mymusicplayer.app;
 
 import android.Manifest;
 import android.content.ComponentName;
@@ -44,6 +44,14 @@ import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.single.PermissionListener;
+import com.wintmain.mymusicplayer.DataBaseHelper;
+import com.wintmain.mymusicplayer.EditPlaylist;
+import com.wintmain.mymusicplayer.MusicController;
+import com.wintmain.mymusicplayer.MusicService;
+import com.wintmain.mymusicplayer.Playlist;
+import com.wintmain.mymusicplayer.R;
+import com.wintmain.mymusicplayer.Song;
+import com.wintmain.mymusicplayer.SongAdapter;
 
 import lib.wintmain.toaster.toast.ToastUtils;
 import lib.wintmain.toaster.style.ToastBlackStyle;

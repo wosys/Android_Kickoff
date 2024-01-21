@@ -57,6 +57,7 @@ android {
         buildConfig false
         compose true
         dataBinding true
+        aidl true
     }
 
     composeOptions {

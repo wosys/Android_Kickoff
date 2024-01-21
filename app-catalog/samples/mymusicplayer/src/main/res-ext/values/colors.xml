@@ -1,5 +1,5 @@
-<!--
-  ~ Copyright 2023 wintmain
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2023-2024 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -14,13 +14,10 @@
   ~ limitations under the License.
   -->
 
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:tint="#614364"
-    android:viewportWidth="24.0"
-    android:viewportHeight="24.0">
-    <path
-        android:fillColor="#FF000000"
-        android:pathData="M6,6h2v12L6,18zM9.5,12l8.5,6L18,6z" />
-</vector>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white_d_d_d">#a1a1a1</color>
+</resources>

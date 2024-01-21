@@ -20,7 +20,7 @@
     android:layout_height="fill_parent"
     android:background="@drawable/musicdev"
     android:orientation="vertical"
-    tools:context=".LocalActivity">
+    tools:context=".app.LocalActivity">
 
     <ListView
         android:id="@+id/song_list"
