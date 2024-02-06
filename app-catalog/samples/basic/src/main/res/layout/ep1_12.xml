@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2023-2024 wintmain
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tbl1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TableRow
+        android:id="@+id/tbr1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:height="50px"
+            android:text="会员昵称：" />
+
+        <EditText
+            android:id="@+id/nickname"
+            android:layout_width="500px"
+            android:layout_height="wrap_content"
+            android:hint="请输入会员昵称"
+            android:singleLine="true" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tbr2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:height="50px"
+            android:text="输入密码：" />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="500px"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tbr3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:height="50px"
+            android:text="确认密码：" />
+
+        <EditText
+            android:id="@+id/conpwd"
+            android:layout_width="500px"
+            android:layout_height="wrap_content"
+            android:hint="请确认密码" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tbr4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:height="50px"
+            android:text="E-mail：" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="500px"
+            android:layout_height="wrap_content"
+            android:hint="请输入邮箱"
+            android:inputType="textEmailAddress" />
+    </TableRow>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重置" />
+    </LinearLayout>
+
+</TableLayout>

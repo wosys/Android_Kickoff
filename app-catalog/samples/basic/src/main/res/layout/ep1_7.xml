@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2023-2024 wintmain
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/framlayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    android:foreground="@android:drawable/sym_def_app_icon"
+    android:foregroundGravity="bottom|right">
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="400px"
+        android:layout_height="400px"
+        android:layout_gravity="center"
+        android:background="#ffff0000"
+        android:text="红色背景的TextView" />
+
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:layout_gravity="center"
+        android:background="#ffff7700"
+        android:text="橙色背景的TextView" />
+
+    <TextView
+        android:id="@+id/textview3"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_gravity="center"
+        android:background="#ffffEE00"
+        android:text="黄色背景的TextView" />
+
+</FrameLayout>

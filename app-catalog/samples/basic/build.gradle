@@ -1,0 +1,8 @@
+apply from: "$rootDir/gradle/sample-build.gradle"
+
+android {
+    namespace 'com.wintmain.basic'
+}
+
+dependencies {
+}
