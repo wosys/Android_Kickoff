@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright 2023 wintmain
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2023-2024 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -17,11 +16,12 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wintmain.deviceinfo">
+
     <application>
-        <activity android:name=".DeviceInfoActivity"
+        <activity
+            android:name=".DeviceInfoActivity"
+            android:exported="true"
             android:process="com.android.phone"
-            android:theme="@style/Theme.AppCompat.DayNight"
-            android:exported="true">
-        </activity>
+            android:theme="@style/Theme.AppCompat.DayNight"></activity>
     </application>
 </manifest>

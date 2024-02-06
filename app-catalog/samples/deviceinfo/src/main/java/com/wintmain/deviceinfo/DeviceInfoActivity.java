@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,12 @@ public class DeviceInfoActivity extends AppCompatActivity {
     private static final String KEY_PLACEHOLDER_4 = "placeholder4";
     private static final String KEY_PLACEHOLDER_5 = "placeholder5";
     private static final String KEY_PLACEHOLDER_6 = "placeholder6";
-    private static String mUnknown = null;
     private static final String TITLE_TAG = "settingsActivityTitle";
+    private static String mUnknown = null;
     // 广播接受器示例，没有其他作用
     private final BroadcastReceiver mReceiver = new DeviceInfoReceiver();
-    private String title = null;
     FragmentManager supportFragmentManager = getSupportFragmentManager();
+    private String title = null;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -99,6 +99,13 @@ public class DeviceInfoActivity extends AppCompatActivity {
         if (mUnknown == null) {
             mUnknown = getResources().getString(R.string.device_info_unknown);
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Save current activity title so we can set it again after a configuration change
+        outState.putCharSequence(TITLE_TAG, title);
     }
 
     // java.lang.IllegalStateException:
@@ -168,12 +175,5 @@ public class DeviceInfoActivity extends AppCompatActivity {
                 Log.d(TAG, "AIRPLANE_MODE changed...");
             }
         }
-    }
-
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        // Save current activity title so we can set it again after a configuration change
-        outState.putCharSequence(TITLE_TAG, title);
     }
 }
