@@ -1,7 +1,5 @@
 # Android NetworkConnect Sample
 
-原项目：https://github.com/android/connectivity-samples/tree/main/NetworkConnect
-
 Connect to the network and fetch raw HTML using HttpsURLConnection.
 AsyncTask is used to perform the fetch on a background thread.
 
@@ -31,3 +29,7 @@ for managing longer running background work.
 [5]: https://developer.android.com/reference/android/app/IntentService.html
 
 [6]: https://developer.android.com/reference/android/content/AsyncTaskLoader.html
+
+原Link：https://github.com/android/connectivity-samples/tree/main/NetworkConnect
+
+[回到主页](README.md)
