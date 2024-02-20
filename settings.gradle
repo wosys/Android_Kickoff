@@ -2,7 +2,7 @@ import java.util.regex.Matcher
 
 /*
  * Copyright 2022 Google LLC
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,10 +32,12 @@ gradleEnterprise {
 }
 
 include ':app-catalog:app'
-include ':framework:base'
-include ':framework:ui'
-include ':framework:annotations'
-include ':framework:processor'
+
+// Replace with remote.
+//include ':framework:base'
+//include ':framework:ui'
+//include ':framework:annotations'
+//include ':framework:processor'
 
 // Dynamically include samples under /app-catalog/samples/ folder
 def samples = []
@@ -58,9 +60,17 @@ gradle.ext.samples = samples
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        google()
         mavenCentral()
+        google()
+
+        mavenLocal()
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+
         // JitPack 远程仓库：https://jitpack.io, 用来解析Github上的三方库
         maven { url 'https://jitpack.io' }
+
+        // Uncomment this to use a snapshot version of casa-android.
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     }
 }

@@ -19,18 +19,21 @@
 #
 
 [versions]
-compose-bom = "2023.10.01"
-composeCompiler = "1.5.3"
+compose-bom = "2024.02.00"
+composeCompiler = "1.5.9"
 composesnapshot = "-" # a single character = no snapshot
-gradlePlugin = "8.1.4"
 mavenPublish = "0.25.2"
 ktlint = "0.42.1"
-kotlin = "1.9.10"
-ksp = "1.9.10-1.0.13" # Should be updated when kotlin version is updated
+kotlin = "1.9.22"
 hilt = "2.48.1"
 
+casa = "0.5.1"
+agp = "8.2.2"
+ksp = "1.9.22-1.0.17" # Should be updated when kotlin version is updated
+
 [libraries]
-android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "gradlePlugin" }
+android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+
 metalavaGradle = "me.tylerbwong.gradle:metalava-gradle:0.1.9"
 google-ksp-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 google-ksp-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
@@ -66,3 +69,7 @@ affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetec
 #[customize] - 将模块需要的库放到这里
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
 androidx-testext = "androidx.test.ext:junit:1.1.5"
+
+casa-ui = { module = "com.google.android.catalog.framework:casa-ui", version.ref = "casa" }
+casa-base = { module = "com.google.android.catalog.framework:casa-base", version.ref = "casa" }
+casa-processor = { module = "com.google.android.catalog.framework:casa-processor", version.ref = "casa" }
