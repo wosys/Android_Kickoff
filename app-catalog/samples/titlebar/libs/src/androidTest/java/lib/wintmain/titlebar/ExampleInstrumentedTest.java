@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.titlebar;
+package lib.wintmain.titlebar;
 
 import static org.junit.Assert.*;
 

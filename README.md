@@ -10,6 +10,7 @@ and dynamically including all available samples into a single activity.
 An App that uses Google/casa-log as the framework to learn the basics of Android, 
 and conducts integrated development while learning other excellent third-party libraries.
 For personal study use only.
+
 一款以Google/casa-log为框架来学习Android基础的App，在学习其他优秀的三方库中进行集成开发。仅供个人学习使用。
 
 ## Topics List[update here]
