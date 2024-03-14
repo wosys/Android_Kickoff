@@ -43,8 +43,6 @@ androidx-annotation = "androidx.annotation:annotation:1.7.0"
 androidx-fragment = "androidx.fragment:fragment-ktx:1.6.2"
 androidx-navigation-compose = "androidx.navigation:navigation-compose:2.7.5"
 
-androidx-test-runner = "androidx.test:runner:1.5.2"
-
 mdc = "com.google.android.material:material:1.10.0"
 
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
@@ -68,6 +66,9 @@ affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetec
 
 #[customize] - 将模块需要的库放到这里
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
+
+# 测试依赖
+androidx-test-runner = "androidx.test:runner:1.5.2"
 androidx-testext = "androidx.test.ext:junit:1.1.5"
 
 casa-ui = { module = "com.google.android.catalog.framework:casa-ui", version.ref = "casa" }

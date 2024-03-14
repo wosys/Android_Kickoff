@@ -86,13 +86,17 @@ dependencies {
     implementation libs.hilt.android
     ksp libs.hilt.compiler
 
-    // Include all available samples dynamically importend in settings.gradle
+    // Include all available samples dynamically imported in settings.gradle
     gradle.ext.samples.each {
         implementation project("$it")
     }
 
+    // 测试依赖
     androidTestImplementation libs.androidx.test.runner
     testImplementation libs.androidx.test.runner
+    // libs.androidx.testext 必须和上面的 runner 一起；AS自动创建的'androidTest'会用到
+    androidTestImplementation libs.androidx.testext
+    testImplementation libs.androidx.testext
 
     // App中集成CodeLocator: https://github.com/bytedance/CodeLocator
     debugImplementation "com.bytedance.tools.codelocator:codelocator-core:2.0.3"
