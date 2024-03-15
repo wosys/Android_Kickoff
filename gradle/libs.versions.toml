@@ -22,7 +22,7 @@
 compose-bom = "2024.02.00"
 composeCompiler = "1.5.9"
 composesnapshot = "-" # a single character = no snapshot
-mavenPublish = "0.25.2"
+
 ktlint = "0.42.1"
 kotlin = "1.9.22"
 hilt = "2.48.1"
@@ -31,46 +31,92 @@ casa = "0.5.1"
 agp = "8.2.2"
 ksp = "1.9.22-1.0.17" # Should be updated when kotlin version is updated
 
+androidx-navigation = "2.7.7"
+androidx-window = "1.2.0"
+
 [libraries]
+# Core dependencies
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 
 metalavaGradle = "me.tylerbwong.gradle:metalava-gradle:0.1.9"
 google-ksp-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 google-ksp-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
 
-androidx-core = "androidx.core:core-ktx:1.12.0"
-androidx-annotation = "androidx.annotation:annotation:1.7.0"
-androidx-fragment = "androidx.fragment:fragment-ktx:1.6.2"
-androidx-navigation-compose = "androidx.navigation:navigation-compose:2.7.5"
-
-mdc = "com.google.android.material:material:1.10.0"
-
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
 compose-ui-ui = { module = "androidx.compose.ui:ui" }
-compose-runtime-runtime = { module = "androidx.compose.runtime:runtime" }
 compose-foundation-foundation = { module = "androidx.compose.foundation:foundation" }
 compose-material-material3 = { module = "androidx.compose.material3:material3" }
 compose-material-iconsext = { module = "androidx.compose.material:material-icons-extended" }
 compose-material-window3 = { module = "androidx.compose.material3:material3-window-size-class" }
-
-kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+compose-animation-animation = { module = "androidx.compose.animation:animation" }
+compose-foundation-layout = { module = "androidx.compose.foundation:layout" }
+compose-material-material = { module = "androidx.compose.material:material" }
+compose-runtime-runtime = { module = "androidx.compose.runtime:runtime" }
+compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+compose-ui-util = { module = "androidx.compose.ui:util" }
 
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-core = { module = "com.google.dagger:hilt-core", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
+hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 
-dokka = "org.jetbrains.dokka:dokka-gradle-plugin:1.5.0"
-
-affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetector:0.2.0"
+kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 
 #[customize] - 将模块需要的库放到这里
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
 
+androidx-core = "androidx.core:core-ktx:1.12.0"
+androidx-annotation = "androidx.annotation:annotation:1.7.1"
+androidx-fragment = "androidx.fragment:fragment-ktx:1.6.2"
+androidx-activity = "androidx.activity:activity:1.8.2"
+androidx-exifinterface = "androidx.exifinterface:exifinterface:1.3.7"
+androidx-transition = "androidx.transition:transition-ktx:1.5.0-alpha06"
+androidx-activity-compose = "androidx.activity:activity-compose:1.8.2"
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "androidx-navigation" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
+androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "androidx-navigation" }
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "androidx-navigation" }
+androidx-lifecycle-viewmodel-compose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0"
+androidx-viewpager2 = "androidx.viewpager2:viewpager2:1.0.0"
+
+androidx-work-runtime-ktx = "androidx.work:work-runtime-ktx:2.9.0"
+androidx-core-remoteviews = "androidx.core:core-remoteviews:1.0.0"
+androidx-glance-appwidget = "androidx.glance:glance-appwidget:1.0.0"
+androidx-glance-material3 = "androidx.glance:glance-material3:1.0.0"
+androidx-graphics-core = { group = "androidx.graphics", name = "graphics-core", version = "1.0.0-beta01" }
+androidx-startup = 'androidx.startup:startup-runtime:1.1.1'
+androidx-window = { module = "androidx.window:window", version.ref = "androidx-window" }
+androidx-window-java = { module = "androidx.window:window-java", version.ref = "androidx-window" }
+androidx-window-rxjava2 = { module = "androidx.window:window-rxjava2", version.ref = "androidx-window" }
+androidx-window-core = { module = "androidx.window:window-core", version.ref = "androidx-window" }
+androidx-media = "androidx.media:media:1.7.0"
+androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
+androidx-draganddrop = "androidx.draganddrop:draganddrop:1.0.0"
+androidx-dynamicanimation = "androidx.dynamicanimation:dynamicanimation-ktx:1.0.0-alpha03"
+
 # 测试依赖
 androidx-test-runner = "androidx.test:runner:1.5.2"
 androidx-testext = "androidx.test.ext:junit:1.1.5"
+androidx-test-core = "androidx.test:core-ktx:1.5.0"
+androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.5.1"
+androidx-test-ext-junit = "androidx.test.ext:junit-ktx:1.1.5"
+androidx-test-ext-truth = "androidx.test.ext:truth:1.5.0"
+androidx-test-rules = "androidx.test:rules:1.5.0"
+androidx-test-uiautomator = "androidx.test.uiautomator:uiautomator:2.3.0"
 
+# CASA框架依赖
 casa-ui = { module = "com.google.android.catalog.framework:casa-ui", version.ref = "casa" }
 casa-base = { module = "com.google.android.catalog.framework:casa-base", version.ref = "casa" }
 casa-processor = { module = "com.google.android.catalog.framework:casa-processor", version.ref = "casa" }
+
+lottie = "com.airbnb.android:lottie:6.0.0"
+dokka = "org.jetbrains.dokka:dokka-gradle-plugin:1.5.0"
+affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetector:0.2.0"
+glide = "com.github.bumptech.glide:glide:4.15.1"
+material = "com.google.android.material:material:1.11.0"

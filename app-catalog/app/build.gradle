@@ -74,7 +74,7 @@ dependencies {
     def composeBom = platform(libs.compose.bom)
     implementation composeBom
     androidTestImplementation composeBom
-    implementation libs.mdc
+    implementation libs.material
 
     // CASA UI dependency for the app-module
 //    implementation(project(":framework:ui"))
