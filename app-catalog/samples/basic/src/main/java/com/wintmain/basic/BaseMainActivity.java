@@ -23,10 +23,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.catalog.framework.annotations.Sample;
-import com.wintmain.basic.uidemo.ep1_1;
-import com.wintmain.basic.uidemo.ep1_4;
-import com.wintmain.basic.uidemo.ep1_6;
-import com.wintmain.basic.uidemo.ep1_7;
+import com.wintmain.basic.uiDemo.ep1_1;
 
 @SuppressWarnings("unchecked")
 @Sample(name = "Basic", description = "Android学习基础", documentation = "", tags = "A-Self_demos")
@@ -43,14 +40,20 @@ public class BaseMainActivity extends AppCompatActivity {
 
         Button ep_2 = this.findViewById(R.id.button2);
         ep_2.setOnClickListener(
-                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_4.class)));
+                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_1.class)));
 
         Button ep_3 = this.findViewById(R.id.button3);
         ep_3.setOnClickListener(
-                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_6.class)));
+                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_1.class)));
 
         Button ep_4 = this.findViewById(R.id.button4);
         ep_4.setOnClickListener(
-                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_7.class)));
+                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_1.class)));
+        Button ep_5 = this.findViewById(R.id.button5);
+        ep_5.setOnClickListener(
+                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_1.class)));
+        Button ep_6 = this.findViewById(R.id.button6);
+        ep_6.setOnClickListener(
+                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_1.class)));
     }
 }

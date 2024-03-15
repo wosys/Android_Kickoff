@@ -44,3 +44,5 @@ package-list-coil-base
 docs-gen
 site
 *.bak
+/.idea/shelf/*
+*.rej

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ Copyright 2023-2024 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,22 +28,22 @@
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uidemo.ep1_1"
+            android:name=".uiDemo.ep1_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uidemo.ep1_4"
+            android:name=".uiDemo.ep1_4"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uidemo.ep1_6"
+            android:name=".uiDemo.ep1_6"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uidemo.ep1_7"
+            android:name=".uiDemo.ep1_7"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
@@ -55,7 +56,7 @@
 
         <!--        <activity android:name=".ep3_5second" />-->
 
-        <activity android:name=".uidemo.ep3_6second" />
+        <activity android:name=".uiDemo.ep3_6second" />
         <!--        ep3_7-->
         <!--        <activity android:name=".ep3_7$DetailActivity"-->
         <!--            android:label="详细内容"></activity>-->
