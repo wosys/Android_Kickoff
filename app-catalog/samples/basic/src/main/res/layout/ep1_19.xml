@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:divider="#f00"
         android:dividerHeight="10px"
-        android:entries="@array/listview"
+        android:entries="@array/ep1_19_listview"
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false" />
 

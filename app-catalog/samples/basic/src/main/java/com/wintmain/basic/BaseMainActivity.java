@@ -23,7 +23,12 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.catalog.framework.annotations.Sample;
-import com.wintmain.basic.uiDemo.ep1_1;
+import com.wintmain.basic.uiDemo.EpOne_1;
+import com.wintmain.basic.uiDemo.EpOne_12;
+import com.wintmain.basic.uiDemo.EpOne_14;
+import com.wintmain.basic.uiDemo.EpOne_15;
+import com.wintmain.basic.uiDemo.EpOne_19;
+import com.wintmain.basic.uiDemo.EpOne_4;
 
 @SuppressWarnings("unchecked")
 @Sample(name = "PreJob", description = "Android学习基础", documentation = "", tags = {"A-Self_demos"})
@@ -36,24 +41,24 @@ public class BaseMainActivity extends AppCompatActivity {
 
         Button ep_1 = this.findViewById(R.id.button1);
         ep_1.setOnClickListener(
-                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_1.class)));
+                v -> startActivity(new Intent().setClass(BaseMainActivity.this, EpOne_1.class)));
 
         Button ep_2 = this.findViewById(R.id.button2);
         ep_2.setOnClickListener(
-                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_1.class)));
+                v -> startActivity(new Intent().setClass(BaseMainActivity.this, EpOne_4.class)));
 
         Button ep_3 = this.findViewById(R.id.button3);
         ep_3.setOnClickListener(
-                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_1.class)));
+                v -> startActivity(new Intent().setClass(BaseMainActivity.this, EpOne_12.class)));
 
         Button ep_4 = this.findViewById(R.id.button4);
         ep_4.setOnClickListener(
-                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_1.class)));
+                v -> startActivity(new Intent().setClass(BaseMainActivity.this, EpOne_14.class)));
         Button ep_5 = this.findViewById(R.id.button5);
         ep_5.setOnClickListener(
-                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_1.class)));
+                v -> startActivity(new Intent().setClass(BaseMainActivity.this, EpOne_15.class)));
         Button ep_6 = this.findViewById(R.id.button6);
         ep_6.setOnClickListener(
-                v -> startActivity(new Intent().setClass(BaseMainActivity.this, ep1_1.class)));
+                v -> startActivity(new Intent().setClass(BaseMainActivity.this, EpOne_19.class)));
     }
 }

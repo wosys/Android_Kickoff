@@ -28,22 +28,32 @@
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uiDemo.ep1_1"
+            android:name=".uiDemo.EpOne_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uiDemo.ep1_4"
+            android:name=".uiDemo.EpOne_4"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uiDemo.ep1_6"
+            android:name=".uiDemo.EpOne_12"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uiDemo.ep1_7"
+            android:name=".uiDemo.EpOne_14"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".uiDemo.EpOne_15"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".uiDemo.EpOne_19"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 

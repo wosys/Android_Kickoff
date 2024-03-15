@@ -16,7 +16,6 @@
 
 package com.wintmain.basic.uiDemo;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -26,38 +25,38 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wintmain.basic.R;
 
-public class ep1_19 extends Activity {
+public class EpOne_19 extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        //        布局
+        // 布局
         super.onCreate(savedInstanceState);
-        LinearLayout linearLayout = new LinearLayout(ep1_19.this);
-        setContentView(linearLayout);
-        //        listview
-        ListView listView = new ListView(ep1_19.this);
-        //        配置分割线
-        View line = View.inflate(ep1_19.this, R.layout.ep1_19, null);
-        //        设置头部线
+        LinearLayout linearLayout = new LinearLayout(this);
+        // listview
+        ListView listView = new ListView(this);
+        // 配置分割线
+        View line = View.inflate(this, R.layout.ep1_19, null);
+        // 设置头部线
         listView.addHeaderView(line);
-        //        创建适配器
-        ArrayAdapter<CharSequence> ad =
-                ArrayAdapter.createFromResource(
-                        this, R.array.listview, android.R.layout.simple_list_item_checked);
+        // 创建适配器
+        ArrayAdapter<CharSequence> ad = ArrayAdapter.createFromResource(this,
+                R.array.ep1_19_listview, android.R.layout.simple_list_item_checked);
         listView.setAdapter(ad);
         listView.addFooterView(line);
-        //        放进去
+        // 放进去
         linearLayout.addView(listView);
-        listView.setOnItemClickListener(
-                new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(
-                            AdapterView<?> parent, View view, int position, long id) {
-                        String s = parent.getItemAtPosition(position).toString();
-                        Toast.makeText(ep1_19.this, s, Toast.LENGTH_SHORT).show();
-                    }
-                });
+        // 设置内容视图
+        setContentView(linearLayout);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String s = parent.getItemAtPosition(position).toString();
+                Toast.makeText(EpOne_19.this, s, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
