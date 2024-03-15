@@ -26,7 +26,7 @@ import com.google.android.catalog.framework.annotations.Sample;
 import com.wintmain.basic.uiDemo.ep1_1;
 
 @SuppressWarnings("unchecked")
-@Sample(name = "Basic", description = "Android学习基础", documentation = "", tags = "A-Self_demos")
+@Sample(name = "PreJob", description = "Android学习基础", documentation = "", tags = {"A-Self_demos"})
 public class BaseMainActivity extends AppCompatActivity {
 
     @Override

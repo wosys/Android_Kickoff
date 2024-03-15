@@ -1,8 +1,18 @@
 apply from: "$rootDir/gradle/sample-build.gradle"
 
 android {
+    sourceSets {
+        main {
+            // res 资源目录配置
+            res.srcDirs(
+                    'src/main/res',
+                    'src/main/res-ext',
+            )
+        }
+    }
     namespace 'com.wintmain.basic'
 }
 
 dependencies {
+    implementation libs.androidx.constraintlayout
 }
