@@ -21,17 +21,25 @@ import com.google.android.catalog.framework.annotations.Sample
 import com.wintmain.basic.R
 
 @Sample(
-    name = "ConstraintLayout - 1. Centering Views",
-    description = "Center child views horizontally or vertically.",
+    name = "1. Centering Views",
+    description = "水平或垂直居中子视图。",
     documentation = "",
     tags = ["user-interface", "constraint-layout"],
 )
 class CenteringViewsFragment : Fragment(R.layout.constraintlayout_centering_views)
 
 @Sample(
-    name = "ConstraintLayout - 2. Basic arrangement",
-    description = "Arrange positions of child views relative to other views.",
+    name = "2. Basic arrangement",
+    description = "排列子视图相对于其他视图的位置。",
     documentation = "",
     tags = ["user-interface", "constraint-layout"],
 )
 class BasicArrangementFragment : Fragment(R.layout.constraintlayout_basic_arrangement)
+
+@Sample(
+    name = "3. Advanced arrangement",
+    description = "更多排列选项。",
+    documentation = "",
+    tags = ["user-interface", "constraint-layout"],
+)
+class AdvancedArrangementFragment : Fragment(R.layout.advanced_arrangement)
