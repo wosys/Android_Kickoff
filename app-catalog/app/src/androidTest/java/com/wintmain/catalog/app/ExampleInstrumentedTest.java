@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.android.catalog.app;
+package com.wintmain.catalog.app;
 
 import static org.junit.Assert.*;
 
@@ -37,6 +37,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.google.android.catalog.app", appContext.getPackageName());
+        assertEquals("com.wintmain.catalog.app", appContext.getPackageName());
     }
 }

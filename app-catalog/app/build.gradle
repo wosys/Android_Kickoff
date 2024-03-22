@@ -26,15 +26,15 @@ plugins {
 }
 
 android {
-    namespace 'com.google.android.catalog.app'
+    namespace 'com.wintmain.catalog.app'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.google.android.catalog.app"
+        applicationId "com.wintmain.catalog.app"
         minSdk 26
         targetSdk 34
-        versionCode 3
-        versionName '20231105_V3'
+        versionCode 4
+        versionName '20240322_V4'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

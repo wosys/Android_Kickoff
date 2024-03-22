@@ -1,6 +1,6 @@
 /*
  * Copyright 2022 Google LLC
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
  * Modifications are licensed under the License.
  */
 
-package com.google.android.catalog.app
+package com.wintmain.catalog.app
 
 import android.app.Application
 import com.google.android.catalog.framework.ui.CatalogActivity
