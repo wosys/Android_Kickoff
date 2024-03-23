@@ -24,9 +24,9 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="201dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="32dp"
         android:text="Centered Button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -34,6 +34,7 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -47,12 +48,13 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
+
     <Button
         android:id="@+id/button31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="按钮"
+        android:text="按钮31"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -66,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="225dp"
         android:layout_marginBottom="224dp"
-        android:text="按钮"
+        android:text="按钮32"
         app:layout_constraintBottom_toBottomOf="@+id/button31"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/button31"
@@ -81,7 +83,7 @@
         android:id="@+id/button33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="按钮"
+        android:text="按钮33"
         app:layout_constraintBottom_toTopOf="@+id/button32"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toRightOf="@+id/button3"
@@ -97,7 +99,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="112dp"
         android:layout_marginBottom="113dp"
-        android:text="按钮"
+        android:text="按钮34"
         app:layout_constraintBottom_toBottomOf="@+id/button32"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintLeft_toLeftOf="parent"
