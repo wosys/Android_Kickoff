@@ -114,3 +114,11 @@ class ConstraintSetFragment : Fragment(R.layout.constraint_set_main) {
         }
     }
 }
+
+@Sample(
+    name = "8. Guidelines",
+    description = "使用水平或垂直基准线可以对子视图进行约束。",
+    documentation = "",
+    tags = ["user-interface", "constraint-layout"],
+)
+class GuidelinesFragment : Fragment(R.layout.guidelines)
