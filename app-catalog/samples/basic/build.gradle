@@ -10,6 +10,9 @@ android {
             )
         }
     }
+    buildFeatures {
+        viewBinding = true
+    }
     namespace 'com.wintmain.basic'
 }
 

@@ -16,9 +16,13 @@
 
 package com.wintmain.basic.constraintlayout
 
+import android.os.Bundle
+import android.view.View
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
 import com.google.android.catalog.framework.annotations.Sample
 import com.wintmain.basic.R
+import com.wintmain.basic.databinding.ConstraintSetMainBinding
 
 @Sample(
     name = "1. Centering Views",
@@ -67,3 +71,46 @@ class BasicChainFragment : Fragment(R.layout.basic_chains)
     tags = ["user-interface", "constraint-layout"],
 )
 class AdvancedChainsFragment : Fragment(R.layout.advanced_chains)
+
+@Sample(
+    name = "7. ConstraintSet",
+    description = "使用“约束集”可以为所有子视图指定多个约束。",
+    documentation = "",
+    tags = ["user-interface", "constraint-layout"],
+)
+class ConstraintSetFragment : Fragment(R.layout.constraint_set_main) {
+
+    private lateinit var binding: ConstraintSetMainBinding
+
+    private var showBigImage = false
+
+    // 视图切换准备的“约束集”
+    private val constraintSetNormal = ConstraintSet()
+    private val constraintSetBig = ConstraintSet()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding = ConstraintSetMainBinding.bind(view)
+        // Note that this can also be achieved by calling
+        // `constraintSetNormal.load(requireContext(), R.layout.constraint_set_main);`
+        // Since we already have an inflated ConstraintLayout in the layout file, clone() is
+        // faster and considered the best practice.
+        constraintSetNormal.clone(binding.root)
+        // Load the constraints from the layout where ImageView is enlarged.
+        constraintSetBig.load(requireContext(), R.layout.constraint_set_big)
+        binding.image.setOnClickListener {
+            clickToChange()
+        }
+        binding.body.setOnClickListener {
+            clickToChange()
+        }
+    }
+
+    private fun clickToChange() {
+        showBigImage = !showBigImage
+        if (showBigImage) {
+            constraintSetBig.applyTo(binding.root)
+        } else {
+            constraintSetNormal.applyTo(binding.root)
+        }
+    }
+}
