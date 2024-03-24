@@ -43,3 +43,11 @@ class BasicArrangementFragment : Fragment(R.layout.constraintlayout_basic_arrang
     tags = ["user-interface", "constraint-layout"],
 )
 class AdvancedArrangementFragment : Fragment(R.layout.advanced_arrangement)
+
+@Sample(
+    name = "4. Aspect ratio",
+    description = "指定子视图尺寸的纵横比（ratio）。",
+    documentation = "",
+    tags = ["user-interface", "constraint-layout"],
+)
+class AspectRatioFragment : Fragment(R.layout.aspect_ratio)
