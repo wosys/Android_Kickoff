@@ -51,3 +51,19 @@ class AdvancedArrangementFragment : Fragment(R.layout.advanced_arrangement)
     tags = ["user-interface", "constraint-layout"],
 )
 class AspectRatioFragment : Fragment(R.layout.aspect_ratio)
+
+@Sample(
+    name = "5. Basic chains",
+    description = "使用 chains 可以水平或垂直排列多个子视图。",
+    documentation = "",
+    tags = ["user-interface", "constraint-layout"],
+)
+class BasicChainFragment : Fragment(R.layout.basic_chains)
+
+@Sample(
+    name = "6. Advanced chains",
+    description = "使用 chains 可以水平或垂直排列多个子视图。",
+    documentation = "",
+    tags = ["user-interface", "constraint-layout"],
+)
+class AdvancedChainsFragment : Fragment(R.layout.advanced_chains)
