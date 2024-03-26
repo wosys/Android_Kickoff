@@ -18,14 +18,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wintmain.basic">
 
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
 
     <application>
         <activity
             android:name=".BaseMainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".callnotification.CallNotificationSample"
+            android:launchMode="singleTop"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight">
+        </activity>
+        <receiver android:name=".callnotification.CallNotificationSample$NotificationReceiver"
+            android:exported="false"/>
 
         <activity
             android:name=".uiDemo.EpOne_1"
