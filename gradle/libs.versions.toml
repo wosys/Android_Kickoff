@@ -31,8 +31,9 @@ casa = "0.5.1"
 agp = "8.2.2"
 ksp = "1.9.22-1.0.17" # Should be updated when kotlin version is updated
 
-androidx-navigation = "2.7.7"
-androidx-window = "1.2.0"
+androidx_activity = "1.8.2"
+androidx_navigation = "2.7.7"
+androidx_window = "1.2.0"
 
 [libraries]
 # Core dependencies
@@ -69,19 +70,22 @@ kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", ve
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 
 #[customize] - 将模块需要的库放到这里
+# https://developer.android.google.cn/jetpack/androidx/versions?hl=zh-cn
+
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
+
+androidx-activity = { group = "androidx.activity", name = "activity", version = "androidx_activity" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version = "androidx_activity" }
 
 androidx-core = "androidx.core:core-ktx:1.12.0"
 androidx-annotation = "androidx.annotation:annotation:1.7.1"
 androidx-fragment = "androidx.fragment:fragment-ktx:1.6.2"
-androidx-activity = "androidx.activity:activity:1.8.2"
 androidx-exifinterface = "androidx.exifinterface:exifinterface:1.3.7"
 androidx-transition = "androidx.transition:transition-ktx:1.5.0-alpha06"
-androidx-activity-compose = "androidx.activity:activity-compose:1.8.2"
-androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "androidx-navigation" }
-androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
-androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "androidx-navigation" }
-androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "androidx-navigation" }
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "androidx_navigation" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx_navigation" }
+androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "androidx_navigation" }
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "androidx_navigation" }
 androidx-lifecycle-viewmodel-compose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0"
 androidx-viewpager2 = "androidx.viewpager2:viewpager2:1.0.0"
 
@@ -91,10 +95,10 @@ androidx-glance-appwidget = "androidx.glance:glance-appwidget:1.0.0"
 androidx-glance-material3 = "androidx.glance:glance-material3:1.0.0"
 androidx-graphics-core = { group = "androidx.graphics", name = "graphics-core", version = "1.0.0-beta01" }
 androidx-startup = 'androidx.startup:startup-runtime:1.1.1'
-androidx-window = { module = "androidx.window:window", version.ref = "androidx-window" }
-androidx-window-java = { module = "androidx.window:window-java", version.ref = "androidx-window" }
-androidx-window-rxjava2 = { module = "androidx.window:window-rxjava2", version.ref = "androidx-window" }
-androidx-window-core = { module = "androidx.window:window-core", version.ref = "androidx-window" }
+androidx-window = { module = "androidx.window:window", version.ref = "androidx_window" }
+androidx-window-java = { module = "androidx.window:window-java", version.ref = "androidx_window" }
+androidx-window-rxjava2 = { module = "androidx.window:window-rxjava2", version.ref = "androidx_window" }
+androidx-window-core = { module = "androidx.window:window-core", version.ref = "androidx_window" }
 androidx-media = "androidx.media:media:1.7.0"
 androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
 androidx-draganddrop = "androidx.draganddrop:draganddrop:1.0.0"
