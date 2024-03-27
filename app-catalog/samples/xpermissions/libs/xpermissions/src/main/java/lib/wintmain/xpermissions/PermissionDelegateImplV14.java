@@ -24,16 +24,22 @@ import android.net.VpnService;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-/** desc : Android 4.0 权限委托实现 */
+/**
+ * desc : Android 4.0 权限委托实现
+ */
 @RequiresApi(api = AndroidVersion.ANDROID_4_0)
 class PermissionDelegateImplV14 implements PermissionDelegate {
 
-    /** 是否有 VPN 权限 */
+    /**
+     * 是否有 VPN 权限
+     */
     private static boolean isGrantedVpnPermission(@NonNull Context context) {
         return VpnService.prepare(context) == null;
     }
 
-    /** 获取 VPN 权限设置界面意图 */
+    /**
+     * 获取 VPN 权限设置界面意图
+     */
     private static Intent getVpnPermissionIntent(@NonNull Context context) {
         Intent intent = VpnService.prepare(context);
         if (!PermissionUtils.areActivityIntent(context, intent)) {

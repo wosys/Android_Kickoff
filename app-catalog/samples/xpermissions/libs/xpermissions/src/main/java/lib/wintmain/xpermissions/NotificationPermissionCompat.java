@@ -23,7 +23,9 @@ import android.provider.Settings;
 
 import androidx.annotation.NonNull;
 
-/** desc : 通知栏权限兼容类 */
+/**
+ * desc : 通知栏权限兼容类
+ */
 final class NotificationPermissionCompat {
 
     private static final String OP_POST_NOTIFICATION_FIELD_NAME = "OP_POST_NOTIFICATION";

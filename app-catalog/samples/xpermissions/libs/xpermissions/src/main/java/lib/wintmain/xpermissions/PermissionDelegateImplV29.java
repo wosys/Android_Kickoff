@@ -23,11 +23,15 @@ import android.os.Environment;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-/** desc : Android 10 权限委托实现 */
+/**
+ * desc : Android 10 权限委托实现
+ */
 @RequiresApi(api = AndroidVersion.ANDROID_10)
 class PermissionDelegateImplV29 extends PermissionDelegateImplV28 {
 
-    /** 是否采用的是非分区存储的模式 */
+    /**
+     * 是否采用的是非分区存储的模式
+     */
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     private static boolean isUseDeprecationExternalStorage() {
         return Environment.isExternalStorageLegacy();
@@ -38,7 +42,7 @@ class PermissionDelegateImplV29 extends PermissionDelegateImplV28 {
         if (PermissionUtils.equalsPermission(permission, Permission.ACCESS_MEDIA_LOCATION)) {
             return hasReadStoragePermission(context)
                     && PermissionUtils.checkSelfPermission(
-                            context, Permission.ACCESS_MEDIA_LOCATION);
+                    context, Permission.ACCESS_MEDIA_LOCATION);
         }
 
         if (PermissionUtils.equalsPermission(permission, Permission.ACCESS_BACKGROUND_LOCATION)
@@ -96,7 +100,9 @@ class PermissionDelegateImplV29 extends PermissionDelegateImplV28 {
         return super.isPermissionPermanentDenied(activity, permission);
     }
 
-    /** 是否有读取文件的权限 */
+    /**
+     * 是否有读取文件的权限
+     */
     private boolean hasReadStoragePermission(@NonNull Context context) {
         if (AndroidVersion.isAndroid13()
                 && AndroidVersion.getTargetSdkVersionCode(context) >= AndroidVersion.ANDROID_13) {

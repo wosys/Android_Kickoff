@@ -25,16 +25,22 @@ import android.provider.Settings;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-/** desc : Android 5.0 权限委托实现 */
+/**
+ * desc : Android 5.0 权限委托实现
+ */
 @RequiresApi(api = AndroidVersion.ANDROID_5)
 class PermissionDelegateImplV21 extends PermissionDelegateImplV19 {
 
-    /** 是否有使用统计权限 */
+    /**
+     * 是否有使用统计权限
+     */
     private static boolean isGrantedPackagePermission(@NonNull Context context) {
         return PermissionUtils.checkOpNoThrow(context, AppOpsManager.OPSTR_GET_USAGE_STATS);
     }
 
-    /** 获取使用统计权限设置界面意图 */
+    /**
+     * 获取使用统计权限设置界面意图
+     */
     private static Intent getPackagePermissionIntent(@NonNull Context context) {
         Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
         if (AndroidVersion.isAndroid10()) {

@@ -34,32 +34,50 @@ import java.util.List;
 import java.util.Random;
 
 /**
- *    desc   : 权限请求 Fragment
+ * desc   : 权限请求 Fragment
  */
 @SuppressWarnings("deprecation")
 public final class PermissionFragment extends Fragment implements Runnable {
 
-    /** 请求的权限组 */
+    /**
+     * 请求的权限组
+     */
     private static final String REQUEST_PERMISSIONS = "request_permissions";
 
-    /** 请求码（自动生成）*/
+    /**
+     * 请求码（自动生成）
+     */
     private static final String REQUEST_CODE = "request_code";
 
-    /** 权限请求码存放集合 */
+    /**
+     * 权限请求码存放集合
+     */
     private static final List<Integer> REQUEST_CODE_ARRAY = new ArrayList<>();
-    /** 是否申请了特殊权限 */
+    /**
+     * 是否申请了特殊权限
+     */
     private boolean mSpecialRequest;
-    /** 是否申请了危险权限 */
+    /**
+     * 是否申请了危险权限
+     */
     private boolean mDangerousRequest;
-    /** 权限申请标记 */
+    /**
+     * 权限申请标记
+     */
     private boolean mRequestFlag;
-    /** 权限回调对象 */
+    /**
+     * 权限回调对象
+     */
     @Nullable
     private OnPermissionCallback mCallBack;
-    /** 权限请求拦截器 */
+    /**
+     * 权限请求拦截器
+     */
     @Nullable
     private IPermissionInterceptor mInterceptor;
-    /** Activity 屏幕方向 */
+    /**
+     * Activity 屏幕方向
+     */
     private int mScreenOrientation;
 
     /**
@@ -304,7 +322,8 @@ public final class PermissionFragment extends Fragment implements Runnable {
             secondPermissions.remove(permission);
         }
 
-        PermissionFragment.launch(activity, firstPermissions, new IPermissionInterceptor() {}, new OnPermissionCallback() {
+        PermissionFragment.launch(activity, firstPermissions, new IPermissionInterceptor() {
+        }, new OnPermissionCallback() {
 
             @Override
             public void onGranted(@NonNull List<String> permissions, boolean allGranted) {
@@ -317,36 +336,37 @@ public final class PermissionFragment extends Fragment implements Runnable {
                 // 为什么延迟时间是 150 毫秒？ 经过实践得出 100 还是有概率会出现失败，但是换成 150 试了很多次就都没有问题了
                 long delayMillis = AndroidVersion.isAndroid13() ? 150 : 0;
                 PermissionUtils.postDelayed(() -> PermissionFragment.launch(activity, secondPermissions,
-                        new IPermissionInterceptor() {}, new OnPermissionCallback() {
+                        new IPermissionInterceptor() {
+                        }, new OnPermissionCallback() {
 
-                    @Override
-                    public void onGranted(@NonNull List<String> permissions, boolean allGranted) {
-                        if (!allGranted || !isAdded()) {
-                            return;
-                        }
+                            @Override
+                            public void onGranted(@NonNull List<String> permissions, boolean allGranted) {
+                                if (!allGranted || !isAdded()) {
+                                    return;
+                                }
 
-                        // 所有的权限都授予了
-                        int[] grantResults = new int[allPermissions.size()];
-                        Arrays.fill(grantResults, PackageManager.PERMISSION_GRANTED);
-                        onRequestPermissionsResult(requestCode, allPermissions.toArray(new String[0]), grantResults);
-                    }
+                                // 所有的权限都授予了
+                                int[] grantResults = new int[allPermissions.size()];
+                                Arrays.fill(grantResults, PackageManager.PERMISSION_GRANTED);
+                                onRequestPermissionsResult(requestCode, allPermissions.toArray(new String[0]), grantResults);
+                            }
 
-                    @Override
-                    public void onDenied(@NonNull List<String> permissions, boolean doNotAskAgain) {
-                        if (!isAdded()) {
-                            return;
-                        }
+                            @Override
+                            public void onDenied(@NonNull List<String> permissions, boolean doNotAskAgain) {
+                                if (!isAdded()) {
+                                    return;
+                                }
 
-                        // 第二次申请的权限失败了，但是第一次申请的权限已经授予了
-                        int[] grantResults = new int[allPermissions.size()];
-                        for (int i = 0; i < allPermissions.size(); i++) {
-                            grantResults[i] = PermissionUtils.containsPermission(secondPermissions, allPermissions.get(i)) ?
-                                    PackageManager.PERMISSION_DENIED : PackageManager.PERMISSION_GRANTED;
-                        }
-                        onRequestPermissionsResult(requestCode, allPermissions.toArray(new String[0]), grantResults);
-                    }
+                                // 第二次申请的权限失败了，但是第一次申请的权限已经授予了
+                                int[] grantResults = new int[allPermissions.size()];
+                                for (int i = 0; i < allPermissions.size(); i++) {
+                                    grantResults[i] = PermissionUtils.containsPermission(secondPermissions, allPermissions.get(i)) ?
+                                            PackageManager.PERMISSION_DENIED : PackageManager.PERMISSION_GRANTED;
+                                }
+                                onRequestPermissionsResult(requestCode, allPermissions.toArray(new String[0]), grantResults);
+                            }
 
-                }), delayMillis);
+                        }), delayMillis);
             }
 
             @Override

@@ -24,10 +24,14 @@ import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 
-/** desc : 通知栏监听权限兼容类 */
+/**
+ * desc : 通知栏监听权限兼容类
+ */
 final class NotificationListenerPermissionCompat {
 
-    /** Settings.Secure.ENABLED_NOTIFICATION_LISTENERS */
+    /**
+     * Settings.Secure.ENABLED_NOTIFICATION_LISTENERS
+     */
     private static final String SETTING_ENABLED_NOTIFICATION_LISTENERS =
             "enabled_notification_listeners";
 

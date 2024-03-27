@@ -26,13 +26,19 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 
-/** desc : 清单文件解析器 */
+/**
+ * desc : 清单文件解析器
+ */
 final class AndroidManifestParser {
 
-    /** 清单文件的文件名称 */
+    /**
+     * 清单文件的文件名称
+     */
     private static final String ANDROID_MANIFEST_FILE_NAME = "AndroidManifest.xml";
 
-    /** Android 的命名空间 */
+    /**
+     * Android 的命名空间
+     */
     private static final String ANDROID_NAMESPACE_URI =
             "http://schemas.android.com/apk/res/android";
 
@@ -61,7 +67,7 @@ final class AndroidManifestParser {
     /**
      * 解析 apk 包中的清单文件
      *
-     * @param context 上下文
+     * @param context   上下文
      * @param apkCookie 要解析 apk 的 cookie
      */
     @NonNull

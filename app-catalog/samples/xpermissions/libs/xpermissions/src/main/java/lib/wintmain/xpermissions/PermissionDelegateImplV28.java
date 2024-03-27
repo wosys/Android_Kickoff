@@ -22,7 +22,9 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-/** desc : Android 9.0 权限委托实现 */
+/**
+ * desc : Android 9.0 权限委托实现
+ */
 @RequiresApi(api = AndroidVersion.ANDROID_9)
 class PermissionDelegateImplV28 extends PermissionDelegateImplV26 {
 

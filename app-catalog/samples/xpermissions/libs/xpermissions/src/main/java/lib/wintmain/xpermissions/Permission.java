@@ -79,22 +79,36 @@ public final class Permission {
      * 官方解释：https://developer.android.google.cn/reference/android/provider/Settings#ACTION_MANAGE_OVERLAY_PERMISSION
      */
     public static final String SYSTEM_ALERT_WINDOW = "android.permission.SYSTEM_ALERT_WINDOW";
-    /** 系统设置权限（特殊权限，Android 6.0 新增的权限） */
+    /**
+     * 系统设置权限（特殊权限，Android 6.0 新增的权限）
+     */
     public static final String WRITE_SETTINGS = "android.permission.WRITE_SETTINGS";
-    /** 请求忽略电池优化选项权限（特殊权限，Android 6.0 新增的权限） */
+    /**
+     * 请求忽略电池优化选项权限（特殊权限，Android 6.0 新增的权限）
+     */
     public static final String REQUEST_IGNORE_BATTERY_OPTIMIZATIONS =
             "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS";
-    /** 勿扰权限，可控制手机响铃模式【静音，震动】（特殊权限，Android 6.0 新增的权限） */
+    /**
+     * 勿扰权限，可控制手机响铃模式【静音，震动】（特殊权限，Android 6.0 新增的权限）
+     */
     public static final String ACCESS_NOTIFICATION_POLICY =
             "android.permission.ACCESS_NOTIFICATION_POLICY";
-    /** 查看应用使用情况权限，简称使用统计权限（特殊权限，Android 5.0 新增的权限） */
+    /**
+     * 查看应用使用情况权限，简称使用统计权限（特殊权限，Android 5.0 新增的权限）
+     */
     public static final String PACKAGE_USAGE_STATS = "android.permission.PACKAGE_USAGE_STATS";
-    /** 通知栏监听权限（特殊权限，Android 4.3 新增的权限，注意此权限不需要在清单文件中注册也能申请） */
+    /**
+     * 通知栏监听权限（特殊权限，Android 4.3 新增的权限，注意此权限不需要在清单文件中注册也能申请）
+     */
     public static final String BIND_NOTIFICATION_LISTENER_SERVICE =
             "android.permission.BIND_NOTIFICATION_LISTENER_SERVICE";
-    /** VPN 权限（特殊权限，Android 4.0 新增的权限，注意此权限不需要在清单文件中注册也能申请） */
+    /**
+     * VPN 权限（特殊权限，Android 4.0 新增的权限，注意此权限不需要在清单文件中注册也能申请）
+     */
     public static final String BIND_VPN_SERVICE = "android.permission.BIND_VPN_SERVICE";
-    /** 通知栏权限（特殊权限，注意此权限不需要在清单文件中注册也能申请） */
+    /**
+     * 通知栏权限（特殊权限，注意此权限不需要在清单文件中注册也能申请）
+     */
     public static final String NOTIFICATION_SERVICE = "android.permission.NOTIFICATION_SERVICE";
     /**
      * 发送通知权限（Android 13.0 新增的权限）
@@ -198,7 +212,9 @@ public final class Permission {
      * Permission#MANAGE_EXTERNAL_STORAGE}
      */
     public static final String ACCESS_MEDIA_LOCATION = "android.permission.ACCESS_MEDIA_LOCATION";
-    /** 允许呼叫应用继续在另一个应用中启动的呼叫（Android 9.0 新增的权限） */
+    /**
+     * 允许呼叫应用继续在另一个应用中启动的呼叫（Android 9.0 新增的权限）
+     */
     public static final String ACCEPT_HANDOVER = "android.permission.ACCEPT_HANDOVER";
     /**
      * 读取手机号码（Android 8.0 新增的权限）
@@ -206,29 +222,53 @@ public final class Permission {
      * <p>为了兼容 Android 8.0 以下版本，需要在清单文件中注册 {@link #READ_PHONE_STATE} 权限
      */
     public static final String READ_PHONE_NUMBERS = "android.permission.READ_PHONE_NUMBERS";
-    /** 接听电话（Android 8.0 新增的权限，Android 8.0 以下可以采用模拟耳机按键事件来实现接听电话，这种方式不需要权限） */
+    /**
+     * 接听电话（Android 8.0 新增的权限，Android 8.0 以下可以采用模拟耳机按键事件来实现接听电话，这种方式不需要权限）
+     */
     public static final String ANSWER_PHONE_CALLS = "android.permission.ANSWER_PHONE_CALLS";
-    /** 读取外部存储 */
+    /**
+     * 读取外部存储
+     */
     public static final String READ_EXTERNAL_STORAGE = "android.permission.READ_EXTERNAL_STORAGE";
-    /** 写入外部存储 */
+    /**
+     * 写入外部存储
+     */
     public static final String WRITE_EXTERNAL_STORAGE = "android.permission.WRITE_EXTERNAL_STORAGE";
-    /** 相机权限 */
+    /**
+     * 相机权限
+     */
     public static final String CAMERA = "android.permission.CAMERA";
-    /** 麦克风权限 */
+    /**
+     * 麦克风权限
+     */
     public static final String RECORD_AUDIO = "android.permission.RECORD_AUDIO";
-    /** 获取精确位置 */
+    /**
+     * 获取精确位置
+     */
     public static final String ACCESS_FINE_LOCATION = "android.permission.ACCESS_FINE_LOCATION";
-    /** 获取粗略位置 */
+    /**
+     * 获取粗略位置
+     */
     public static final String ACCESS_COARSE_LOCATION = "android.permission.ACCESS_COARSE_LOCATION";
-    /** 读取联系人 */
+    /**
+     * 读取联系人
+     */
     public static final String READ_CONTACTS = "android.permission.READ_CONTACTS";
-    /** 修改联系人 */
+    /**
+     * 修改联系人
+     */
     public static final String WRITE_CONTACTS = "android.permission.WRITE_CONTACTS";
-    /** 访问账户列表 */
+    /**
+     * 访问账户列表
+     */
     public static final String GET_ACCOUNTS = "android.permission.GET_ACCOUNTS";
-    /** 读取日历 */
+    /**
+     * 读取日历
+     */
     public static final String READ_CALENDAR = "android.permission.READ_CALENDAR";
-    /** 修改日历 */
+    /**
+     * 修改日历
+     */
     public static final String WRITE_CALENDAR = "android.permission.WRITE_CALENDAR";
     /**
      * 读取电话状态
@@ -240,61 +280,94 @@ public final class Permission {
      * android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
      */
     public static final String READ_PHONE_STATE = "android.permission.READ_PHONE_STATE";
-    /** 拨打电话 */
+    /**
+     * 拨打电话
+     */
     public static final String CALL_PHONE = "android.permission.CALL_PHONE";
-    /** 读取通话记录 */
+    /**
+     * 读取通话记录
+     */
     public static final String READ_CALL_LOG = "android.permission.READ_CALL_LOG";
-    /** 修改通话记录 */
+    /**
+     * 修改通话记录
+     */
     public static final String WRITE_CALL_LOG = "android.permission.WRITE_CALL_LOG";
-    /** 添加语音邮件 */
+    /**
+     * 添加语音邮件
+     */
     public static final String ADD_VOICEMAIL = "com.android.voicemail.permission.ADD_VOICEMAIL";
-    /** 使用SIP视频 */
+    /**
+     * 使用SIP视频
+     */
     public static final String USE_SIP = "android.permission.USE_SIP";
     /**
      * 处理拨出电话
      *
      * @deprecated 在 Android 10
-     *     已经过时，请见：https://developer.android.google.cn/reference/android/Manifest.permission?hl=zh_cn#PROCESS_OUTGOING_CALLS
+     * 已经过时，请见：https://developer.android.google.cn/reference/android/Manifest.permission?hl=zh_cn#PROCESS_OUTGOING_CALLS
      */
     public static final String PROCESS_OUTGOING_CALLS = "android.permission.PROCESS_OUTGOING_CALLS";
-    /** 使用传感器 */
+    /**
+     * 使用传感器
+     */
     public static final String BODY_SENSORS = "android.permission.BODY_SENSORS";
-    /** 发送短信 */
+    /**
+     * 发送短信
+     */
     public static final String SEND_SMS = "android.permission.SEND_SMS";
-    /** 接收短信 */
+    /**
+     * 接收短信
+     */
     public static final String RECEIVE_SMS = "android.permission.RECEIVE_SMS";
-    /** 读取短信 */
+    /**
+     * 读取短信
+     */
     public static final String READ_SMS = "android.permission.READ_SMS";
-    /** 接收 WAP 推送消息 */
+    /**
+     * 接收 WAP 推送消息
+     */
     public static final String RECEIVE_WAP_PUSH = "android.permission.RECEIVE_WAP_PUSH";
-    /** 接收彩信 */
+    /**
+     * 接收彩信
+     */
     public static final String RECEIVE_MMS = "android.permission.RECEIVE_MMS";
 
-    private Permission() {}
+    private Permission() {
+    }
 
-    /** 权限组 */
+    /**
+     * 权限组
+     */
     public static final class Group {
 
-        /** 存储权限 */
+        /**
+         * 存储权限
+         */
         public static final String[] STORAGE =
-                new String[] {Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE};
+                new String[]{Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE};
 
-        /** 日历权限 */
+        /**
+         * 日历权限
+         */
         public static final String[] CALENDAR =
-                new String[] {Permission.READ_CALENDAR, Permission.WRITE_CALENDAR};
+                new String[]{Permission.READ_CALENDAR, Permission.WRITE_CALENDAR};
 
-        /** 联系人权限 */
+        /**
+         * 联系人权限
+         */
         public static final String[] CONTACTS =
-                new String[] {
-                    Permission.READ_CONTACTS, Permission.WRITE_CONTACTS, Permission.GET_ACCOUNTS
+                new String[]{
+                        Permission.READ_CONTACTS, Permission.WRITE_CONTACTS, Permission.GET_ACCOUNTS
                 };
 
-        /** 蓝牙权限 */
+        /**
+         * 蓝牙权限
+         */
         public static final String[] BLUETOOTH =
-                new String[] {
-                    Permission.BLUETOOTH_SCAN,
-                    Permission.BLUETOOTH_CONNECT,
-                    Permission.BLUETOOTH_ADVERTISE
+                new String[]{
+                        Permission.BLUETOOTH_SCAN,
+                        Permission.BLUETOOTH_CONNECT,
+                        Permission.BLUETOOTH_ADVERTISE
                 };
     }
 }

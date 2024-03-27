@@ -26,14 +26,15 @@ import androidx.annotation.Nullable;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Properties;
 
-/** desc : 厂商 Rom 工具类 */
+/**
+ * desc : 厂商 Rom 工具类
+ */
 final class PhoneRomUtils {
 
     private static final String[] ROM_HUAWEI = {"huawei"};
@@ -53,7 +54,7 @@ final class PhoneRomUtils {
     private static final String VERSION_PROPERTY_VIVO = "ro.vivo.os.build.display.id";
     private static final String VERSION_PROPERTY_XIAOMI = "ro.build.version.incremental";
     private static final String[] VERSION_PROPERTY_OPPO = {
-        "ro.build.version.opporom", "ro.build.version.oplusrom.display"
+            "ro.build.version.opporom", "ro.build.version.oplusrom.display"
     };
     private static final String VERSION_PROPERTY_LEECO = "ro.letv.release.version";
     private static final String VERSION_PROPERTY_360 = "ro.build.uiversion";
@@ -61,19 +62,26 @@ final class PhoneRomUtils {
     private static final String VERSION_PROPERTY_ONEPLUS = "ro.rom.version";
     private static final String VERSION_PROPERTY_NUBIA = "ro.build.rom.id";
 
-    private PhoneRomUtils() {}
+    private PhoneRomUtils() {
+    }
 
-    /** 判断当前厂商系统是否为 emui */
+    /**
+     * 判断当前厂商系统是否为 emui
+     */
     static boolean isEmui() {
         return !TextUtils.isEmpty(getPropertyName(VERSION_PROPERTY_HUAWEI));
     }
 
-    /** 判断当前厂商系统是否为 miui */
+    /**
+     * 判断当前厂商系统是否为 miui
+     */
     static boolean isMiui() {
         return !TextUtils.isEmpty(getPropertyName(ROM_NAME_MIUI));
     }
 
-    /** 判断当前厂商系统是否为 ColorOs */
+    /**
+     * 判断当前厂商系统是否为 ColorOs
+     */
     static boolean isColorOs() {
         for (String property : VERSION_PROPERTY_OPPO) {
             String versionName = getPropertyName(property);
@@ -85,12 +93,16 @@ final class PhoneRomUtils {
         return false;
     }
 
-    /** 判断当前厂商系统是否为 OriginOS */
+    /**
+     * 判断当前厂商系统是否为 OriginOS
+     */
     static boolean isOriginOs() {
         return !TextUtils.isEmpty(getPropertyName(VERSION_PROPERTY_VIVO));
     }
 
-    /** 判断当前厂商系统是否为 OneUI */
+    /**
+     * 判断当前厂商系统是否为 OneUI
+     */
     @SuppressLint("PrivateApi")
     static boolean isOneUi() {
         return isRightRom(getBrand(), getManufacturer(), ROM_SAMSUNG);
@@ -111,7 +123,9 @@ final class PhoneRomUtils {
         //      }
     }
 
-    /** 判断当前是否为鸿蒙系统 */
+    /**
+     * 判断当前是否为鸿蒙系统
+     */
     static boolean isHarmonyOs() {
         try {
             Class<?> buildExClass = Class.forName("com.huawei.system.BuildEx");
@@ -141,19 +155,16 @@ final class PhoneRomUtils {
                                     clazz,
                                     "persist.sys.miui_optimization",
                                     !"1".equals(ctsValue))));
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (ClassNotFoundException | InvocationTargetException | NoSuchMethodException |
+                 IllegalAccessException e) {
             e.printStackTrace();
         }
         return true;
     }
 
-    /** 返回厂商系统版本号 */
+    /**
+     * 返回厂商系统版本号
+     */
     @Nullable
     static String getRomVersionName() {
         final String brand = getBrand();
@@ -279,8 +290,6 @@ final class PhoneRomUtils {
                     new FileInputStream(new File(Environment.getRootDirectory(), "build.prop"));
             prop.load(is);
             return prop.getProperty(key, "");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -293,13 +302,8 @@ final class PhoneRomUtils {
             Class<?> clz = Class.forName("android.os.SystemProperties");
             Method getMethod = clz.getMethod("get", String.class, String.class);
             return (String) getMethod.invoke(clz, key, "");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (ClassNotFoundException | InvocationTargetException | NoSuchMethodException |
+                 IllegalAccessException e) {
             e.printStackTrace();
         }
         return "";

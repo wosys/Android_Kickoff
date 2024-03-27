@@ -26,10 +26,13 @@ import androidx.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 
-/** desc : 权限判断类 */
+/**
+ * desc : 权限判断类
+ */
 final class PermissionApi {
 
-    @NonNull private static final PermissionDelegate DELEGATE;
+    @NonNull
+    private static final PermissionDelegate DELEGATE;
 
     static {
         if (AndroidVersion.isAndroid13()) {
@@ -57,28 +60,38 @@ final class PermissionApi {
         }
     }
 
-    /** 判断某个权限是否授予 */
+    /**
+     * 判断某个权限是否授予
+     */
     static boolean isGrantedPermission(@NonNull Context context, @NonNull String permission) {
         return DELEGATE.isGrantedPermission(context, permission);
     }
 
-    /** 判断某个权限是否被永久拒绝 */
+    /**
+     * 判断某个权限是否被永久拒绝
+     */
     static boolean isPermissionPermanentDenied(
             @NonNull Activity activity, @NonNull String permission) {
         return DELEGATE.isPermissionPermanentDenied(activity, permission);
     }
 
-    /** 获取权限设置页意图 */
+    /**
+     * 获取权限设置页意图
+     */
     static Intent getPermissionIntent(@NonNull Context context, @NonNull String permission) {
         return DELEGATE.getPermissionIntent(context, permission);
     }
 
-    /** 判断某个权限是否是特殊权限 */
+    /**
+     * 判断某个权限是否是特殊权限
+     */
     static boolean isSpecialPermission(@NonNull String permission) {
         return PermissionUtils.isSpecialPermission(permission);
     }
 
-    /** 判断某个权限集合是否包含特殊权限 */
+    /**
+     * 判断某个权限集合是否包含特殊权限
+     */
     static boolean containsSpecialPermission(List<String> permissions) {
         if (permissions == null || permissions.isEmpty()) {
             return false;
@@ -92,7 +105,9 @@ final class PermissionApi {
         return false;
     }
 
-    /** 判断某些权限是否全部被授予 */
+    /**
+     * 判断某些权限是否全部被授予
+     */
     static boolean isGrantedPermissions(
             @NonNull Context context, @NonNull List<String> permissions) {
         if (permissions.isEmpty()) {
@@ -108,7 +123,9 @@ final class PermissionApi {
         return true;
     }
 
-    /** 获取已经授予的权限 */
+    /**
+     * 获取已经授予的权限
+     */
     static List<String> getGrantedPermissions(
             @NonNull Context context, @NonNull List<String> permissions) {
         List<String> grantedPermission = new ArrayList<>(permissions.size());
@@ -120,7 +137,9 @@ final class PermissionApi {
         return grantedPermission;
     }
 
-    /** 获取已经拒绝的权限 */
+    /**
+     * 获取已经拒绝的权限
+     */
     static List<String> getDeniedPermissions(
             @NonNull Context context, @NonNull List<String> permissions) {
         List<String> deniedPermission = new ArrayList<>(permissions.size());
@@ -135,7 +154,7 @@ final class PermissionApi {
     /**
      * 在权限组中检查是否有某个权限是否被永久拒绝
      *
-     * @param activity Activity对象
+     * @param activity    Activity对象
      * @param permissions 请求的权限
      */
     static boolean isPermissionPermanentDenied(
@@ -151,7 +170,7 @@ final class PermissionApi {
     /**
      * 获取没有授予的权限
      *
-     * @param permissions 需要请求的权限组
+     * @param permissions  需要请求的权限组
      * @param grantResults 允许结果组
      */
     static List<String> getDeniedPermissions(
@@ -169,7 +188,7 @@ final class PermissionApi {
     /**
      * 获取已授予的权限
      *
-     * @param permissions 需要请求的权限组
+     * @param permissions  需要请求的权限组
      * @param grantResults 允许结果组
      */
     static List<String> getGrantedPermissions(

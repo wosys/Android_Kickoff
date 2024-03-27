@@ -27,20 +27,33 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-/** desc : 权限页跳转 Fragment */
+/**
+ * desc : 权限页跳转 Fragment
+ */
 @SuppressWarnings("deprecation")
 public final class PermissionPageFragment extends Fragment implements Runnable {
 
-    /** 请求的权限组 */
+    /**
+     * 请求的权限组
+     */
     private static final String REQUEST_PERMISSIONS = "request_permissions";
-    /** 权限回调对象 */
-    @Nullable private OnPermissionPageCallback mCallBack;
-    /** 权限申请标记 */
+    /**
+     * 权限回调对象
+     */
+    @Nullable
+    private OnPermissionPageCallback mCallBack;
+    /**
+     * 权限申请标记
+     */
     private boolean mRequestFlag;
-    /** 是否申请了权限 */
+    /**
+     * 是否申请了权限
+     */
     private boolean mStartActivityFlag;
 
-    /** 开启权限申请 */
+    /**
+     * 开启权限申请
+     */
     public static void beginRequest(
             @NonNull Activity activity,
             @NonNull ArrayList<String> permissions,
@@ -59,7 +72,9 @@ public final class PermissionPageFragment extends Fragment implements Runnable {
         fragment.attachActivity(activity);
     }
 
-    /** 绑定 Activity */
+    /**
+     * 绑定 Activity
+     */
     public void attachActivity(@NonNull Activity activity) {
         activity.getFragmentManager()
                 .beginTransaction()
@@ -67,17 +82,23 @@ public final class PermissionPageFragment extends Fragment implements Runnable {
                 .commitAllowingStateLoss();
     }
 
-    /** 解绑 Activity */
+    /**
+     * 解绑 Activity
+     */
     public void detachActivity(@NonNull Activity activity) {
         activity.getFragmentManager().beginTransaction().remove(this).commitAllowingStateLoss();
     }
 
-    /** 设置权限监听回调监听 */
+    /**
+     * 设置权限监听回调监听
+     */
     public void setCallBack(@Nullable OnPermissionPageCallback callback) {
         mCallBack = callback;
     }
 
-    /** 权限申请标记（防止系统杀死应用后重新触发请求的问题） */
+    /**
+     * 权限申请标记（防止系统杀死应用后重新触发请求的问题）
+     */
     public void setRequestFlag(boolean flag) {
         mRequestFlag = flag;
     }

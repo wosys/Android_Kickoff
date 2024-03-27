@@ -24,20 +24,38 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-/** desc : 清单文件解析 Bean 类 */
+/**
+ * desc : 清单文件解析 Bean 类
+ */
 final class AndroidManifestInfo {
 
-    /** 权限节点信息 */
-    @NonNull final List<PermissionInfo> permissionInfoList = new ArrayList<>();
-    /** Activity 节点信息 */
-    @NonNull final List<ActivityInfo> activityInfoList = new ArrayList<>();
-    /** Service 节点信息 */
-    @NonNull final List<ServiceInfo> serviceInfoList = new ArrayList<>();
-    /** 应用包名 */
+    /**
+     * 权限节点信息
+     */
+    @NonNull
+    final List<PermissionInfo> permissionInfoList = new ArrayList<>();
+    /**
+     * Activity 节点信息
+     */
+    @NonNull
+    final List<ActivityInfo> activityInfoList = new ArrayList<>();
+    /**
+     * Service 节点信息
+     */
+    @NonNull
+    final List<ServiceInfo> serviceInfoList = new ArrayList<>();
+    /**
+     * 应用包名
+     */
     String packageName;
-    /** 使用 sdk 信息 */
-    @Nullable UsesSdkInfo usesSdkInfo;
-    /** Application 节点信息 */
+    /**
+     * 使用 sdk 信息
+     */
+    @Nullable
+    UsesSdkInfo usesSdkInfo;
+    /**
+     * Application 节点信息
+     */
     ApplicationInfo applicationInfo;
 
     static final class UsesSdkInfo {
@@ -47,7 +65,9 @@ final class AndroidManifestInfo {
 
     static final class PermissionInfo {
 
-        /** {@link PackageInfo#REQUESTED_PERMISSION_NEVER_FOR_LOCATION} */
+        /**
+         * {@link PackageInfo#REQUESTED_PERMISSION_NEVER_FOR_LOCATION}
+         */
         private static final int REQUESTED_PERMISSION_NEVER_FOR_LOCATION = 0x00010000;
 
         public String name;

@@ -27,7 +27,9 @@ import android.provider.Settings;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-/** desc : 读取应用列表权限兼容类 */
+/**
+ * desc : 读取应用列表权限兼容类
+ */
 final class GetInstalledAppsPermissionCompat {
 
     private static final String MIUI_OP_GET_INSTALLED_APPS_FIELD_NAME = "OP_GET_INSTALLED_APPS";
@@ -70,7 +72,7 @@ final class GetInstalledAppsPermissionCompat {
             // 如果支持申请，那么再去判断权限是否永久拒绝
             return !PermissionUtils.checkSelfPermission(activity, Permission.GET_INSTALLED_APPS)
                     && !PermissionUtils.shouldShowRequestPermissionRationale(
-                            activity, Permission.GET_INSTALLED_APPS);
+                    activity, Permission.GET_INSTALLED_APPS);
         }
 
         if (PhoneRomUtils.isMiui() && isMiuiSupportGetInstalledAppsPermission()) {
@@ -101,7 +103,9 @@ final class GetInstalledAppsPermissionCompat {
         return PermissionUtils.getApplicationDetailsIntent(context);
     }
 
-    /** 判断是否支持获取应用列表权限 */
+    /**
+     * 判断是否支持获取应用列表权限
+     */
     @RequiresApi(api = AndroidVersion.ANDROID_6)
     private static boolean isSupportGetInstalledAppsPermission(Context context) {
         try {
@@ -124,8 +128,8 @@ final class GetInstalledAppsPermissionCompat {
             // 这是兜底方案，因为测试了大量的机型，除了荣耀的 Magic UI 有按照这个规范去做，其他厂商（包括华为的 HarmonyOS）都没有按照这个规范去做
             // 虽然可以只用上面那种判断权限是不是危险权限的方式，但是避免不了有的手机厂商用下面的这种，所以两种都写比较好，小孩子才做选择，大人我全都要
             return Settings.Secure.getInt(
-                            context.getContentResolver(),
-                            "oem_installed_apps_runtime_permission_enable")
+                    context.getContentResolver(),
+                    "oem_installed_apps_runtime_permission_enable")
                     == 1;
         } catch (Settings.SettingNotFoundException e) {
             e.printStackTrace();
@@ -134,7 +138,9 @@ final class GetInstalledAppsPermissionCompat {
         return false;
     }
 
-    /** 判断当前 miui 版本是否支持申请读取应用列表权限 */
+    /**
+     * 判断当前 miui 版本是否支持申请读取应用列表权限
+     */
     private static boolean isMiuiSupportGetInstalledAppsPermission() {
         if (!AndroidVersion.isAndroid4_4()) {
             return true;

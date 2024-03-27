@@ -28,34 +28,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *    desc   : Android 危险权限请求类
+ * desc   : Android 危险权限请求类
  */
 @SuppressWarnings({"unused", "deprecation"})
 public final class XPermissions {
 
-    /** 权限设置页跳转请求码 */
+    /**
+     * 权限设置页跳转请求码
+     */
     public static final int REQUEST_CODE = 1024 + 1;
 
-    /** 权限请求拦截器 */
+    /**
+     * 权限请求拦截器
+     */
     private static IPermissionInterceptor sInterceptor;
 
-    /** 当前是否为检查模式 */
+    /**
+     * 当前是否为检查模式
+     */
     private static Boolean sCheckMode;
-    /** Context 对象 */
+    /**
+     * Context 对象
+     */
     @Nullable
     private final Context mContext;
-    /** 申请的权限列表 */
+    /**
+     * 申请的权限列表
+     */
     @NonNull
-    private List<String> mPermissions = new ArrayList<>();
+    private final List<String> mPermissions = new ArrayList<>();
     /*
     public static XPermissions with(@NonNull android.support.v4.app.Fragment fragment) {
         return with(fragment.getActivity());
     }
     */
-    /** 权限请求拦截器 */
+    /**
+     * 权限请求拦截器
+     */
     @Nullable
     private IPermissionInterceptor mInterceptor;
-    /** 设置不检查 */
+    /**
+     * 设置不检查
+     */
     @Nullable
     private Boolean mCheckMode;
 
@@ -69,7 +83,7 @@ public final class XPermissions {
     /**
      * 设置请求的对象
      *
-     * @param context          当前 Activity，可以传入栈顶的 Activity
+     * @param context 当前 Activity，可以传入栈顶的 Activity
      */
     public static XPermissions with(@NonNull Context context) {
         return new XPermissions(context);
@@ -91,7 +105,8 @@ public final class XPermissions {
      */
     public static IPermissionInterceptor getInterceptor() {
         if (sInterceptor == null) {
-            sInterceptor = new IPermissionInterceptor() {};
+            sInterceptor = new IPermissionInterceptor() {
+            };
         }
         return sInterceptor;
     }
@@ -153,7 +168,7 @@ public final class XPermissions {
 
     /**
      * 判断一个或多个权限是否被永久拒绝了
-     *
+     * <p>
      * 注意不能在请求权限之前调用，一定要在 {@link OnPermissionCallback#onDenied(List, boolean)} 方法中调用
      * 如果你在应用启动后，没有申请过这个权限，然后去判断它有没有永久拒绝，这样系统会一直返回 true，也就是永久拒绝
      * 但是实际并没有永久拒绝，系统只是不想让你知道权限是否被永久拒绝了，你必须要申请过这个权限，才能去判断这个权限是否被永久拒绝
@@ -185,7 +200,7 @@ public final class XPermissions {
     /**
      * 跳转到应用权限设置页
      *
-     * @param permissions           没有授予或者被拒绝的权限组
+     * @param permissions 没有授予或者被拒绝的权限组
      */
     public static void startPermissionActivity(@NonNull Context context, @NonNull List<String> permissions) {
         Activity activity = PermissionUtils.findActivity(context);
@@ -432,7 +447,7 @@ public final class XPermissions {
     /**
      * 撤销权限并杀死当前进程
      *
-     * @return          返回 true 代表成功，返回 false 代表失败
+     * @return 返回 true 代表成功，返回 false 代表失败
      */
     public boolean revokeOnKill() {
         if (mContext == null) {

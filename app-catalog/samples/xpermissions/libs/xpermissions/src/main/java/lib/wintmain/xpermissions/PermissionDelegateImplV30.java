@@ -25,16 +25,22 @@ import android.provider.Settings;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-/** desc : Android 11 权限委托实现 */
+/**
+ * desc : Android 11 权限委托实现
+ */
 @RequiresApi(api = AndroidVersion.ANDROID_11)
 class PermissionDelegateImplV30 extends PermissionDelegateImplV29 {
 
-    /** 是否有所有文件的管理权限 */
+    /**
+     * 是否有所有文件的管理权限
+     */
     private static boolean isGrantedManageStoragePermission() {
         return Environment.isExternalStorageManager();
     }
 
-    /** 获取所有文件的管理权限设置界面意图 */
+    /**
+     * 获取所有文件的管理权限设置界面意图
+     */
     private static Intent getManageStoragePermissionIntent(@NonNull Context context) {
         Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
         intent.setData(PermissionUtils.getPackageNameUri(context));

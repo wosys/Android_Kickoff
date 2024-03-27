@@ -25,16 +25,22 @@ import android.provider.Settings;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-/** desc : Android 8.0 权限委托实现 */
+/**
+ * desc : Android 8.0 权限委托实现
+ */
 @RequiresApi(api = AndroidVersion.ANDROID_8)
 class PermissionDelegateImplV26 extends PermissionDelegateImplV23 {
 
-    /** 是否有安装权限 */
+    /**
+     * 是否有安装权限
+     */
     private static boolean isGrantedInstallPermission(@NonNull Context context) {
         return context.getPackageManager().canRequestPackageInstalls();
     }
 
-    /** 获取安装权限设置界面意图 */
+    /**
+     * 获取安装权限设置界面意图
+     */
     private static Intent getInstallPermissionIntent(@NonNull Context context) {
         Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES);
         intent.setData(PermissionUtils.getPackageNameUri(context));
@@ -44,12 +50,16 @@ class PermissionDelegateImplV26 extends PermissionDelegateImplV23 {
         return intent;
     }
 
-    /** 是否有画中画权限 */
+    /**
+     * 是否有画中画权限
+     */
     private static boolean isGrantedPictureInPicturePermission(@NonNull Context context) {
         return PermissionUtils.checkOpNoThrow(context, AppOpsManager.OPSTR_PICTURE_IN_PICTURE);
     }
 
-    /** 获取画中画权限设置界面意图 */
+    /**
+     * 获取画中画权限设置界面意图
+     */
     private static Intent getPictureInPicturePermissionIntent(@NonNull Context context) {
         // android.provider.Settings.ACTION_PICTURE_IN_PICTURE_SETTINGS
         Intent intent = new Intent("android.settings.PICTURE_IN_PICTURE_SETTINGS");

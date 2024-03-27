@@ -25,8 +25,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
- * author : Android 轮子哥 github : https://github.com/getActivity/XXPermissions time : 2023/04/05 desc
- * : startActivity 管理器
+ * startActivity 管理器
  */
 final class StartActivityManager {
 

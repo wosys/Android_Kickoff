@@ -23,25 +23,37 @@ import android.provider.Settings;
 
 import androidx.annotation.Nullable;
 
-/** desc : 国内手机厂商权限设置页管理器 */
+/**
+ * desc : 国内手机厂商权限设置页管理器
+ */
 final class PermissionIntentManager {
 
-    /** 华为手机管家 App 包名 */
+    /**
+     * 华为手机管家 App 包名
+     */
     private static final String EMUI_MOBILE_MANAGER_APP_PACKAGE_NAME = "com.huawei.systemmanager";
 
-    /** 小米手机管家 App 包名 */
+    /**
+     * 小米手机管家 App 包名
+     */
     private static final String MIUI_MOBILE_MANAGER_APP_PACKAGE_NAME = "com.miui.securitycenter";
 
-    /** OPPO 安全中心 App 包名 */
+    /**
+     * OPPO 安全中心 App 包名
+     */
     private static final String COLOR_OS_SAFE_CENTER_APP_PACKAGE_NAME_1 = "com.oppo.safe";
 
     private static final String COLOR_OS_SAFE_CENTER_APP_PACKAGE_NAME_2 = "com.color.safecenter";
     private static final String COLOR_OS_SAFE_CENTER_APP_PACKAGE_NAME_3 = "com.oplus.safecenter";
 
-    /** vivo 安全中心 App 包名 */
+    /**
+     * vivo 安全中心 App 包名
+     */
     private static final String ORIGIN_OS_MOBILE_MANAGER_APP_PACKAGE_NAME = "com.iqoo.secure";
 
-    /** 获取华为悬浮窗权限设置意图 */
+    /**
+     * 获取华为悬浮窗权限设置意图
+     */
     @Nullable
     static Intent getEmuiWindowPermissionPageIntent(Context context) {
         // EMUI 发展史：http://www.360doc.com/content/19/1017/10/9113704_867381705.shtml
@@ -103,13 +115,17 @@ final class PermissionIntentManager {
         return intent;
     }
 
-    /** 获取小米悬浮窗权限设置意图 */
+    /**
+     * 获取小米悬浮窗权限设置意图
+     */
     @Nullable
     static Intent getMiuiWindowPermissionPageIntent(Context context) {
         return getMiuiPermissionPageIntent(context);
     }
 
-    /** 获取 oppo 悬浮窗权限设置意图 */
+    /**
+     * 获取 oppo 悬浮窗权限设置意图
+     */
     @Nullable
     static Intent getColorOsWindowPermissionPageIntent(Context context) {
         // com.color.safecenter 是之前 oppo 安全中心的包名，而 com.oppo.safe 是 oppo 后面改的安全中心的包名
@@ -157,13 +173,14 @@ final class PermissionIntentManager {
 
         if (PermissionUtils.areActivityIntent(context, oppoSafeCenterAppIntent)) {
             intent = StartActivityManager.addSubIntentToMainIntent(intent, oppoSafeCenterAppIntent);
-            ;
         }
 
         return intent;
     }
 
-    /** 获取 vivo 悬浮窗权限设置意图 */
+    /**
+     * 获取 vivo 悬浮窗权限设置意图
+     */
     @Nullable
     static Intent getOriginOsWindowPermissionPageIntent(Context context) {
         // java.lang.SecurityException: Permission Denial: starting Intent
@@ -232,7 +249,9 @@ final class PermissionIntentManager {
         return null;
     }
 
-    /** 获取三星权限设置意图 */
+    /**
+     * 获取三星权限设置意图
+     */
     @Nullable
     static Intent getOneUiPermissionPageIntent(Context context) {
         Intent intent = new Intent();
@@ -250,7 +269,9 @@ final class PermissionIntentManager {
 
     /* ---------------------------------------------------------------------------------------- */
 
-    /** 返回华为手机管家 App 意图 */
+    /**
+     * 返回华为手机管家 App 意图
+     */
     @Nullable
     static Intent getHuaWeiMobileManagerAppIntent(Context context) {
         Intent intent =
@@ -262,7 +283,9 @@ final class PermissionIntentManager {
         return null;
     }
 
-    /** 返回小米手机管家 App 意图 */
+    /**
+     * 返回小米手机管家 App 意图
+     */
     @Nullable
     static Intent getXiaoMiMobileManagerAppIntent(Context context) {
         Intent intent =
@@ -274,7 +297,9 @@ final class PermissionIntentManager {
         return null;
     }
 
-    /** 获取 oppo 安全中心 App 意图 */
+    /**
+     * 获取 oppo 安全中心 App 意图
+     */
     @Nullable
     static Intent getOppoSafeCenterAppIntent(Context context) {
         Intent intent =
@@ -298,7 +323,9 @@ final class PermissionIntentManager {
         return null;
     }
 
-    /** 获取 vivo 管家手机意图 */
+    /**
+     * 获取 vivo 管家手机意图
+     */
     @Nullable
     static Intent getVivoMobileManagerAppIntent(Context context) {
         Intent intent =
@@ -310,7 +337,9 @@ final class PermissionIntentManager {
         return null;
     }
 
-    /** 跳转到系统设置页面 */
+    /**
+     * 跳转到系统设置页面
+     */
     @Nullable
     static Intent getAndroidSettingAppIntent(Context context) {
         Intent intent = new Intent(Settings.ACTION_SETTINGS);

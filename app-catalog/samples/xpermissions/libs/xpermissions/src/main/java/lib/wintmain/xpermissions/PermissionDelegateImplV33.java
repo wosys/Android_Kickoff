@@ -22,7 +22,9 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-/** desc : Android 13 权限委托实现 */
+/**
+ * desc : Android 13 权限委托实现
+ */
 @RequiresApi(api = AndroidVersion.ANDROID_13)
 class PermissionDelegateImplV33 extends PermissionDelegateImplV31 {
 
@@ -32,7 +34,7 @@ class PermissionDelegateImplV33 extends PermissionDelegateImplV31 {
             // 有后台传感器权限的前提条件是要有前台的传感器权限
             return PermissionUtils.checkSelfPermission(context, Permission.BODY_SENSORS)
                     && PermissionUtils.checkSelfPermission(
-                            context, Permission.BODY_SENSORS_BACKGROUND);
+                    context, Permission.BODY_SENSORS_BACKGROUND);
         }
 
         if (PermissionUtils.equalsPermission(permission, Permission.POST_NOTIFICATIONS)
@@ -54,7 +56,7 @@ class PermissionDelegateImplV33 extends PermissionDelegateImplV31 {
                 return PermissionUtils.checkSelfPermission(context, Permission.READ_MEDIA_IMAGES)
                         && PermissionUtils.checkSelfPermission(context, Permission.READ_MEDIA_VIDEO)
                         && PermissionUtils.checkSelfPermission(
-                                context, Permission.READ_MEDIA_AUDIO);
+                        context, Permission.READ_MEDIA_AUDIO);
             }
         }
 
@@ -91,15 +93,15 @@ class PermissionDelegateImplV33 extends PermissionDelegateImplV31 {
             if (PermissionUtils.equalsPermission(permission, Permission.READ_EXTERNAL_STORAGE)) {
                 return !PermissionUtils.checkSelfPermission(activity, Permission.READ_MEDIA_IMAGES)
                         && !PermissionUtils.shouldShowRequestPermissionRationale(
-                                activity, Permission.READ_MEDIA_IMAGES)
+                        activity, Permission.READ_MEDIA_IMAGES)
                         && !PermissionUtils.checkSelfPermission(
-                                activity, Permission.READ_MEDIA_VIDEO)
+                        activity, Permission.READ_MEDIA_VIDEO)
                         && !PermissionUtils.shouldShowRequestPermissionRationale(
-                                activity, Permission.READ_MEDIA_VIDEO)
+                        activity, Permission.READ_MEDIA_VIDEO)
                         && !PermissionUtils.checkSelfPermission(
-                                activity, Permission.READ_MEDIA_AUDIO)
+                        activity, Permission.READ_MEDIA_AUDIO)
                         && !PermissionUtils.shouldShowRequestPermissionRationale(
-                                activity, Permission.READ_MEDIA_AUDIO);
+                        activity, Permission.READ_MEDIA_AUDIO);
             }
         }
 

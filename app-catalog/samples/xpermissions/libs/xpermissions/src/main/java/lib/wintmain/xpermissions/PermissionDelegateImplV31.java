@@ -26,18 +26,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
 /**
- * author : Android 轮子哥 github : https://github.com/getActivity/XXPermissions time : 2022/06/11 desc
- * : Android 12 权限委托实现
+ * Android 12 权限委托实现
  */
 @RequiresApi(api = AndroidVersion.ANDROID_12)
 class PermissionDelegateImplV31 extends PermissionDelegateImplV30 {
 
-    /** 是否有闹钟权限 */
+    /**
+     * 是否有闹钟权限
+     */
     private static boolean isGrantedAlarmPermission(@NonNull Context context) {
         return context.getSystemService(AlarmManager.class).canScheduleExactAlarms();
     }
 
-    /** 获取闹钟权限设置界面意图 */
+    /**
+     * 获取闹钟权限设置界面意图
+     */
     private static Intent getAlarmPermissionIntent(@NonNull Context context) {
         Intent intent = new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
         intent.setData(PermissionUtils.getPackageNameUri(context));
@@ -78,14 +81,14 @@ class PermissionDelegateImplV31 extends PermissionDelegateImplV30 {
 
         if (activity.getApplicationInfo().targetSdkVersion >= AndroidVersion.ANDROID_12
                 && PermissionUtils.equalsPermission(
-                        permission, Permission.ACCESS_BACKGROUND_LOCATION)) {
+                permission, Permission.ACCESS_BACKGROUND_LOCATION)) {
             if (!PermissionUtils.checkSelfPermission(activity, Permission.ACCESS_FINE_LOCATION)
                     && !PermissionUtils.checkSelfPermission(
-                            activity, Permission.ACCESS_COARSE_LOCATION)) {
+                    activity, Permission.ACCESS_COARSE_LOCATION)) {
                 return !PermissionUtils.shouldShowRequestPermissionRationale(
-                                activity, Permission.ACCESS_FINE_LOCATION)
+                        activity, Permission.ACCESS_FINE_LOCATION)
                         && !PermissionUtils.shouldShowRequestPermissionRationale(
-                                activity, Permission.ACCESS_COARSE_LOCATION);
+                        activity, Permission.ACCESS_COARSE_LOCATION);
             }
 
             return !PermissionUtils.checkSelfPermission(activity, permission)

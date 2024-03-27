@@ -23,7 +23,9 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-/** desc : Android 4.4 权限委托实现 */
+/**
+ * desc : Android 4.4 权限委托实现
+ */
 @RequiresApi(api = AndroidVersion.ANDROID_4_4)
 class PermissionDelegateImplV19 extends PermissionDelegateImplV18 {
 
