@@ -16,6 +16,7 @@
 
 package com.wintmain.basic.callnotification
 
+import android.Manifest
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -38,6 +39,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.google.android.catalog.framework.annotations.Sample
 import com.google.android.catalog.framework.ui.theme.CatalogTheme
+import lib.wintmain.permissionbase.PermissionsBox
 
 @Sample(
     name = "Call Notification",
@@ -64,8 +66,16 @@ class CallNotificationSample : AppCompatActivity() {
                         .statusBarsPadding(),
                     color = Color.Transparent
                 ) {
-                    // TBD, 权限检查
-                    EntryPoint(notificationSource)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                        // 多个权限申请，ANSWER_PHONE_CALLS在这里没有效果
+                        val permissions = mutableListOf(Manifest.permission.ANSWER_PHONE_CALLS)
+                        permissions.add(Manifest.permission.POST_NOTIFICATIONS)
+                        PermissionsBox(permissions = permissions) {
+                            EntryPoint(notificationSource)
+                        }
+                    } else {
+                        EntryPoint(notificationSource)
+                    }
                 }
             }
         }
