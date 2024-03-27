@@ -71,11 +71,12 @@ kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref =
 
 #[customize] - 将模块需要的库放到这里
 # https://developer.android.google.cn/jetpack/androidx/versions?hl=zh-cn
+# 具体的版本号用version = xxx，其他的是 version.ref = xxx
 
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
 
-androidx-activity = { group = "androidx.activity", name = "activity", version = "androidx_activity" }
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version = "androidx_activity" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "androidx_activity" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx_activity" }
 
 androidx-core = "androidx.core:core-ktx:1.12.0"
 androidx-annotation = "androidx.annotation:annotation:1.7.1"
@@ -124,3 +125,5 @@ dokka = "org.jetbrains.dokka:dokka-gradle-plugin:1.5.0"
 affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetector:0.2.0"
 glide = "com.github.bumptech.glide:glide:4.15.1"
 material = "com.google.android.material:material:1.11.0"
+
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version = "0.32.0" }
