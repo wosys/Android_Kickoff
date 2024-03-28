@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,12 +30,12 @@ import com.hjq.bar.TitleBar;
 import com.hjq.bar.style.LightBarStyle;
 import com.hjq.toast.Toaster;
 
-@Sample(
-        name = "Android PfT",
-        description = "Android Platform for Technology.",
-        documentation = "",
-        //    owners = ["wintmain"],
-        tags = "A-Self_demos")
+//@Sample(
+//        name = "Android PfT",
+//        description = "Android Platform for Technology.",
+//        documentation = "",
+//        //    owners = ["wintmain"],
+//        tags = "A-Self_demos")
 public class PlaceHolderActivity extends AppCompatActivity {
 
     @Override
