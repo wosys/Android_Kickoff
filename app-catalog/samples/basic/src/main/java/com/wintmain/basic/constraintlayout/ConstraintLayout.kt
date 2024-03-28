@@ -28,7 +28,7 @@ import com.wintmain.basic.databinding.ConstraintSetMainBinding
     name = "1. Centering Views",
     description = "水平或垂直居中子视图。",
     documentation = "",
-    tags = ["user-interface", "constraint-layout"],
+    tags = ["android-samples", "constraint-layout"],
 )
 class CenteringViewsFragment : Fragment(R.layout.constraintlayout_centering_views)
 
@@ -36,7 +36,7 @@ class CenteringViewsFragment : Fragment(R.layout.constraintlayout_centering_view
     name = "2. Basic arrangement",
     description = "排列子视图相对于其他视图的位置。",
     documentation = "",
-    tags = ["user-interface", "constraint-layout"],
+    tags = ["android-samples", "constraint-layout"],
 )
 class BasicArrangementFragment : Fragment(R.layout.constraintlayout_basic_arrangement)
 
@@ -44,7 +44,7 @@ class BasicArrangementFragment : Fragment(R.layout.constraintlayout_basic_arrang
     name = "3. Advanced arrangement",
     description = "更多排列选项。",
     documentation = "",
-    tags = ["user-interface", "constraint-layout"],
+    tags = ["android-samples", "constraint-layout"],
 )
 class AdvancedArrangementFragment : Fragment(R.layout.advanced_arrangement)
 
@@ -52,7 +52,7 @@ class AdvancedArrangementFragment : Fragment(R.layout.advanced_arrangement)
     name = "4. Aspect ratio",
     description = "指定子视图尺寸的纵横比（ratio）。",
     documentation = "",
-    tags = ["user-interface", "constraint-layout"],
+    tags = ["android-samples", "constraint-layout"],
 )
 class AspectRatioFragment : Fragment(R.layout.aspect_ratio)
 
@@ -60,7 +60,7 @@ class AspectRatioFragment : Fragment(R.layout.aspect_ratio)
     name = "5. Basic chains",
     description = "使用 chains 可以水平或垂直排列多个子视图。",
     documentation = "",
-    tags = ["user-interface", "constraint-layout"],
+    tags = ["android-samples", "constraint-layout"],
 )
 class BasicChainFragment : Fragment(R.layout.basic_chains)
 
@@ -68,7 +68,7 @@ class BasicChainFragment : Fragment(R.layout.basic_chains)
     name = "6. Advanced chains",
     description = "使用 chains 可以水平或垂直排列多个子视图。",
     documentation = "",
-    tags = ["user-interface", "constraint-layout"],
+    tags = ["android-samples", "constraint-layout"],
 )
 class AdvancedChainsFragment : Fragment(R.layout.advanced_chains)
 
@@ -76,7 +76,7 @@ class AdvancedChainsFragment : Fragment(R.layout.advanced_chains)
     name = "7. ConstraintSet",
     description = "使用“约束集”可以为所有子视图指定多个约束。",
     documentation = "",
-    tags = ["user-interface", "constraint-layout"],
+    tags = ["android-samples", "constraint-layout"],
 )
 class ConstraintSetFragment : Fragment(R.layout.constraint_set_main) {
 
@@ -119,6 +119,6 @@ class ConstraintSetFragment : Fragment(R.layout.constraint_set_main) {
     name = "8. Guidelines",
     description = "使用水平或垂直基准线可以对子视图进行约束。",
     documentation = "",
-    tags = ["user-interface", "constraint-layout"],
+    tags = ["android-samples", "constraint-layout"],
 )
 class GuidelinesFragment : Fragment(R.layout.guidelines)

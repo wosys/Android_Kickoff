@@ -45,7 +45,7 @@ import lib.wintmain.permissionbase.PermissionsBox
     name = "Call Notification",
     description = "如何发出来电通知和来电通知的示例。",
     documentation = "",
-    tags = ["telephony"],
+    tags = ["android-samples", "telephony"],
 )
 @RequiresApi(Build.VERSION_CODES.P)
 class CallNotificationSample : AppCompatActivity() {
