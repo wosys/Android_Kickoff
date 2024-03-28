@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.wintmain.networkconn;
+package com.wintmain.basic.networkconnectivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -28,6 +29,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.catalog.framework.annotations.Sample;
+import com.wintmain.basic.R;
 
 /**
  * @Description Sample Activity demonstrating how to connect to the network and fetch raw HTML. It
@@ -37,7 +39,7 @@ import com.google.android.catalog.framework.annotations.Sample;
  * @mailto wosintmain@gmail.com
  * @Date 2023-08-17 21:06:51
  */
-@Sample(name = "NetworkConnectivity demo", description = "网络连接例子", tags = "A-Self_demos")
+@Sample(name = "NetworkConnectivity", description = "网络连接例子", tags = {"android-samples", "telephony"})
 public class NetworkConnActivity extends AppCompatActivity implements DownloadCallback {
     private static final String TAG = NetworkConnActivity.class.getSimpleName();
 
@@ -57,7 +59,7 @@ public class NetworkConnActivity extends AppCompatActivity implements DownloadCa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.conn_main);
-        mDataText = (TextView) findViewById(R.id.data_text);
+        mDataText = findViewById(R.id.data_text);
         // 这里的网站换成国内的，便于访问
         mNetworkFragment =
                 NetworkFragment.getInstance(getSupportFragmentManager(), "https://www.baidu.com");
@@ -111,8 +113,7 @@ public class NetworkConnActivity extends AppCompatActivity implements DownloadCa
     public NetworkInfo getActiveNetworkInfo() {
         ConnectivityManager connectivityManager =
                 (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        return networkInfo;
+        return connectivityManager.getActiveNetworkInfo();
     }
 
     @Override
@@ -123,20 +124,18 @@ public class NetworkConnActivity extends AppCompatActivity implements DownloadCa
         }
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onProgressUpdate(int progressCode, int percentComplete) {
         switch (progressCode) {
-                // TODO: You can add UI behavior for progress updates here.
+            // TODO: You can add UI behavior for progress updates here.
             case Progress.ERROR:
-                break;
             case Progress.CONNECT_SUCCESS:
-                break;
             case Progress.GET_INPUT_STREAM_SUCCESS:
+            case Progress.PROCESS_INPUT_STREAM_SUCCESS:
                 break;
             case Progress.PROCESS_INPUT_STREAM_IN_PROGRESS:
-                mDataText.setText("" + percentComplete + "%");
-                break;
-            case Progress.PROCESS_INPUT_STREAM_SUCCESS:
+                mDataText.setText(percentComplete + "%");
                 break;
         }
     }

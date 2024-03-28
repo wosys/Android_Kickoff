@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright 2023 wintmain
+<!--
+  ~ Copyright 2023-2024 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -14,9 +14,14 @@
   ~ limitations under the License.
   -->
 
-<network-security-config>
-    <!--Set application-wide security config using base-config tag.-->
-    <base-config cleartextTrafficPermitted="false" />
-    <!--Set domain-specific security config using domain-config tags. -->
-    <!--See https://developer.android.com/training/articles/security-config.html for more information.-->
-</network-security-config>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/fetch_action"
+        android:title="@string/fetch_text"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/clear_action"
+        android:title="@string/clear_text"
+        app:showAsAction="ifRoom|withText" />
+</menu>

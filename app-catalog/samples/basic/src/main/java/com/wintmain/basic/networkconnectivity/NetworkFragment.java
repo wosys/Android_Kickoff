@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.networkconn;
+package com.wintmain.basic.networkconnectivity;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -99,14 +99,18 @@ public class NetworkFragment extends Fragment {
         super.onDestroy();
     }
 
-    /** Start non-blocking execution of DownloadTask. */
+    /**
+     * Start non-blocking execution of DownloadTask.
+     */
     public void startDownload() {
         cancelDownload();
         mDownloadTask = new DownloadTask();
         mDownloadTask.execute(mUrlString);
     }
 
-    /** Cancel (and interrupt if necessary) any ongoing DownloadTask execution. */
+    /**
+     * Cancel (and interrupt if necessary) any ongoing DownloadTask execution.
+     */
     public void cancelDownload() {
         if (mDownloadTask != null) {
             mDownloadTask.cancel(true);
@@ -114,10 +118,14 @@ public class NetworkFragment extends Fragment {
         }
     }
 
-    /** Implementation of AsyncTask that runs a network operation on a background thread. */
+    /**
+     * Implementation of AsyncTask that runs a network operation on a background thread.
+     */
     private class DownloadTask extends AsyncTask<String, Integer, DownloadTask.Result> {
 
-        /** Cancel background network operation if we do not have network connectivity. */
+        /**
+         * Cancel background network operation if we do not have network connectivity.
+         */
         @Override
         protected void onPreExecute() {
             if (mCallback != null) {
@@ -125,7 +133,7 @@ public class NetworkFragment extends Fragment {
                 if (networkInfo == null
                         || !networkInfo.isConnected()
                         || (networkInfo.getType() != ConnectivityManager.TYPE_WIFI
-                                && networkInfo.getType() != ConnectivityManager.TYPE_MOBILE)) {
+                        && networkInfo.getType() != ConnectivityManager.TYPE_MOBILE)) {
                     // If no connectivity, cancel task and update Callback with null data.
                     mCallback.updateFromDownload(null);
                     cancel(true);
@@ -133,7 +141,9 @@ public class NetworkFragment extends Fragment {
             }
         }
 
-        /** Defines work to perform on the background thread. */
+        /**
+         * Defines work to perform on the background thread.
+         */
         @Override
         protected Result doInBackground(String... urls) {
             Result result = null;
@@ -154,7 +164,9 @@ public class NetworkFragment extends Fragment {
             return result;
         }
 
-        /** Send DownloadCallback a progress update. */
+        /**
+         * Send DownloadCallback a progress update.
+         */
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
@@ -163,7 +175,9 @@ public class NetworkFragment extends Fragment {
             }
         }
 
-        /** Updates the DownloadCallback with the result. */
+        /**
+         * Updates the DownloadCallback with the result.
+         */
         @Override
         protected void onPostExecute(Result result) {
             if (result != null && mCallback != null) {
@@ -176,9 +190,12 @@ public class NetworkFragment extends Fragment {
             }
         }
 
-        /** Override to add special behavior for cancelled AsyncTask. */
+        /**
+         * Override to add special behavior for cancelled AsyncTask.
+         */
         @Override
-        protected void onCancelled(Result result) {}
+        protected void onCancelled(Result result) {
+        }
 
         /**
          * Given a URL, sets up a connection and gets the HTTP response body from the server. If the
@@ -228,7 +245,9 @@ public class NetworkFragment extends Fragment {
             return result;
         }
 
-        /** Converts the contents of an InputStream to a String. */
+        /**
+         * Converts the contents of an InputStream to a String.
+         */
         private String readStream(InputStream stream, int maxLength) throws IOException {
             String result = null;
             // Read InputStream using the UTF-8 charset.

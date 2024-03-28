@@ -21,11 +21,16 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
 
+    <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application>
         <activity
             android:name=".BaseMainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
+        <!-- callnotification START-->
         <activity
             android:name=".callnotification.CallNotificationSample"
             android:launchMode="singleTop"
@@ -34,6 +39,14 @@
         </activity>
         <receiver android:name=".callnotification.CallNotificationSample$NotificationReceiver"
             android:exported="false"/>
+        <!-- callnotification END-->
+
+        <!-- networkConnectivity START-->
+        <activity
+            android:name="com.wintmain.basic.networkconnectivity.NetworkConnActivity"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:exported="true" />
+        <!-- networkConnectivity END-->
 
         <activity
             android:name=".uiDemo.EpOne_1"

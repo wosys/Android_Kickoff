@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.networkconn;
+package com.wintmain.basic.networkconnectivity;
 
 import android.net.NetworkInfo;
 
@@ -29,13 +29,15 @@ public interface DownloadCallback {
      */
     void updateFromDownload(String result);
 
-    /** Get the device's active network status in the form of a NetworkInfo object. */
+    /**
+     * Get the device's active network status in the form of a NetworkInfo object.
+     */
     NetworkInfo getActiveNetworkInfo();
 
     /**
      * Indicate to callback handler any progress update.
      *
-     * @param progressCode must be one of the constants defined in DownloadCallback.Progress.
+     * @param progressCode    must be one of the constants defined in DownloadCallback.Progress.
      * @param percentComplete must be 0-100.
      */
     void onProgressUpdate(int progressCode, int percentComplete);
