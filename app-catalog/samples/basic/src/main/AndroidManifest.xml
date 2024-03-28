@@ -27,7 +27,7 @@
 
     <application>
         <activity
-            android:name=".BaseMainActivity"
+            android:name=".prejob.BaseMainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <!-- callnotification START-->
@@ -48,33 +48,40 @@
             android:exported="true" />
         <!-- networkConnectivity END-->
 
+        <!-- recyclerview START-->
+        <activity android:name=".recyclerview.RecyclerViewActivity"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:exported="true">
+        </activity>
+        <!-- recyclerview END-->
+
         <activity
-            android:name=".uiDemo.EpOne_1"
+            android:name=".prejob.uiDemo.EpOne_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uiDemo.EpOne_4"
+            android:name=".prejob.uiDemo.EpOne_4"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uiDemo.EpOne_12"
+            android:name=".prejob.uiDemo.EpOne_12"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uiDemo.EpOne_14"
+            android:name=".prejob.uiDemo.EpOne_14"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uiDemo.EpOne_15"
+            android:name=".prejob.uiDemo.EpOne_15"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".uiDemo.EpOne_19"
+            android:name=".prejob.uiDemo.EpOne_19"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
@@ -87,7 +94,7 @@
 
         <!--        <activity android:name=".ep3_5second" />-->
 
-        <activity android:name=".uiDemo.ep3_6second" />
+        <activity android:name=".prejob.uiDemo.ep3_6second" />
         <!--        ep3_7-->
         <!--        <activity android:name=".ep3_7$DetailActivity"-->
         <!--            android:label="详细内容"></activity>-->
