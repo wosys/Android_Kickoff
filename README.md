@@ -19,7 +19,6 @@ For personal study use only.
 * [Basic](app-catalog/samples/basic)
 * [DeviceInfo](app-catalog/samples/deviceinfo)
 * [MyMusicPlayer](app-catalog/samples/mymusicplayer)
-* [NetworkConn](app-catalog/samples/networkconn)
 * [ShadowLayout](app-catalog/samples/shadowlayout)
 * [Titlebar](app-catalog/samples/titlebar)
 * [Toaster](app-catalog/samples/toaster)
