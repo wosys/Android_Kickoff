@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,26 +17,23 @@
 package com.wintmain.xpermissions;
 
 import android.app.Notification;
-import android.os.Build;
 import android.os.Bundle;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 
-import androidx.annotation.RequiresApi;
-
 import lib.wintmain.toaster.toast.ToastUtils;
 
-/** desc : 通知消息监控服务 */
-@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+/**
+ * 通知消息监控服务
+ */
 public final class NotificationMonitorService extends NotificationListenerService {
 
-    /** 当系统收到新的通知后出发回调 */
+    /**
+     * 当系统收到新的通知后出发回调
+     */
     @Override
     public void onNotificationPosted(StatusBarNotification sbn) {
         super.onNotificationPosted(sbn);
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-            return;
-        }
 
         Bundle extras = sbn.getNotification().extras;
         if (extras == null) {
@@ -52,7 +49,9 @@ public final class NotificationMonitorService extends NotificationListenerServic
                         getString(R.string.demo_notification_listener_toast), title, msgText));
     }
 
-    /** 当系统通知被删掉后出发回调 */
+    /**
+     * 当系统通知被删掉后出发回调
+     */
     @Override
     public void onNotificationRemoved(StatusBarNotification sbn) {
         super.onNotificationRemoved(sbn);

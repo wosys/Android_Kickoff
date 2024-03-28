@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,6 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.catalog.framework.annotations.Sample;
@@ -52,6 +51,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 /**
  * @Description 权限列表
@@ -66,28 +66,28 @@ import java.util.Locale;
         //    owners = ["wintmain"],
         tags = "A-Self_demos")
 public class MyPermissionActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private static final String TAG = "MyPermissionActivity";
     private final SensorEventListener mSensorEventListener =
             new SensorEventListener() {
                 @Override
                 public void onSensorChanged(SensorEvent event) {
-                    Log.w("onSensorChanged", "event = " + event);
+                    Log.w(TAG, "onSensorChanged event = " + event);
                     switch (event.sensor.getType()) {
-                        case Sensor.TYPE_STEP_COUNTER:
-                            Log.w("XPermissions", "开机以来当天总步数：" + event.values[0]);
-                            break;
-                        case Sensor.TYPE_STEP_DETECTOR:
+                        case Sensor.TYPE_STEP_COUNTER -> Log.w(TAG, "开机以来当天总步数：" + event.values[0]);
+                        case Sensor.TYPE_STEP_DETECTOR -> {
                             if (event.values[0] == 1) {
-                                Log.w("XPermissions", "当前走了一步");
+                                Log.w(TAG, "当前走了一步");
                             }
-                            break;
-                        default:
-                            break;
+                        }
+                        default -> {
+                        }
                     }
                 }
 
                 @Override
                 public void onAccuracyChanged(Sensor sensor, int accuracy) {
-                    Log.w("onAccuracyChanged", String.valueOf(accuracy));
+                    Log.w(TAG, "onAccuracyChanged" + accuracy);
                 }
             };
 
@@ -353,12 +353,12 @@ public class MyPermissionActivity extends AppCompatActivity implements View.OnCl
                                                                                         .this,
                                                                                 permissions)));
                                                 new Thread(
-                                                                new Runnable() {
-                                                                    @Override
-                                                                    public void run() {
-                                                                        getAllImagesFromGallery();
-                                                                    }
-                                                                })
+                                                        new Runnable() {
+                                                            @Override
+                                                            public void run() {
+                                                                getAllImagesFromGallery();
+                                                            }
+                                                        })
                                                         .start();
                                             });
                         }
@@ -564,9 +564,7 @@ public class MyPermissionActivity extends AppCompatActivity implements View.OnCl
                                                                 .demo_obtain_permission_success_hint),
                                                 PermissionNameConvert.getPermissionString(
                                                         MyPermissionActivity.this, permissions)));
-                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                                    toggleNotificationListenerService();
-                                }
+                                toggleNotificationListenerService();
                             });
 
         } else if (viewId == R.id.btn_main_request_usage_stats_permission) {
@@ -722,7 +720,6 @@ public class MyPermissionActivity extends AppCompatActivity implements View.OnCl
         ToastUtils.show(text);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
     private void toggleNotificationListenerService() {
         PackageManager packageManager = getPackageManager();
         packageManager.setComponentEnabledSetting(
@@ -736,15 +733,17 @@ public class MyPermissionActivity extends AppCompatActivity implements View.OnCl
                 PackageManager.DONT_KILL_APP);
     }
 
-    /** 获取所有图片 */
+    /**
+     * 获取所有图片
+     */
     private void getAllImagesFromGallery() {
         String[] projection = {
-            MediaStore.Images.Media._ID,
-            MediaStore.Images.Media.DATA,
-            MediaStore.MediaColumns.TITLE,
-            MediaStore.Images.Media.SIZE,
-            MediaStore.Images.ImageColumns.LATITUDE,
-            MediaStore.Images.ImageColumns.LONGITUDE
+                MediaStore.Images.Media._ID,
+                MediaStore.Images.Media.DATA,
+                MediaStore.MediaColumns.TITLE,
+                MediaStore.Images.Media.SIZE,
+                MediaStore.Images.ImageColumns.LATITUDE,
+                MediaStore.Images.ImageColumns.LONGITUDE
         };
 
         final String orderBy = MediaStore.Video.Media.DATE_TAKEN;
@@ -758,7 +757,7 @@ public class MyPermissionActivity extends AppCompatActivity implements View.OnCl
                                 null,
                                 orderBy + " DESC");
 
-        int idIndex = ((Cursor) cursor).getColumnIndexOrThrow(MediaStore.MediaColumns._ID);
+        int idIndex = ((Cursor) Objects.requireNonNull(cursor)).getColumnIndexOrThrow(MediaStore.MediaColumns._ID);
         int pathIndex = cursor.getColumnIndex(MediaStore.MediaColumns.DATA);
 
         while (cursor.moveToNext()) {
@@ -799,24 +798,24 @@ public class MyPermissionActivity extends AppCompatActivity implements View.OnCl
                 int longitudeIndex =
                         cursor.getColumnIndexOrThrow(MediaStore.Images.ImageColumns.LONGITUDE);
                 latLong =
-                        new float[] {
-                            cursor.getFloat(latitudeIndex), cursor.getFloat(longitudeIndex)
+                        new float[]{
+                                cursor.getFloat(latitudeIndex), cursor.getFloat(longitudeIndex)
                         };
             }
 
             if (latLong[0] != 0 && latLong[1] != 0) {
-                Log.i("XPermissions", "获取到图片的经纬度：" + filePath + "，" + Arrays.toString(latLong));
-                Log.i(
-                        "XPermissions",
-                        "图片经纬度所在的地址：" + latLongToAddressString(latLong[0], latLong[1]));
+                Log.i(TAG, "获取到图片的经纬度：" + filePath + "，" + Arrays.toString(latLong));
+                Log.i(TAG, "图片经纬度所在的地址：" + latLongToAddressString(latLong[0], latLong[1]));
             } else {
-                Log.i("XPermissions", "该图片获取不到经纬度：" + filePath);
+                Log.i(TAG, "该图片获取不到经纬度：" + filePath);
             }
         }
         cursor.close();
     }
 
-    /** 将经纬度转换成地址 */
+    /**
+     * 将经纬度转换成地址
+     */
     private String latLongToAddressString(float latitude, float longitude) {
         String addressString = "";
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
@@ -824,27 +823,26 @@ public class MyPermissionActivity extends AppCompatActivity implements View.OnCl
             List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
             if (addresses != null) {
                 Address returnedAddress = addresses.get(0);
-                StringBuilder strReturnedAddress = new StringBuilder("");
+                StringBuilder strReturnedAddress = new StringBuilder();
 
                 for (int i = 0; i <= returnedAddress.getMaxAddressLineIndex(); i++) {
                     strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
                 }
                 addressString = strReturnedAddress.toString();
             } else {
-                Log.w("XXPermissions", "没有返回地址");
+                Log.w(TAG, "没有返回地址");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            Log.w("XXPermissions", "无法获取到地址");
+            Log.w(TAG, "无法获取到地址");
         }
         return addressString;
     }
 
-    /** 添加步数监听 */
+    /**
+     * 添加步数监听
+     */
     private void addCountStepListener() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-            return;
-        }
         SensorManager manager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
         Sensor stepSensor = manager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
@@ -875,7 +873,7 @@ public class MyPermissionActivity extends AppCompatActivity implements View.OnCl
             }
 
             for (PackageInfo info : packageInfoList) {
-                Log.i("XPermissions", "应用包名：" + info.packageName);
+                Log.i(TAG, "应用包名：" + info.packageName);
             }
         } catch (Throwable t) {
             t.printStackTrace();

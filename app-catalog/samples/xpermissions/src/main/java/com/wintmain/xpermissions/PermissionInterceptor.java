@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,21 @@ import lib.wintmain.xpermissions.XPermissions;
 import java.util.ArrayList;
 import java.util.List;
 
-/** desc : 权限申请拦截器 */
+/**
+ * 权限申请拦截器
+ */
 public final class PermissionInterceptor implements IPermissionInterceptor {
 
     public static final Handler HANDLER = new Handler(Looper.getMainLooper());
 
-    /** 权限申请标记 */
+    /**
+     * 权限申请标记
+     */
     private boolean mRequestFlag;
 
-    /** 权限申请说明 Popup */
+    /**
+     * 权限申请说明 Popup
+     */
     private PopupWindow mPermissionPopup;
 
     @Override
@@ -101,9 +107,7 @@ public final class PermissionInterceptor implements IPermissionInterceptor {
                         if (!mRequestFlag) {
                             return;
                         }
-                        if (activity.isFinishing()
-                                || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1
-                                        && activity.isDestroyed())) {
+                        if (activity.isFinishing() || activity.isDestroyed()) {
                             return;
                         }
                         showPopupWindow(activity, decorView, message);
@@ -136,19 +140,6 @@ public final class PermissionInterceptor implements IPermissionInterceptor {
                             })
                     .show();
         }
-    }
-
-    @Override
-    public void grantedPermissionRequest(
-            @NonNull Activity activity,
-            @NonNull List<String> allPermissions,
-            @NonNull List<String> grantedPermissions,
-            boolean allGranted,
-            @Nullable OnPermissionCallback callback) {
-        if (callback == null) {
-            return;
-        }
-        callback.onGranted(grantedPermissions, allGranted);
     }
 
     @Override
@@ -268,10 +259,7 @@ public final class PermissionInterceptor implements IPermissionInterceptor {
             List<String> allPermissions,
             List<String> deniedPermissions,
             OnPermissionCallback callback) {
-        if (activity == null
-                || activity.isFinishing()
-                || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1
-                        && activity.isDestroyed())) {
+        if (activity == null || activity.isFinishing() || activity.isDestroyed()) {
             return;
         }
 
