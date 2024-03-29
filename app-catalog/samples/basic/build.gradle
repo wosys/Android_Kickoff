@@ -22,4 +22,5 @@ dependencies {
     implementation libs.androidx.activity.compose
     implementation libs.casa.ui
     implementation libs.androidx.recyclerviewExt
+    implementation libs.androidx.cardview
 }

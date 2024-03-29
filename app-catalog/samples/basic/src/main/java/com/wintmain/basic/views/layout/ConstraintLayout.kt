@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.basic.views.constraintlayout
+package com.wintmain.basic.views.layout
 
 import android.os.Bundle
 import android.view.View
@@ -122,3 +122,11 @@ class ConstraintSetFragment : Fragment(R.layout.constraint_set_main) {
     tags = ["android-samples", "constraint-layout"],
 )
 class GuidelinesFragment : Fragment(R.layout.guidelines)
+
+@Sample(
+    name = "CardView",
+    description = "创建卡片式布局",
+    documentation = "",
+    tags = ["android-samples"],
+)
+class CardViewFragment : Fragment(R.layout.card_view)

@@ -82,6 +82,8 @@ androidx-recyclerviewExt = { group = "androidx.recyclerview", name = "recyclervi
 # For control over item selection of both touch and mouse driven selection
 androidx-recyclerview-selection = "androidx.recyclerview:recyclerview-selection:1.1.0"
 
+androidx-cardview = "androidx.cardview:cardview:1.0.0"
+
 androidx-coreExt = "androidx.core:core-ktx:1.12.0"
 androidx-annotation = "androidx.annotation:annotation:1.7.1"
 androidx-fragment = "androidx.fragment:fragment-ktx:1.6.2"
