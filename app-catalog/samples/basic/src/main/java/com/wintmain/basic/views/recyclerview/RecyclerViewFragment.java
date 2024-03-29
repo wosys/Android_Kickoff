@@ -94,12 +94,8 @@ public class RecyclerViewFragment extends Fragment {
         });
 
         mGridLayoutRadioButton = rootView.findViewById(R.id.grid_layout_rb);
-        mGridLayoutRadioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setRecyclerViewLayoutManager(LayoutManagerType.GRID_LAYOUT_MANAGER);
-            }
-        });
+        mGridLayoutRadioButton.setOnClickListener(v ->
+                setRecyclerViewLayoutManager(LayoutManagerType.GRID_LAYOUT_MANAGER));
 
         return rootView;
     }
@@ -114,6 +110,9 @@ public class RecyclerViewFragment extends Fragment {
 
         // If a layout manager has already been set, get current scroll position.
         if (mRecyclerView.getLayoutManager() != null) {
+            // java.lang.ClassCastException:
+            // androidx.recyclerview.widget.StaggeredGridLayoutManager cannot be cast to
+            // androidx.recyclerview.widget.LinearLayoutManager
             scrollPosition = ((LinearLayoutManager) mRecyclerView.getLayoutManager())
                     .findFirstCompletelyVisibleItemPosition();
         }
