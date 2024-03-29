@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.basic.networkconnectivity;
+package com.wintmain.basic.telephony.networkconnectivity;
 
 import android.net.NetworkInfo;
 

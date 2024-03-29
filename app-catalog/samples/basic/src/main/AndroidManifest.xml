@@ -32,24 +32,24 @@
             android:theme="@style/Theme.AppCompat.DayNight" />
         <!-- callnotification START-->
         <activity
-            android:name=".callnotification.CallNotificationSample"
+            android:name=".telephony.callnotification.CallNotificationSample"
             android:launchMode="singleTop"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight">
         </activity>
-        <receiver android:name=".callnotification.CallNotificationSample$NotificationReceiver"
+        <receiver android:name=".telephony.callnotification.CallNotificationSample$NotificationReceiver"
             android:exported="false"/>
         <!-- callnotification END-->
 
         <!-- networkConnectivity START-->
         <activity
-            android:name="com.wintmain.basic.networkconnectivity.NetworkConnActivity"
+            android:name=".telephony.networkconnectivity.NetworkConnActivity"
             android:theme="@style/Theme.AppCompat.DayNight"
             android:exported="true" />
         <!-- networkConnectivity END-->
 
         <!-- recyclerview START-->
-        <activity android:name=".recyclerview.RecyclerViewActivity"
+        <activity android:name=".views.recyclerview.RecyclerViewActivity"
             android:theme="@style/Theme.AppCompat.DayNight"
             android:exported="true">
         </activity>

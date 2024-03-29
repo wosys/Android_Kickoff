@@ -43,7 +43,7 @@
         </ScrollView>
 
         <androidx.fragment.app.FragmentContainerView
-            android:name="com.wintmain.basic.recyclerview.logger.LogFragment"
+            android:name="com.wintmain.basic.views.recyclerview.logger.LogFragment"
             android:id="@+id/log_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

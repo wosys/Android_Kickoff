@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.basic.callnotification
+package com.wintmain.basic.telephony.callnotification
 
 import android.Manifest
 import android.content.BroadcastReceiver

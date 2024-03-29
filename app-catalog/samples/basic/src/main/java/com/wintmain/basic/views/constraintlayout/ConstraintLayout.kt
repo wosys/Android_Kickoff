@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.basic.constraintlayout
+package com.wintmain.basic.views.constraintlayout
 
 import android.os.Bundle
 import android.view.View
