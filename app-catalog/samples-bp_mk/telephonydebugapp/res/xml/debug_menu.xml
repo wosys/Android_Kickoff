@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:textStyle="bold"
+        android:title="@string/connectivity_category_title">
+        <PreferenceScreen
+            android:key="connectivity_debug"
+            android:title="@string/connectivity_debug_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.wintmain.telephonydebugapp"
+                android:targetClass="com.wintmain.telephonydebugapp.ConnectivityDebugActivity"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:textStyle="bold"
+        android:title="@string/network_category_title">
+        <PreferenceScreen
+            android:key="network_debug"
+            android:title="@string/network_debug_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.wintmain.telephonydebugapp"
+                android:targetClass="com.wintmain.telephonydebugapp.NetworkDebugActivity"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:textStyle="bold"
+        android:title="@string/sim_category_title">
+        <PreferenceScreen
+            android:key="sim_debug"
+            android:title="@string/sim_debug_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.wintmain.telephonydebugapp"
+                android:targetClass="com.wintmain.telephonydebugapp.SimDebugActivity"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>

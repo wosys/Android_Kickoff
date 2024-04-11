@@ -1,0 +1,150 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string-array name="rat_entries">
+        <item>Unknown</item>
+        <item>GPRS</item>
+        <item>EDGE</item>
+        <item>UMTS</item>
+        <item>IS95A</item>
+        <item>IS95B</item>
+        <item>1xRTT</item>
+        <item>EVDO_0</item>
+        <item>EVDO_A</item>
+        <item>HSDPA</item>
+        <item>HSUPA</item>
+        <item>HSPA</item>
+        <item>EVDO_B</item>
+        <item>EHRPD</item>
+        <item>LTE</item>
+        <item>HSPAP</item>
+        <item>GSM</item>
+        <item>TD-SCDMA</item>
+        <item>LTE_CA</item>
+        <item>NR</item>
+    </string-array>
+    <string-array translatable="false" name="rat_values">
+        <!-- Unknown -->
+        <item>0</item>
+        <!-- GPRS -->
+        <item>1</item>
+        <!-- EDGE -->
+        <item>2</item>
+        <!-- UMTS -->
+        <item>3</item>
+        <!-- IS95A -->
+        <item>4</item>
+        <!-- IS95B -->
+        <item>5</item>
+        <!-- 1xRTT -->
+        <item>6</item>
+        <!-- EVDO_0 -->
+        <item>7</item>
+        <!-- EVDO_A -->
+        <item>8</item>
+        <!-- HSDPA -->
+        <item>9</item>
+        <!-- HSUPA -->
+        <item>10</item>
+        <!-- HSPA -->
+        <item>11</item>
+        <!-- EVDO_B -->
+        <item>12</item>
+        <!-- EHRPD -->
+        <item>13</item>
+        <!-- LTE -->
+        <item>14</item>
+        <!-- HSPAP -->
+        <item>15</item>
+        <!-- GSM -->
+        <item>16</item>
+        <!-- TD-SCDMA -->
+        <item>17</item>
+        <!-- LTE_CA -->
+        <item>19</item>
+        <!-- NR -->
+        <item>20</item>
+    </string-array>
+
+    <string-array name="reg_state_entries">
+        <item>In service</item>
+        <item>Out of service</item>
+        <item>Emergency only</item>
+        <item>Power off</item>
+    </string-array>
+    <string-array translatable="false" name="reg_state_values">
+        <!-- In service -->
+        <item>0</item>
+        <!-- Out of service -->
+        <item>1</item>
+        <!-- Emergency only -->
+        <item>2</item>
+        <!-- Power off -->
+        <item>3</item>
+    </string-array>
+
+    <string-array name="nr_state_entries">
+        <item>None</item>
+        <item>NR restricted</item>
+        <item>NR not restrictedd</item>
+        <item>NR connected</item>
+    </string-array>
+    <string-array translatable="false" name="nr_state_values">
+        <!-- NR none  -->
+        <item>0</item>
+        <!-- NR restricted -->
+        <item>1</item>
+        <!-- NR not restricted -->
+        <item>2</item>
+        <!-- NR connected -->
+        <item>3</item>
+    </string-array>
+
+    <string-array name="nr_frequency_entries">
+        <item>Unknown</item>
+        <item>Low</item>
+        <item>Mid</item>
+        <item>High</item>
+        <item>Mmwave</item>
+    </string-array>
+    <string-array translatable="false" name="nr_frequency_values">
+        <!-- The frequency is unknown  -->
+        <item>0</item>
+        <!-- The frequency is below 1GHz -->
+        <item>1</item>
+        <!-- The frequency is between 1GHz to 3GHz -->
+        <item>2</item>
+        <!-- The frequency range is between 3GHz and 6GHz -->
+        <item>3</item>
+        <!-- The frequency range is above 6GHz(millimeter wave frequency). -->
+        <item>4</item>
+    </string-array>
+
+    <string-array name="roaming_type_entries">
+        <item>Not roaming(Home)</item>
+        <item>Roaming unknown</item>
+        <item>Domestic roaming</item>
+        <item>International roaming</item>
+    </string-array>
+    <string-array translatable="false" name="roaming_type_values">
+        <!-- Not roaming, home network -->
+        <item>0</item>
+        <!-- In roaming, can't know domestic or international -->
+        <item>1</item>
+        <!-- Domestic roaming -->
+        <item>2</item>
+        <!-- International roaming -->
+        <item>3</item>
+    </string-array>
+
+    <string-array name="sim_entries">
+        <item>SLOT1</item>
+        <item>SLOT2</item>
+    </string-array>
+    <string-array translatable="false" name="sim_values">
+        <!-- SIM1's number -->
+        <item>0</item>
+        <!-- SIM2's number -->
+        <item>1</item>
+    </string-array>
+
+</resources>

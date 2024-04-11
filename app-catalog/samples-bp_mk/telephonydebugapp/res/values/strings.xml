@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+           xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="telephonydebug">TelephonyDebugApp</string>
+
+    <string name="connectivity_category_title">Connectivity</string>
+    <string name="connectivity_debug_title">Connectivity Debug</string>
+    <string name="connectivity_request">Connectivity Request:</string>
+    <string name="request_button">REQUEST</string>
+    <string name="release_button">RELEASE</string>
+
+    <string name="network_category_title">Network</string>
+    <string name="network_debug_title">Network Debug</string>
+    <string name="mcc_mnc">MccMnc</string>
+    <string name="network_name">Network Name</string>
+    <string name="network_rat">Network RAT</string>
+    <string name="network_state">Network State</string>
+    <string name="network_roaming_type">Network Roaming Type</string>
+    <string name="voice_rat">Voice RAT</string>
+    <string name="voice_state">Voice State</string>
+    <string name="voice_roaming_type">Voice Roaming Type</string>
+    <string name="data_rat">Data RAT</string>
+    <string name="data_state">Data State</string>
+    <string name="data_roaming_type">Data Roaming Type</string>
+    <string name="nr_state">NR State</string>
+    <string name="nr_frequency">NR Frequency Range</string>
+    <string name="set_network_button">SET NETWORK</string>
+    <string name="reset_network_button">RESET</string>
+
+    <string name="sim_category_title">SIM</string>
+    <string name="sim_debug_title">SIM Debug</string>
+    <string name="sim">SLOT</string>
+    <string name="sim_imsi">IMSI</string>
+    <string name="sim_iccid">ICCID</string>
+    <string name="sim_gid1">GID1</string>
+    <string name="sim_gid2">GID2</string>
+    <string name="sim_pnn">PNN</string>
+    <string name="sim_spn">SPN</string>
+    <string name="sim_apn">APN</string>
+    <string name="override_sim_button">OVERRIDE</string>
+    <string name="reset_sim_button">RESET</string>
+</resources>
