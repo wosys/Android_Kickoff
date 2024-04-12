@@ -18,13 +18,13 @@
     <!-- Base application theme. -->
     <style name="Theme.Pre_Job" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/color2</item>
+        <item name="colorPrimaryVariant">@color/color3</item>
+        <item name="colorOnPrimary">@color/color4</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/color5</item>
+        <item name="colorSecondaryVariant">@color/color6</item>
+        <item name="colorOnSecondary">@color/color7</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

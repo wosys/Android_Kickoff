@@ -18,7 +18,7 @@
 
     <style name="test_style">
         <item name="android:textSize">50px</item>
-        <item name="android:textColor">@color/purple_200</item>
+        <item name="android:textColor">@color/color1</item>
     </style>
 
     <style name="text">
