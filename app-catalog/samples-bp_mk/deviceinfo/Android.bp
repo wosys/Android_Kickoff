@@ -1,0 +1,15 @@
+android_app {
+    name: "DeviceInfo",
+
+    srcs: ["src/**/*.java"],
+
+    libs: [
+        "telephony-common",
+        "extphonelib",
+    ],
+
+    certificate: "platform",
+    platform_apis: true,
+    system_ext_specific: true,
+
+}
