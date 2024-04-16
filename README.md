@@ -15,9 +15,8 @@ For personal study use only.
 
 ## Topics List[update here]
 
-* [AndroidPfT](app-catalog/samples/androidpft)
+* [AndroidRes](app-catalog/samples/androidres)
 * [Basic](app-catalog/samples/basic)
-* [DeviceInfo](app-catalog/samples/deviceinfo)
 * [MyMusicPlayer](app-catalog/samples/mymusicplayer)
 * [ShadowLayout](app-catalog/samples/shadowlayout)
 * [Titlebar](app-catalog/samples/titlebar)
