@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.androidpft;
+package com.wintmain.basic;
 
 import android.app.Application;
 import android.content.Context;

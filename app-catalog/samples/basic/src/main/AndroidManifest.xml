@@ -56,6 +56,11 @@
         <!-- recyclerview END-->
 
         <activity
+            android:name=".PlaceHolderActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
             android:name=".prejob.uiDemo.EpOne_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />

@@ -1,0 +1,14 @@
+apply from: "$rootDir/gradle/sample-build.gradle"
+
+android {
+    namespace 'com.wintmain.aospres'
+
+    sourceSets {
+        main {
+            // 修改这个路径，或者复制过来的文件夹命名成 res
+            res.srcDirs(
+                    'src/main/res',
+            )
+        }
+    }
+}
