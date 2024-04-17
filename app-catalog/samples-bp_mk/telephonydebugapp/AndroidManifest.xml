@@ -2,13 +2,15 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
-        package="com.wintmain.telephonydebugapp"
+        package="com.wintmain"
         android:sharedUserId="android.uid.phone"
         android:versionCode="1" >
 
-    <uses-sdk android:minSdkVersion="23" />
+    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="33" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CONTROL_INCALL_EXPERIENCE" />
+    <uses-permission android:name="android.permission.QTI_SYSTEM_SERVICE"/>
 
     <application
         android:allowBackup="false"
@@ -16,7 +18,7 @@
         android:label="@string/telephonydebug">
 
         <activity
-            android:name=".TelephonyDebugActivity"
+            android:name=".telephonydebugapp.TelephonyDebugActivity"
             android:label="@string/telephonydebug"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTop"
@@ -29,7 +31,7 @@
         </activity>
 
         <activity
-            android:name=".ConnectivityDebugActivity"
+            android:name=".telephonydebugapp.ConnectivityDebugActivity"
             android:label="@string/connectivity_debug_title"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTop"
@@ -42,7 +44,7 @@
         </activity>
 
         <activity
-            android:name=".NetworkDebugActivity"
+            android:name=".telephonydebugapp.NetworkDebugActivity"
             android:label="@string/network_debug_title"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTop"
@@ -55,7 +57,7 @@
         </activity>
 
         <activity
-            android:name=".SimDebugActivity"
+            android:name=".telephonydebugapp.SimDebugActivity"
             android:label="@string/sim_debug_title"
             android:process="com.android.phone"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -67,6 +69,26 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <!-- <action android:name="org.codeaurora.intent.action.ACTION_DEVICEINFO" />不会在后台-->
+        <activity android:name=".deviceinfo.DeviceInfo"
+            android:process="com.android.phone"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".deviceinfo.DeviceInfoReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data android:host="00001111" android:scheme="android_secret_code" />
+            </intent-filter>
+        </receiver>
 
     </application>
 </manifest>

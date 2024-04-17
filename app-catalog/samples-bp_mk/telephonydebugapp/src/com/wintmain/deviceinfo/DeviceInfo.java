@@ -1,20 +1,29 @@
+/*
+ * Copyright 2023-2024 wintmain
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.wintmain.deviceinfo;
 
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.content.res.Resources;
 import android.content.SharedPreferences;
 import android.os.AsyncResult;
 import android.os.Binder;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.os.Handler;
 import android.os.Message;
-import android.os.ServiceManager;
-import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -28,6 +37,7 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousFileChannel;
@@ -46,7 +56,6 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.IccCard;
 import com.android.internal.telephony.uicc.IccUtils;
 import com.android.internal.telephony.PhoneFactory;
-import com.android.internal.telephony.uicc.IccConstants;
 import com.android.internal.telephony.uicc.IccFileHandler;
 import com.android.internal.telephony.uicc.IccRecords;
 import com.android.internal.telephony.uicc.UiccController;
@@ -58,6 +67,7 @@ import org.json.JSONObject;
 import com.qti.extphone.ExtTelephonyManager;
 import com.qti.extphone.QtiImeiInfo;
 import com.qti.extphone.ServiceCallback;
+import com.wintmain.R;
 
 /**
  * Display the following information # Battery Strength : TODO # Uptime # Awake
@@ -74,7 +84,6 @@ public class DeviceInfo extends PreferenceActivity {
     private static final String KEY_PRL_VERSION = "prl_version";
     private static final String KEY_ANDROID_VERSION = "android_version";
     private static final String KEY_SOFTWARE_VERSION = "software_version";
-    private static final String KEY_PHONE_NUMBER = "number";
     private static final String KEY_IMSI = "imsi";
     private static final String KEY_UIM_ID = "uim_id";
     private static final String KEY_SID_NUMBER = "sid_number";
@@ -85,7 +94,6 @@ public class DeviceInfo extends PreferenceActivity {
     private static final String KEY_ICCID_NUMBER = "iccid_number";
     private static final String KEY_IMEI_NUMBER_1 = "imei_number_1";
     private static final String KEY_IMEI_NUMBER_2 = "imei_number_2";
-    private static final String KEY_META_VERSION = "meta_info";
 
     private static final String SP_MEID = "sp_meid";
     private static final String SP_ESN = "sp_esn";
@@ -467,6 +475,16 @@ public class DeviceInfo extends PreferenceActivity {
 
         setPreferenceSummary();
         mMetaInfoFetcherProxy.start();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        final int itemId = item.getItemId();
+        if (itemId == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /**

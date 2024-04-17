@@ -1,5 +1,5 @@
 android_app {
-    name: "TelephonyDebugApp",
+    name: "TelephonyDebugAppExt",
 
     certificate: "platform",
     platform_apis: true,
@@ -9,7 +9,10 @@ android_app {
         enabled: false,
     },
 
-    libs:["telephony-common"],
+    libs: [
+        "telephony-common",
+        "extphonelib",
+    ],
 
     srcs: ["src/**/*.java"],
 }

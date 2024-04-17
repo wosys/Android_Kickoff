@@ -25,7 +25,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.view.MenuItem;
 
-import com.wintmain.telephonydebugapp.R;
+import com.wintmain.R;
 
 public class TelephonyDebugActivity extends PreferenceActivity {
     public static class TelephonyDebugFragment extends PreferenceFragment

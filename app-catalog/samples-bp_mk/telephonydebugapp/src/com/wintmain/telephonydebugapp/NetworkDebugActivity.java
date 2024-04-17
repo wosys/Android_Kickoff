@@ -36,7 +36,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.wintmain.telephonydebugapp.R;
+import com.wintmain.R;
 
 public class NetworkDebugActivity extends PreferenceActivity
         implements Preference.OnPreferenceChangeListener {

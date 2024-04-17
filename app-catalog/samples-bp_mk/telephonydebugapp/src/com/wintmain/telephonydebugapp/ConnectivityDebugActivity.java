@@ -35,7 +35,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.wintmain.telephonydebugapp.R;
+import com.wintmain.R;
 
 public class ConnectivityDebugActivity extends Activity {
 
