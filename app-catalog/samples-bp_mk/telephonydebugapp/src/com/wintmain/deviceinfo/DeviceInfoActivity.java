@@ -73,8 +73,8 @@ import com.wintmain.R;
  * Display the following information # Battery Strength : TODO # Uptime # Awake
  * Time # XMPP/buzz/tickle status : TODO
  */
-public class DeviceInfo extends PreferenceActivity {
-    private static final String TAG = DeviceInfo.class.getSimpleName();
+public class DeviceInfoActivity extends PreferenceActivity {
+    private static final String TAG = DeviceInfoActivity.class.getSimpleName();
 
     private static final String KEY_DEVICE_MODEL = "device_model";
     private static final String KEY_HW_VERSION = "hardware_version";
@@ -208,11 +208,11 @@ public class DeviceInfo extends PreferenceActivity {
         private static final String KEY_META_BUILD_INFO = "Metabuild_Info";
         private static final String KEY_META_BUILD_ID = "Meta_Build_ID";
 
-        private DeviceInfo mListener;
+        private DeviceInfoActivity mListener;
 
-        public MetaInfoFetcherProxy (DeviceInfo deviceInfo) {
+        public MetaInfoFetcherProxy (DeviceInfoActivity deviceInfoActivity) {
             super();
-            mListener = deviceInfo;
+            mListener = deviceInfoActivity;
         }
 
         @Override
@@ -455,6 +455,10 @@ public class DeviceInfo extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        if (getActionBar() != null) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         addPreferencesFromResource(R.xml.device_info);
 
         mMetaInfoFetcherProxy = new MetaInfoFetcherProxy(this);

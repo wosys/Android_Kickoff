@@ -21,6 +21,8 @@
             android:name=".telephonydebugapp.TelephonyDebugActivity"
             android:label="@string/telephonydebug"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:excludeFromRecents="false"
+            android:noHistory="false"
             android:launchMode="singleTop"
             android:resizeableActivity="true"
             android:exported="true">
@@ -71,10 +73,11 @@
         </activity>
 
         <!-- <action android:name="org.codeaurora.intent.action.ACTION_DEVICEINFO" />不会在后台-->
-        <activity android:name=".deviceinfo.DeviceInfo"
+        <activity android:name=".deviceinfo.DeviceInfoActivity"
             android:process="com.android.phone"
-            android:excludeFromRecents="true"
-            android:noHistory="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:resizeableActivity="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
