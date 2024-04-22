@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">设备信息</string>
     <string name="device_info_unknown">未知</string>
-    <string name="model_number">型号</string>
+    <string name="model_number">Meta信息</string>
     <string name="hardware_version">硬件版本</string>
     <string name="baseband_version">基带版本</string>
     <string name="prl_version">PRL版本</string>

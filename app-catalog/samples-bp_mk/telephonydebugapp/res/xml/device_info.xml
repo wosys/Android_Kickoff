@@ -3,7 +3,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/device_info_title">
     <!-- for device model version -->
-    <Preference android:key="device_model"
+    <Preference android:key="device_meta"
         style="?android:attr/preferenceInformationStyle"
         android:title="@string/model_number"
         android:summary="@string/device_info_unknown"
@@ -15,14 +15,14 @@
         android:summary="@string/device_info_unknown"
         android:persistent="false" />
     <!-- for meid number -->
-    <Preference android:key="meid_number"
+    <Preference android:key="meid_esn_number"
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/meid"
+        android:title="@string/meid_esn"
         android:summary="@string/device_info_unknown"
         android:persistent="false" />
-    <Preference android:key="esn_number"
+    <Preference android:key="telephone_number"
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/esn"
+        android:title="@string/my_number"
         android:summary="@string/device_info_unknown"
         android:persistent="false" />
     <!-- for baseband version -->
@@ -43,6 +43,7 @@
         android:title="@string/android_version"
         android:summary="@string/device_info_unknown"
         android:persistent="false" />
+    <!-- get sw version from prop or metainfo -->
     <Preference android:key="software_version"
         style="?android:attr/preferenceInformationStyle"
         android:title="@string/software_version"

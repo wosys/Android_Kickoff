@@ -45,10 +45,9 @@
     <string name="device_info_category_title">Device Info</string>
     <string name="device_info_title">Device Info</string>
     <string name="device_info_unknown">Unknown</string>
-    <string name="model_number">Model</string>
+    <string name="model_number">MetaInfo</string>
     <string name="hardware_version">Hardware version</string>
-    <string name="meid">MEID</string>
-    <string name="esn">ESN</string>
+    <string name="meid_esn">MEID_ESN</string>
     <string name="baseband_version">Baseband version</string>
     <string name="prl_version">PRL version</string>
     <string name="android_version">Android version</string>

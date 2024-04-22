@@ -27,47 +27,50 @@ import android.os.Message;
 import android.os.SystemProperties;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
-import android.preference.PreferenceScreen;
 import android.preference.PreferenceManager;
+import android.preference.PreferenceScreen;
 import android.telephony.CellLocation;
-import android.telephony.SubscriptionInfo;
-import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.Rlog;
+import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
+import android.telephony.cdma.CdmaCellLocation;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 
-import java.nio.ByteBuffer;
-import java.nio.channels.AsynchronousFileChannel;
-import java.nio.channels.CompletionHandler;
-import java.nio.CharBuffer;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CharacterCodingException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.io.IOException;
-import java.util.List;
-
-import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.IccCard;
-import com.android.internal.telephony.uicc.IccUtils;
+import com.android.internal.telephony.Phone;
+import com.android.internal.telephony.PhoneConstants;
 import com.android.internal.telephony.PhoneFactory;
 import com.android.internal.telephony.uicc.IccFileHandler;
 import com.android.internal.telephony.uicc.IccRecords;
+import com.android.internal.telephony.uicc.IccUtils;
 import com.android.internal.telephony.uicc.UiccController;
-import com.android.internal.telephony.PhoneConstants;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.android.settingslib.DeviceInfoUtils;
 
 import com.qti.extphone.ExtTelephonyManager;
 import com.qti.extphone.QtiImeiInfo;
 import com.qti.extphone.ServiceCallback;
 import com.wintmain.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.channels.AsynchronousFileChannel;
+import java.nio.channels.CompletionHandler;
+import java.nio.charset.CharacterCodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
 
 /**
  * Display the following information # Battery Strength : TODO # Uptime # Awake
@@ -76,10 +79,10 @@ import com.wintmain.R;
 public class DeviceInfoActivity extends PreferenceActivity {
     private static final String TAG = DeviceInfoActivity.class.getSimpleName();
 
-    private static final String KEY_DEVICE_MODEL = "device_model";
+    private static final String KEY_DEVICE_META = "device_meta";
     private static final String KEY_HW_VERSION = "hardware_version";
-    private static final String KEY_MEID = "meid_number";
-    private static final String KEY_ESN = "esn_number";
+    private static final String KEY_MEID_ESN = "meid_esn_number";
+    private static final String KEY_TELEPHONE_NUMBER = "telephone_number";
     private static final String KEY_BASEBAND_VERSION = "baseband_version";
     private static final String KEY_PRL_VERSION = "prl_version";
     private static final String KEY_ANDROID_VERSION = "android_version";
@@ -236,14 +239,8 @@ public class DeviceInfoActivity extends PreferenceActivity {
                 Rlog.e(TAG, "parsing failed as json format");
                 metaId = ret;
             } finally {
-                String model = null;
-                if (!TextUtils.isEmpty(metaId)) {
-                    String[] metaArray = metaId.split("\\.");
-                    if (metaArray.length > 0) {
-                        model = metaArray[0];
-                    }
-                }
-                mListener.onMetaInfoLoaded(metaId, model);
+                String swVer = SystemProperties.get("ro.software.version", metaId);
+                mListener.onMetaInfoLoaded(swVer, metaId);
             }
         }
     }
@@ -339,9 +336,8 @@ public class DeviceInfoActivity extends PreferenceActivity {
             AsyncResult ar = (AsyncResult) msg.obj;
             if (ar.exception == null) {
                 String[] respId = (String[])ar.result;
-                Log.d(TAG, "esn: " + respId[2] + " meid: " + respId[3]);
-                setSummaryText(KEY_ESN, respId[2]);
-                setSummaryText(KEY_MEID, respId[3]);
+                Log.d(TAG, "respId: " + respId);
+                setSummaryText(KEY_MEID_ESN, respId[3] + "-" + respId[2]);
                 // Need clear calling identity due to run in phone wiht system uid
                 final long token = Binder.clearCallingIdentity();
                 mSharedPreferences.edit().putString(SP_ESN, respId[2]).apply();
@@ -420,11 +416,9 @@ public class DeviceInfoActivity extends PreferenceActivity {
         for (Phone phone : PhoneFactory.getPhones()) {
             if (phone == null) continue;
 
-            Log.d(TAG, "Logical Modem id: " + phone.getModemUuId()
-                    + " phoneId: " + phone.getPhoneId());
+            Log.d(TAG, "Logical Modem id: " + phone.getModemUuId() + " phoneId: " + phone.getPhoneId());
             modemUuId = phone.getModemUuId();
-            if ((modemUuId == null) || (modemUuId.length() <= 0) ||
-                    modemUuId.isEmpty()) {
+            if ((modemUuId == null) || (modemUuId.length() <= 0) || modemUuId.isEmpty()) {
                 continue;
             }
             // Select the phone id based on modemUuid
@@ -646,9 +640,11 @@ public class DeviceInfoActivity extends PreferenceActivity {
 
         final PreferenceScreen prefSet = getPreferenceScreen();
         // get hardware
-        String hwVersion = SystemProperties.get("ro.hw_version", mUnknown);
-        if (TextUtils.isEmpty(hwVersion) || hwVersion.equals(mUnknown)) {
-            hwVersion = "PVT2.0";
+        String hwVersion = null;
+        try {
+            hwVersion = getDeviceModel();
+        } catch (Exception e) {
+            hwVersion = mUnknown;
         }
         setSummaryText(KEY_HW_VERSION, hwVersion);
 
@@ -658,11 +654,12 @@ public class DeviceInfoActivity extends PreferenceActivity {
         // get my phone number
         if (mPhone != null) {
             // get baseband version
-            String basebandVersion =
-                    mHandler.getBasebandVersionForPhone(mPhone.getPhoneId(), null);
+            String basebandVersion = mHandler.getBasebandVersionForPhone(mPhone.getPhoneId(), mUnknown);
             setSummaryText(KEY_BASEBAND_VERSION, basebandVersion);
 
             updateMeidEsn();
+
+            updatePhoneNumber();
 
             // get PRL version
             mHandler.getPrlVersion();
@@ -705,6 +702,25 @@ public class DeviceInfoActivity extends PreferenceActivity {
         }
     }
 
+    public static String getDeviceModel() {
+        // Use SettingLib, getMsvSuffix(), as example.
+        FutureTask<String> msvSuffixTask = new FutureTask<>(() -> DeviceInfoUtils.getMsvSuffix());
+
+        msvSuffixTask.run();
+        try {
+            // Wait for msv suffix value.
+            final String msvSuffix = msvSuffixTask.get();
+            return Build.MODEL + msvSuffix;
+        } catch (ExecutionException e) {
+            Log.e(TAG, "Execution error, so we only show model name");
+        } catch (InterruptedException e) {
+            Log.e(TAG, "Interruption error, so we only show model name");
+        }
+        // If we can't get an msv suffix value successfully,
+        // it's better to return model name.
+        return Build.MODEL;
+    }
+
     private void setSummaryText(String preferenceKey, String value) {
         Preference preference = findPreference(preferenceKey);
         if (preference == null)
@@ -730,14 +746,17 @@ public class DeviceInfoActivity extends PreferenceActivity {
         if (invalidMeid(meid) || invalidMeid(esn)) {
             mHandler.getDeviceIdentity();
         } else {
-            setSummaryText(KEY_ESN, esn);
-            setSummaryText(KEY_MEID, meid);
+            setSummaryText(KEY_MEID_ESN, meid + "-" + esn);
         }
     }
 
+    private void updatePhoneNumber() {
+        // TODO, update phone number here.
+        setSummaryText(KEY_TELEPHONE_NUMBER, mUnknown);
+    }
+
     private boolean invalidMeid(String meid) {
-        return TextUtils.isEmpty(meid) || meid.equals("0")
-                || meid.startsWith("00000000");
+        return TextUtils.isEmpty(meid) || meid.equals("0") || meid.startsWith("00000000");
     }
 
     @Override
@@ -750,10 +769,10 @@ public class DeviceInfoActivity extends PreferenceActivity {
     }
 
     // running in work thread
-    private void onMetaInfoLoaded(String metaVer, String model) {
+    private void onMetaInfoLoaded(String swVer, String metaVer) {
         runOnUiThread(()-> {
-            setSummaryText(KEY_SOFTWARE_VERSION, metaVer);
-            setSummaryText(KEY_DEVICE_MODEL, model);
+            setSummaryText(KEY_SOFTWARE_VERSION, swVer);
+            setSummaryText(KEY_DEVICE_META, metaVer);
         });
     }
 

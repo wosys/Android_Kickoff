@@ -9,6 +9,9 @@ android_app {
         enabled: false,
     },
 
+    // Use System - Settings libs.
+    defaults: ["SettingsLibDefaults"],
+
     libs: [
         "telephony-common",
         "extphonelib",
