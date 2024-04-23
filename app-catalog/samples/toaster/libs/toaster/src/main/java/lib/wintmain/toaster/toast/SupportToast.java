@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import android.app.Application;
 
 /**
  * @Description 不需要通知栏权限的 Toast @Author wintmain
- *
  * @mailto wosintmain@gmail.com> @Date 2022-11-27 16:58:05
  */
 final class SupportToast extends BaseToast {

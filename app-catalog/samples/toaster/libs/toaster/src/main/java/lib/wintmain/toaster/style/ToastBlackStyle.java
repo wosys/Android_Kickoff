@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 package lib.wintmain.toaster.style;
 
 import android.view.Gravity;
-
 import lib.wintmain.toaster.toast.IToastStyle;
 
 /** desc : 默认黑色样式实现 */

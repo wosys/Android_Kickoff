@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,12 +24,10 @@ import android.os.Looper;
 import android.provider.Settings;
 import android.view.WindowManager;
 import android.widget.Toast;
-
 import lib.wintmain.toaster.R;
 
 /**
  * @Description @Author wintmain
- *
  * @mailto wosintmain@gmail.com @Date 2022-11-27 17:00:48
  */
 final class ToastHelper implements Runnable {
@@ -60,7 +58,8 @@ final class ToastHelper implements Runnable {
             这里解释一下，为什么不复用 WindowManager.LayoutParams 这个对象
             因为如果复用了，不同 Activity 之间不能共用一个，第一个 Activity 调用显示方法可以显示出来，但是会导致后面的 Activity 都显示不出来
             又或者说，非第一次调用显示方法的 Activity 都会把这个显示请求推送给之前第一个调用显示的 Activity 上面，如果第一个 Activity 已经销毁，还会报以下异常
-            android.view.WindowManager$BadTokenException: Unable to add window -- token android.os.BinderProxy@ef1ccb6 is not valid; is your activity running?
+            android.view.WindowManager$BadTokenException: Unable to add window -- token android
+            .os.BinderProxy@ef1ccb6 is not valid; is your activity running?
             */
             WindowManager.LayoutParams params = new WindowManager.LayoutParams();
             // 为什么不能加 TYPE_TOAST，因为通知权限在关闭后设置显示的类型为Toast会报错

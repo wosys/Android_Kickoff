@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,12 +23,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import lib.wintmain.toaster.R;
 
 /**
  * @Description @Author wintmain
- *
  * @mailto wosintmain@gmail.com @Date 2022-11-15 23:00:41
  */
 public final class XToast extends Toast implements Runnable {
@@ -51,7 +49,9 @@ public final class XToast extends Toast implements Runnable {
                 return (TextView) view;
             } else if (view instanceof ViewGroup) {
                 TextView textView = getTextView((ViewGroup) view);
-                if (textView != null) return textView;
+                if (textView != null) {
+                    return textView;
+                }
             }
         }
         return null;
@@ -68,7 +68,9 @@ public final class XToast extends Toast implements Runnable {
             return;
         } else if (view instanceof ViewGroup) {
             this.mTextView = getTextView((ViewGroup) view);
-            if (this.mTextView != null) return;
+            if (this.mTextView != null) {
+                return;
+            }
         }
         // 布局中必须包含一个Textview作为Message对象
         throw new IllegalArgumentException("The layout must contain a TextView");

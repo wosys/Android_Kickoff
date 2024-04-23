@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,12 +23,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import lib.wintmain.toaster.R;
 
 /**
  * @Description @Author wintmain
- *
  * @mailto wosintmain@gmail.com @Date 2022-11-27 16:52:29
  */
 abstract class BaseToast extends Toast implements Runnable {
@@ -57,7 +55,9 @@ abstract class BaseToast extends Toast implements Runnable {
                 return (TextView) view;
             } else if (view instanceof ViewGroup) {
                 TextView textView = findTextView((ViewGroup) view);
-                if (textView != null) return textView;
+                if (textView != null) {
+                    return textView;
+                }
             }
         }
         return null;
@@ -73,7 +73,9 @@ abstract class BaseToast extends Toast implements Runnable {
             mMessageView = ((TextView) view.findViewById(R.id.toast_main_text_view_id));
             return;
         } else if (view instanceof ViewGroup) {
-            if ((mMessageView = findTextView((ViewGroup) view)) != null) return;
+            if ((mMessageView = findTextView((ViewGroup) view)) != null) {
+                return;
+            }
         }
         // 如果设置的布局没有包含一个 TextView 则抛出异常，必须要包含一个 TextView 作为 Message View
         throw new IllegalArgumentException("The layout must contain a TextView");

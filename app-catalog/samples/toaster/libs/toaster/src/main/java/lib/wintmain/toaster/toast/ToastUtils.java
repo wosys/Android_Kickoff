@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import lib.wintmain.toaster.R;
 import lib.wintmain.toaster.style.ToastBlackStyle;
 
@@ -318,11 +317,11 @@ public final class ToastUtils {
                 int value = (Integer) opPostNotificationValue.get(Integer.class);
                 return (Integer) checkOpNoThrowMethod.invoke(appOps, value, uid, pkg) == 0;
             } catch (NoSuchMethodException
-                    | NoSuchFieldException
-                    | InvocationTargetException
-                    | IllegalAccessException
-                    | RuntimeException
-                    | ClassNotFoundException ignored) {
+                     | NoSuchFieldException
+                     | InvocationTargetException
+                     | IllegalAccessException
+                     | RuntimeException
+                     | ClassNotFoundException ignored) {
                 return true;
             }
         } else {
