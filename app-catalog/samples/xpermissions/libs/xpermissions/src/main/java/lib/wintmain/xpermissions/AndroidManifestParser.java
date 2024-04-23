@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,7 @@ package lib.wintmain.xpermissions;
 import android.content.Context;
 import android.content.res.XmlResourceParser;
 import android.text.TextUtils;
-
 import androidx.annotation.NonNull;
-
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;

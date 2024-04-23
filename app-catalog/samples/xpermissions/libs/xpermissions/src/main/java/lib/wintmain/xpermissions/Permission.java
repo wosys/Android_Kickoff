@@ -22,7 +22,8 @@ import android.Manifest;
  * desc : 危险权限和特殊权限常量集，参考 {@link Manifest.permission} doc :
  * https://developer.android.google.cn/reference/android/Manifest.permission?hl=zh_cn
  * https://developer.android.google.cn/guide/topics/permissions/overview?hl=zh-cn#normal-dangerous
- * http://www.taf.org.cn/upload/AssociationStandard/TTAF%20004-2017%20Android%E6%9D%83%E9%99%90%E8%B0%83%E7%94%A8%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97.pdf
+ * http://www.taf.org.cn/upload/AssociationStandard/TTAF%20004-2017%20Android%E6%9D%83%E9%99%90
+ * %E8%B0%83%E7%94%A8%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97.pdf
  */
 @SuppressWarnings("unused")
 public final class Permission {
@@ -31,7 +32,8 @@ public final class Permission {
      * 读取应用列表权限（危险权限，电信终端产业协会联合各大中国手机厂商搞的一个权限）
      *
      * <p>Github issue 地址：https://github.com/getActivity/XXPermissions/issues/175
-     * 移动终端应用软件列表权限实施指南：http://www.taf.org.cn/StdDetail.aspx?uid=3A7D6656-43B8-4C46-8871-E379A3EA1D48&stdType=TAF
+     * 移动终端应用软件列表权限实施指南：http://www.taf.org.cn/StdDetail
+     * .aspx?uid=3A7D6656-43B8-4C46-8871-E379A3EA1D48&stdType=TAF
      *
      * <p>需要注意的是： 1. 需要在清单文件中注册 QUERY_ALL_PACKAGES 权限，否则在 Android 11 上面就算申请成功也是获取不到第三方安装列表信息的 2.
      * 这个权限在有的手机上面是授予状态，在有的手机上面是还没有授予，在有的手机上面是无法申请，能支持申请该权限的的厂商系统版本有： 华为：Harmony 3.0.0 及以上版本，Harmony
@@ -44,7 +46,8 @@ public final class Permission {
      * 闹钟权限（特殊权限，Android 12 新增的权限）
      *
      * <p>需要注意的是：这个权限和其他特殊权限不同的是，默认已经是授予状态，用户也可以手动撤销授权
-     * 官方文档介绍：https://developer.android.google.cn/about/versions/12/behavior-changes-12?hl=zh_cn#exact-alarm-permission
+     * 官方文档介绍：https://developer.android.google
+     * .cn/about/versions/12/behavior-changes-12?hl=zh_cn#exact-alarm-permission
      */
     public static final String SCHEDULE_EXACT_ALARM = "android.permission.SCHEDULE_EXACT_ALARM";
     /**
@@ -76,7 +79,8 @@ public final class Permission {
      * 悬浮窗权限（特殊权限，Android 6.0 新增的权限）
      *
      * <p>在 Android 10 及之前的版本能跳转到应用悬浮窗设置页面，而在 Android 11 及之后的版本只能跳转到系统设置悬浮窗管理列表了
-     * 官方解释：https://developer.android.google.cn/reference/android/provider/Settings#ACTION_MANAGE_OVERLAY_PERMISSION
+     * 官方解释：https://developer.android.google
+     * .cn/reference/android/provider/Settings#ACTION_MANAGE_OVERLAY_PERMISSION
      */
     public static final String SYSTEM_ALERT_WINDOW = "android.permission.SYSTEM_ALERT_WINDOW";
     /**
@@ -304,7 +308,8 @@ public final class Permission {
      * 处理拨出电话
      *
      * @deprecated 在 Android 10
-     * 已经过时，请见：https://developer.android.google.cn/reference/android/Manifest.permission?hl=zh_cn#PROCESS_OUTGOING_CALLS
+     * 已经过时，请见：https://developer.android.google.cn/reference/android/Manifest
+     * .permission?hl=zh_cn#PROCESS_OUTGOING_CALLS
      */
     @Deprecated
     public static final String PROCESS_OUTGOING_CALLS = "android.permission.PROCESS_OUTGOING_CALLS";

@@ -24,25 +24,14 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
+import android.view.*;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-
 import lib.wintmain.toaster.toast.ToastUtils;
-import lib.wintmain.xpermissions.IPermissionInterceptor;
-import lib.wintmain.xpermissions.OnPermissionCallback;
-import lib.wintmain.xpermissions.OnPermissionPageCallback;
-import lib.wintmain.xpermissions.Permission;
-import lib.wintmain.xpermissions.PermissionFragment;
-import lib.wintmain.xpermissions.XPermissions;
+import lib.wintmain.xpermissions.*;
 
 import java.util.ArrayList;
 import java.util.List;

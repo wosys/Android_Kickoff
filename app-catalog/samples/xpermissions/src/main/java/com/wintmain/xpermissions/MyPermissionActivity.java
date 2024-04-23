@@ -34,13 +34,10 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.catalog.framework.annotations.Sample;
-
 import lib.wintmain.toaster.toast.ToastUtils;
 import lib.wintmain.xpermissions.OnPermissionCallback;
 import lib.wintmain.xpermissions.Permission;
@@ -74,7 +71,8 @@ public class MyPermissionActivity extends AppCompatActivity implements View.OnCl
                 public void onSensorChanged(SensorEvent event) {
                     Log.w(TAG, "onSensorChanged event = " + event);
                     switch (event.sensor.getType()) {
-                        case Sensor.TYPE_STEP_COUNTER -> Log.w(TAG, "开机以来当天总步数：" + event.values[0]);
+                        case Sensor.TYPE_STEP_COUNTER -> Log.w(TAG,
+                                "开机以来当天总步数：" + event.values[0]);
                         case Sensor.TYPE_STEP_DETECTOR -> {
                             if (event.values[0] == 1) {
                                 Log.w(TAG, "当前走了一步");
@@ -757,7 +755,8 @@ public class MyPermissionActivity extends AppCompatActivity implements View.OnCl
                                 null,
                                 orderBy + " DESC");
 
-        int idIndex = ((Cursor) Objects.requireNonNull(cursor)).getColumnIndexOrThrow(MediaStore.MediaColumns._ID);
+        int idIndex = ((Cursor) Objects.requireNonNull(cursor)).getColumnIndexOrThrow(
+                MediaStore.MediaColumns._ID);
         int pathIndex = cursor.getColumnIndex(MediaStore.MediaColumns.DATA);
 
         while (cursor.moveToNext()) {
@@ -805,7 +804,8 @@ public class MyPermissionActivity extends AppCompatActivity implements View.OnCl
 
             if (latLong[0] != 0 && latLong[1] != 0) {
                 Log.i(TAG, "获取到图片的经纬度：" + filePath + "，" + Arrays.toString(latLong));
-                Log.i(TAG, "图片经纬度所在的地址：" + latLongToAddressString(latLong[0], latLong[1]));
+                Log.i(TAG,
+                        "图片经纬度所在的地址：" + latLongToAddressString(latLong[0], latLong[1]));
             } else {
                 Log.i(TAG, "该图片获取不到经纬度：" + filePath);
             }

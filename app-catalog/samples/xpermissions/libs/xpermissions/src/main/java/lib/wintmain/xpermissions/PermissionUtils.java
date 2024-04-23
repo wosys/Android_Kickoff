@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,11 +34,9 @@ import android.os.Looper;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.Surface;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;

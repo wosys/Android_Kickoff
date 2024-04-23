@@ -18,9 +18,7 @@ package com.wintmain.xpermissions;
 
 import android.content.Context;
 import android.os.Build;
-
 import androidx.annotation.NonNull;
-
 import lib.wintmain.xpermissions.Permission;
 
 import java.util.ArrayList;
@@ -107,7 +105,8 @@ public final class PermissionNameConvert {
                         permissionNames.add(hint);
                     }
                 }
-                case Permission.ACCESS_FINE_LOCATION, Permission.ACCESS_COARSE_LOCATION, Permission.ACCESS_BACKGROUND_LOCATION -> {
+                case Permission.ACCESS_FINE_LOCATION, Permission.ACCESS_COARSE_LOCATION,
+                        Permission.ACCESS_BACKGROUND_LOCATION -> {
                     String hint;
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q
                             && !permissions.contains(Permission.ACCESS_FINE_LOCATION)
@@ -136,7 +135,8 @@ public final class PermissionNameConvert {
                         permissionNames.add(hint);
                     }
                 }
-                case Permission.BLUETOOTH_SCAN, Permission.BLUETOOTH_CONNECT, Permission.BLUETOOTH_ADVERTISE -> {
+                case Permission.BLUETOOTH_SCAN, Permission.BLUETOOTH_CONNECT,
+                        Permission.BLUETOOTH_ADVERTISE -> {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                         String hint =
                                 context.getString(R.string.common_permission_nearby_devices);
@@ -154,7 +154,9 @@ public final class PermissionNameConvert {
                         }
                     }
                 }
-                case Permission.READ_PHONE_STATE, Permission.CALL_PHONE, Permission.ADD_VOICEMAIL, Permission.USE_SIP, Permission.READ_PHONE_NUMBERS, Permission.ANSWER_PHONE_CALLS -> {
+                case Permission.READ_PHONE_STATE, Permission.CALL_PHONE, Permission.ADD_VOICEMAIL
+                        , Permission.USE_SIP, Permission.READ_PHONE_NUMBERS,
+                        Permission.ANSWER_PHONE_CALLS -> {
                     String hint = context.getString(R.string.common_permission_phone);
                     if (!permissionNames.contains(hint)) {
                         permissionNames.add(hint);
@@ -189,7 +191,7 @@ public final class PermissionNameConvert {
                                             ? R.string
                                             .common_permission_activity_recognition_api30
                                             : R.string
-                                            .common_permission_activity_recognition_api29);
+                                                    .common_permission_activity_recognition_api29);
                     if (!permissionNames.contains(hint)) {
                         permissionNames.add(hint);
                     }
@@ -204,7 +206,8 @@ public final class PermissionNameConvert {
                         }
                     }
                 }
-                case Permission.SEND_SMS, Permission.RECEIVE_SMS, Permission.READ_SMS, Permission.RECEIVE_WAP_PUSH, Permission.RECEIVE_MMS -> {
+                case Permission.SEND_SMS, Permission.RECEIVE_SMS, Permission.READ_SMS,
+                        Permission.RECEIVE_WAP_PUSH, Permission.RECEIVE_MMS -> {
                     String hint = context.getString(R.string.common_permission_sms);
                     if (!permissionNames.contains(hint)) {
                         permissionNames.add(hint);

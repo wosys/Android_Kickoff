@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -107,8 +106,10 @@ final class StartActivityManager {
     }
 
     /*
-    static boolean startActivityForResult(@NonNull android.support.v4.app.Fragment fragment, @NonNull Intent intent, int requestCode) {
-       return startActivityForResult(new StartActivityDelegateSupportFragmentImpl(fragment), intent, requestCode);
+    static boolean startActivityForResult(@NonNull android.support.v4.app.Fragment fragment,
+    @NonNull Intent intent, int requestCode) {
+       return startActivityForResult(new StartActivityDelegateSupportFragmentImpl(fragment),
+       intent, requestCode);
     }
     */
 
@@ -197,11 +198,13 @@ final class StartActivityManager {
     }
 
     /*
-    private static class StartActivityDelegateSupportFragmentImpl implements IStartActivityDelegate {
+    private static class StartActivityDelegateSupportFragmentImpl implements
+    IStartActivityDelegate {
 
        private final android.support.v4.app.Fragment mFragment;
 
-       private StartActivityDelegateSupportFragmentImpl(@NonNull android.support.v4.app.Fragment fragment) {
+       private StartActivityDelegateSupportFragmentImpl(@NonNull android.support.v4.app.Fragment
+       fragment) {
           mFragment = fragment;
        }
 

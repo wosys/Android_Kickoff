@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.provider.Settings;
 import android.text.TextUtils;
-
 import androidx.annotation.NonNull;
 
 /**
@@ -46,7 +45,8 @@ final class NotificationListenerPermissionCompat {
         if (TextUtils.isEmpty(enabledNotificationListeners)) {
             return false;
         }
-        // com.hjq.permissions.demo/com.hjq.permissions.demo.NotificationMonitorService:com.huawei.health/com.huawei.bone.ui.setting.NotificationPushListener
+        // com.hjq.permissions.demo/com.hjq.permissions.demo.NotificationMonitorService:com
+        // .huawei.health/com.huawei.bone.ui.setting.NotificationPushListener
         final String[] components = enabledNotificationListeners.split(":");
         for (String component : components) {
             ComponentName componentName = ComponentName.unflattenFromString(component);

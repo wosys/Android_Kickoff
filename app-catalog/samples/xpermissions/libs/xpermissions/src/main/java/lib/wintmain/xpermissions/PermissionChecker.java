@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.text.TextUtils;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -273,7 +272,8 @@ final class PermissionChecker {
             // <meta-data android:name="ScopedStorage" android:value="true" /> 来跳过该检查
             throw new IllegalStateException(
                     "Please register the android:requestLegacyExternalStorage=\"true\" "
-                            + "attribute in the AndroidManifest.xml file, otherwise it will cause incompatibility with the old version");
+                            + "attribute in the AndroidManifest.xml file, otherwise it will cause"
+                            + " incompatibility with the old version");
         }
 
         // 如果在已经适配 Android 11 的情况下
@@ -287,8 +287,11 @@ final class PermissionChecker {
             // 上面两种方式需要二选一，否则无法在 Android 11 的设备上正常读写外部存储上的文件
             // 如果不知道该怎么选择，可以看文档：https://github.com/getActivity/XXPermissions/blob/master/HelpDoc
             throw new IllegalArgumentException(
-                    "The storage permission application is abnormal. If you have adapted the scope storage, "
-                            + "please register the <meta-data android:name=\"ScopedStorage\" android:value=\"true\" /> attribute in the AndroidManifest.xml file. "
+                    "The storage permission application is abnormal. If you have adapted the "
+                            + "scope storage, "
+                            + "please register the <meta-data android:name=\"ScopedStorage\" "
+                            + "android:value=\"true\" /> attribute in the AndroidManifest.xml "
+                            + "file. "
                             + "If there is no adaptation scope storage, please use "
                             + Permission.MANAGE_EXTERNAL_STORAGE
                             + " to apply for permission");
@@ -348,8 +351,10 @@ final class PermissionChecker {
         愣是没测出来只申请 ACCESS_FINE_LOCATION 会有什么异常，估计是 Google 将代码改回去了，但是文档忘记改了
         总结出来：耳听为虚，眼见不一定为实，要自己动手实践，实践出真理，光说不练假把式
         if (AndroidVersion.getTargetSdkVersionCode(context) >= AndroidVersion.ANDROID_12) {
-            if (PermissionUtils.containsPermission(requestPermissions, Permission.ACCESS_FINE_LOCATION) &&
-                    !PermissionUtils.containsPermission(requestPermissions, Permission.ACCESS_COARSE_LOCATION) ) {
+            if (PermissionUtils.containsPermission(requestPermissions, Permission
+            .ACCESS_FINE_LOCATION) &&
+                    !PermissionUtils.containsPermission(requestPermissions, Permission
+                    .ACCESS_COARSE_LOCATION) ) {
                 // 如果您的应用以 Android 12 为目标平台并且您请求 ACCESS_FINE_LOCATION 权限
                 // 则还必须请求 ACCESS_COARSE_LOCATION 权限。您必须在单个运行时请求中包含这两项权限
                 // 如果您尝试仅请求 ACCESS_FINE_LOCATION，则系统会忽略该请求并在 Logcat 中记录以下错误消息：
@@ -834,8 +839,8 @@ final class PermissionChecker {
                             ? "the minimum requirement for maxSdkVersion is "
                             + maxSdkVersion
                             : "please delete the android:maxSdkVersion=\""
-                            + manifestMaxSdkVersion
-                            + "\" attribute"));
+                                    + manifestMaxSdkVersion
+                                    + "\" attribute"));
         }
     }
 
@@ -899,7 +904,8 @@ final class PermissionChecker {
                 // 框架会在 Android 10 以下的版本上自动添加并申请这两个权限
                 throw new IllegalArgumentException(
                         "If you have applied for MANAGE_EXTERNAL_STORAGE permissions, "
-                                + "do not apply for the READ_EXTERNAL_STORAGE and WRITE_EXTERNAL_STORAGE permissions");
+                                + "do not apply for the READ_EXTERNAL_STORAGE and "
+                                + "WRITE_EXTERNAL_STORAGE permissions");
             }
 
             if (!AndroidVersion.isAndroid11()) {
