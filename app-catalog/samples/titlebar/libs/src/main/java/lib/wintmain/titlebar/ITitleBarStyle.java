@@ -99,7 +99,7 @@ public interface ITitleBarStyle {
      * 获取标题的字体样式
      *
      * @param style 文字样式 常规：{@link Typeface#NORMAL} 粗体：{@link Typeface#BOLD} 斜体：{@link
-     *     Typeface#ITALIC} 粗斜体：{@link Typeface#BOLD_ITALIC}
+     *              Typeface#ITALIC} 粗斜体：{@link Typeface#BOLD_ITALIC}
      */
     Typeface getTitleTypeface(Context context, int style);
 
@@ -107,7 +107,7 @@ public interface ITitleBarStyle {
      * 获取左标题的的字体样式
      *
      * @param style 文字样式 常规：{@link Typeface#NORMAL} 粗体：{@link Typeface#BOLD} 斜体：{@link
-     *     Typeface#ITALIC} 粗斜体：{@link Typeface#BOLD_ITALIC}
+     *              Typeface#ITALIC} 粗斜体：{@link Typeface#BOLD_ITALIC}
      */
     Typeface getLeftTitleTypeface(Context context, int style);
 
@@ -115,7 +115,7 @@ public interface ITitleBarStyle {
      * 获取右标题的的字体样式
      *
      * @param style 文字样式 常规：{@link Typeface#NORMAL} 粗体：{@link Typeface#BOLD} 斜体：{@link
-     *     Typeface#ITALIC} 粗斜体：{@link Typeface#BOLD_ITALIC}
+     *              Typeface#ITALIC} 粗斜体：{@link Typeface#BOLD_ITALIC}
      */
     Typeface getRightTitleTypeface(Context context, int style);
 

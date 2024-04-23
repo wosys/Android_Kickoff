@@ -20,7 +20,6 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-
 import lib.wintmain.titlebar.R;
 import lib.wintmain.titlebar.SelectorDrawable;
 import lib.wintmain.titlebar.TitleBarSupport;

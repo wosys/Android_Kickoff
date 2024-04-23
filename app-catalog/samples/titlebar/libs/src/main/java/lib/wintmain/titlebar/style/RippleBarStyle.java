@@ -19,7 +19,6 @@ package lib.wintmain.titlebar.style;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
-
 import lib.wintmain.titlebar.TitleBarSupport;
 
 /** desc : 水波纹样式实现（对应布局属性：app:barStyle="ripple"） */

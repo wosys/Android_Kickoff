@@ -31,14 +31,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
 import lib.wintmain.titlebar.style.LightBarStyle;
 import lib.wintmain.titlebar.style.NightBarStyle;
 import lib.wintmain.titlebar.style.RippleBarStyle;
 import lib.wintmain.titlebar.style.TransparentBarStyle;
 
 /**
- *    desc   : 标题栏框架
+ * desc   : 标题栏框架
  */
 @SuppressWarnings({"unused", "UnusedReturnValue"})
 public class TitleBarExt extends FrameLayout
@@ -88,7 +87,8 @@ public class TitleBarExt extends FrameLayout
             sGlobalStyle = new LightBarStyle();
         }
 
-        final TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.TitleBarExt, 0, R.style.TitleBarStyleExt);
+        final TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.TitleBarExt, 0,
+                R.style.TitleBarStyleExt);
 
         // 标题栏样式设置
         switch (array.getInt(R.styleable.TitleBarExt_barStyleExt, 0)) {
@@ -124,37 +124,55 @@ public class TitleBarExt extends FrameLayout
                 mCurrentStyle.getLineSize(context), Gravity.BOTTOM));
 
         // 设置图标显示的重心
-        setTitleIconGravity(array.getInt(R.styleable.TitleBarExt_titleIconGravityExt, mCurrentStyle.getTitleIconGravity(context)));
-        setLeftIconGravity(array.getInt(R.styleable.TitleBarExt_leftIconGravityExt, mCurrentStyle.getLeftIconGravity(context)));
-        setRightIconGravity(array.getInt(R.styleable.TitleBarExt_rightIconGravityExt, mCurrentStyle.getRightIconGravity(context)));
+        setTitleIconGravity(array.getInt(R.styleable.TitleBarExt_titleIconGravityExt,
+                mCurrentStyle.getTitleIconGravity(context)));
+        setLeftIconGravity(array.getInt(R.styleable.TitleBarExt_leftIconGravityExt,
+                mCurrentStyle.getLeftIconGravity(context)));
+        setRightIconGravity(array.getInt(R.styleable.TitleBarExt_rightIconGravityExt,
+                mCurrentStyle.getRightIconGravity(context)));
 
         // 设置图标显示的大小
-        setTitleIconSize(array.getDimensionPixelSize(R.styleable.TitleBarExt_titleIconWidth, mCurrentStyle.getTitleIconWidth(context)),
-                array.getDimensionPixelSize(R.styleable.TitleBarExt_titleIconHeight, mCurrentStyle.getTitleIconHeight(context)));
-        setLeftIconSize(array.getDimensionPixelSize(R.styleable.TitleBarExt_leftIconWidth, mCurrentStyle.getLeftIconWidth(context)),
-                array.getDimensionPixelSize(R.styleable.TitleBarExt_leftIconHeight, mCurrentStyle.getLeftIconHeight(context)));
-        setRightIconSize(array.getDimensionPixelSize(R.styleable.TitleBarExt_rightIconWidth, mCurrentStyle.getRightIconWidth(context)),
-                array.getDimensionPixelSize(R.styleable.TitleBarExt_rightIconHeight, mCurrentStyle.getRightIconHeight(context)));
+        setTitleIconSize(array.getDimensionPixelSize(R.styleable.TitleBarExt_titleIconWidth,
+                        mCurrentStyle.getTitleIconWidth(context)),
+                array.getDimensionPixelSize(R.styleable.TitleBarExt_titleIconHeight,
+                        mCurrentStyle.getTitleIconHeight(context)));
+        setLeftIconSize(array.getDimensionPixelSize(R.styleable.TitleBarExt_leftIconWidth,
+                        mCurrentStyle.getLeftIconWidth(context)),
+                array.getDimensionPixelSize(R.styleable.TitleBarExt_leftIconHeight,
+                        mCurrentStyle.getLeftIconHeight(context)));
+        setRightIconSize(array.getDimensionPixelSize(R.styleable.TitleBarExt_rightIconWidth,
+                        mCurrentStyle.getRightIconWidth(context)),
+                array.getDimensionPixelSize(R.styleable.TitleBarExt_rightIconHeight,
+                        mCurrentStyle.getRightIconHeight(context)));
 
         // 设置文字和图标之间的间距
-        setTitleIconPadding(array.getDimensionPixelSize(R.styleable.TitleBarExt_titleIconPadding, mCurrentStyle.getTitleIconPadding(context)));
-        setLeftIconPadding(array.getDimensionPixelSize(R.styleable.TitleBarExt_leftIconPadding, mCurrentStyle.getLeftIconPadding(context)));
-        setRightIconPadding(array.getDimensionPixelSize(R.styleable.TitleBarExt_rightIconPadding, mCurrentStyle.getRightIconPadding(context)));
+        setTitleIconPadding(array.getDimensionPixelSize(R.styleable.TitleBarExt_titleIconPadding,
+                mCurrentStyle.getTitleIconPadding(context)));
+        setLeftIconPadding(array.getDimensionPixelSize(R.styleable.TitleBarExt_leftIconPadding,
+                mCurrentStyle.getLeftIconPadding(context)));
+        setRightIconPadding(array.getDimensionPixelSize(R.styleable.TitleBarExt_rightIconPadding,
+                mCurrentStyle.getRightIconPadding(context)));
 
         // 标题设置
         if (array.hasValue(R.styleable.TitleBarExt_title)) {
-            setTitle(array.getResourceId(R.styleable.TitleBarExt_title, 0) != R.string.bar_string_placeholder ?
-                    array.getString(R.styleable.TitleBarExt_title) : mCurrentStyle.getTitle(context));
+            setTitle(array.getResourceId(R.styleable.TitleBarExt_title, 0)
+                    != R.string.bar_string_placeholder ?
+                    array.getString(R.styleable.TitleBarExt_title)
+                    : mCurrentStyle.getTitle(context));
         }
 
         if (array.hasValue(R.styleable.TitleBarExt_leftTitle)) {
-            setLeftTitle(array.getResourceId(R.styleable.TitleBarExt_leftTitle, 0) != R.string.bar_string_placeholder ?
-                    array.getString(R.styleable.TitleBarExt_leftTitle) : mCurrentStyle.getLeftTitle(context));
+            setLeftTitle(array.getResourceId(R.styleable.TitleBarExt_leftTitle, 0)
+                    != R.string.bar_string_placeholder ?
+                    array.getString(R.styleable.TitleBarExt_leftTitle)
+                    : mCurrentStyle.getLeftTitle(context));
         }
 
         if (array.hasValue(R.styleable.TitleBarExt_rightTitle)) {
-            setRightTitle(array.getResourceId(R.styleable.TitleBarExt_rightTitle, 0) != R.string.bar_string_placeholder ?
-                    array.getString(R.styleable.TitleBarExt_rightTitle) : mCurrentStyle.getRightTitle(context));
+            setRightTitle(array.getResourceId(R.styleable.TitleBarExt_rightTitle, 0)
+                    != R.string.bar_string_placeholder ?
+                    array.getString(R.styleable.TitleBarExt_rightTitle)
+                    : mCurrentStyle.getRightTitle(context));
         }
 
         // 图标着色设置
@@ -172,17 +190,21 @@ public class TitleBarExt extends FrameLayout
 
         // 图标设置
         if (array.hasValue(R.styleable.TitleBarExt_titleIcon)) {
-            setTitleIcon(TitleBarSupport.getDrawable(context, array.getResourceId(R.styleable.TitleBarExt_titleIcon, 0)));
+            setTitleIcon(TitleBarSupport.getDrawable(context,
+                    array.getResourceId(R.styleable.TitleBarExt_titleIcon, 0)));
         }
 
         if (array.hasValue(R.styleable.TitleBarExt_leftIcon)) {
-            setLeftIcon(array.getResourceId(R.styleable.TitleBarExt_leftIcon, 0) != R.drawable.bar_drawable_placeholder ?
-                    TitleBarSupport.getDrawable(context, array.getResourceId(R.styleable.TitleBarExt_leftIcon, 0)) :
+            setLeftIcon(array.getResourceId(R.styleable.TitleBarExt_leftIcon, 0)
+                    != R.drawable.bar_drawable_placeholder ?
+                    TitleBarSupport.getDrawable(context,
+                            array.getResourceId(R.styleable.TitleBarExt_leftIcon, 0)) :
                     mCurrentStyle.getBackButtonDrawable(context));
         }
 
         if (array.hasValue(R.styleable.TitleBarExt_rightIcon)) {
-            setRightIcon(TitleBarSupport.getDrawable(context, array.getResourceId(R.styleable.TitleBarExt_rightIcon, 0)));
+            setRightIcon(TitleBarSupport.getDrawable(context,
+                    array.getResourceId(R.styleable.TitleBarExt_rightIcon, 0)));
         }
 
         // 文字颜色设置
@@ -200,12 +222,14 @@ public class TitleBarExt extends FrameLayout
         setTitleSize(TypedValue.COMPLEX_UNIT_PX, array.hasValue(R.styleable.TitleBarExt_titleSize) ?
                 array.getDimensionPixelSize(R.styleable.TitleBarExt_titleSize, 0) :
                 mCurrentStyle.getTitleSize(context));
-        setLeftTitleSize(TypedValue.COMPLEX_UNIT_PX, array.hasValue(R.styleable.TitleBarExt_leftTitleSize) ?
-                array.getDimensionPixelSize(R.styleable.TitleBarExt_leftTitleSize, 0) :
-                mCurrentStyle.getLeftTitleSize(context));
-        setRightTitleSize(TypedValue.COMPLEX_UNIT_PX, array.hasValue(R.styleable.TitleBarExt_rightTitleSize) ?
-                array.getDimensionPixelSize(R.styleable.TitleBarExt_rightTitleSize, 0) :
-                mCurrentStyle.getRightTitleSize(context));
+        setLeftTitleSize(TypedValue.COMPLEX_UNIT_PX,
+                array.hasValue(R.styleable.TitleBarExt_leftTitleSize) ?
+                        array.getDimensionPixelSize(R.styleable.TitleBarExt_leftTitleSize, 0) :
+                        mCurrentStyle.getLeftTitleSize(context));
+        setRightTitleSize(TypedValue.COMPLEX_UNIT_PX,
+                array.hasValue(R.styleable.TitleBarExt_rightTitleSize) ?
+                        array.getDimensionPixelSize(R.styleable.TitleBarExt_rightTitleSize, 0) :
+                        mCurrentStyle.getRightTitleSize(context));
 
         // 文字样式设置
         int titleStyle = array.hasValue(R.styleable.TitleBarExt_titleStyleExt) ?
@@ -216,52 +240,67 @@ public class TitleBarExt extends FrameLayout
         int leftTitleStyle = array.hasValue(R.styleable.TitleBarExt_leftTitleStyleExt) ?
                 array.getInt(R.styleable.TitleBarExt_leftTitleStyleExt, Typeface.NORMAL) :
                 mCurrentStyle.getLeftTitleStyle(context);
-        setLeftTitleStyle(mCurrentStyle.getLeftTitleTypeface(context, leftTitleStyle), leftTitleStyle);
+        setLeftTitleStyle(mCurrentStyle.getLeftTitleTypeface(context, leftTitleStyle),
+                leftTitleStyle);
 
         int rightTitleStyle = array.hasValue(R.styleable.TitleBarExt_rightTitleStyleExt) ?
                 array.getInt(R.styleable.TitleBarExt_rightTitleStyleExt, Typeface.NORMAL) :
                 mCurrentStyle.getRightTitleStyle(context);
-        setRightTitleStyle(mCurrentStyle.getRightTitleTypeface(context, rightTitleStyle), rightTitleStyle);
+        setRightTitleStyle(mCurrentStyle.getRightTitleTypeface(context, rightTitleStyle),
+                rightTitleStyle);
 
         // 标题重心设置
         if (array.hasValue(R.styleable.TitleBarExt_titleGravityExt)) {
-            setTitleGravity(array.getInt(R.styleable.TitleBarExt_titleGravityExt, Gravity.NO_GRAVITY));
+            setTitleGravity(
+                    array.getInt(R.styleable.TitleBarExt_titleGravityExt, Gravity.NO_GRAVITY));
         }
 
         // 设置背景
         if (array.hasValue(R.styleable.TitleBarExt_android_background)) {
-            if (array.getResourceId(R.styleable.TitleBarExt_android_background, 0) == R.drawable.bar_drawable_placeholder) {
+            if (array.getResourceId(R.styleable.TitleBarExt_android_background, 0)
+                    == R.drawable.bar_drawable_placeholder) {
                 TitleBarSupport.setBackground(this, mCurrentStyle.getTitleBarBackground(context));
             }
         }
 
         if (array.hasValue(R.styleable.TitleBarExt_leftBackground)) {
-            setLeftBackground(array.getResourceId(R.styleable.TitleBarExt_leftBackground, 0) != R.drawable.bar_drawable_placeholder ?
-                    array.getDrawable(R.styleable.TitleBarExt_leftBackground) : mCurrentStyle.getLeftTitleBackground(context));
+            setLeftBackground(array.getResourceId(R.styleable.TitleBarExt_leftBackground, 0)
+                    != R.drawable.bar_drawable_placeholder ?
+                    array.getDrawable(R.styleable.TitleBarExt_leftBackground)
+                    : mCurrentStyle.getLeftTitleBackground(context));
         }
 
         if (array.hasValue(R.styleable.TitleBarExt_rightBackground)) {
-            setRightBackground(array.getResourceId(R.styleable.TitleBarExt_rightBackground, 0) != R.drawable.bar_drawable_placeholder ?
-                    array.getDrawable(R.styleable.TitleBarExt_rightBackground) : mCurrentStyle.getRightTitleBackground(context));
+            setRightBackground(array.getResourceId(R.styleable.TitleBarExt_rightBackground, 0)
+                    != R.drawable.bar_drawable_placeholder ?
+                    array.getDrawable(R.styleable.TitleBarExt_rightBackground)
+                    : mCurrentStyle.getRightTitleBackground(context));
         }
 
         // 设置前景
         if (array.hasValue(R.styleable.TitleBarExt_leftForeground)) {
-            setLeftForeground(array.getResourceId(R.styleable.TitleBarExt_leftForeground, 0) != R.drawable.bar_drawable_placeholder ?
-                    array.getDrawable(R.styleable.TitleBarExt_leftForeground) : mCurrentStyle.getLeftTitleForeground(context));
+            setLeftForeground(array.getResourceId(R.styleable.TitleBarExt_leftForeground, 0)
+                    != R.drawable.bar_drawable_placeholder ?
+                    array.getDrawable(R.styleable.TitleBarExt_leftForeground)
+                    : mCurrentStyle.getLeftTitleForeground(context));
         }
 
         if (array.hasValue(R.styleable.TitleBarExt_rightForeground)) {
-            setRightForeground(array.getResourceId(R.styleable.TitleBarExt_rightForeground, 0) != R.drawable.bar_drawable_placeholder ?
-                    array.getDrawable(R.styleable.TitleBarExt_rightForeground) : mCurrentStyle.getRightTitleForeground(context));
+            setRightForeground(array.getResourceId(R.styleable.TitleBarExt_rightForeground, 0)
+                    != R.drawable.bar_drawable_placeholder ?
+                    array.getDrawable(R.styleable.TitleBarExt_rightForeground)
+                    : mCurrentStyle.getRightTitleForeground(context));
         }
 
         // 分割线设置
-        setLineVisible(array.getBoolean(R.styleable.TitleBarExt_lineVisible, mCurrentStyle.isLineVisible(context)));
+        setLineVisible(array.getBoolean(R.styleable.TitleBarExt_lineVisible,
+                mCurrentStyle.isLineVisible(context)));
 
         if (array.hasValue(R.styleable.TitleBarExt_lineDrawable)) {
-            setLineDrawable(array.getResourceId(R.styleable.TitleBarExt_lineDrawable, 0) != R.drawable.bar_drawable_placeholder ?
-                    array.getDrawable(R.styleable.TitleBarExt_lineDrawable) : mCurrentStyle.getLineDrawable(context));
+            setLineDrawable(array.getResourceId(R.styleable.TitleBarExt_lineDrawable, 0)
+                    != R.drawable.bar_drawable_placeholder ?
+                    array.getDrawable(R.styleable.TitleBarExt_lineDrawable)
+                    : mCurrentStyle.getLineDrawable(context));
         }
 
         if (array.hasValue(R.styleable.TitleBarExt_lineSize)) {
@@ -269,12 +308,20 @@ public class TitleBarExt extends FrameLayout
         }
 
         // 设置子控件的内间距
-        mLeftHorizontalPadding = array.getDimensionPixelSize(R.styleable.TitleBarExt_leftHorizontalPadding, mCurrentStyle.getLeftHorizontalPadding(context));
-        mTitleHorizontalPadding = array.getDimensionPixelSize(R.styleable.TitleBarExt_titleHorizontalPadding, mCurrentStyle.getTitleHorizontalPadding(context));
-        mRightHorizontalPadding = array.getDimensionPixelSize(R.styleable.TitleBarExt_rightHorizontalPadding, mCurrentStyle.getRightHorizontalPadding(context));
-        setChildHorizontalPadding(mLeftHorizontalPadding, mTitleHorizontalPadding, mRightHorizontalPadding);
+        mLeftHorizontalPadding = array.getDimensionPixelSize(
+                R.styleable.TitleBarExt_leftHorizontalPadding,
+                mCurrentStyle.getLeftHorizontalPadding(context));
+        mTitleHorizontalPadding = array.getDimensionPixelSize(
+                R.styleable.TitleBarExt_titleHorizontalPadding,
+                mCurrentStyle.getTitleHorizontalPadding(context));
+        mRightHorizontalPadding = array.getDimensionPixelSize(
+                R.styleable.TitleBarExt_rightHorizontalPadding,
+                mCurrentStyle.getRightHorizontalPadding(context));
+        setChildHorizontalPadding(mLeftHorizontalPadding, mTitleHorizontalPadding,
+                mRightHorizontalPadding);
 
-        mVerticalPadding = array.getDimensionPixelSize(R.styleable.TitleBarExt_childVerticalPadding, mCurrentStyle.getChildVerticalPadding(context));
+        mVerticalPadding = array.getDimensionPixelSize(R.styleable.TitleBarExt_childVerticalPadding,
+                mCurrentStyle.getChildVerticalPadding(context));
         setChildVerticalPadding(mVerticalPadding);
 
         // 回收 TypedArray 对象
@@ -332,25 +379,39 @@ public class TitleBarExt extends FrameLayout
         // 判断是左右项太长还是标题项太长
         if (maxEdgeWidth > titleBarWidth / 3) {
             // 如果是左右项太长，那么就进行动态计算
-            measureChildWithMargins(mLeftView, MeasureSpec.makeMeasureSpec(titleBarWidth / 4, MeasureSpec.EXACTLY), 0,
-                    MeasureSpec.makeMeasureSpec(mLeftView.getMeasuredHeight(), MeasureSpec.EXACTLY), 0);
-            measureChildWithMargins(mTitleView, MeasureSpec.makeMeasureSpec(titleBarWidth / 2, MeasureSpec.EXACTLY), 0,
-                    MeasureSpec.makeMeasureSpec(mTitleView.getMeasuredHeight(), MeasureSpec.EXACTLY), 0);
-            measureChildWithMargins(mRightView, MeasureSpec.makeMeasureSpec(titleBarWidth / 4, MeasureSpec.EXACTLY), 0,
-                    MeasureSpec.makeMeasureSpec(mRightView.getMeasuredHeight(), MeasureSpec.EXACTLY), 0);
+            measureChildWithMargins(mLeftView,
+                    MeasureSpec.makeMeasureSpec(titleBarWidth / 4, MeasureSpec.EXACTLY), 0,
+                    MeasureSpec.makeMeasureSpec(mLeftView.getMeasuredHeight(), MeasureSpec.EXACTLY),
+                    0);
+            measureChildWithMargins(mTitleView,
+                    MeasureSpec.makeMeasureSpec(titleBarWidth / 2, MeasureSpec.EXACTLY), 0,
+                    MeasureSpec.makeMeasureSpec(mTitleView.getMeasuredHeight(),
+                            MeasureSpec.EXACTLY), 0);
+            measureChildWithMargins(mRightView,
+                    MeasureSpec.makeMeasureSpec(titleBarWidth / 4, MeasureSpec.EXACTLY), 0,
+                    MeasureSpec.makeMeasureSpec(mRightView.getMeasuredHeight(),
+                            MeasureSpec.EXACTLY), 0);
         } else {
             // 如果是标题项太长，那么就进行动态计算
-            measureChildWithMargins(mLeftView, MeasureSpec.makeMeasureSpec(maxEdgeWidth, MeasureSpec.EXACTLY), 0,
-                    MeasureSpec.makeMeasureSpec(mLeftView.getMeasuredHeight(), MeasureSpec.EXACTLY), 0);
-            measureChildWithMargins(mTitleView, MeasureSpec.makeMeasureSpec(titleBarWidth - maxEdgeWidth * 2, MeasureSpec.EXACTLY), 0,
-                    MeasureSpec.makeMeasureSpec(mTitleView.getMeasuredHeight(), MeasureSpec.EXACTLY), 0);
-            measureChildWithMargins(mRightView, MeasureSpec.makeMeasureSpec(maxEdgeWidth, MeasureSpec.EXACTLY), 0,
-                    MeasureSpec.makeMeasureSpec(mRightView.getMeasuredHeight(), MeasureSpec.EXACTLY), 0);
+            measureChildWithMargins(mLeftView,
+                    MeasureSpec.makeMeasureSpec(maxEdgeWidth, MeasureSpec.EXACTLY), 0,
+                    MeasureSpec.makeMeasureSpec(mLeftView.getMeasuredHeight(), MeasureSpec.EXACTLY),
+                    0);
+            measureChildWithMargins(mTitleView,
+                    MeasureSpec.makeMeasureSpec(titleBarWidth - maxEdgeWidth * 2,
+                            MeasureSpec.EXACTLY), 0,
+                    MeasureSpec.makeMeasureSpec(mTitleView.getMeasuredHeight(),
+                            MeasureSpec.EXACTLY), 0);
+            measureChildWithMargins(mRightView,
+                    MeasureSpec.makeMeasureSpec(maxEdgeWidth, MeasureSpec.EXACTLY), 0,
+                    MeasureSpec.makeMeasureSpec(mRightView.getMeasuredHeight(),
+                            MeasureSpec.EXACTLY), 0);
         }
     }
 
     @Override
-    public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+    public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft,
+            int oldTop, int oldRight, int oldBottom) {
         // 解决在外部触摸时触发点击效果的问题
         if (!mLeftView.isClickable()) {
             mLeftView.setClickable(true);
@@ -482,8 +543,8 @@ public class TitleBarExt extends FrameLayout
     /**
      * 设置标题样式
      *
-     * @param typeface              字体样式
-     * @param style                 文字样式
+     * @param typeface 字体样式
+     * @param style    文字样式
      */
     public TitleBarExt setTitleStyle(Typeface typeface, int style) {
         mTitleView.setTypeface(typeface, style);
@@ -497,8 +558,8 @@ public class TitleBarExt extends FrameLayout
     /**
      * 设置左标题样式
      *
-     * @param typeface              字体样式
-     * @param style                 文字样式
+     * @param typeface 字体样式
+     * @param style    文字样式
      */
     public TitleBarExt setLeftTitleStyle(Typeface typeface, int style) {
         mLeftView.setTypeface(typeface, style);
@@ -512,8 +573,8 @@ public class TitleBarExt extends FrameLayout
     /**
      * 设置右边标题样式
      *
-     * @param typeface              字体样式
-     * @param style                 文字样式
+     * @param typeface 字体样式
+     * @param style    文字样式
      */
     public TitleBarExt setRightTitleStyle(Typeface typeface, int style) {
         mRightView.setTypeface(typeface, style);
@@ -883,15 +944,19 @@ public class TitleBarExt extends FrameLayout
 
         // 如果标题的重心为左，那么左边就不能有内容
         if (gravity == Gravity.LEFT &&
-                TitleBarSupport.isContainContent(TitleBarSupport.isLayoutRtl(getContext()) ? mRightView : mLeftView)) {
-            Log.e(LOG_TAG, "Title center of gravity for the left, the left title can not have content");
+                TitleBarSupport.isContainContent(
+                        TitleBarSupport.isLayoutRtl(getContext()) ? mRightView : mLeftView)) {
+            Log.e(LOG_TAG,
+                    "Title center of gravity for the left, the left title can not have content");
             return this;
         }
 
         // 如果标题的重心为右，那么右边就不能有内容
         if (gravity == Gravity.RIGHT &&
-                TitleBarSupport.isContainContent(TitleBarSupport.isLayoutRtl(getContext()) ? mLeftView : mRightView)) {
-            Log.e(LOG_TAG, "Title center of gravity for the right, the right title can not have content");
+                TitleBarSupport.isContainContent(
+                        TitleBarSupport.isLayoutRtl(getContext()) ? mLeftView : mRightView)) {
+            Log.e(LOG_TAG,
+                    "Title center of gravity for the right, the right title can not have content");
             return this;
         }
 
@@ -906,19 +971,26 @@ public class TitleBarExt extends FrameLayout
      */
     public TitleBarExt setChildVerticalPadding(int verticalPadding) {
         mVerticalPadding = verticalPadding;
-        mLeftView.setPadding(mLeftHorizontalPadding, mVerticalPadding, mLeftHorizontalPadding, mVerticalPadding);
-        mTitleView.setPadding(mTitleHorizontalPadding, mVerticalPadding, mTitleHorizontalPadding, mVerticalPadding);
-        mRightView.setPadding(mRightHorizontalPadding, mVerticalPadding, mRightHorizontalPadding, mVerticalPadding);
+        mLeftView.setPadding(mLeftHorizontalPadding, mVerticalPadding, mLeftHorizontalPadding,
+                mVerticalPadding);
+        mTitleView.setPadding(mTitleHorizontalPadding, mVerticalPadding, mTitleHorizontalPadding,
+                mVerticalPadding);
+        mRightView.setPadding(mRightHorizontalPadding, mVerticalPadding, mRightHorizontalPadding,
+                mVerticalPadding);
         return this;
     }
 
-    public TitleBarExt setChildHorizontalPadding(int leftHorizontalPadding, int titleHorizontalPadding, int rightHorizontalPadding) {
+    public TitleBarExt setChildHorizontalPadding(int leftHorizontalPadding,
+            int titleHorizontalPadding, int rightHorizontalPadding) {
         mLeftHorizontalPadding = leftHorizontalPadding;
         mTitleHorizontalPadding = titleHorizontalPadding;
         mRightHorizontalPadding = rightHorizontalPadding;
-        mLeftView.setPadding(mLeftHorizontalPadding, mVerticalPadding, mLeftHorizontalPadding, mVerticalPadding);
-        mTitleView.setPadding(mTitleHorizontalPadding, mVerticalPadding, mTitleHorizontalPadding, mVerticalPadding);
-        mRightView.setPadding(mRightHorizontalPadding, mVerticalPadding, mRightHorizontalPadding, mVerticalPadding);
+        mLeftView.setPadding(mLeftHorizontalPadding, mVerticalPadding, mLeftHorizontalPadding,
+                mVerticalPadding);
+        mTitleView.setPadding(mTitleHorizontalPadding, mVerticalPadding, mTitleHorizontalPadding,
+                mVerticalPadding);
+        mRightView.setPadding(mRightHorizontalPadding, mVerticalPadding, mRightHorizontalPadding,
+                mVerticalPadding);
         return this;
     }
 

@@ -20,17 +20,15 @@ import android.content.Context;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
-
 import com.google.android.catalog.framework.annotations.Sample;
-
 import lib.wintmain.titlebar.OnTitleBarListener;
 import lib.wintmain.titlebar.TitleBarExt;
 import lib.wintmain.titlebar.style.LightBarStyle;
 
-@Sample(name = "Titlebar_demo", description = "标题栏例子", documentation = "", tags = "A-Self_demos" )
+@Sample(name = "Titlebar_demo", description = "标题栏例子", documentation = "",
+        tags = "A-Self_demos")
 public class TitleBarExtActivity extends AppCompatActivity {
 
     @Override
@@ -46,17 +44,20 @@ public class TitleBarExtActivity extends AppCompatActivity {
 
             @Override
             public void onLeftClick(TitleBarExt titleBarExt) {
-                Toast.makeText(getApplicationContext(),"左项 View 被点击", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "左项 View 被点击", Toast.LENGTH_LONG)
+                        .show();
             }
 
             @Override
             public void onTitleClick(TitleBarExt titleBarExt) {
-                Toast.makeText(getApplicationContext(),"中间 View 被点击", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "中间 View 被点击", Toast.LENGTH_LONG)
+                        .show();
             }
 
             @Override
             public void onRightClick(TitleBarExt titleBarExt) {
-                Toast.makeText(getApplicationContext(),"右项 View 被点击", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "右项 View 被点击", Toast.LENGTH_LONG)
+                        .show();
             }
         });
     }

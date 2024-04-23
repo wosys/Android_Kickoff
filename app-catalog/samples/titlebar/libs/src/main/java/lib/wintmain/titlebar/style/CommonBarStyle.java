@@ -27,12 +27,11 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
-
 import lib.wintmain.titlebar.ITitleBarStyle;
 import lib.wintmain.titlebar.TitleBarSupport;
 
 /**
- *    desc   : 默认初始化器基类
+ * desc   : 默认初始化器基类
  */
 public abstract class CommonBarStyle implements ITitleBarStyle {
 
@@ -100,22 +99,26 @@ public abstract class CommonBarStyle implements ITitleBarStyle {
 
     @Override
     public int getLeftHorizontalPadding(Context context) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, context.getResources().getDisplayMetrics());
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10,
+                context.getResources().getDisplayMetrics());
     }
 
     @Override
     public int getTitleHorizontalPadding(Context context) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 0, context.getResources().getDisplayMetrics());
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 0,
+                context.getResources().getDisplayMetrics());
     }
 
     @Override
     public int getRightHorizontalPadding(Context context) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, context.getResources().getDisplayMetrics());
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10,
+                context.getResources().getDisplayMetrics());
     }
 
     @Override
     public int getChildVerticalPadding(Context context) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 15, context.getResources().getDisplayMetrics());
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 15,
+                context.getResources().getDisplayMetrics());
     }
 
     @Override
@@ -135,11 +138,13 @@ public abstract class CommonBarStyle implements ITitleBarStyle {
             PackageManager packageManager = context.getPackageManager();
             PackageInfo packageInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
             // 如果当前 Activity 没有设置 android:label 属性，则默认会返回 App 名称，则需要过滤掉
-            if (!label.toString().equals(packageInfo.applicationInfo.loadLabel(packageManager).toString())) {
+            if (!label.toString().equals(
+                    packageInfo.applicationInfo.loadLabel(packageManager).toString())) {
                 // 设置标题
                 return label;
             }
-        } catch (PackageManager.NameNotFoundException ignored) {}
+        } catch (PackageManager.NameNotFoundException ignored) {
+        }
 
         return "";
     }
@@ -156,17 +161,20 @@ public abstract class CommonBarStyle implements ITitleBarStyle {
 
     @Override
     public float getTitleSize(Context context) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, context.getResources().getDisplayMetrics());
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16,
+                context.getResources().getDisplayMetrics());
     }
 
     @Override
     public float getLeftTitleSize(Context context) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 14, context.getResources().getDisplayMetrics());
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 14,
+                context.getResources().getDisplayMetrics());
     }
 
     @Override
     public float getRightTitleSize(Context context) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 14, context.getResources().getDisplayMetrics());
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 14,
+                context.getResources().getDisplayMetrics());
     }
 
     @Override
@@ -216,17 +224,20 @@ public abstract class CommonBarStyle implements ITitleBarStyle {
 
     @Override
     public int getTitleIconPadding(Context context) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, context.getResources().getDisplayMetrics());
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2,
+                context.getResources().getDisplayMetrics());
     }
 
     @Override
     public int getLeftIconPadding(Context context) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, context.getResources().getDisplayMetrics());
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2,
+                context.getResources().getDisplayMetrics());
     }
 
     @Override
     public int getRightIconPadding(Context context) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, context.getResources().getDisplayMetrics());
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2,
+                context.getResources().getDisplayMetrics());
     }
 
     @Override

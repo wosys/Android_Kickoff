@@ -24,19 +24,22 @@ public interface OnTitleBarListener {
      *
      * @param titleBarExt 标题栏对象（非空）
      */
-    default void onLeftClick(TitleBarExt titleBarExt) {}
+    default void onLeftClick(TitleBarExt titleBarExt) {
+    }
 
     /**
      * 中间的标题被点击
      *
      * @param titleBarExt 标题栏对象（非空）
      */
-    default void onTitleClick(TitleBarExt titleBarExt) {}
+    default void onTitleClick(TitleBarExt titleBarExt) {
+    }
 
     /**
      * 右边的标题被点击
      *
      * @param titleBarExt 标题栏对象（非空）
      */
-    default void onRightClick(TitleBarExt titleBarExt) {}
+    default void onRightClick(TitleBarExt titleBarExt) {
+    }
 }

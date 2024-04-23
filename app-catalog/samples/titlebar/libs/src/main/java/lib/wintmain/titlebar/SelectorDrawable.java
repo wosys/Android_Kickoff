@@ -84,25 +84,25 @@ public final class SelectorDrawable extends StateListDrawable {
         public SelectorDrawable build() {
             SelectorDrawable selector = new SelectorDrawable();
             if (mPressed != null) {
-                selector.addState(new int[] {android.R.attr.state_pressed}, mPressed);
+                selector.addState(new int[]{android.R.attr.state_pressed}, mPressed);
             }
             if (mFocused != null) {
-                selector.addState(new int[] {android.R.attr.state_focused}, mFocused);
+                selector.addState(new int[]{android.R.attr.state_focused}, mFocused);
             }
             if (mChecked != null) {
-                selector.addState(new int[] {android.R.attr.state_checked}, mChecked);
+                selector.addState(new int[]{android.R.attr.state_checked}, mChecked);
             }
             if (mEnabled != null) {
-                selector.addState(new int[] {android.R.attr.state_enabled}, mEnabled);
+                selector.addState(new int[]{android.R.attr.state_enabled}, mEnabled);
             }
             if (mSelected != null) {
-                selector.addState(new int[] {android.R.attr.state_selected}, mSelected);
+                selector.addState(new int[]{android.R.attr.state_selected}, mSelected);
             }
             if (mHovered != null) {
-                selector.addState(new int[] {android.R.attr.state_hovered}, mHovered);
+                selector.addState(new int[]{android.R.attr.state_hovered}, mHovered);
             }
             if (mDefault != null) {
-                selector.addState(new int[] {}, mDefault);
+                selector.addState(new int[]{}, mDefault);
             }
             return selector;
         }
