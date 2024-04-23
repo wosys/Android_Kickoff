@@ -79,6 +79,8 @@ import java.util.concurrent.FutureTask;
 public class DeviceInfoActivity extends PreferenceActivity {
     private static final String TAG = DeviceInfoActivity.class.getSimpleName();
 
+    private Context mContext;
+
     private static final String KEY_DEVICE_META = "device_meta";
     private static final String KEY_HW_VERSION = "hardware_version";
     private static final String KEY_MEID_ESN = "meid_esn_number";
@@ -124,10 +126,10 @@ public class DeviceInfoActivity extends PreferenceActivity {
     private MetaInfoFetcherProxy mMetaInfoFetcherProxy;
 
     private ExtTelephonyManager mExtTelephonyManager = null;
+    private SubscriptionManager mSubscriptionManager;
     private int mNumPhone = 1;
 
-    private static abstract class TextFilePraserBase
-            implements CompletionHandler<Integer, ByteBuffer> {
+    private static abstract class TextFilePraserBase implements CompletionHandler<Integer, ByteBuffer> {
         private AsynchronousFileChannel mAsynchronousFileChannel;
         private ByteBuffer mBuffer;
         private boolean mIsStarted = false;
@@ -452,6 +454,7 @@ public class DeviceInfoActivity extends PreferenceActivity {
         if (getActionBar() != null) {
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
+        mContext = getBaseContext();
 
         addPreferencesFromResource(R.xml.device_info);
 
@@ -463,6 +466,7 @@ public class DeviceInfoActivity extends PreferenceActivity {
         Log.d(TAG, "numPhone: " + mNumPhone);
 
         mPhone = getPhone();
+        mSubscriptionManager = mContext.getSystemService(SubscriptionManager.class);
         mExtTelephonyManager = ExtTelephonyManager.getInstance(this);
         mExtTelephonyManager.connectService(mServiceCallback);
         Log.d(TAG, "Connect to ExtTelephony bound service...");
@@ -659,7 +663,7 @@ public class DeviceInfoActivity extends PreferenceActivity {
 
             updateMeidEsn();
 
-            updatePhoneNumber();
+            updatePhoneNumber(mPhone.getPhoneId());
 
             // get PRL version
             mHandler.getPrlVersion();
@@ -750,9 +754,15 @@ public class DeviceInfoActivity extends PreferenceActivity {
         }
     }
 
-    private void updatePhoneNumber() {
-        // TODO, update phone number here.
-        setSummaryText(KEY_TELEPHONE_NUMBER, mUnknown);
+    private void updatePhoneNumber(int simSlot) {
+        final SubscriptionInfo subscriptionInfo = Utils.getSubscriptionInfo(mContext, simSlot);
+        if (subscriptionInfo == null) {
+            setSummaryText(KEY_TELEPHONE_NUMBER, mUnknown);
+            return;
+        }
+
+        String phoneNumber = Utils.getBidiFormattedPhoneNumber(mContext, subscriptionInfo);
+        setSummaryText(KEY_TELEPHONE_NUMBER, phoneNumber);
     }
 
     private boolean invalidMeid(String meid) {
