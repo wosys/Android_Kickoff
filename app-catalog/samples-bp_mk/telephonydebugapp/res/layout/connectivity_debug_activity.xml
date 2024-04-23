@@ -7,10 +7,10 @@
 
     <TextView
         android:id="@+id/textView"
-        android:textSize="18sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/connectivity_request" />
+        android:text="@string/connectivity_request"
+        android:textSize="18sp" />
 
     <Spinner
         android:id="@+id/connectivityCapability"
@@ -19,15 +19,15 @@
 
     <Button
         android:id="@+id/request_network"
-        android:textSize="14sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/request_button" />
+        android:text="@string/request_button"
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/release_network"
-        android:textSize="14sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/release_button" />
+        android:text="@string/release_button"
+        android:textSize="14sp" />
 </LinearLayout>

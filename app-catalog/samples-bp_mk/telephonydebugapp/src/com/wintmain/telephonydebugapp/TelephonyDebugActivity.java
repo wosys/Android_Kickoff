@@ -28,16 +28,43 @@ import android.view.MenuItem;
 import com.wintmain.R;
 
 public class TelephonyDebugActivity extends PreferenceActivity {
+    @Override
+    public Intent getIntent() {
+        Intent intent = new Intent();
+        intent.putExtra(EXTRA_SHOW_FRAGMENT, TelephonyDebugFragment.class.getName());
+        intent.putExtra(EXTRA_NO_HEADERS, true);
+        return intent;
+    }
+
+    @Override
+    protected boolean isValidFragment(String fragmentName) {
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public static class TelephonyDebugFragment extends PreferenceFragment
-           implements Preference.OnPreferenceChangeListener {
+            implements Preference.OnPreferenceChangeListener {
 
         /** Called when the activity is first created. */
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             if (getActivity() != null && getActivity().getActionBar() != null) {
-                getActivity().getActionBar().setDisplayOptions(
-                        ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_TITLE);
+                getActivity()
+                        .getActionBar()
+                        .setDisplayOptions(
+                                ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_TITLE);
             }
 
             final Preference readConfigPreference;
@@ -58,29 +85,4 @@ public class TelephonyDebugActivity extends PreferenceActivity {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
     }
-
-    @Override
-    public Intent getIntent() {
-        Intent intent = new Intent();
-        intent.putExtra(EXTRA_SHOW_FRAGMENT, TelephonyDebugFragment.class.getName());
-        intent.putExtra(EXTRA_NO_HEADERS, true);
-        return intent;
-    }
-
-    @Override
-    protected boolean isValidFragment(String fragmentName) {
-        return true;
-    }
-
-    @Override
-     public boolean onOptionsItemSelected(MenuItem item) {
-         switch (item.getItemId()) {
-              case android.R.id.home:
-                 finish();
-                 return true;
-              default:
-                 break;
-         }
-         return super.onOptionsItemSelected(item);
-     }
 }

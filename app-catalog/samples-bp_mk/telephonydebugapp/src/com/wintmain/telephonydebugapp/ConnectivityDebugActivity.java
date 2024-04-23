@@ -71,16 +71,17 @@ public class ConnectivityDebugActivity extends Activity {
     private Button mReleaseNetworkButton;
     private Spinner mConnectivityCapabilities;
     private int mConnectivityCapabilityIndex = 0;
-    private ConnectivityManager mCM;
-    private NetworkRequest mNetworkRequest;
-    private ConnectivityManager.NetworkCallback mNetworkCallback = new NetworkRequestCallback();
-
     AdapterView.OnItemSelectedListener mConnectivityCapabilityHandler =
             new AdapterView.OnItemSelectedListener() {
                 @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    Log.i(TAG, "onItemSelected position: " + position
-                            + "; mConnectivityCapabilityIndex: " + mConnectivityCapabilityIndex);
+                public void onItemSelected(
+                        AdapterView<?> parent, View view, int position, long id) {
+                    Log.i(
+                            TAG,
+                            "onItemSelected position: "
+                                    + position
+                                    + "; mConnectivityCapabilityIndex: "
+                                    + mConnectivityCapabilityIndex);
                     if (position >= 0 && position < CONNECTIVITY_CAPABILITY_TABLES.length) {
                         mConnectivityCapabilityIndex = position;
                     }
@@ -91,63 +92,41 @@ public class ConnectivityDebugActivity extends Activity {
                     // TODO
                 }
             };
-
-    View.OnClickListener mRequestNetworkHandler = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            mNetworkRequest = new NetworkRequest.Builder()
-                    .addTransportType(TRANSPORT_CELLULAR)
-                    .addCapability(CONNECTIVITY_CAPABILITIES[mConnectivityCapabilityIndex])
-                    .addCapability(NET_CAPABILITY_NOT_RESTRICTED)
-                    .build();
-            Log.i(TAG, "mNetworkRequest: " + mNetworkRequest);
-            if (mCM != null) {
-                mCM.requestNetwork(mNetworkRequest, mNetworkCallback);
-            }
-        }
-    };
-
-    View.OnClickListener mReleaseNetworkHandler = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if (mCM != null && mNetworkRequest != null) {
-                try {
-                    mCM.unregisterNetworkCallback(mNetworkCallback);
-                } catch (IllegalArgumentException e) {
-                    Log.e(TAG, "unregisterNetworkCallback exception");
+    private ConnectivityManager mCM;
+    private NetworkRequest mNetworkRequest;
+    private ConnectivityManager.NetworkCallback mNetworkCallback = new NetworkRequestCallback();
+    View.OnClickListener mRequestNetworkHandler =
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mNetworkRequest =
+                            new NetworkRequest.Builder()
+                                    .addTransportType(TRANSPORT_CELLULAR)
+                                    .addCapability(
+                                            CONNECTIVITY_CAPABILITIES[mConnectivityCapabilityIndex])
+                                    .addCapability(NET_CAPABILITY_NOT_RESTRICTED)
+                                    .build();
+                    Log.i(TAG, "mNetworkRequest: " + mNetworkRequest);
+                    if (mCM != null) {
+                        mCM.requestNetwork(mNetworkRequest, mNetworkCallback);
+                    }
                 }
-            }
-        }
-    };
+            };
 
-    private class NetworkRequestCallback extends ConnectivityManager.NetworkCallback {
-        @Override
-        public void onLost(Network network) {
-            super.onLost(network);
-            Log.i(TAG, "onLost mConnectivityCapabilityIndex: " + mConnectivityCapabilityIndex);
-            Toast.makeText(getApplicationContext(),
-                    CONNECTIVITY_CAPABILITY_TABLES[mConnectivityCapabilityIndex] + " lost",
-                    Toast.LENGTH_LONG).show();
-        }
+    View.OnClickListener mReleaseNetworkHandler =
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mCM != null && mNetworkRequest != null) {
+                        try {
+                            mCM.unregisterNetworkCallback(mNetworkCallback);
+                        } catch (IllegalArgumentException e) {
+                            Log.e(TAG, "unregisterNetworkCallback exception");
+                        }
+                    }
+                }
+            };
 
-        @Override
-        public void onUnavailable() {
-            super.onUnavailable();
-            Log.i(TAG, "onUnavailable mConnectivityCapabilityIndex: " + mConnectivityCapabilityIndex);
-            Toast.makeText(getApplicationContext(),
-                    CONNECTIVITY_CAPABILITY_TABLES[mConnectivityCapabilityIndex] + " unavailable",
-                    Toast.LENGTH_LONG).show();
-        }
-
-        @Override
-        public void onAvailable(Network network) {
-            super.onAvailable(network);
-            Log.i(TAG, "onAvailable mConnectivityCapabilityIndex: " + mConnectivityCapabilityIndex);
-            Toast.makeText(getApplicationContext(),
-                    CONNECTIVITY_CAPABILITY_TABLES[mConnectivityCapabilityIndex] + " available",
-                    Toast.LENGTH_LONG).show();
-        }
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -157,7 +136,7 @@ public class ConnectivityDebugActivity extends Activity {
         setContentView(R.layout.connectivity_debug_activity);
 
         Log.i(TAG, "onCreate");
-        mCM = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        mCM = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
         mRequestNetworkButton = (Button) findViewById(R.id.request_network);
         mReleaseNetworkButton = (Button) findViewById(R.id.release_network);
@@ -165,12 +144,11 @@ public class ConnectivityDebugActivity extends Activity {
         mReleaseNetworkButton.setOnClickListener(mReleaseNetworkHandler);
 
         mConnectivityCapabilities = (Spinner) findViewById(R.id.connectivityCapability);
-        ArrayAdapter<String> mConnectivityCapabilitiesAdapter = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_spinner_item,
-                CONNECTIVITY_CAPABILITY_TABLES);
-        mConnectivityCapabilitiesAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> mConnectivityCapabilitiesAdapter =
+                new ArrayAdapter<String>(
+                        this, android.R.layout.simple_spinner_item, CONNECTIVITY_CAPABILITY_TABLES);
+        mConnectivityCapabilitiesAdapter.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item);
         mConnectivityCapabilities.setAdapter(mConnectivityCapabilitiesAdapter);
         mConnectivityCapabilities.setOnItemSelectedListener(mConnectivityCapabilityHandler);
     }
@@ -183,5 +161,44 @@ public class ConnectivityDebugActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private class NetworkRequestCallback extends ConnectivityManager.NetworkCallback {
+        @Override
+        public void onLost(Network network) {
+            super.onLost(network);
+            Log.i(TAG, "onLost mConnectivityCapabilityIndex: " + mConnectivityCapabilityIndex);
+            Toast.makeText(
+                            getApplicationContext(),
+                            CONNECTIVITY_CAPABILITY_TABLES[mConnectivityCapabilityIndex] + " lost",
+                            Toast.LENGTH_LONG)
+                    .show();
+        }
+
+        @Override
+        public void onUnavailable() {
+            super.onUnavailable();
+            Log.i(
+                    TAG,
+                    "onUnavailable mConnectivityCapabilityIndex: " + mConnectivityCapabilityIndex);
+            Toast.makeText(
+                            getApplicationContext(),
+                            CONNECTIVITY_CAPABILITY_TABLES[mConnectivityCapabilityIndex]
+                                    + " unavailable",
+                            Toast.LENGTH_LONG)
+                    .show();
+        }
+
+        @Override
+        public void onAvailable(Network network) {
+            super.onAvailable(network);
+            Log.i(TAG, "onAvailable mConnectivityCapabilityIndex: " + mConnectivityCapabilityIndex);
+            Toast.makeText(
+                            getApplicationContext(),
+                            CONNECTIVITY_CAPABILITY_TABLES[mConnectivityCapabilityIndex]
+                                    + " available",
+                            Toast.LENGTH_LONG)
+                    .show();
+        }
     }
 }

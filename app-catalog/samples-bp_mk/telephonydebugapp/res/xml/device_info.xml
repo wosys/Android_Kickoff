@@ -3,110 +3,128 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/device_info_title">
     <!-- for device model version -->
-    <Preference android:key="device_meta"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/model_number"
+        android:key="device_meta"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/model_number" />
     <!-- for hardware version -->
-    <Preference android:key="hardware_version"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/hardware_version"
+        android:key="hardware_version"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/hardware_version" />
     <!-- for meid number -->
-    <Preference android:key="meid_esn_number"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/meid_esn"
+        android:key="meid_esn_number"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
-    <Preference android:key="telephone_number"
+        android:title="@string/meid_esn" />
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/my_number"
+        android:key="telephone_number"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/my_number" />
     <!-- for baseband version -->
-    <Preference android:key="baseband_version"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/baseband_version"
+        android:key="baseband_version"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/baseband_version" />
     <!-- for PRL version -->
-    <Preference android:key="prl_version"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/prl_version"
+        android:key="prl_version"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/prl_version" />
     <!-- for firmware version(android version) -->
-    <Preference android:key="android_version"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/android_version"
+        android:key="android_version"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/android_version" />
     <!-- get sw version from prop or metainfo -->
-    <Preference android:key="software_version"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/software_version"
+        android:key="software_version"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/software_version" />
     <!-- for imsi of card -->
-    <Preference android:key="imsi"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/imsi"
+        android:key="imsi"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/imsi" />
     <!-- for UIM ID of C card -->
-    <Preference android:key="uim_id"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/uim_id"
+        android:key="uim_id"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/uim_id" />
     <!-- for SID number -->
-    <Preference android:key="sid_number"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/sid"
+        android:key="sid_number"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/sid" />
     <!-- for NID number -->
-    <Preference android:key="nid_number"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/nid"
+        android:key="nid_number"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/nid" />
     <!-- for MSPL number -->
-    <Preference android:key="mspl_number"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/mspl"
+        android:key="mspl_number"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/mspl" />
     <!-- for MLPL number -->
-    <Preference android:key="mlpl_number"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/mlpl"
+        android:key="mlpl_number"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/mlpl" />
     <!-- for PRL number -->
-    <Preference android:key="eprl_number"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/eprl"
+        android:key="eprl_number"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/eprl" />
     <!-- for ICCID number -->
-    <Preference android:key="iccid_number"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/iccid"
+        android:key="iccid_number"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/iccid" />
     <!-- for IMEI 1 number -->
-    <Preference android:key="imei_number_1"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/imei1"
+        android:key="imei_number_1"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/imei1" />
     <!-- for IMEI 2 number -->
-    <Preference android:key="imei_number_2"
+    <Preference
         style="?android:attr/preferenceInformationStyle"
-        android:title="@string/imei2"
+        android:key="imei_number_2"
+        android:persistent="false"
         android:summary="@string/device_info_unknown"
-        android:persistent="false" />
+        android:title="@string/imei2" />
 </PreferenceScreen>

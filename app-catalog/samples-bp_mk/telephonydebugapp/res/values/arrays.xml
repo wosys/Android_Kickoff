@@ -22,7 +22,7 @@
         <item>LTE_CA</item>
         <item>NR</item>
     </string-array>
-    <string-array translatable="false" name="rat_values">
+    <string-array name="rat_values" translatable="false">
         <!-- Unknown -->
         <item>0</item>
         <!-- GPRS -->
@@ -71,7 +71,7 @@
         <item>Emergency only</item>
         <item>Power off</item>
     </string-array>
-    <string-array translatable="false" name="reg_state_values">
+    <string-array name="reg_state_values" translatable="false">
         <!-- In service -->
         <item>0</item>
         <!-- Out of service -->
@@ -88,7 +88,7 @@
         <item>NR not restrictedd</item>
         <item>NR connected</item>
     </string-array>
-    <string-array translatable="false" name="nr_state_values">
+    <string-array name="nr_state_values" translatable="false">
         <!-- NR none  -->
         <item>0</item>
         <!-- NR restricted -->
@@ -106,7 +106,7 @@
         <item>High</item>
         <item>Mmwave</item>
     </string-array>
-    <string-array translatable="false" name="nr_frequency_values">
+    <string-array name="nr_frequency_values" translatable="false">
         <!-- The frequency is unknown  -->
         <item>0</item>
         <!-- The frequency is below 1GHz -->
@@ -125,7 +125,7 @@
         <item>Domestic roaming</item>
         <item>International roaming</item>
     </string-array>
-    <string-array translatable="false" name="roaming_type_values">
+    <string-array name="roaming_type_values" translatable="false">
         <!-- Not roaming, home network -->
         <item>0</item>
         <!-- In roaming, can't know domestic or international -->
@@ -140,7 +140,7 @@
         <item>SLOT1</item>
         <item>SLOT2</item>
     </string-array>
-    <string-array translatable="false" name="sim_values">
+    <string-array name="sim_values" translatable="false">
         <!-- SIM1's number -->
         <item>0</item>
         <!-- SIM2's number -->

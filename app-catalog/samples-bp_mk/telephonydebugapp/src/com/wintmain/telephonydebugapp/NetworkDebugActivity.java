@@ -57,7 +57,7 @@ public class NetworkDebugActivity extends PreferenceActivity
     private static final String NR_STATE_KEY = "nr_state";
     private static final String NR_FREQUENCY_KEY = "nr_frequency_range";
     private static final String OPERATOR_KEY = "operator";
-
+    private static final int MSG_RESET_NETWORK_DONE = 1;
     private EditTextPreference mNetworkMccMnc;
     private EditTextPreference mNetworkName;
     private ListPreference mVoiceRat;
@@ -68,20 +68,19 @@ public class NetworkDebugActivity extends PreferenceActivity
     private ListPreference mDataRoamingType;
     private ListPreference mNrState;
     private ListPreference mNrFrequency;
-
-    private static final int MSG_RESET_NETWORK_DONE = 1;
-    private final Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case MSG_RESET_NETWORK_DONE:
-                    initPreferenceValues();
-                    break;
-                default:
-                    break;
-            }
-        }
-    };
+    private final Handler mHandler =
+            new Handler() {
+                @Override
+                public void handleMessage(Message msg) {
+                    switch (msg.what) {
+                        case MSG_RESET_NETWORK_DONE:
+                            initPreferenceValues();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -95,20 +94,22 @@ public class NetworkDebugActivity extends PreferenceActivity
 
         Button setButton = findViewById(R.id.set_network);
         if (setButton != null) {
-            setButton.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    setOverrideNetworkInfo();
-                }
-            });
+            setButton.setOnClickListener(
+                    new View.OnClickListener() {
+                        public void onClick(View v) {
+                            setOverrideNetworkInfo();
+                        }
+                    });
         }
 
         Button resetButton = findViewById(R.id.reset);
         if (resetButton != null) {
-            resetButton.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    resetNetwork();
-                }
-            });
+            resetButton.setOnClickListener(
+                    new View.OnClickListener() {
+                        public void onClick(View v) {
+                            resetNetwork();
+                        }
+                    });
         }
 
         initPreferences();
@@ -128,7 +129,9 @@ public class NetworkDebugActivity extends PreferenceActivity
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Log.i(TAG, "onPreferenceChange pref: " + preference + "; newValue: " + newValue);
 
-        if (preference == null || newValue == null) return false;
+        if (preference == null || newValue == null) {
+            return false;
+        }
 
         if (preference == mNetworkMccMnc) {
             String mccmnc = (String) newValue;
@@ -144,7 +147,9 @@ public class NetworkDebugActivity extends PreferenceActivity
     }
 
     private void updatePreference(Preference preference, String value) {
-        if (preference == null || value == null) return;
+        if (preference == null || value == null) {
+            return;
+        }
 
         Log.i(TAG, "updatePreference key: " + preference.getKey() + "; value: " + value);
 
@@ -234,10 +239,13 @@ public class NetworkDebugActivity extends PreferenceActivity
 
             if (!VOICE_DATE_MERGED) {
                 int dataRat = ServiceState.RIL_RADIO_TECHNOLOGY_UNKNOWN;
-                NetworkRegistrationInfo nri = ss.getNetworkRegistrationInfo(
-                        NetworkRegistrationInfo.DOMAIN_PS,
-                        AccessNetworkConstants.TRANSPORT_TYPE_WWAN);
-                if (nri != null) dataRat = nri.getAccessNetworkTechnology();
+                NetworkRegistrationInfo nri =
+                        ss.getNetworkRegistrationInfo(
+                                NetworkRegistrationInfo.DOMAIN_PS,
+                                AccessNetworkConstants.TRANSPORT_TYPE_WWAN);
+                if (nri != null) {
+                    dataRat = nri.getAccessNetworkTechnology();
+                }
 
                 if (dataRat == ServiceState.RIL_RADIO_TECHNOLOGY_LTE
                         && ss.isUsingCarrierAggregation()) {
@@ -276,12 +284,10 @@ public class NetworkDebugActivity extends PreferenceActivity
         setIntentExtra(intent, VOICE_ROAMING_KEY, mVoiceRoamingType);
 
         // If voice and data setting merged, set voice info to data extra
-        setIntentExtra(intent, DATA_RAT_KEY,
-                VOICE_DATE_MERGED ? mVoiceRat : mDataRat);
-        setIntentExtra(intent, DATA_STATE_KEY,
-                VOICE_DATE_MERGED ? mVoiceState : mDataState);
-        setIntentExtra(intent, DATA_ROAMING_KEY,
-                VOICE_DATE_MERGED ? mVoiceRoamingType : mDataRoamingType);
+        setIntentExtra(intent, DATA_RAT_KEY, VOICE_DATE_MERGED ? mVoiceRat : mDataRat);
+        setIntentExtra(intent, DATA_STATE_KEY, VOICE_DATE_MERGED ? mVoiceState : mDataState);
+        setIntentExtra(
+                intent, DATA_ROAMING_KEY, VOICE_DATE_MERGED ? mVoiceRoamingType : mDataRoamingType);
 
         setIntentExtra(intent, NR_STATE_KEY, mNrState);
         setIntentExtra(intent, NR_FREQUENCY_KEY, mNrFrequency);
@@ -310,7 +316,9 @@ public class NetworkDebugActivity extends PreferenceActivity
                 }
             }
 
-            if (value != -1) intent.putExtra(key, value);
+            if (value != -1) {
+                intent.putExtra(key, value);
+            }
         }
     }
 

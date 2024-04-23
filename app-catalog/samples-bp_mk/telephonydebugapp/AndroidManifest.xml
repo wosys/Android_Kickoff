@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
-        package="com.wintmain"
-        android:sharedUserId="android.uid.phone"
-        android:versionCode="1" >
+    android:sharedUserId="android.uid.phone"
+    android:versionCode="1"
+    package="com.wintmain">
 
-    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="33" />
+    <uses-sdk
+        android:minSdkVersion="23"
+        android:targetSdkVersion="33" />
+
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CONTROL_INCALL_EXPERIENCE" />
-    <uses-permission android:name="android.permission.QTI_SYSTEM_SERVICE"/>
+    <uses-permission android:name="android.permission.QTI_SYSTEM_SERVICE" />
 
     <application
         android:allowBackup="false"
@@ -19,13 +21,13 @@
 
         <activity
             android:name=".telephonydebugapp.TelephonyDebugActivity"
-            android:label="@string/telephonydebug"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:excludeFromRecents="false"
-            android:noHistory="false"
+            android:exported="true"
+            android:label="@string/telephonydebug"
             android:launchMode="singleTop"
-            android:resizeableActivity="true"
-            android:exported="true">
+            android:noHistory="false"
+            android:resizeableActivity="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -34,11 +36,11 @@
 
         <activity
             android:name=".telephonydebugapp.ConnectivityDebugActivity"
-            android:label="@string/connectivity_debug_title"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/connectivity_debug_title"
             android:launchMode="singleTop"
-            android:resizeableActivity="true"
-            android:exported="true">
+            android:resizeableActivity="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -47,11 +49,11 @@
 
         <activity
             android:name=".telephonydebugapp.NetworkDebugActivity"
-            android:label="@string/network_debug_title"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/network_debug_title"
             android:launchMode="singleTop"
-            android:resizeableActivity="true"
-            android:exported="true">
+            android:resizeableActivity="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -60,12 +62,12 @@
 
         <activity
             android:name=".telephonydebugapp.SimDebugActivity"
-            android:label="@string/sim_debug_title"
-            android:process="com.android.phone"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/sim_debug_title"
             android:launchMode="singleTop"
-            android:resizeableActivity="true"
-            android:exported="true">
+            android:process="com.android.phone"
+            android:resizeableActivity="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -73,23 +75,27 @@
         </activity>
 
         <!-- <action android:name="org.codeaurora.intent.action.ACTION_DEVICEINFO" />不会在后台-->
-        <activity android:name=".deviceinfo.DeviceInfoActivity"
-            android:process="com.android.phone"
+        <activity
+            android:name=".deviceinfo.DeviceInfoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
             android:launchMode="singleTop"
-            android:resizeableActivity="true"
-            android:exported="true">
+            android:process="com.android.phone"
+            android:resizeableActivity="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <receiver android:name=".deviceinfo.DeviceInfoReceiver"
+        <receiver
+            android:name=".deviceinfo.DeviceInfoReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SECRET_CODE" />
-                <data android:host="00001111" android:scheme="android_secret_code" />
+                <data
+                    android:host="00001111"
+                    android:scheme="android_secret_code" />
             </intent-filter>
         </receiver>
 

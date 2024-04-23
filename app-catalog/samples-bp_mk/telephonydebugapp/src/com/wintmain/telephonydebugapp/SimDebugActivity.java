@@ -17,14 +17,12 @@
 package com.wintmain.telephonydebugapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.telephony.CarrierConfigManager;
-import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -35,6 +33,7 @@ import android.widget.Button;
 
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneFactory;
+
 import com.wintmain.R;
 
 public class SimDebugActivity extends PreferenceActivity
@@ -76,20 +75,22 @@ public class SimDebugActivity extends PreferenceActivity
 
         Button overrideButton = findViewById(R.id.override_sim);
         if (overrideButton != null) {
-            overrideButton.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    overrideSimInfo();
-                }
-            });
+            overrideButton.setOnClickListener(
+                    new View.OnClickListener() {
+                        public void onClick(View v) {
+                            overrideSimInfo();
+                        }
+                    });
         }
 
         Button resetButton = findViewById(R.id.reset);
         if (resetButton != null) {
-            resetButton.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    resetSim();
-                }
-            });
+            resetButton.setOnClickListener(
+                    new View.OnClickListener() {
+                        public void onClick(View v) {
+                            resetSim();
+                        }
+                    });
         }
 
         initPreferences();
@@ -109,7 +110,9 @@ public class SimDebugActivity extends PreferenceActivity
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Log.i(TAG, "onPreferenceChange pref: " + preference + "; newValue: " + newValue);
 
-        if (preference == null || newValue == null) return false;
+        if (preference == null || newValue == null) {
+            return false;
+        }
 
         if (preference == mSimPref) {
             try {
@@ -190,7 +193,8 @@ public class SimDebugActivity extends PreferenceActivity
         updatePreference(mSimGid2Pref, phone.getGroupIdLevel2());
         updatePreference(mSimPnnPref, phone.getPlmn());
 
-        updatePreference(mSimSpnPref,
+        updatePreference(
+                mSimSpnPref,
                 ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE))
                         .getSimOperatorNameForPhone(mCurrentSlotId));
 
@@ -198,7 +202,9 @@ public class SimDebugActivity extends PreferenceActivity
     }
 
     private void updatePreference(Preference preference, String value) {
-        if (preference == null) return;
+        if (preference == null) {
+            return;
+        }
 
         Log.i(TAG, "updatePreference key: " + preference.getKey() + "; value: " + value);
         value = (value == null ? "" : value);
@@ -216,9 +222,15 @@ public class SimDebugActivity extends PreferenceActivity
     private void overrideSimInfo() {
         Log.i(TAG, "overrideSimInfo");
 
-        setCarrierTestOverride(mSimMccMncPref.getText(), mSimImsiPref.getText(),
-                mSimIccidPref.getText(), mSimGid1Pref.getText(), mSimGid2Pref.getText(),
-                mSimPnnPref.getText(), mSimSpnPref.getText(), mSimApnPref.getText());
+        setCarrierTestOverride(
+                mSimMccMncPref.getText(),
+                mSimImsiPref.getText(),
+                mSimIccidPref.getText(),
+                mSimGid1Pref.getText(),
+                mSimGid2Pref.getText(),
+                mSimPnnPref.getText(),
+                mSimSpnPref.getText(),
+                mSimApnPref.getText());
     }
 
     private void resetSim() {
@@ -229,15 +241,22 @@ public class SimDebugActivity extends PreferenceActivity
         // setCarrierTestOverride(null, ...) will set mccmnc and spn as null.
         // So need to reset them to sim's real mccmnc and spn.
         TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        tm.setSimOperatorNumericForPhone(mCurrentSlotId,
-                PhoneFactory.getPhone(mCurrentSlotId).getOperatorNumeric());
+        tm.setSimOperatorNumericForPhone(
+                mCurrentSlotId, PhoneFactory.getPhone(mCurrentSlotId).getOperatorNumeric());
         tm.setSimOperatorNameForPhone(mCurrentSlotId, tm.getSimOperatorName());
 
         initPreferenceValues();
     }
 
-    private void setCarrierTestOverride(String mccmnc, String imsi, String iccid,
-            String gid1, String gid2, String pnn, String spn, String apn) {
+    private void setCarrierTestOverride(
+            String mccmnc,
+            String imsi,
+            String iccid,
+            String gid1,
+            String gid2,
+            String pnn,
+            String spn,
+            String apn) {
         Phone phone = PhoneFactory.getPhone(mCurrentSlotId);
         if (phone != null) {
             phone.setCarrierTestOverride(mccmnc, imsi, iccid, gid1, gid2, pnn, spn, "", apn);
@@ -247,8 +266,9 @@ public class SimDebugActivity extends PreferenceActivity
     }
 
     private void updateCarrierConfig() {
-        int[] subIds = ((SubscriptionManager) getSystemService(
-                Context.TELEPHONY_SUBSCRIPTION_SERVICE)).getSubscriptionIds(mCurrentSlotId);
+        int[] subIds =
+                ((SubscriptionManager) getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE))
+                        .getSubscriptionIds(mCurrentSlotId);
         if (subIds != null && subIds.length >= 1) {
             Log.i(TAG, "updateCarrierConfig subId: " + subIds[0]);
             ((CarrierConfigManager) getSystemService(Context.CARRIER_CONFIG_SERVICE))

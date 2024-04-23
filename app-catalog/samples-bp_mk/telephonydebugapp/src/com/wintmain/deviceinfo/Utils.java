@@ -40,12 +40,13 @@ public class Utils {
 
     /**
      * To get specific simSlot's SubscriptionInfo.
-     * @param simSlot.
+     *
      * @return Returns simSlot's SubscriptionInfo.
      */
     public static SubscriptionInfo getSubscriptionInfo(Context context, int simSlot) {
         final SubscriptionManager subManager = context.getSystemService(SubscriptionManager.class);
-        final List<SubscriptionInfo> subscriptionInfoList = subManager.getActiveSubscriptionInfoList();
+        final List<SubscriptionInfo> subscriptionInfoList =
+                subManager.getActiveSubscriptionInfoList();
         if (subscriptionInfoList != null) {
             for (SubscriptionInfo info : subscriptionInfoList) {
                 if (info.getSimSlotIndex() == simSlot) {
@@ -57,40 +58,50 @@ public class Utils {
     }
 
     /**
-     * To get the formatting text for display in a potentially opposite-directionality context without garbling.
+     * To get the formatting text for display in a potentially opposite-directionality context
+     * without garbling.
+     *
      * @param subscriptionInfo {@link SubscriptionInfo} subscription information.
      * @return Returns phone number with Bidi format.
      */
     @Nullable
-    public static String getBidiFormattedPhoneNumber(Context context, SubscriptionInfo subscriptionInfo) {
+    public static String getBidiFormattedPhoneNumber(
+            Context context, SubscriptionInfo subscriptionInfo) {
         String phoneNumber = getFormattedPhoneNumber(context, subscriptionInfo);
-        return (phoneNumber == null) ? phoneNumber :
-                BidiFormatter.getInstance().unicodeWrap(phoneNumber, TextDirectionHeuristics.LTR);
+        return (phoneNumber == null)
+                ? phoneNumber
+                : BidiFormatter.getInstance().unicodeWrap(phoneNumber, TextDirectionHeuristics.LTR);
     }
 
     /** Returns the formatted phone number of a subscription. */
     @Nullable
-    public static String getFormattedPhoneNumber(Context context, SubscriptionInfo subscriptionInfo) {
+    public static String getFormattedPhoneNumber(
+            Context context, SubscriptionInfo subscriptionInfo) {
         if (subscriptionInfo == null) {
             Log.e(TAG, "Invalid subscription.");
             return null;
         }
 
-        final SubscriptionManager subscriptionManager = context.getSystemService(SubscriptionManager.class);
-        String rawPhoneNumber = subscriptionManager.getPhoneNumber(subscriptionInfo.getSubscriptionId());
+        final SubscriptionManager subscriptionManager =
+                context.getSystemService(SubscriptionManager.class);
+        String rawPhoneNumber =
+                subscriptionManager.getPhoneNumber(subscriptionInfo.getSubscriptionId());
         if (TextUtils.isEmpty(rawPhoneNumber)) {
             return null;
         }
-        String countryIso = MccTable.countryCodeForMcc(subscriptionInfo.getMccString()).toUpperCase(Locale.ROOT);
+        String countryIso =
+                MccTable.countryCodeForMcc(subscriptionInfo.getMccString())
+                        .toUpperCase(Locale.ROOT);
         return PhoneNumberUtils.formatNumber(rawPhoneNumber, countryIso);
     }
 
     public static boolean isInactiveInsertedPSim(UiccSlotInfo slotInfo) {
-        if (slotInfo == null)  {
+        if (slotInfo == null) {
             return false;
         }
-        return !slotInfo.getIsEuicc() && !slotInfo.getPorts().stream().findFirst().get()
-                .isActive() && slotInfo.getCardStateInfo() == CARD_STATE_INFO_PRESENT;
+        return !slotInfo.getIsEuicc()
+                && !slotInfo.getPorts().stream().findFirst().get().isActive()
+                && slotInfo.getCardStateInfo() == CARD_STATE_INFO_PRESENT;
     }
 
     public static String getDisplayName(SubscriptionInfo info) {

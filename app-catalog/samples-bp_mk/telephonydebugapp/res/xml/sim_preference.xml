@@ -1,78 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/sim_debug_title">
+    android:title="@string/sim_debug_title">
     <ListPreference
-        android:title="@string/sim"
         android:dialogTitle="@string/sim"
-        android:key="sim"
         android:entries="@array/sim_entries"
         android:entryValues="@array/sim_values"
+        android:key="sim"
         android:persistent="false"
-        />
+        android:title="@string/sim" />
     <EditTextPreference
-        android:title="@string/mcc_mnc"
         android:dialogTitle="@string/mcc_mnc"
+        android:inputType="number"
         android:key="mcc_mnc"
-        android:singleLine="true"
-        android:inputType="number"
         android:persistent="false"
-        />
+        android:singleLine="true"
+        android:title="@string/mcc_mnc" />
     <EditTextPreference
-        android:title="@string/sim_imsi"
         android:dialogTitle="@string/sim_imsi"
+        android:inputType="number"
         android:key="sim_imsi"
-        android:singleLine="true"
-        android:inputType="number"
         android:persistent="false"
-        />
+        android:singleLine="true"
+        android:title="@string/sim_imsi" />
     <EditTextPreference
-        android:title="@string/sim_iccid"
         android:dialogTitle="@string/sim_iccid"
-        android:key="sim_iccid"
-        android:singleLine="true"
         android:inputType="number"
+        android:key="sim_iccid"
         android:persistent="false"
-        />
+        android:singleLine="true"
+        android:title="@string/sim_iccid" />
     <EditTextPreference
-        android:title="@string/sim_gid1"
         android:dialogTitle="@string/sim_gid1"
+        android:inputType="text"
         android:key="sim_gid1"
-        android:singleLine="true"
-        android:inputType="text"
         android:persistent="false"
-        />
+        android:singleLine="true"
+        android:title="@string/sim_gid1" />
     <EditTextPreference
-        android:title="@string/sim_gid2"
         android:dialogTitle="@string/sim_gid2"
+        android:inputType="text"
         android:key="sim_gid2"
-        android:singleLine="true"
-        android:inputType="text"
         android:persistent="false"
-        />
+        android:singleLine="true"
+        android:title="@string/sim_gid2" />
     <EditTextPreference
-        android:title="@string/sim_pnn"
         android:dialogTitle="@string/sim_pnn"
+        android:inputType="text"
         android:key="sim_pnn"
-        android:singleLine="true"
-        android:inputType="text"
         android:persistent="false"
-        />
+        android:singleLine="true"
+        android:title="@string/sim_pnn" />
     <EditTextPreference
-        android:title="@string/sim_spn"
         android:dialogTitle="@string/sim_spn"
+        android:inputType="text"
         android:key="sim_spn"
-        android:singleLine="true"
-        android:inputType="text"
         android:persistent="false"
-        />
+        android:singleLine="true"
+        android:title="@string/sim_spn" />
     <EditTextPreference
-        android:title="@string/sim_apn"
         android:dialogTitle="@string/sim_apn"
-        android:key="sim_apn"
-        android:singleLine="true"
         android:inputType="text"
+        android:key="sim_apn"
         android:persistent="false"
-        />
+        android:singleLine="true"
+        android:title="@string/sim_apn" />
 
 </PreferenceScreen>
