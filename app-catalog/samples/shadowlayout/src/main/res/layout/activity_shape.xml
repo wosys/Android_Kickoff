@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright 2023 wintmain
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2023-2024 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -94,8 +93,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_15"
-                    android:layout_marginTop="15dp"
                     android:layout_marginRight="@dimen/dp_15"
+                    android:layout_marginTop="15dp"
                     android:text="1、边框的使用"
                     android:textColor="@color/title_color"
                     android:textSize="15sp" />
@@ -166,8 +165,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_15"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="@dimen/dp_15"
+                    android:layout_marginTop="20dp"
                     android:text="2、shape、selector及背景圆角的使用"
                     android:textColor="@color/title_color"
                     android:textSize="15sp" />
@@ -345,8 +344,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_15"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="@dimen/dp_15"
+                    android:layout_marginTop="20dp"
                     android:text="3、渐变色的用法"
                     android:textColor="@color/title_color"
                     android:textSize="15sp" />
@@ -404,8 +403,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_15"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="@dimen/dp_15"
+                    android:layout_marginTop="20dp"
                     android:text="4、ripple水波纹点击效果"
                     android:textColor="@color/title_color"
                     android:textSize="15sp" />
@@ -466,8 +465,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_15"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="@dimen/dp_15"
+                    android:layout_marginTop="20dp"
                     android:text="5、绑定TextView(请点击)"
                     android:textColor="@color/title_color"
                     android:textSize="15sp" />
@@ -566,8 +565,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_15"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="@dimen/dp_15"
+                    android:layout_marginTop="20dp"
                     android:text="6、组合用法"
                     android:textColor="@color/title_color"
                     android:textSize="15sp" />

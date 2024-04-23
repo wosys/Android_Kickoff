@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,17 +17,8 @@
 package lib.wintmain.shadowlib;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.Shader;
-
+import android.graphics.*;
 import androidx.annotation.NonNull;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.Transformation;
 import com.bumptech.glide.load.engine.Resource;
@@ -52,7 +43,7 @@ class GlideRoundTransform implements Transformation<Bitmap> {
      * @param context 上下文
      */
     public GlideRoundTransform(Context context, float leftTop_radius, float leftBottom_radius,
-                               float rightTop_radius, float rightBottom_radius) {
+            float rightTop_radius, float rightBottom_radius) {
         this.mBitmapPool = Glide.get(context).getBitmapPool();
         this.leftTop_radius = leftTop_radius;
         if (leftTop_radius != 0) {
@@ -75,7 +66,7 @@ class GlideRoundTransform implements Transformation<Bitmap> {
     @NonNull
     @Override
     public Resource<Bitmap> transform(@NonNull Context context, @NonNull Resource<Bitmap> resource,
-                                      int outWidth, int outHeight) {
+            int outWidth, int outHeight) {
         Bitmap source = resource.get();
         int finalWidth, finalHeight;
         // 输出目标的宽高或高宽比例
@@ -124,7 +115,8 @@ class GlideRoundTransform implements Transformation<Bitmap> {
         Canvas canvas = new Canvas(outBitmap);
         Paint paint = new Paint();
         // 关联画笔绘制的原图bitmap
-        BitmapShader shader = new BitmapShader(source, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+        BitmapShader shader = new BitmapShader(source, Shader.TileMode.CLAMP,
+                Shader.TileMode.CLAMP);
         // 计算中心位置,进行偏移
         int width = (source.getWidth() - finalWidth) / 2;
         int height = (source.getHeight() - finalHeight) / 2;

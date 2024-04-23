@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,8 @@ package lib.wintmain.shadowlib;
 
 import android.graphics.drawable.Drawable;
 import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
@@ -30,13 +28,13 @@ import com.bumptech.glide.request.transition.Transition;
 
 class GlideRoundUtils {
     public static void setRoundCorner(final View view, final Drawable resourceId,
-                                      final float cornerDipValue) {
+            final float cornerDipValue) {
         if (cornerDipValue == 0) {
             if (view.getMeasuredWidth() == 0 && view.getMeasuredHeight() == 0) {
                 view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
                     @Override
                     public void onLayoutChange(View v, int left, int top, int right, int bottom,
-                                               int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                            int oldLeft, int oldTop, int oldRight, int oldBottom) {
                         view.removeOnLayoutChangeListener(this);
                         Glide.with(view)
                                 .asDrawable()
@@ -46,7 +44,7 @@ class GlideRoundUtils {
                                 .into(new CustomTarget<Drawable>() {
                                     @Override
                                     public void onResourceReady(@NonNull Drawable resource,
-                                                                @Nullable Transition<? super Drawable> transition) {
+                                            @Nullable Transition<? super Drawable> transition) {
                                         view.setBackground(resource);
                                     }
 
@@ -64,7 +62,8 @@ class GlideRoundUtils {
                         .override(view.getMeasuredWidth(), view.getMeasuredHeight())
                         .into(new CustomTarget<Drawable>() {
                             @Override
-                            public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                            public void onResourceReady(@NonNull Drawable resource,
+                                    @Nullable Transition<? super Drawable> transition) {
                                 view.setBackground(resource);
                             }
 
@@ -81,16 +80,17 @@ class GlideRoundUtils {
                 view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
                     @Override
                     public void onLayoutChange(View v, int left, int top, int right, int bottom,
-                                               int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                            int oldLeft, int oldTop, int oldRight, int oldBottom) {
                         view.removeOnLayoutChangeListener(this);
                         Glide.with(view)
                                 .load(resourceId)
-                                .transform(new CenterCrop(), new RoundedCorners((int) cornerDipValue))
+                                .transform(new CenterCrop(),
+                                        new RoundedCorners((int) cornerDipValue))
                                 .override(view.getMeasuredWidth(), view.getMeasuredHeight())
                                 .into(new CustomTarget<Drawable>() {
                                     @Override
                                     public void onResourceReady(@NonNull Drawable resource,
-                                                                @Nullable Transition<? super Drawable> transition) {
+                                            @Nullable Transition<? super Drawable> transition) {
                                         view.setBackground(resource);
                                     }
 
@@ -109,7 +109,7 @@ class GlideRoundUtils {
                         .into(new CustomTarget<Drawable>() {
                             @Override
                             public void onResourceReady(@NonNull Drawable resource,
-                                                        @Nullable Transition<? super Drawable> transition) {
+                                    @Nullable Transition<? super Drawable> transition) {
                                 view.setBackground(resource);
                             }
 
@@ -123,14 +123,15 @@ class GlideRoundUtils {
 
 
     public static void setCorners(final View view, final Drawable resourceId,
-                                  final float leftTop_corner, final float leftBottom_corner,
-                                  final float rightTop_corner, final float rightBottom_corner) {
-        if (leftTop_corner == 0 && leftBottom_corner == 0 && rightTop_corner == 0 && rightBottom_corner == 0) {
+            final float leftTop_corner, final float leftBottom_corner,
+            final float rightTop_corner, final float rightBottom_corner) {
+        if (leftTop_corner == 0 && leftBottom_corner == 0 && rightTop_corner == 0
+                && rightBottom_corner == 0) {
             if (view.getMeasuredWidth() == 0 && view.getMeasuredHeight() == 0) {
                 view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
                     @Override
                     public void onLayoutChange(View v, int left, int top, int right, int bottom,
-                                               int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                            int oldLeft, int oldTop, int oldRight, int oldBottom) {
                         view.removeOnLayoutChangeListener(this);
                         Glide.with(view)
                                 .load(resourceId)
@@ -138,7 +139,7 @@ class GlideRoundUtils {
                                 .into(new CustomTarget<Drawable>() {
                                     @Override
                                     public void onResourceReady(@NonNull Drawable resource,
-                                                                @Nullable Transition<? super Drawable> transition) {
+                                            @Nullable Transition<? super Drawable> transition) {
                                         view.setBackground(resource);
                                     }
 
@@ -155,7 +156,7 @@ class GlideRoundUtils {
                         .into(new CustomTarget<Drawable>() {
                             @Override
                             public void onResourceReady(@NonNull Drawable resource,
-                                                        @Nullable Transition<? super Drawable> transition) {
+                                    @Nullable Transition<? super Drawable> transition) {
                                 view.setBackground(resource);
                             }
 
@@ -170,10 +171,11 @@ class GlideRoundUtils {
                 view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
                     @Override
                     public void onLayoutChange(View v, int left, int top, int right, int bottom,
-                                               int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                            int oldLeft, int oldTop, int oldRight, int oldBottom) {
                         view.removeOnLayoutChangeListener(this);
                         GlideRoundTransform transform = new GlideRoundTransform(view.getContext(),
-                                leftTop_corner, leftBottom_corner, rightTop_corner, rightBottom_corner);
+                                leftTop_corner, leftBottom_corner, rightTop_corner,
+                                rightBottom_corner);
                         Glide.with(view)
                                 .load(resourceId)
                                 .transform(transform)
@@ -181,7 +183,7 @@ class GlideRoundUtils {
                                 .into(new CustomTarget<Drawable>() {
                                     @Override
                                     public void onResourceReady(@NonNull Drawable resource,
-                                                                @Nullable Transition<? super Drawable> transition) {
+                                            @Nullable Transition<? super Drawable> transition) {
                                         view.setBackground(resource);
                                     }
 
@@ -202,7 +204,7 @@ class GlideRoundUtils {
                         .into(new CustomTarget<Drawable>() {
                             @Override
                             public void onResourceReady(@NonNull Drawable resource,
-                                                        @Nullable Transition<? super Drawable> transition) {
+                                    @Nullable Transition<? super Drawable> transition) {
                                 view.setBackground(resource);
                             }
 

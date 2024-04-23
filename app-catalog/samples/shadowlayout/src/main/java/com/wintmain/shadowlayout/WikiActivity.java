@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,18 +23,11 @@ import android.net.http.SslError;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.webkit.JavascriptInterface;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.webkit.*;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-
 import com.wintmain.shadowlayout.databinding.ActivityWikiBinding;
 
 
@@ -64,7 +57,9 @@ public class WikiActivity extends AppCompatActivity {
         webSettings.setDisplayZoomControls(false); // 隐藏原生的缩放控件
 
         // 其他细节操作
-        webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK); // 开启缓存LOAD_CACHE_ELSE_NETWORK//LOAD_NO_CACHE关闭缓存
+        webSettings.setCacheMode(
+                WebSettings.LOAD_CACHE_ELSE_NETWORK); // 开启缓存LOAD_CACHE_ELSE_NETWORK
+        // LOAD_NO_CACHE关闭缓存
         webSettings.setAllowFileAccess(true); // 设置可以访问文件
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true); // 支持通过JS打开新窗口
         webSettings.setLoadsImagesAutomatically(true); // 支持自动加载图片
@@ -93,7 +88,7 @@ public class WikiActivity extends AppCompatActivity {
 
             @Override
             public void onReceivedError(WebView view, int errorCode,
-                                        String description, String failingUrl) {
+                    String description, String failingUrl) {
                 // Condition 'binding.progressBar != null' is always 'true'
                 binding.progressBar.setVisibility(View.GONE);
                 Toast.makeText(WikiActivity.this, "网页加载失败", Toast.LENGTH_SHORT).show();

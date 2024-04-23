@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,9 +21,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import lib.wintmain.shadowlib.ShadowLayout;
 
 public class StarShowActivity extends AppCompatActivity implements View.OnClickListener {
@@ -81,7 +79,7 @@ public class StarShowActivity extends AppCompatActivity implements View.OnClickL
         skbar_limit.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress,
-                                          boolean fromUser) {
+                    boolean fromUser) {
                 ShadowLayout.setShadowLimit(progress);
             }
 
