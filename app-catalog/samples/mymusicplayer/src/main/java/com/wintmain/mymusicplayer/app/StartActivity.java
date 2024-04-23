@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.wintmain.mymusicplayer.app;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.mymusicplayer.R;
 
 public class StartActivity extends AppCompatActivity {

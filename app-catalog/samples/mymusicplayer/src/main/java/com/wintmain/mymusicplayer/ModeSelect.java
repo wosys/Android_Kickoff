@@ -20,15 +20,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.catalog.framework.annotations.Sample;
 import com.wintmain.mymusicplayer.app.InternetActivity;
 import com.wintmain.mymusicplayer.app.LocalActivity;
 import com.wintmain.mymusicplayer.app.StartActivity;
-
 import lib.wintmain.toaster.toast.ToastUtils;
 
 /**

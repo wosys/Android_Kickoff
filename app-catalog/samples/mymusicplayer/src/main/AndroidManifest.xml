@@ -41,25 +41,26 @@
     <application>
         <activity
             android:name=".ModeSelect"
-            android:theme="@style/Theme.AppCompat.DayNight"
             android:exported="true"
-            android:launchMode="singleTop">
-        </activity>
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
             android:name=".app.LocalActivity"
-            android:theme="@style/Theme.AppCompat.DayNight"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.DayNight">
             <meta-data
                 android:name="android.app.search"
                 android:resource="@xml/search" />
         </activity>
 
-        <activity android:name=".app.InternetActivity"
-                  android:theme="@style/Theme.AppCompat.DayNight"/>
+        <activity
+            android:name=".app.InternetActivity"
+            android:theme="@style/Theme.AppCompat.DayNight" />
 
-        <activity android:name=".app.StartActivity"
-            android:theme="@style/Theme.AppCompat.DayNight"/>
+        <activity
+            android:name=".app.StartActivity"
+            android:theme="@style/Theme.AppCompat.DayNight" />
 
         <service
             android:name=".MusicService"

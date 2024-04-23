@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,9 +31,9 @@ public class SongAdapter extends BaseAdapter {
     private final ArrayList<Song> songs;
     private final LayoutInflater songInf;
 
-    public SongAdapter(Context c, ArrayList<Song> theSongs){
-        songs=theSongs;
-        songInf=LayoutInflater.from(c);
+    public SongAdapter(Context c, ArrayList<Song> theSongs) {
+        songs = theSongs;
+        songInf = LayoutInflater.from(c);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class SongAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        if( convertView == null ){
+        if (convertView == null) {
             //We must create a View:
             convertView = songInf.inflate(R.layout.song, parent, false);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ public abstract class OnPlayStatusChangedListener extends IOnPlayStatusChangedLi
     /**
      * 1 自动播放时开始播放曲目时回调 2 继续播放，开始播放时回调
      *
-     * @param song 当前开始播放曲目
-     * @param index 播放列表下标
+     * @param song   当前开始播放曲目
+     * @param index  播放列表下标
      * @param status 播放状态
      */
     @Override
@@ -39,8 +39,8 @@ public abstract class OnPlayStatusChangedListener extends IOnPlayStatusChangedLi
     /**
      * 1 自动播放时播放曲目播放完成时回调，一般情况下该方法调用后{@link #playStart(Song, int, int)}将会被调用 2 暂停，停止播放时回调
      *
-     * @param song 当前播放曲目
-     * @param index 播放列表下标
+     * @param song   当前播放曲目
+     * @param index  播放列表下标
      * @param status 播放状态
      */
     @Override

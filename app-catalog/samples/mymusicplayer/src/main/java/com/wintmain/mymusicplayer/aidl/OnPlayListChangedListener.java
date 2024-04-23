@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ public abstract class OnPlayListChangedListener extends IOnPlayListChangedListen
      * 服务端的播放列表改变时回调
      *
      * @param current 当前曲目
-     * @param index 曲目下标
-     * @param id 歌单 id
+     * @param index   曲目下标
+     * @param id      歌单 id
      */
     @Override
     public abstract void onPlayListChange(Song current, int index, int id);

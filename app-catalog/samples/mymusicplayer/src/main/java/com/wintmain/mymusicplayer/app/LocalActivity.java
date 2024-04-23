@@ -17,11 +17,7 @@
 package com.wintmain.mymusicplayer.app;
 
 import android.Manifest;
-import android.content.ComponentName;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
+import android.content.*;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -36,25 +32,15 @@ import android.widget.ListView;
 import android.widget.MediaController.MediaPlayerControl;
 import android.widget.SearchView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.single.PermissionListener;
-import com.wintmain.mymusicplayer.DataBaseHelper;
-import com.wintmain.mymusicplayer.EditPlaylist;
-import com.wintmain.mymusicplayer.MusicController;
-import com.wintmain.mymusicplayer.MusicService;
-import com.wintmain.mymusicplayer.Playlist;
-import com.wintmain.mymusicplayer.R;
-import com.wintmain.mymusicplayer.Song;
-import com.wintmain.mymusicplayer.SongAdapter;
-
-import lib.wintmain.toaster.toast.ToastUtils;
+import com.wintmain.mymusicplayer.*;
 import lib.wintmain.toaster.style.ToastBlackStyle;
+import lib.wintmain.toaster.toast.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -75,15 +61,13 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
     private ListView songView;
     private MusicService musicSrv;
     private Intent playIntent;
-    private boolean musicBound=false;
-    private MusicController controller;
-    private boolean paused = false, playbackPaused = false;
+    private boolean musicBound = false;
     //connect to the service
-    private final ServiceConnection musicConnection = new ServiceConnection(){
+    private final ServiceConnection musicConnection = new ServiceConnection() {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            MusicService.MusicBinder binder = (MusicService.MusicBinder)service;
+            MusicService.MusicBinder binder = (MusicService.MusicBinder) service;
             //get service
             musicSrv = binder.getService();
             //pass list
@@ -96,6 +80,8 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
             musicBound = false;
         }
     };
+    private MusicController controller;
+    private boolean paused = false, playbackPaused = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,8 +92,8 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
         search_result_arraylist = new ArrayList<>();
         myDB = new DataBaseHelper(this);
 
-        Collections.sort(songList, new Comparator<Song>(){
-            public int compare(Song a, Song b){
+        Collections.sort(songList, new Comparator<Song>() {
+            public int compare(Song a, Song b) {
                 return a.getTitle().compareTo(b.getTitle());
             }
         });
@@ -140,7 +126,9 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
                     }
 
                     @Override
-                    public void onPermissionRationaleShouldBeShown(com.karumi.dexter.listener.PermissionRequest permission, PermissionToken token) {
+                    public void onPermissionRationaleShouldBeShown(
+                            com.karumi.dexter.listener.PermissionRequest permission,
+                            PermissionToken token) {
                         token.continuePermissionRequest();
                     }
 
@@ -168,9 +156,10 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
                 String thisTitle = musicCursor.getString(titleColumn);
                 String thisArtist = musicCursor.getString(artistColumn);
                 songList.add(new Song(thisId, thisTitle, thisArtist));
-            }while (musicCursor.moveToNext());
+            } while (musicCursor.moveToNext());
         }
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -192,7 +181,7 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
                 playbackPaused = false;
             }
         } else {
-            Toast.makeText(LocalActivity.this,"null reference",Toast.LENGTH_LONG).show();
+            Toast.makeText(LocalActivity.this, "null reference", Toast.LENGTH_LONG).show();
         }
         controller.show(0);
     }
@@ -205,15 +194,15 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
             String name1 = entry.getTitle();
             String singer1 = entry.getArtist();
 
-            boolean isInserted = myDB.insertData((int) id1,name1,singer1);
+            boolean isInserted = myDB.insertData((int) id1, name1, singer1);
             if (isInserted) {
-                Toast.makeText(LocalActivity.this,"Song Added ",Toast.LENGTH_SHORT).show();
+                Toast.makeText(LocalActivity.this, "Song Added ", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(LocalActivity.this,"Something Went Wrong, Please try again",Toast.LENGTH_SHORT).show();
+                Toast.makeText(LocalActivity.this, "Something Went Wrong, Please try again",
+                        Toast.LENGTH_SHORT).show();
             }
-        }
-        else {
-            Toast.makeText(LocalActivity.this,"Error",Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(LocalActivity.this, "Error", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -222,27 +211,28 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
             int pos = Integer.parseInt(view.getTag().toString());
 
             Cursor cursor2 = myDB.getAllData();
-            if(cursor2.getCount()==0){
-                Toast.makeText(LocalActivity.this,"Empty Playlist",Toast.LENGTH_SHORT).show();
+            if (cursor2.getCount() == 0) {
+                Toast.makeText(LocalActivity.this, "Empty Playlist", Toast.LENGTH_SHORT).show();
             }
             ArrayList<Song> playList2 = new ArrayList<>();
 
             while (cursor2.moveToNext()) {
-                playList2.add(new Song(cursor2.getInt(0),cursor2.getString(1),cursor2.getString(2)));
+                playList2.add(
+                        new Song(cursor2.getInt(0), cursor2.getString(1), cursor2.getString(2)));
             }
 
             Song entry = playList2.get(pos);
 
             long id1 = entry.getID();
-            Integer deletedRow = myDB.deleteData(Integer.toString((int)id1));
+            Integer deletedRow = myDB.deleteData(Integer.toString((int) id1));
 
             if (deletedRow > 0) {
-                Toast.makeText(LocalActivity.this,"Song Removed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LocalActivity.this, "Song Removed", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(LocalActivity.this, "Try Again", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(LocalActivity.this,"Error",Toast.LENGTH_LONG).show();
+            Toast.makeText(LocalActivity.this, "Error", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -303,7 +293,8 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
                             search_result_arraylist.add(sam);
                         }
                     }
-                    language_adapter = new ArrayAdapter<Song>(LocalActivity.this, android.R.layout.simple_list_item_1, search_result_arraylist);
+                    language_adapter = new ArrayAdapter<Song>(LocalActivity.this,
+                            android.R.layout.simple_list_item_1, search_result_arraylist);
                     songView.setAdapter(language_adapter);
                     return false;
                 }
@@ -325,7 +316,8 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
             ArrayList<Song> playList2 = new ArrayList<>();
 
             while (cursor2.moveToNext()) {
-                playList2.add(new Song(cursor2.getInt(0), cursor2.getString(1), cursor2.getString(2)));
+                playList2.add(
+                        new Song(cursor2.getInt(0), cursor2.getString(1), cursor2.getString(2)));
             }
 
             EditPlaylist edit = new EditPlaylist(this, playList2);
@@ -356,16 +348,20 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
 
     @Override
     public int getDuration() {
-        if(musicSrv!=null && musicBound && musicSrv.isPng())
+        if (musicSrv != null && musicBound && musicSrv.isPng()) {
             return musicSrv.getDur();
-        else return 0;
+        } else {
+            return 0;
+        }
     }
 
     @Override
     public int getCurrentPosition() {
-        if (musicSrv != null && musicBound && musicSrv.isPng())
+        if (musicSrv != null && musicBound && musicSrv.isPng()) {
             return musicSrv.getPosn();
-        else return 0;
+        } else {
+            return 0;
+        }
     }
 
     @Override
@@ -376,8 +372,9 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
 
     @Override
     public boolean isPlaying() {
-        if (musicSrv != null && musicBound)
+        if (musicSrv != null && musicBound) {
             return musicSrv.isPng();
+        }
         return false;
     }
 
@@ -428,18 +425,18 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
 
     private void playNext() {
         musicSrv.playNext();
-        if(playbackPaused){
+        if (playbackPaused) {
             setController();
-            playbackPaused=false;
+            playbackPaused = false;
         }
         controller.show(0);
     }
 
     private void playPrev() {
         musicSrv.playPrev();
-        if(playbackPaused){
+        if (playbackPaused) {
             setController();
-            playbackPaused=false;
+            playbackPaused = false;
         }
         controller.show(0);
     }
@@ -447,15 +444,15 @@ public class LocalActivity extends AppCompatActivity implements MediaPlayerContr
     @Override
     protected void onPause() {
         super.onPause();
-        paused=true;
+        paused = true;
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if(paused){
+        if (paused) {
             setController();
-            paused=false;
+            paused = false;
         }
     }
 
