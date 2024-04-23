@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,29 +25,22 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
-
-import lib.wintmain.base.action.ActivityAction;
-import lib.wintmain.base.action.BundleAction;
-import lib.wintmain.base.action.ClickAction;
-import lib.wintmain.base.action.HandlerAction;
-import lib.wintmain.base.action.KeyboardAction;
-import lib.wintmain.base.action.ResourcesAction;
+import lib.wintmain.base.action.*;
 
 import java.util.List;
 
 /** desc : Fragment 技术基类 */
 public abstract class BaseFragment<A extends BaseActivity> extends Fragment
         implements ActivityAction,
-                ResourcesAction,
-                HandlerAction,
-                ClickAction,
-                BundleAction,
-                KeyboardAction {
+        ResourcesAction,
+        HandlerAction,
+        ClickAction,
+        BundleAction,
+        KeyboardAction {
 
     /** Activity 对象 */
     private A mActivity;
@@ -102,10 +95,12 @@ public abstract class BaseFragment<A extends BaseActivity> extends Fragment
      *
      * @param first 是否首次调用
      */
-    protected void onFragmentResume(boolean first) {}
+    protected void onFragmentResume(boolean first) {
+    }
 
     /** Activity 可见回调 */
-    protected void onActivityResume() {}
+    protected void onActivityResume() {
+    }
 
     @Override
     public void onDestroyView() {

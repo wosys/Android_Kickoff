@@ -22,9 +22,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 import java.util.Random;
@@ -32,14 +30,14 @@ import java.util.Random;
 public class ep7_6 extends Activity {
     public static TextView[] tv = new TextView[14]; // TextView数组
     int[] bgcolor =
-            new int[] {
-                R.color.color1,
-                R.color.color2,
-                R.color.color3,
-                R.color.color4,
-                R.color.color5,
-                R.color.color6,
-                R.color.color7
+            new int[]{
+                    R.color.color1,
+                    R.color.color2,
+                    R.color.color3,
+                    R.color.color4,
+                    R.color.color5,
+                    R.color.color6,
+                    R.color.color7
             };
     private Handler handler; // 创建Handler对象
     private int index = 0; // 当前颜色值

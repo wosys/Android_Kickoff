@@ -22,9 +22,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 public class ep6_1 extends Activity {
@@ -37,21 +35,22 @@ public class ep6_1 extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ep6_1);
-        TextView textView = (TextView)findViewById(R.id.result);
+        TextView textView = (TextView) findViewById(R.id.result);
         textView.setText(getQueryData());//为标签设置数据
     }
 
     private String getQueryData() {
         StringBuilder stringBuilder = new StringBuilder();//用于保存字符串
         ContentResolver contentResolver = getContentResolver();//获得ContentResolver对象
-        Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, columns, null, null, null);
+        Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, columns, null,
+                null, null);
         //查询记录
         int idIndex = cursor.getColumnIndex(columns[0]);//获得ID记录的索引值
         int displayNameIndex = cursor.getColumnIndex(columns[1]);//获得姓名记录的索引值
-        for (cursor.moveToFirst();!cursor.isAfterLast();cursor.moveToNext()){//迭代全部
+        for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {//迭代全部
             int id = cursor.getInt(idIndex);
             String displayName = cursor.getString(displayNameIndex);
-            stringBuilder.append(id + ": "+ displayName + "\n");
+            stringBuilder.append(id + ": " + displayName + "\n");
         }
         cursor.close();//关闭CUrsor
         return stringBuilder.toString();//返回查询结果

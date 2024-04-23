@@ -18,15 +18,9 @@ package com.wintmain.basic.prejob.uiDemo;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.Toast;
-
+import android.widget.*;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class EpOne_19 extends AppCompatActivity {

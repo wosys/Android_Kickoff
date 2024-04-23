@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,22 +20,16 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.MotionEvent;
-import android.view.View;
+import android.view.*;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
-
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
-
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 /**
@@ -151,7 +145,7 @@ public final class BottomSheetDialog extends BaseDialog
             TypedArray array =
                     getContext()
                             .obtainStyledAttributes(
-                                    new int[] {android.R.attr.windowCloseOnTouchOutside});
+                                    new int[]{android.R.attr.windowCloseOnTouchOutside});
             mCanceledOnTouchOutside = array.getBoolean(0, true);
             array.recycle();
             mCanceledOnTouchOutsideSet = true;
@@ -218,7 +212,8 @@ public final class BottomSheetDialog extends BaseDialog
         }
 
         @Override
-        public void onSlide(@NonNull View bottomSheet, float slideOffset) {}
+        public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+        }
     }
 
     private class BehaviorAccessibilityDelegate extends AccessibilityDelegateCompat {

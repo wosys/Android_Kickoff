@@ -23,11 +23,9 @@ import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
-
 import com.wintmain.basic.R;
 
 /* 两种方式设置 Android 的布局，即 xml 和 code.*/
@@ -45,8 +43,9 @@ public class EpOne_1 extends AppCompatActivity {
         // 创建帧布局管理器
         FrameLayout frameLayout = new FrameLayout(this);
         // 设置背景
-        frameLayout.setBackground(ResourcesCompat.getDrawable(this.getResources(), R.drawable.ic_launcher_foreground,
-                null));
+        frameLayout.setBackground(
+                ResourcesCompat.getDrawable(this.getResources(), R.drawable.ic_launcher_foreground,
+                        null));
         // 设置在Activity中显示frameLayout
         setContentView(frameLayout);
         // 创建一个TextView组件text1,设置其文字大小和颜色，并将其添加到布局管理器中
@@ -61,7 +60,8 @@ public class EpOne_1 extends AppCompatActivity {
         text2.setText("单击进入Android…"); // 设置显示文字
         text2.setTextSize(TypedValue.COMPLEX_UNIT_PX, 24); // 设置文字大小，单位为像素
         text2.setTextColor(Color.rgb(1, 1, 1)); // 设置文字的颜色
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT); // 创建保存布局参数的对象
         params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL; // 设置居中显示
         text2.setLayoutParams(params); // 设置布局参数

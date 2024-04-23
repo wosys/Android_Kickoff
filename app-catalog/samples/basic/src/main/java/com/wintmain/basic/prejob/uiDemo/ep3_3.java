@@ -23,9 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 public class ep3_3 extends Activity {
@@ -67,7 +65,8 @@ public class ep3_3 extends Activity {
                                 && !"".equals(pwdcs)
                                 && !"".equals(emails)) {
                             if (!pwds.equals(pwdcs)) {
-                                Toast.makeText(ep3_3.this, "两次输入密码不一致", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ep3_3.this, "两次输入密码不一致", Toast.LENGTH_SHORT)
+                                        .show();
                                 pwd.requestFocus();
                             } else {
                                 Intent intent = new Intent(ep3_3.this, ep3_3second.class);

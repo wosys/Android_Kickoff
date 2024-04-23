@@ -21,10 +21,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class EpOne_12 extends AppCompatActivity {
@@ -48,10 +46,12 @@ public class EpOne_12 extends AppCompatActivity {
                 String confirmpwd = confirmpwdET.getText().toString();
 
                 if (!confirmpwd.isEmpty() && confirmpwd.equals(pwd)) {
-                    Toast.makeText(getApplicationContext(), "会员昵称:" + nickname + " 密码:" + pwd +
-                            " E-mail地址:" + email, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),
+                            "会员昵称:" + nickname + " 密码:" + pwd +
+                                    " E-mail地址:" + email, Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "两次输入的密码不一致", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "两次输入的密码不一致",
+                            Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -69,7 +69,8 @@ public class EpOne_12 extends AppCompatActivity {
                 EditText emailET = (EditText) findViewById(R.id.email); // 获取E-mail编辑框组件
                 emailET.setText("");
 
-                Toast.makeText(getApplicationContext(), "Reset success...", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Reset success...", Toast.LENGTH_LONG)
+                        .show();
             }
         });
     }

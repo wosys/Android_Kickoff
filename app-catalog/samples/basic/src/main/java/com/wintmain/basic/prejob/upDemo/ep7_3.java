@@ -22,7 +22,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-
 import androidx.annotation.Nullable;
 
 public class ep7_3 extends Activity {

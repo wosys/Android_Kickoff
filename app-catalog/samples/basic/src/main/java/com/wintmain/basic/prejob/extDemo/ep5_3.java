@@ -17,10 +17,8 @@
 package com.wintmain.basic.prejob.extDemo;
 
 import android.os.Bundle;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class ep5_3 extends AppCompatActivity {

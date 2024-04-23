@@ -21,10 +21,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ViewAnimator;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.google.android.catalog.framework.annotations.Sample;
 import com.wintmain.basic.R;
 import com.wintmain.basic.views.recyclerview.logger.Log;
@@ -38,7 +36,8 @@ import java.util.Objects;
  * A simple launcher activity containing a summary sample description, sample log and a custom
  * {@link androidx.fragment.app.Fragment} which can display a view.
  */
-@Sample(name = "RecyclerView", description = "使用 RecyclerView 创建动态列表", tags = {"android-samples", "recyclerView"})
+@Sample(name = "RecyclerView", description = "使用 RecyclerView 创建动态列表",
+        tags = {"android-samples", "recyclerView"})
 public class RecyclerViewActivity extends AppCompatActivity {
 
     public static final String TAG = "RecyclerViewActivity";

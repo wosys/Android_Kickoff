@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,18 +24,12 @@ import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.ViewGroup;
 import android.view.Window;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
-
-import lib.wintmain.base.action.ActivityAction;
-import lib.wintmain.base.action.BundleAction;
-import lib.wintmain.base.action.ClickAction;
-import lib.wintmain.base.action.HandlerAction;
-import lib.wintmain.base.action.KeyboardAction;
+import lib.wintmain.base.action.*;
 
 import java.util.List;
 import java.util.Random;
@@ -192,7 +186,7 @@ public abstract class BaseActivity extends AppCompatActivity
          * 结果回调
          *
          * @param resultCode 结果码
-         * @param data 数据
+         * @param data       数据
          */
         void onActivityResult(int resultCode, @Nullable Intent data);
     }

@@ -22,14 +22,13 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 
 public class ep1_20 extends ListActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String[] strings = new String[] {"测试1", "测试2", "测试3"};
+        String[] strings = new String[]{"测试1", "测试2", "测试3"};
         ArrayAdapter<String> ad =
                 new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, strings);
         // 该方法相对简单，直接通过this.setListAdapter(ad);配置适配器即可

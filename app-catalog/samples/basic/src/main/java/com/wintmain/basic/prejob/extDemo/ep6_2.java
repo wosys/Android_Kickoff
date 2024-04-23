@@ -23,7 +23,6 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 
 public class ep6_2 extends Activity {
@@ -36,10 +35,10 @@ public class ep6_2 extends Activity {
         textView.setTextSize(25);
 
         String[] columns = {
-            ContactsContract.Contacts._ID,
-            ContactsContract.Contacts.DISPLAY_NAME,
-            ContactsContract.CommonDataKinds.Phone.NUMBER,
-            ContactsContract.CommonDataKinds.Phone.CONTACT_ID
+                ContactsContract.Contacts._ID,
+                ContactsContract.Contacts.DISPLAY_NAME,
+                ContactsContract.CommonDataKinds.Phone.NUMBER,
+                ContactsContract.CommonDataKinds.Phone.CONTACT_ID
         };
         StringBuilder stringBuilder = new StringBuilder();
         ContentResolver contentResolver = getContentResolver();

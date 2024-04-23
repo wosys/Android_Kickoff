@@ -19,10 +19,8 @@ package com.wintmain.basic.prejob.uiDemo;
 import android.os.Bundle;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 import java.util.ArrayList;
@@ -38,17 +36,17 @@ public class ep2_7 extends AppCompatActivity {
 
         GridView gridview = (GridView) findViewById(R.id.gridView1); // 获取GridView组件
         int[] imageId =
-                new int[] {
-                    R.drawable.img01,
-                    R.drawable.img02,
-                    R.drawable.img03,
-                    R.drawable.img04,
-                    R.drawable.img05,
-                    R.drawable.img06
+                new int[]{
+                        R.drawable.img01,
+                        R.drawable.img02,
+                        R.drawable.img03,
+                        R.drawable.img04,
+                        R.drawable.img05,
+                        R.drawable.img06
                 }; // 定义并初始化保存图片id的数组
         String[] title =
-                new String[] {
-                    "智能手机", "运营商认证", "自动化测试", "系统升级", "硬件设计", "Camera一站式"
+                new String[]{
+                        "智能手机", "运营商认证", "自动化测试", "系统升级", "硬件设计", "Camera一站式"
                 }; // 定义并初始化保存说明文字的数组
         List<Map<String, Object>> listItems = new ArrayList<>(); // 创建一个List集合
         // 通过for循环将图片id和列表项文字放到Map中并添加到List集合中
@@ -64,8 +62,8 @@ public class ep2_7 extends AppCompatActivity {
                         this,
                         listItems,
                         R.layout.items,
-                        new String[] {"title", "image"},
-                        new int[] {R.id.title, R.id.image}); // 创建适配器
+                        new String[]{"title", "image"},
+                        new int[]{R.id.title, R.id.image}); // 创建适配器
         gridview.setAdapter(adapter); // 将适配器与GridView关联
     }
 }

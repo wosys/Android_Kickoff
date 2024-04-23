@@ -22,14 +22,12 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.widget.AutoCompleteTextView;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 public class ep6_3 extends Activity {
     private String[] columns =
-            new String[] {ContactsContract.Contacts._ID, ContactsContract.Contacts.DISPLAY_NAME};
+            new String[]{ContactsContract.Contacts._ID, ContactsContract.Contacts.DISPLAY_NAME};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

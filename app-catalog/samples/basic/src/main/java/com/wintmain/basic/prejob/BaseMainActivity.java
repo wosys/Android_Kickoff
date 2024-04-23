@@ -19,20 +19,14 @@ package com.wintmain.basic.prejob;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.catalog.framework.annotations.Sample;
 import com.wintmain.basic.R;
-import com.wintmain.basic.prejob.uiDemo.EpOne_1;
-import com.wintmain.basic.prejob.uiDemo.EpOne_12;
-import com.wintmain.basic.prejob.uiDemo.EpOne_14;
-import com.wintmain.basic.prejob.uiDemo.EpOne_15;
-import com.wintmain.basic.prejob.uiDemo.EpOne_19;
-import com.wintmain.basic.prejob.uiDemo.EpOne_4;
+import com.wintmain.basic.prejob.uiDemo.*;
 
 @SuppressWarnings("unchecked")
-@Sample(name = "PreJob", description = "Android学习基础", documentation = "", tags = {"A-Self_demos"})
+@Sample(name = "PreJob", description = "Android学习基础", documentation = "",
+        tags = {"A-Self_demos"})
 public class BaseMainActivity extends AppCompatActivity {
 
     @Override

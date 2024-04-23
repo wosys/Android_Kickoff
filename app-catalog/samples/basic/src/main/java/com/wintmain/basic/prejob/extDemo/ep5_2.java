@@ -19,10 +19,8 @@ package com.wintmain.basic.prejob.extDemo;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class ep5_2 extends AppCompatActivity {
@@ -31,18 +29,18 @@ public class ep5_2 extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
         setContentView(R.layout.ep5_2);
         int[] tvID =
-                new int[] {
-                    R.id.str1, R.id.str2, R.id.str3, R.id.str4, R.id.str5, R.id.str6, R.id.str7
+                new int[]{
+                        R.id.str1, R.id.str2, R.id.str3, R.id.str4, R.id.str5, R.id.str6, R.id.str7
                 }; // 定义TextView组件的id数组
         int[] tvColor =
-                new int[] {
-                    R.color.color1,
-                    R.color.color2,
-                    R.color.color3,
-                    R.color.color4,
-                    R.color.color5,
-                    R.color.color6,
-                    R.color.color7
+                new int[]{
+                        R.color.color1,
+                        R.color.color2,
+                        R.color.color3,
+                        R.color.color4,
+                        R.color.color5,
+                        R.color.color6,
+                        R.color.color7
                 }; // 使用颜色资源
         for (int i = 0; i < 7; i++) {
             TextView tv = (TextView) findViewById(tvID[i]); // 根据id获取TextView组件

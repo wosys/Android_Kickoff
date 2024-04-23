@@ -22,10 +22,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class ep2_4 extends AppCompatActivity {
@@ -45,7 +43,8 @@ public class ep2_4 extends AppCompatActivity {
                         int result = ratingbar.getProgress(); // 获取进度
                         float rating = ratingbar.getRating(); // 获取等级
                         float step = ratingbar.getStepSize(); // 获取每次最少要改变多少个星级
-                        Log.i("星级评分条", "step=" + step + " result=" + result + " rating=" + rating);
+                        Log.i("星级评分条",
+                                "step=" + step + " result=" + result + " rating=" + rating);
                         Toast.makeText(ep2_4.this, "你得到了" + rating + "颗星", Toast.LENGTH_SHORT)
                                 .show();
                     }

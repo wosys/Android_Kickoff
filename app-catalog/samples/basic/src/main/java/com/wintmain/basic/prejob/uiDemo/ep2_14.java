@@ -23,9 +23,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 public class ep2_14 extends Activity {
@@ -51,7 +49,8 @@ public class ep2_14 extends Activity {
                                 "取消",
                                 new DialogInterface.OnClickListener() {
                                     @Override
-                                    public void onClick(DialogInterface dialog, int which) {}
+                                    public void onClick(DialogInterface dialog, int which) {
+                                    }
                                 });
                         builder.setPositiveButton(
                                 "确定",

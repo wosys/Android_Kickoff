@@ -18,9 +18,7 @@ package com.wintmain.basic.prejob.extDemo;
 
 import android.app.Activity;
 import android.os.Bundle;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 public class ep5_1 extends Activity {

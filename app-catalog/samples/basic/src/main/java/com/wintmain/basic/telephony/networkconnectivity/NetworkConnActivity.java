@@ -25,9 +25,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.catalog.framework.annotations.Sample;
 import com.wintmain.basic.R;
 
@@ -39,7 +37,8 @@ import com.wintmain.basic.R;
  * @mailto wosintmain@gmail.com
  * @Date 2023-08-17 21:06:51
  */
-@Sample(name = "NetworkConnectivity", description = "网络连接例子", tags = {"android-samples", "telephony"})
+@Sample(name = "NetworkConnectivity", description = "网络连接例子",
+        tags = {"android-samples", "telephony"})
 public class NetworkConnActivity extends AppCompatActivity implements DownloadCallback {
     private static final String TAG = NetworkConnActivity.class.getSimpleName();
 

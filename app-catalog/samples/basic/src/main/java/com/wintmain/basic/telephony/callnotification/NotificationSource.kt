@@ -177,7 +177,12 @@ class NotificationSource<T>(
         cancelCallIntent.putExtra(NOTIFICATION_ACTION, NotificationState.CANCEL.ordinal)
 
         val cancelCallPendingIntent =
-            PendingIntent.getBroadcast(context, 1201, cancelCallIntent, PendingIntent.FLAG_IMMUTABLE)
+            PendingIntent.getBroadcast(
+                context,
+                1201,
+                cancelCallIntent,
+                PendingIntent.FLAG_IMMUTABLE
+            )
 
         return NotificationCompat.Builder(context, ChannelOnGoingID)
             .setSmallIcon(R.drawable.ic_launcher_foreground)

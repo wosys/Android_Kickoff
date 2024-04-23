@@ -21,9 +21,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 public class ep3_1second extends Activity {

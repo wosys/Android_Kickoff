@@ -20,7 +20,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 
 public class ep4_3second extends Activity {

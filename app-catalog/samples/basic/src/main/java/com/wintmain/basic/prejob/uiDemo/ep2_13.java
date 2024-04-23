@@ -24,9 +24,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 public class ep2_13 extends Activity {

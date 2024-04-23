@@ -19,10 +19,8 @@ package com.wintmain.basic.prejob.uiDemo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.TabHost;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class ep2_5 extends AppCompatActivity {

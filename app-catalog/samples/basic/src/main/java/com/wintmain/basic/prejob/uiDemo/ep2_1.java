@@ -22,16 +22,14 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class ep2_1 extends AppCompatActivity {
 
     private static final String[] COUNTRIES =
-            new String[] {"android", "android app", "android开发", "开发应用", "开发者"};
+            new String[]{"android", "android app", "android开发", "开发应用", "开发者"};
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

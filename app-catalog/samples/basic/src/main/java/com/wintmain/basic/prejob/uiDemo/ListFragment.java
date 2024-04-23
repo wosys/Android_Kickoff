@@ -22,7 +22,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import com.wintmain.basic.R;
 
 public class ListFragment extends android.app.ListFragment {

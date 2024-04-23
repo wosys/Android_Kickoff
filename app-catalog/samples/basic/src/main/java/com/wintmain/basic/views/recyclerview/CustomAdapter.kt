@@ -24,7 +24,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.wintmain.basic.R
 import com.wintmain.basic.views.recyclerview.logger.Log
 
-class CustomAdapter(private val dataSet: Array<String>): RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(private val dataSet: Array<String>) :
+    RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder)

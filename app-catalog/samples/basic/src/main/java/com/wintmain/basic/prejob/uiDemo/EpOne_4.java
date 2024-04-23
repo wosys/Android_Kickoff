@@ -16,9 +16,6 @@
 
 package com.wintmain.basic.prejob.uiDemo;
 
-import static android.graphics.BitmapFactory.decodeResource;
-import static android.widget.Toast.LENGTH_SHORT;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -30,10 +27,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-
 import com.wintmain.basic.R;
+
+import static android.graphics.BitmapFactory.decodeResource;
+import static android.widget.Toast.LENGTH_SHORT;
 
 public class EpOne_4 extends Activity {
     // AppCompatActivity -> 会有title bar，还有其他的一些

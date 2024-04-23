@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,35 +27,12 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.SparseArray;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
-import android.widget.TextView;
-
-import androidx.annotation.ColorInt;
-import androidx.annotation.DrawableRes;
-import androidx.annotation.FloatRange;
-import androidx.annotation.IdRes;
-import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
-import androidx.annotation.StyleRes;
+import android.view.*;
+import android.widget.*;
+import androidx.annotation.*;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.PopupWindowCompat;
-
-import lib.wintmain.base.action.ActivityAction;
-import lib.wintmain.base.action.AnimAction;
-import lib.wintmain.base.action.ClickAction;
-import lib.wintmain.base.action.HandlerAction;
-import lib.wintmain.base.action.KeyboardAction;
-import lib.wintmain.base.action.ResourcesAction;
+import lib.wintmain.base.action.*;
 
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
@@ -64,11 +41,11 @@ import java.util.List;
 /** desc : PopupWindow 技术基类 */
 public class BasePopupWindow extends PopupWindow
         implements ActivityAction,
-                HandlerAction,
-                ClickAction,
-                AnimAction,
-                KeyboardAction,
-                PopupWindow.OnDismissListener {
+        HandlerAction,
+        ClickAction,
+        AnimAction,
+        KeyboardAction,
+        PopupWindow.OnDismissListener {
 
     private final Context mContext;
     private PopupBackground mPopupBackground;
@@ -800,8 +777,8 @@ public class BasePopupWindow extends PopupWindow
     /** PopupWindow 生命周期绑定 */
     private static final class PopupWindowLifecycle
             implements Application.ActivityLifecycleCallbacks,
-                    BasePopupWindow.OnShowListener,
-                    BasePopupWindow.OnDismissListener {
+            BasePopupWindow.OnShowListener,
+            BasePopupWindow.OnDismissListener {
 
         private BasePopupWindow mPopupWindow;
         private Activity mActivity;
@@ -818,23 +795,29 @@ public class BasePopupWindow extends PopupWindow
 
         @Override
         public void onActivityCreated(
-                @NonNull Activity activity, @Nullable Bundle savedInstanceState) {}
+                @NonNull Activity activity, @Nullable Bundle savedInstanceState) {
+        }
 
         @Override
-        public void onActivityStarted(@NonNull Activity activity) {}
+        public void onActivityStarted(@NonNull Activity activity) {
+        }
 
         @Override
-        public void onActivityResumed(@NonNull Activity activity) {}
+        public void onActivityResumed(@NonNull Activity activity) {
+        }
 
         @Override
-        public void onActivityPaused(@NonNull Activity activity) {}
+        public void onActivityPaused(@NonNull Activity activity) {
+        }
 
         @Override
-        public void onActivityStopped(@NonNull Activity activity) {}
+        public void onActivityStopped(@NonNull Activity activity) {
+        }
 
         @Override
         public void onActivitySaveInstanceState(
-                @NonNull Activity activity, @NonNull Bundle outState) {}
+                @NonNull Activity activity, @NonNull Bundle outState) {
+        }
 
         @Override
         public void onActivityDestroyed(@NonNull Activity activity) {
@@ -940,7 +923,8 @@ public class BasePopupWindow extends PopupWindow
     private static final class ViewClickWrapper implements View.OnClickListener {
 
         private final BasePopupWindow mBasePopupWindow;
-        @Nullable private final BasePopupWindow.OnClickListener mListener;
+        @Nullable
+        private final BasePopupWindow.OnClickListener mListener;
 
         private ViewClickWrapper(
                 BasePopupWindow popupWindow, @Nullable BasePopupWindow.OnClickListener listener) {

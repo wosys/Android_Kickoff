@@ -22,11 +22,9 @@ import android.os.Message;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class ep2_2 extends AppCompatActivity {
@@ -49,7 +47,8 @@ public class ep2_2 extends AppCompatActivity {
                         if (msg.what == 0x111) {
                             horizonP.setProgress(mProgressStatus); // 更新进度
                         } else {
-                            Toast.makeText(ep2_2.this, "耗时操作已经完成", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ep2_2.this, "耗时操作已经完成", Toast.LENGTH_SHORT)
+                                    .show();
                             horizonP.setVisibility(View.GONE); // 设置进度条不显示，并且不占用空间
                             circleP.setVisibility(View.GONE);
                         }
@@ -57,33 +56,33 @@ public class ep2_2 extends AppCompatActivity {
                 };
 
         new Thread(
-                        new Runnable() {
-                            public void run() {
-                                while (true) {
-                                    mProgressStatus = doWork(); // 获取耗时操作完成的百分比
-                                    Message m = new Message();
-                                    if (mProgressStatus < 100) {
-                                        m.what = 0x111;
-                                        mHandler.sendMessage(m); // 发送信息
-                                    } else {
-                                        m.what = 0x110;
-                                        mHandler.sendMessage(m); // 发送消息
-                                        break;
-                                    }
-                                }
+                new Runnable() {
+                    public void run() {
+                        while (true) {
+                            mProgressStatus = doWork(); // 获取耗时操作完成的百分比
+                            Message m = new Message();
+                            if (mProgressStatus < 100) {
+                                m.what = 0x111;
+                                mHandler.sendMessage(m); // 发送信息
+                            } else {
+                                m.what = 0x110;
+                                mHandler.sendMessage(m); // 发送消息
+                                break;
                             }
+                        }
+                    }
 
-                            // 模拟一个耗时操作
-                            private int doWork() {
-                                mProgressStatus += Math.random() * 10; // 改变完成进度
-                                try {
-                                    Thread.sleep(200); // 线程休眠200毫秒
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                                return mProgressStatus;
-                            }
-                        })
+                    // 模拟一个耗时操作
+                    private int doWork() {
+                        mProgressStatus += Math.random() * 10; // 改变完成进度
+                        try {
+                            Thread.sleep(200); // 线程休眠200毫秒
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        return mProgressStatus;
+                    }
+                })
                 .start(); // 开启一个线程
     }
 }

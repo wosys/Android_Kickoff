@@ -18,7 +18,6 @@ package com.wintmain.basic.views.recyclerview.logger;
 import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
-
 import androidx.appcompat.widget.AppCompatTextView;
 
 /**

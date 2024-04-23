@@ -22,13 +22,22 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class EpOne_15 extends AppCompatActivity {
+
+    private CompoundButton.OnCheckedChangeListener listener =
+            new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if (isChecked) {
+                        Toast.makeText(EpOne_15.this, "选中了" + buttonView.getText().toString(),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+            };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,22 +57,18 @@ public class EpOne_15 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String answer = "";
-                if (c1.isChecked()) answer += c1.getText().toString() + " ";
-                if (c2.isChecked()) answer += c2.getText().toString() + " ";
-                if (c3.isChecked()) answer += c3.getText().toString() + " ";
+                if (c1.isChecked()) {
+                    answer += c1.getText().toString() + " ";
+                }
+                if (c2.isChecked()) {
+                    answer += c2.getText().toString() + " ";
+                }
+                if (c3.isChecked()) {
+                    answer += c3.getText().toString() + " ";
+                }
                 Toast toast = Toast.makeText(EpOne_15.this, "选中" + answer, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
     }
-
-    private CompoundButton.OnCheckedChangeListener listener = new CompoundButton.OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            if (isChecked) {
-                Toast.makeText(EpOne_15.this, "选中了" + buttonView.getText().toString(),
-                        Toast.LENGTH_SHORT).show();
-            }
-        }
-    };
 }

@@ -19,13 +19,13 @@ package com.wintmain.basic.prejob.upDemo;
 /**
  * @Description @Author wintmain <wosintmain@gmail.com> @Date 2022-06-12 22:58:39
  */
+
 import android.app.Activity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
 import androidx.annotation.Nullable;
 
 import java.io.IOException;
@@ -78,7 +78,9 @@ public class ep7_2 extends Activity {
 
         // 网络链接
         path =
-                "http://218.205.239.34/MIGUM2.0/v1.0/content/sub/listenSong.do?toneFlag=LQ&netType=00&copyrightId=0&contentId=600913000000560388&resourceType=2&channel=0";
+                "http://218.205.239.34/MIGUM2.0/v1.0/content/sub/listenSong"
+                        + ".do?toneFlag=LQ&netType=00&copyrightId=0&contentId=600913000000560388"
+                        + "&resourceType=2&channel=0";
         mediaplayer = new MediaPlayer();
         mediaplayer.setDataSource(path);
         mediaplayer.prepare();

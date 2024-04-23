@@ -22,9 +22,7 @@ import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 import java.util.Calendar;
@@ -76,7 +74,8 @@ public class ep1_21 extends Activity {
 
     private void show(int year, int month, int day, int hour, int minute) {
         String str =
-                year + "年" + (month + 1) + "月" + day + "日" + hour + ":" + minute; // 获取拾取器设置的日期和时间
+                year + "年" + (month + 1) + "月" + day + "日" + hour + ":"
+                        + minute; // 获取拾取器设置的日期和时间
         Toast.makeText(this, str, Toast.LENGTH_SHORT).show(); // 显示消息提示框
     }
 }

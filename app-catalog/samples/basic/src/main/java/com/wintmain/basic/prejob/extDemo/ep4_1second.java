@@ -19,10 +19,8 @@ package com.wintmain.basic.prejob.extDemo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class ep4_1second extends AppCompatActivity {

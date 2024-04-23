@@ -21,18 +21,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.wintmain.basic.R;
 
 import java.util.Objects;
 
 /**
- * Demonstrates the use of {@link RecyclerView} with a {@link LinearLayoutManager} and a {@link GridLayoutManager}.
+ * Demonstrates the use of {@link RecyclerView} with a {@link LinearLayoutManager} and a
+ * {@link GridLayoutManager}.
  */
 public class RecyclerViewFragment extends Fragment {
 
@@ -52,7 +51,8 @@ public class RecyclerViewFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Initialize dataset, this data would usually come from a local content provider or remote server.
+        // Initialize dataset, this data would usually come from a local content provider or
+        // remote server.
         // Generates Strings for RecyclerView's adapter.
         mDataset = new String[DATASET_COUNT];
         for (int i = 0; i < DATASET_COUNT; i++) {
@@ -62,7 +62,7 @@ public class RecyclerViewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+            Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.recycler_view_frag, container, false);
         rootView.setTag(TAG);
 
@@ -77,7 +77,8 @@ public class RecyclerViewFragment extends Fragment {
 
         if (savedInstanceState != null) {
             // Restore saved layout manager type.
-            mCurrentLayoutManagerType = (LayoutManagerType) savedInstanceState.getSerializable(KEY_LAYOUT_MANAGER);
+            mCurrentLayoutManagerType = (LayoutManagerType) savedInstanceState.getSerializable(
+                    KEY_LAYOUT_MANAGER);
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 

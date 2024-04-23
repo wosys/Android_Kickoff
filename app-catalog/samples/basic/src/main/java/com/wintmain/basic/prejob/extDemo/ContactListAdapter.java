@@ -32,7 +32,7 @@ import android.widget.TextView;
 public class ContactListAdapter extends CursorAdapter implements Filterable {
     private ContentResolver resolver;
     private String[] columns =
-            new String[] {ContactsContract.Contacts._ID, ContactsContract.Contacts.DISPLAY_NAME};
+            new String[]{ContactsContract.Contacts._ID, ContactsContract.Contacts.DISPLAY_NAME};
 
     public ContactListAdapter(Context context, Cursor c) {
         super(context, c); // 调用父类构造方法

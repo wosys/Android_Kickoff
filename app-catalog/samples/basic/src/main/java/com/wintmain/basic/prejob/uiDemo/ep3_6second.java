@@ -25,19 +25,17 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 public class ep3_6second extends Activity {
     int[] image =
-            new int[] {
-                R.drawable.img01,
-                R.drawable.img02,
-                R.drawable.img03,
-                R.drawable.img04,
-                R.drawable.img05
+            new int[]{
+                    R.drawable.img01,
+                    R.drawable.img02,
+                    R.drawable.img03,
+                    R.drawable.img04,
+                    R.drawable.img05
             };
 
     @Override

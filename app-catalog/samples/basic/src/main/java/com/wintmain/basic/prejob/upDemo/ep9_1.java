@@ -25,7 +25,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.widget.Toast;
-
 import com.wintmain.basic.R;
 
 public class ep9_1 extends Activity {

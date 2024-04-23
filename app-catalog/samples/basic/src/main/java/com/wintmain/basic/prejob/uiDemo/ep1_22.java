@@ -22,9 +22,7 @@ import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 public class ep1_22 extends Activity {

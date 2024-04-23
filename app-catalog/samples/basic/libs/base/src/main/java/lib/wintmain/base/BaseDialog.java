@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,40 +25,19 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.SparseArray;
-import android.view.Gravity;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.*;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import androidx.annotation.ColorInt;
-import androidx.annotation.DrawableRes;
-import androidx.annotation.FloatRange;
-import androidx.annotation.IdRes;
-import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
-import androidx.annotation.StyleRes;
+import androidx.annotation.*;
 import androidx.appcompat.app.AppCompatDialog;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleRegistry;
-
-import lib.wintmain.base.action.ActivityAction;
-import lib.wintmain.base.action.AnimAction;
-import lib.wintmain.base.action.ClickAction;
-import lib.wintmain.base.action.HandlerAction;
-import lib.wintmain.base.action.KeyboardAction;
-import lib.wintmain.base.action.ResourcesAction;
+import lib.wintmain.base.action.*;
 
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
@@ -73,16 +52,19 @@ public class BaseDialog extends AppCompatDialog
         ClickAction,
         AnimAction,
         KeyboardAction,
-                DialogInterface.OnShowListener,
-                DialogInterface.OnCancelListener,
-                DialogInterface.OnDismissListener {
+        DialogInterface.OnShowListener,
+        DialogInterface.OnCancelListener,
+        DialogInterface.OnDismissListener {
 
     private final ListenersWrapper<BaseDialog> mListeners = new ListenersWrapper<>(this);
     private final LifecycleRegistry mLifecycle = new LifecycleRegistry(this);
 
-    @Nullable private List<BaseDialog.OnShowListener> mShowListeners;
-    @Nullable private List<BaseDialog.OnCancelListener> mCancelListeners;
-    @Nullable private List<BaseDialog.OnDismissListener> mDismissListeners;
+    @Nullable
+    private List<BaseDialog.OnShowListener> mShowListeners;
+    @Nullable
+    private List<BaseDialog.OnCancelListener> mCancelListeners;
+    @Nullable
+    private List<BaseDialog.OnDismissListener> mDismissListeners;
 
     public BaseDialog(Context context) {
         this(context, R.style.BaseDialogTheme);
@@ -1019,8 +1001,8 @@ public class BaseDialog extends AppCompatDialog
     /** Dialog 生命周期绑定 */
     private static final class DialogLifecycle
             implements Application.ActivityLifecycleCallbacks,
-                    BaseDialog.OnShowListener,
-                    BaseDialog.OnDismissListener {
+            BaseDialog.OnShowListener,
+            BaseDialog.OnDismissListener {
 
         private BaseDialog mDialog;
         private Activity mActivity;
@@ -1040,10 +1022,12 @@ public class BaseDialog extends AppCompatDialog
 
         @Override
         public void onActivityCreated(
-                @NonNull Activity activity, @Nullable Bundle savedInstanceState) {}
+                @NonNull Activity activity, @Nullable Bundle savedInstanceState) {
+        }
 
         @Override
-        public void onActivityStarted(@NonNull Activity activity) {}
+        public void onActivityStarted(@NonNull Activity activity) {
+        }
 
         @Override
         public void onActivityResumed(@NonNull Activity activity) {
@@ -1083,11 +1067,13 @@ public class BaseDialog extends AppCompatDialog
         }
 
         @Override
-        public void onActivityStopped(@NonNull Activity activity) {}
+        public void onActivityStopped(@NonNull Activity activity) {
+        }
 
         @Override
         public void onActivitySaveInstanceState(
-                @NonNull Activity activity, @NonNull Bundle outState) {}
+                @NonNull Activity activity, @NonNull Bundle outState) {
+        }
 
         @Override
         public void onActivityDestroyed(@NonNull Activity activity) {
@@ -1150,13 +1136,13 @@ public class BaseDialog extends AppCompatDialog
 
     /** Dialog 监听包装类（修复原生 Dialog 监听器对象导致的内存泄漏） */
     private static final class ListenersWrapper<
-                    T extends
-                            DialogInterface.OnShowListener & DialogInterface.OnCancelListener
-                                    & DialogInterface.OnDismissListener>
+            T extends
+                    DialogInterface.OnShowListener & DialogInterface.OnCancelListener
+                    & DialogInterface.OnDismissListener>
             extends SoftReference<T>
             implements DialogInterface.OnShowListener,
-                    DialogInterface.OnCancelListener,
-                    DialogInterface.OnDismissListener {
+            DialogInterface.OnCancelListener,
+            DialogInterface.OnDismissListener {
 
         private ListenersWrapper(T referent) {
             super(referent);
@@ -1192,7 +1178,8 @@ public class BaseDialog extends AppCompatDialog
     private static final class ViewClickWrapper implements View.OnClickListener {
 
         private final BaseDialog mDialog;
-        @Nullable private final BaseDialog.OnClickListener mListener;
+        @Nullable
+        private final BaseDialog.OnClickListener mListener;
 
         private ViewClickWrapper(BaseDialog dialog, @Nullable BaseDialog.OnClickListener listener) {
             mDialog = dialog;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 wintmain
+ * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,7 @@ package lib.wintmain.base.action;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-
-import androidx.annotation.ColorInt;
-import androidx.annotation.ColorRes;
-import androidx.annotation.DrawableRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.StringRes;
+import androidx.annotation.*;
 import androidx.core.content.ContextCompat;
 
 /** desc : Context 意图处理（扩展非 Context 类的方法，请不要用 Context 子类实现此接口） */

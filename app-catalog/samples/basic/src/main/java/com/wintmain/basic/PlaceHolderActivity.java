@@ -20,11 +20,8 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
-
-import com.google.android.catalog.framework.annotations.Sample;
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
 import com.hjq.bar.style.LightBarStyle;

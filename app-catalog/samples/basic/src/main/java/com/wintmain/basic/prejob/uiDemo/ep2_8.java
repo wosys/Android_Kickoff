@@ -20,26 +20,20 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.Gallery;
-import android.widget.ImageView;
-import android.widget.Toast;
-
+import android.widget.*;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class ep2_8 extends AppCompatActivity {
     private int[] imageId =
-            new int[] {
-                R.drawable.img01,
-                R.drawable.img02,
-                R.drawable.img03,
-                R.drawable.img04,
-                R.drawable.img05,
-                R.drawable.img06
+            new int[]{
+                    R.drawable.img01,
+                    R.drawable.img02,
+                    R.drawable.img03,
+                    R.drawable.img04,
+                    R.drawable.img05,
+                    R.drawable.img06
             }; // 定义并初始化保存图片id的数组
 
     @Override

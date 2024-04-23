@@ -21,10 +21,8 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class EpOne_14 extends AppCompatActivity {
@@ -53,7 +51,8 @@ public class EpOne_14 extends AppCompatActivity {
         for (int i = 0; i < sex2.getChildCount(); i++) {
             RadioButton r = (RadioButton) sex2.getChildAt(i); // 根据索引值获取单选按钮的值
             if (r.isChecked()) { // 判断是否选中
-                Toast.makeText(EpOne_14.this, "你选择的是：" + r.getText(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(EpOne_14.this, "你选择的是：" + r.getText(), Toast.LENGTH_SHORT)
+                        .show();
                 break; // 跳出循环，单选
             }
         }

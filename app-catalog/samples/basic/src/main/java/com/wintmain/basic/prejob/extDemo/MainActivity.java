@@ -17,9 +17,7 @@
 package com.wintmain.basic.prejob.extDemo;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.wintmain.basic.R;
 
 public class MainActivity extends AppCompatActivity {

@@ -16,11 +16,7 @@
 
 package com.wintmain.basic.prejob.uiDemo;
 
-import android.app.Activity;
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
+import android.app.*;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -28,9 +24,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
 import androidx.annotation.Nullable;
-
 import com.wintmain.basic.R;
 
 public class ep2_12 extends Activity {
@@ -71,7 +65,7 @@ public class ep2_12 extends Activity {
                         //                开启震动
                         channel.enableVibration(true);
                         channel.setVibrationPattern(
-                                new long[] {100, 200, 300, 400, 500, 400, 300, 200, 400});
+                                new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
                         //                管理器创建该通知渠道
                         manager.createNotificationChannel(channel);
                         //                创建notification对象

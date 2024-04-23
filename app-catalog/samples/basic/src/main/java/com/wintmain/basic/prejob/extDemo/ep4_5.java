@@ -24,7 +24,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-
 import androidx.annotation.Nullable;
 
 public class ep4_5 extends Activity {

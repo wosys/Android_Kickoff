@@ -22,7 +22,8 @@ public class Person implements Serializable {
     private String sex = "";
     private int height = 0;
 
-    public Person() {}
+    public Person() {
+    }
 
     @Override
     public String toString() {

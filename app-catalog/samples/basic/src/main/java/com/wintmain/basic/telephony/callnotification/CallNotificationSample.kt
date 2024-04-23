@@ -52,7 +52,6 @@ class CallNotificationSample : AppCompatActivity() {
 
     private lateinit var notificationSource: NotificationSource<NotificationReceiver>
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         notificationSource = NotificationSource(this, NotificationReceiver::class.java)
@@ -109,7 +108,7 @@ class CallNotificationSample : AppCompatActivity() {
 @RequiresApi(Build.VERSION_CODES.P)
 @Composable
 fun EntryPoint(notificationSource: NotificationSource<CallNotificationSample.NotificationReceiver>) {
-    Column (
+    Column(
         Modifier
             .fillMaxSize()
             .padding(64.dp)
