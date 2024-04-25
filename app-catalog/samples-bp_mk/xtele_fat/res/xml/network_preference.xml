@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/network_debug_title">
+    <EditTextPreference
+        android:dialogTitle="@string/mcc_mnc"
+        android:inputType="number"
+        android:key="mcc_mnc"
+        android:persistent="false"
+        android:singleLine="true"
+        android:title="@string/mcc_mnc" />
+    <EditTextPreference
+        android:dialogTitle="@string/network_name"
+        android:inputType="text"
+        android:key="network_name"
+        android:persistent="false"
+        android:singleLine="true"
+        android:title="@string/network_name" />
+    <ListPreference
+        android:dialogTitle="@string/voice_rat"
+        android:entries="@array/rat_entries"
+        android:entryValues="@array/rat_values"
+        android:key="voice_rat"
+        android:persistent="false"
+        android:title="@string/voice_rat" />
+    <ListPreference
+        android:dialogTitle="@string/voice_state"
+        android:entries="@array/reg_state_entries"
+        android:entryValues="@array/reg_state_values"
+        android:key="voice_reg_state"
+        android:persistent="false"
+        android:title="@string/voice_state" />
+    <ListPreference
+        android:dialogTitle="@string/voice_roaming_type"
+        android:entries="@array/roaming_type_entries"
+        android:entryValues="@array/roaming_type_values"
+        android:key="voice_roaming_type"
+        android:persistent="false"
+        android:title="@string/voice_roaming_type" />
+    <ListPreference
+        android:dialogTitle="@string/data_rat"
+        android:entries="@array/rat_entries"
+        android:entryValues="@array/rat_values"
+        android:key="data_rat"
+        android:persistent="false"
+        android:title="@string/data_rat" />
+    <ListPreference
+        android:dialogTitle="@string/data_state"
+        android:entries="@array/reg_state_entries"
+        android:entryValues="@array/reg_state_values"
+        android:key="data_reg_state"
+        android:persistent="false"
+        android:title="@string/data_state" />
+    <ListPreference
+        android:dialogTitle="@string/data_roaming_type"
+        android:entries="@array/roaming_type_entries"
+        android:entryValues="@array/roaming_type_values"
+        android:key="data_roaming_type"
+        android:persistent="false"
+        android:title="@string/data_roaming_type" />
+    <ListPreference
+        android:dialogTitle="@string/nr_state"
+        android:entries="@array/nr_state_entries"
+        android:entryValues="@array/nr_state_values"
+        android:key="nr_state"
+        android:persistent="false"
+        android:title="@string/nr_state" />
+    <ListPreference
+        android:dialogTitle="@string/nr_frequency"
+        android:entries="@array/nr_frequency_entries"
+        android:entryValues="@array/nr_frequency_values"
+        android:key="nr_frequency_range"
+        android:persistent="false"
+        android:title="@string/nr_frequency" />
+
+</PreferenceScreen>
