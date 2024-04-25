@@ -47,7 +47,6 @@ import com.android.internal.telephony.uicc.IccFileHandler;
 import com.android.internal.telephony.uicc.IccRecords;
 import com.android.internal.telephony.uicc.IccUtils;
 import com.android.internal.telephony.uicc.UiccController;
-import com.android.settingslib.DeviceInfoUtils;
 
 import com.qti.extphone.ExtTelephonyManager;
 import com.qti.extphone.QtiImeiInfo;
@@ -69,8 +68,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
 
 /**
  * Display the following information # Battery Strength : TODO # Uptime # Awake Time #
@@ -182,25 +179,6 @@ public class DeviceInfoActivity extends PreferenceActivity {
         }
 
         return primayStackPhoneId;
-    }
-
-    public static String getDeviceModel() {
-        // Use SettingLib, getMsvSuffix(), as example.
-        FutureTask<String> msvSuffixTask = new FutureTask<>(() -> DeviceInfoUtils.getMsvSuffix());
-
-        msvSuffixTask.run();
-        try {
-            // Wait for msv suffix value.
-            final String msvSuffix = msvSuffixTask.get();
-            return Build.MODEL + msvSuffix;
-        } catch (ExecutionException e) {
-            Log.e(TAG, "Execution error, so we only show model name");
-        } catch (InterruptedException e) {
-            Log.e(TAG, "Interruption error, so we only show model name");
-        }
-        // If we can't get an msv suffix value successfully,
-        // it's better to return model name.
-        return Build.MODEL;
     }
 
     @Override
@@ -382,7 +360,7 @@ public class DeviceInfoActivity extends PreferenceActivity {
         // get hardware
         String hwVersion = null;
         try {
-            hwVersion = getDeviceModel();
+            hwVersion = Build.MODEL;
         } catch (Exception e) {
             hwVersion = mUnknown;
         }

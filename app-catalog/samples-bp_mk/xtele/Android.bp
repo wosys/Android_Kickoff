@@ -1,5 +1,5 @@
 android_app {
-    name: "TelephonyDebugAppExt",
+    name: "XTele",
 
     certificate: "platform",
     platform_apis: true,
@@ -8,9 +8,6 @@ android_app {
     optimize: {
         enabled: false,
     },
-
-    // Use System - Settings libs.
-    defaults: ["SettingsLibDefaults"],
 
     libs: [
         "telephony-common",
