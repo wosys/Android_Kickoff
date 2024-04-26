@@ -47,8 +47,6 @@ import com.android.internal.telephony.uicc.IccFileHandler;
 import com.android.internal.telephony.uicc.IccRecords;
 import com.android.internal.telephony.uicc.IccUtils;
 import com.android.internal.telephony.uicc.UiccController;
-import com.android.settingslib.DeviceInfoUtils;
-import com.android.settings.network.SubscriptionUtil;
 
 import com.qti.extphone.ExtTelephonyManager;
 import com.qti.extphone.QtiImeiInfo;
@@ -70,8 +68,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
 
 /**
  * Display the following information # Battery Strength : TODO # Uptime # Awake Time #
@@ -150,12 +146,8 @@ public class DeviceInfoActivity extends PreferenceActivity {
                 continue;
             }
 
-            Log.d(
-                    TAG,
-                    "Logical Modem id: "
-                            + phone.getModemUuId()
-                            + " phoneId: "
-                            + phone.getPhoneId());
+            Log.d(TAG, "Logical Modem id: " + phone.getModemUuId() + " phoneId: "
+                    + phone.getPhoneId());
             modemUuId = phone.getModemUuId();
             if ((modemUuId == null) || (modemUuId.length() <= 0) || modemUuId.isEmpty()) {
                 continue;
@@ -185,25 +177,6 @@ public class DeviceInfoActivity extends PreferenceActivity {
         return primayStackPhoneId;
     }
 
-    public static String getDeviceModel() {
-        // Use SettingLib, getMsvSuffix(), as example.
-        FutureTask<String> msvSuffixTask = new FutureTask<>(() -> DeviceInfoUtils.getMsvSuffix());
-
-        msvSuffixTask.run();
-        try {
-            // Wait for msv suffix value.
-            final String msvSuffix = msvSuffixTask.get();
-            return Build.MODEL + msvSuffix;
-        } catch (ExecutionException e) {
-            Log.e(TAG, "Execution error, so we only show model name");
-        } catch (InterruptedException e) {
-            Log.e(TAG, "Interruption error, so we only show model name");
-        }
-        // If we can't get an msv suffix value successfully,
-        // it's better to return model name.
-        return Build.MODEL;
-    }
-
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -230,10 +203,6 @@ public class DeviceInfoActivity extends PreferenceActivity {
         if (mUnknown == null) {
             mUnknown = getResources().getString(R.string.device_info_unknown);
         }
-
-        // TODO, remove this. Only for test import static_libs.
-        // Now you can use class in packages/apps/Settings !!!
-        boolean isSimHWV = SubscriptionUtil.isSimHardwareVisible(mContext);
 
         setPreferenceSummary();
         mMetaInfoFetcherProxy.start();
@@ -384,14 +353,14 @@ public class DeviceInfoActivity extends PreferenceActivity {
     private void setPreferenceSummary() {
 
         final PreferenceScreen prefSet = getPreferenceScreen();
-        // get hardware
-        String hwVersion = null;
-        try {
-            hwVersion = getDeviceModel();
-        } catch (Exception e) {
-            hwVersion = mUnknown;
+        // Update hardware(device) version.
+        String hwVersion = Utils.getDeviceModel();
+        if (hwVersion != null && !TextUtils.isEmpty(hwVersion)) {
+            setSummaryText(KEY_HW_VERSION, hwVersion);
+        } else {
+            setSummaryText(KEY_HW_VERSION, mUnknown);
         }
-        setSummaryText(KEY_HW_VERSION, hwVersion);
+
 
         // get android version, get property of ro.build.version.release_or_codename.
         setSummaryText(KEY_ANDROID_VERSION, Build.VERSION.RELEASE_OR_CODENAME);
@@ -405,7 +374,14 @@ public class DeviceInfoActivity extends PreferenceActivity {
 
             updateMeidEsn();
 
-            updatePhoneNumber(mPhone.getPhoneId());
+            // Update phone number.
+            String phoneNumber = Utils.getPhoneNumber(mContext, mSubscriptionManager,
+                    mPhone.getPhoneId());
+            if (phoneNumber != null && !TextUtils.isEmpty(phoneNumber)) {
+                setSummaryText(KEY_TELEPHONE_NUMBER, phoneNumber);
+            } else {
+                setSummaryText(KEY_TELEPHONE_NUMBER, mUnknown);
+            }
 
             // get PRL version
             mHandler.getPrlVersion();
@@ -478,17 +454,6 @@ public class DeviceInfoActivity extends PreferenceActivity {
         } else {
             setSummaryText(KEY_MEID_ESN, meid + "-" + esn);
         }
-    }
-
-    private void updatePhoneNumber(int simSlot) {
-        final SubscriptionInfo subscriptionInfo = Utils.getSubscriptionInfo(mContext, simSlot);
-        if (subscriptionInfo == null) {
-            setSummaryText(KEY_TELEPHONE_NUMBER, mUnknown);
-            return;
-        }
-
-        String phoneNumber = Utils.getBidiFormattedPhoneNumber(mContext, subscriptionInfo);
-        setSummaryText(KEY_TELEPHONE_NUMBER, phoneNumber);
     }
 
     private boolean invalidMeid(String meid) {
