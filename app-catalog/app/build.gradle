@@ -33,8 +33,8 @@ android {
         applicationId "com.wintmain.catalog.app"
         minSdk 26
         targetSdk 34
-        versionCode 20240423
-        versionName 'V20240423'
+        versionCode 20240428
+        versionName 'V20240428'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
