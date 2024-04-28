@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.deviceinfo;
+package com.wintmain;
 
 import static com.android.internal.telephony.TelephonyIntents.SECRET_CODE_ACTION;
 
@@ -22,9 +22,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.wintmain.telephonydebugapp.TelephonyDebugActivity;
-
-public class DeviceInfoReceiver extends BroadcastReceiver {
+public class XTeleReceiver extends BroadcastReceiver {
     private static final String SECRET_CODE = "00001111";
 
     @Override
@@ -32,7 +30,7 @@ public class DeviceInfoReceiver extends BroadcastReceiver {
         if (SECRET_CODE_ACTION.equals(intent.getAction())) {
             String host = intent.getData() != null ? intent.getData().getHost() : null;
             if (SECRET_CODE.equals(host)) {
-                Intent i = new Intent(context, TelephonyDebugActivity.class);
+                Intent i = new Intent(context, XTeleActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
             }
