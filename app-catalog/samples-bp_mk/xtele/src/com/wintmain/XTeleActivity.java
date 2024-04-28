@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.telephonydebugapp;
+package com.wintmain;
 
 import android.app.ActionBar;
 import android.content.Intent;
@@ -27,11 +27,11 @@ import android.view.MenuItem;
 
 import com.wintmain.R;
 
-public class TelephonyDebugActivity extends PreferenceActivity {
+public class XTeleActivity extends PreferenceActivity {
     @Override
     public Intent getIntent() {
         Intent intent = new Intent();
-        intent.putExtra(EXTRA_SHOW_FRAGMENT, TelephonyDebugFragment.class.getName());
+        intent.putExtra(EXTRA_SHOW_FRAGMENT, XTeleFragment.class.getName());
         intent.putExtra(EXTRA_NO_HEADERS, true);
         return intent;
     }
@@ -53,7 +53,7 @@ public class TelephonyDebugActivity extends PreferenceActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public static class TelephonyDebugFragment extends PreferenceFragment
+    public static class XTeleFragment extends PreferenceFragment
             implements Preference.OnPreferenceChangeListener {
 
         /** Called when the activity is first created. */

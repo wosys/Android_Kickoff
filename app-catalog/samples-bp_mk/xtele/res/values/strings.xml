@@ -2,7 +2,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="telephonydebug">TelephonyDebugApp</string>
+    <string name="xtele">XTele</string>
 
     <string name="connectivity_category_title">Connectivity</string>
     <string name="connectivity_debug_title">Connectivity Debug</string>
