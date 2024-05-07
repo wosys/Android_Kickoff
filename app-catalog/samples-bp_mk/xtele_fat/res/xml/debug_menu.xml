@@ -16,6 +16,19 @@
 
     <PreferenceCategory
         android:textStyle="bold"
+        android:title="@string/apn_query_title">
+        <PreferenceScreen
+            android:key="apn_query"
+            android:title="@string/apn_query_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.wintmain.xtelephony.ApnQueryActivity"
+                android:targetPackage="com.wintmain" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:textStyle="bold"
         android:title="@string/connectivity_category_title">
         <PreferenceScreen
             android:key="connectivity_debug"

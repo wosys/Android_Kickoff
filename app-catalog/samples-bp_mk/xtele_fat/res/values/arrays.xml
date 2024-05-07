@@ -147,4 +147,19 @@
         <item>1</item>
     </string-array>
 
+    <string-array name="apn_mvno_type_entries">
+        <item>None</item>
+        <item>SPN</item>
+        <item>IMSI</item>
+        <item>GID</item>
+        <item>ICCID</item>
+    </string-array>
+    <string-array translatable="false" name="apn_mvno_type_values">
+        <item>Empty</item>
+        <item>spn</item>
+        <item>imsi</item>
+        <item>gid</item>
+        <item>iccid</item>
+    </string-array>
+
 </resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:title="@string/mcc_mnc"
+        android:dialogTitle="@string/mcc_mnc"
+        android:key="mcc_mnc"
+        android:singleLine="true"
+        android:inputType="number"
+        android:persistent="false"/>
+
+    <ListPreference
+        android:title="@string/apn_mvno_type"
+        android:dialogTitle="@string/apn_mvno_type"
+        android:key="mvno_type"
+        android:entries="@array/apn_mvno_type_entries"
+        android:entryValues="@array/apn_mvno_type_values"
+        android:persistent="false"/>
+
+    <EditTextPreference
+        android:title="@string/apn_mvno_value"
+        android:dialogTitle="@string/apn_mvno_value"
+        android:key="mvno_value"
+        android:singleLine="true"
+        android:inputType="text"
+        android:persistent="false"/>
+
+    <EditTextPreference
+        android:title="@string/apn_carrier_id"
+        android:dialogTitle="@string/apn_carrier_id"
+        android:key="carrier_id"
+        android:singleLine="true"
+        android:inputType="number"
+        android:persistent="false" />
+
+</PreferenceScreen>

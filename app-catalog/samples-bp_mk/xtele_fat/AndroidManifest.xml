@@ -50,6 +50,19 @@
         </receiver>
 
         <activity
+            android:name=".xtelephony.ApnQueryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/apn_query_title"
+            android:launchMode="singleTop"
+            android:resizeableActivity="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".xtelephony.ConnectivityDebugActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
