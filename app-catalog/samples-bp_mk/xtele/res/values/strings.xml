@@ -63,4 +63,12 @@
     <string name="imei1">IMEI1</string>
     <string name="imei2">IMEI2</string>
     <string name="meta_info">Meta version</string>
+
+    <!-- Category of APN Query -->
+    <string name="apn_query_title">APN Query</string>
+    <string name="apn_mvno_type">MVNO Type</string>
+    <string name="apn_mvno_value">MVNO Value</string>
+    <string name="apn_carrier_id">Carrier Id</string>
+    <string name="apn_empty">Empty</string>
+    <string name="apn_query_result">Query Result:</string>
 </resources>
