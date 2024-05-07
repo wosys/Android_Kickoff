@@ -50,7 +50,7 @@
         </receiver>
 
         <activity
-            android:name=".telephonydebugapp.ConnectivityDebugActivity"
+            android:name=".xtelephony.ConnectivityDebugActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:label="@string/connectivity_debug_title"
@@ -63,7 +63,7 @@
         </activity>
 
         <activity
-            android:name=".telephonydebugapp.NetworkDebugActivity"
+            android:name=".xtelephony.NetworkDebugActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:label="@string/network_debug_title"
@@ -76,7 +76,7 @@
         </activity>
 
         <activity
-            android:name=".telephonydebugapp.SimDebugActivity"
+            android:name=".xtelephony.SimDebugActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:label="@string/sim_debug_title"

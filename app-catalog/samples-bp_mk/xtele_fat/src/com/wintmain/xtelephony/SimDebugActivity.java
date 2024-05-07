@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.telephonydebugapp;
+package com.wintmain.xtelephony;
 
 import android.content.Context;
 import android.os.Bundle;

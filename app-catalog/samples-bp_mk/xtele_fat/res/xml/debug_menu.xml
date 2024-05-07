@@ -22,7 +22,7 @@
             android:title="@string/connectivity_debug_title">
             <intent
                 android:action="android.intent.action.MAIN"
-                android:targetClass="com.wintmain.telephonydebugapp.ConnectivityDebugActivity"
+                android:targetClass="com.wintmain.xtelephony.ConnectivityDebugActivity"
                 android:targetPackage="com.wintmain" />
         </PreferenceScreen>
     </PreferenceCategory>
@@ -35,7 +35,7 @@
             android:title="@string/network_debug_title">
             <intent
                 android:action="android.intent.action.MAIN"
-                android:targetClass="com.wintmain.telephonydebugapp.NetworkDebugActivity"
+                android:targetClass="com.wintmain.xtelephony.NetworkDebugActivity"
                 android:targetPackage="com.wintmain" />
         </PreferenceScreen>
     </PreferenceCategory>
@@ -48,7 +48,7 @@
             android:title="@string/sim_debug_title">
             <intent
                 android:action="android.intent.action.MAIN"
-                android:targetClass="com.wintmain.telephonydebugapp.SimDebugActivity"
+                android:targetClass="com.wintmain.xtelephony.SimDebugActivity"
                 android:targetPackage="com.wintmain" />
         </PreferenceScreen>
     </PreferenceCategory>

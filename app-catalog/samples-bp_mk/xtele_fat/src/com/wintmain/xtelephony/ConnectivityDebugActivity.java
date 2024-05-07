@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.telephonydebugapp;
+package com.wintmain.xtelephony;
 
 import static android.net.NetworkCapabilities.NET_CAPABILITY_NOT_RESTRICTED;
 import static android.net.NetworkCapabilities.TRANSPORT_CELLULAR;
