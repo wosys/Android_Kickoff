@@ -22,7 +22,10 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.catalog.framework.annotations.Sample;
 import com.wintmain.basic.R;
-import com.wintmain.basic.prejob.uiDemo.*;
+import com.wintmain.basic.prejob.uiDemo.EpOne_12;
+import com.wintmain.basic.prejob.uiDemo.EpOne_14;
+import com.wintmain.basic.prejob.uiDemo.EpOne_15;
+import com.wintmain.basic.prejob.uiDemo.EpOne_19;
 
 @SuppressWarnings("unchecked")
 @Sample(name = "PreJob", description = "Android学习基础", documentation = "",
@@ -33,14 +36,6 @@ public class BaseMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.basic_activity_main);
-
-        Button ep_1 = this.findViewById(R.id.button1);
-        ep_1.setOnClickListener(
-                v -> startActivity(new Intent().setClass(BaseMainActivity.this, EpOne_1.class)));
-
-        Button ep_2 = this.findViewById(R.id.button2);
-        ep_2.setOnClickListener(
-                v -> startActivity(new Intent().setClass(BaseMainActivity.this, EpOne_4.class)));
 
         Button ep_3 = this.findViewById(R.id.button3);
         ep_3.setOnClickListener(

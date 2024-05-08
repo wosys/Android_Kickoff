@@ -34,7 +34,7 @@
             android:name=".telephony.callnotification.CallNotificationSample"
             android:exported="true"
             android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.DayNight"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight" />
         <receiver
             android:name=".telephony.callnotification.CallNotificationSample$NotificationReceiver"
             android:exported="false" />
@@ -51,7 +51,7 @@
         <activity
             android:name=".views.recyclerview.RecyclerViewActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight" />
         <!-- recyclerview END-->
 
         <activity
@@ -60,12 +60,7 @@
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".prejob.uiDemo.EpOne_1"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight" />
-
-        <activity
-            android:name=".prejob.uiDemo.EpOne_4"
+            android:name=".prejob.uiDemo.RabbitLayout"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
