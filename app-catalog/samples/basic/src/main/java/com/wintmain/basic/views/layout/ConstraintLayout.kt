@@ -130,3 +130,11 @@ class GuidelinesFragment : Fragment(R.layout.guidelines)
     tags = ["android-samples"],
 )
 class CardViewFragment : Fragment(R.layout.card_view)
+
+@Sample(
+    name = "LinearLayout",
+    description = "线性布局",
+    documentation = "",
+    tags = ["android-samples", "linear-layout"],
+)
+class LinearViewsFragment : Fragment(R.layout.linearlayout_view)
