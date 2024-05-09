@@ -50,6 +50,13 @@
             android:theme="@style/Theme.AppCompat.DayNight" />
         <!-- recyclerview END-->
 
+        <!-- slidingpanelayout START-->
+        <activity android:name=".views.layout.slidingpanelayout.SlidingPaneLayoutMain"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:exported="true">
+        </activity>
+        <!-- slidingpanelayout END-->
+
         <activity
             android:name=".PlaceHolderActivity"
             android:exported="true"

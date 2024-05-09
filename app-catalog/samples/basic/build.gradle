@@ -49,4 +49,10 @@ dependencies {
     // 上拉刷新下拉加载框架：https://github.com/scwang90/SmartRefreshLayout
 //    implementation  'io.github.scwang90:refresh-layout-kernel:2.1.0'      //核心必须依赖
 //    implementation  'io.github.scwang90:refresh-header-material:2.1.0'    //谷歌刷新头
+
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui
+    implementation libs.androidx.slidingpanelayout
+
+    implementation "io.coil-kt:coil:2.6.0"
 }
