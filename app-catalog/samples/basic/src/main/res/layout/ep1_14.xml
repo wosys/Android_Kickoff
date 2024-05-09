@@ -49,6 +49,7 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="提交"></Button>
+        android:onClick="selectClick"
+        android:text="提交" />
 
 </LinearLayout>

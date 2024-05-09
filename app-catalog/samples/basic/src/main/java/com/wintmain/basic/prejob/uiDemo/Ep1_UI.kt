@@ -28,7 +28,17 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.CompoundButton
+import android.widget.EditText
 import android.widget.FrameLayout
+import android.widget.LinearLayout
+import android.widget.ListView
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
@@ -230,6 +240,352 @@ class RabbitView extends View {
         if (bitmap.isRecycled()) { // 判断图片是否回收
             bitmap.recycle(); // 强制回收图片
         }
+    }
+}
+*/
+
+@Sample(
+    name = "4. Register Member",
+    description = "信息录入",
+    documentation = "",
+    tags = ["A-Self_demos"],
+)
+class RegisterMember : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.ep1_12)
+        val button1 = findViewById<View>(R.id.button1) as Button
+        button1.setOnClickListener {
+            val nicknameET =
+                findViewById<View>(R.id.nickname) as EditText // 获取会员昵称编辑框组件
+            val nickname = nicknameET.getText().toString() // 获取输入的会员昵称
+            val pwdET = findViewById<View>(R.id.pwd) as EditText // 获取密码编辑框组件
+            val pwd = pwdET.getText().toString() // 获取输入的密码
+            val emailET = findViewById<View>(R.id.email) as EditText // 获取E-mail编辑框组件
+            val email = emailET.getText().toString() // 获取输入的E-mail地址
+            val confirmpwdET =
+                findViewById<View>(R.id.confirmpwd) as EditText // 获取确认密码编辑框组件
+            val confirmpwd = confirmpwdET.getText().toString()
+            if (!confirmpwd.isEmpty() && confirmpwd == pwd) {
+                Toast.makeText(
+                    applicationContext,
+                    "会员昵称:" + nickname + " 密码:" + pwd +
+                        " E-mail地址:" + email, Toast.LENGTH_LONG
+                ).show()
+            } else {
+                Toast.makeText(
+                    applicationContext, "两次输入的密码不一致",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+        val button2 = findViewById<View>(R.id.button2) as Button
+        button2.setOnClickListener {
+            val nicknameET =
+                findViewById<View>(R.id.nickname) as EditText // 获取会员昵称编辑框组件
+            nicknameET.setText("")
+            val pwdET = findViewById<View>(R.id.pwd) as EditText // 获取密码编辑框组件
+            pwdET.setText("")
+            val confirmpwdET =
+                findViewById<View>(R.id.confirmpwd) as EditText // 获取确认密码编辑框组件
+            confirmpwdET.setText("")
+            val emailET = findViewById<View>(R.id.email) as EditText // 获取E-mail编辑框组件
+            emailET.setText("")
+            Toast.makeText(applicationContext, "Reset success...", Toast.LENGTH_LONG).show()
+        }
+    }
+}
+
+/*
+* Java
+public class EpOne_12 extends AppCompatActivity {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.ep1_12);
+
+        Button button1 = (Button) findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText nicknameET = (EditText) findViewById(R.id.nickname); // 获取会员昵称编辑框组件
+                String nickname = nicknameET.getText().toString(); // 获取输入的会员昵称
+                EditText pwdET = (EditText) findViewById(R.id.pwd); // 获取密码编辑框组件
+                String pwd = pwdET.getText().toString(); // 获取输入的密码
+                EditText emailET = (EditText) findViewById(R.id.email); // 获取E-mail编辑框组件
+                String email = emailET.getText().toString(); // 获取输入的E-mail地址
+
+                EditText confirmpwdET = (EditText) findViewById(R.id.confirmpwd); // 获取确认密码编辑框组件
+                String confirmpwd = confirmpwdET.getText().toString();
+
+                if (!confirmpwd.isEmpty() && confirmpwd.equals(pwd)) {
+                    Toast.makeText(getApplicationContext(),
+                            "会员昵称:" + nickname + " 密码:" + pwd +
+                                    " E-mail地址:" + email, Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "两次输入的密码不一致",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        Button button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText nicknameET = (EditText) findViewById(R.id.nickname); // 获取会员昵称编辑框组件
+                nicknameET.setText("");
+                EditText pwdET = (EditText) findViewById(R.id.pwd); // 获取密码编辑框组件
+                pwdET.setText("");
+                EditText confirmpwdET = (EditText) findViewById(R.id.confirmpwd); // 获取确认密码编辑框组件
+                confirmpwdET.setText("");
+                EditText emailET = (EditText) findViewById(R.id.email); // 获取E-mail编辑框组件
+                emailET.setText("");
+
+                Toast.makeText(getApplicationContext(), "Reset success...", Toast.LENGTH_LONG)
+                        .show();
+            }
+        });
+    }
+}
+*/
+
+@Sample(
+    name = "5. RadioGroup",
+    description = "单选框",
+    documentation = "",
+    tags = ["A-Self_demos"],
+)
+class RadioGroupDemo : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.ep1_14)
+        val sex = findViewById<RadioGroup>(R.id.radiogroup1)
+        // Parameter 'radioGroup' is never used, could be renamed to _
+        sex.setOnCheckedChangeListener { _, i -> // i -> checkedId
+            val r = findViewById<RadioButton>(i)
+            Toast.makeText(
+                this@RadioGroupDemo, "单选按钮, 选择的是：" + r.getText(),
+                LENGTH_SHORT
+            ).show()
+        }
+
+        val button1: Button = findViewById(R.id.button1)
+        button1.setOnClickListener { selectClick() }
+    }
+
+    // 配合xml文件里的属性 android:onClick="selectClick"（kt有问题）
+    fun selectClick() {
+        val sex2 = findViewById<RadioGroup>(R.id.radiogroup1)
+        for (i in 0 until sex2.childCount) {
+            val r = sex2.getChildAt(i) as RadioButton // 根据索引值获取单选按钮的值
+            if (r.isChecked) { // 判断是否选中
+                Toast.makeText(this@RadioGroupDemo, "你选择的是：" + r.getText(),
+                    LENGTH_SHORT).show()
+                break // 跳出循环，单选
+            }
+        }
+    }
+}
+
+/*
+* Java
+public class EpOne_14 extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.ep1_14);
+
+        RadioGroup sex = findViewById(R.id.radiogroup1);
+        sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                // i -> checkedId
+                RadioButton r = findViewById(i);
+                Toast.makeText(EpOne_14.this, "单选按钮, 选择的是：" + r.getText(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    // 配合xml文件里的属性 android:onClick="selectClick"
+    public void selectClick(View view) {
+        final RadioGroup sex2 = findViewById(R.id.radiogroup1);
+
+        for (int i = 0; i < sex2.getChildCount(); i++) {
+            RadioButton r = (RadioButton) sex2.getChildAt(i); // 根据索引值获取单选按钮的值
+            if (r.isChecked()) { // 判断是否选中
+                Toast.makeText(EpOne_14.this, "你选择的是：" + r.getText(), Toast.LENGTH_SHORT)
+                        .show();
+                break; // 跳出循环，单选
+            }
+        }
+    }
+}
+*/
+
+
+@Sample(
+    name = "6. CheckBox",
+    description = "复选框",
+    documentation = "",
+    tags = ["A-Self_demos"],
+)
+class CheckBoxDemo : AppCompatActivity() {
+    private val listener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+        if (isChecked) {
+            Toast.makeText(
+                this@CheckBoxDemo, "选中了" + buttonView.getText().toString(),
+                LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.ep1_15)
+        val c1 = findViewById<CheckBox>(R.id.c1)
+        val c2 = findViewById<CheckBox>(R.id.c2)
+        val c3 = findViewById<CheckBox>(R.id.c3)
+        c1.setOnCheckedChangeListener(listener)
+        c2.setOnCheckedChangeListener(listener)
+        c3.setOnCheckedChangeListener(listener)
+        val button = findViewById<Button>(R.id.submit1)
+        button.setOnClickListener {
+            var answer = ""
+            if (c1.isChecked) {
+                answer += c1.getText().toString() + " "
+            }
+            if (c2.isChecked) {
+                answer += c2.getText().toString() + " "
+            }
+            if (c3.isChecked) {
+                answer += c3.getText().toString() + " "
+            }
+            val toast = Toast.makeText(this@CheckBoxDemo, "选中$answer", LENGTH_SHORT)
+            toast.show()
+        }
+    }
+}
+
+/*
+* Java
+public class EpOne_15 extends AppCompatActivity {
+
+    private CompoundButton.OnCheckedChangeListener listener =
+            new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if (isChecked) {
+                        Toast.makeText(EpOne_15.this, "选中了" + buttonView.getText().toString(),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+            };
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.ep1_15);
+
+        CheckBox c1 = findViewById(R.id.c1);
+        CheckBox c2 = findViewById(R.id.c2);
+        CheckBox c3 = findViewById(R.id.c3);
+
+        c1.setOnCheckedChangeListener(listener);
+        c2.setOnCheckedChangeListener(listener);
+        c3.setOnCheckedChangeListener(listener);
+
+        Button button = findViewById(R.id.submit1);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String answer = "";
+                if (c1.isChecked()) {
+                    answer += c1.getText().toString() + " ";
+                }
+                if (c2.isChecked()) {
+                    answer += c2.getText().toString() + " ";
+                }
+                if (c3.isChecked()) {
+                    answer += c3.getText().toString() + " ";
+                }
+                Toast toast = Toast.makeText(EpOne_15.this, "选中" + answer, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+    }
+}
+* */
+
+@Sample(
+    name = "7. CodeToCreateView",
+    description = "利用 code 创建视图。",
+    documentation = "",
+    tags = ["A-Self_demos"],
+)
+class CodeToCreateView : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        // 布局
+        super.onCreate(savedInstanceState)
+        val linearLayout = LinearLayout(this)
+        // listview
+        val listView = ListView(this)
+        // 配置分割线
+        val line = View.inflate(this, R.layout.ep1_19, null)
+        // 设置头部线
+        listView.addHeaderView(line)
+        // 创建适配器
+        val ad = ArrayAdapter.createFromResource(
+            this,
+            R.array.ep1_19_listview, android.R.layout.simple_list_item_checked
+        )
+        listView.setAdapter(ad)
+        listView.addFooterView(line)
+        // 放进去
+        linearLayout.addView(listView)
+        // 设置内容视图
+        setContentView(linearLayout)
+        listView.onItemClickListener =
+            AdapterView.OnItemClickListener { parent, _, position, _ ->
+                val s = parent.getItemAtPosition(position).toString()
+                Toast.makeText(this@CodeToCreateView, s, LENGTH_SHORT).show()
+            }
+    }
+}
+
+/*
+* Java
+public class EpOne_19 extends AppCompatActivity {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        // 布局
+        super.onCreate(savedInstanceState);
+        LinearLayout linearLayout = new LinearLayout(this);
+        // listview
+        ListView listView = new ListView(this);
+        // 配置分割线
+        View line = View.inflate(this, R.layout.ep1_19, null);
+        // 设置头部线
+        listView.addHeaderView(line);
+        // 创建适配器
+        ArrayAdapter<CharSequence> ad = ArrayAdapter.createFromResource(this,
+                R.array.ep1_19_listview, android.R.layout.simple_list_item_checked);
+        listView.setAdapter(ad);
+        listView.addFooterView(line);
+        // 放进去
+        linearLayout.addView(listView);
+        // 设置内容视图
+        setContentView(linearLayout);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String s = parent.getItemAtPosition(position).toString();
+                Toast.makeText(EpOne_19.this, s, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
 */

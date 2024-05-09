@@ -25,10 +25,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application>
-        <activity
-            android:name=".prejob.BaseMainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight" />
         <!-- callnotification START-->
         <activity
             android:name=".telephony.callnotification.CallNotificationSample"
@@ -65,22 +61,22 @@
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".prejob.uiDemo.EpOne_12"
+            android:name=".prejob.uiDemo.RegisterMember"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".prejob.uiDemo.EpOne_14"
+            android:name=".prejob.uiDemo.RadioGroupDemo"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".prejob.uiDemo.EpOne_15"
+            android:name=".prejob.uiDemo.CheckBoxDemo"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".prejob.uiDemo.EpOne_19"
+            android:name=".prejob.uiDemo.CodeToCreateView"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
