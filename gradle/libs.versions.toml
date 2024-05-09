@@ -69,33 +69,30 @@ hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", ver
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 
-#[customize] - 将模块需要的库放到这里
+# [customize] - 将模块需要的库放到这里
 # https://developer.android.google.cn/jetpack/androidx/versions?hl=zh-cn
 # 具体的版本号用version = xxx，其他的是 version.ref = xxx
-
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
-
 androidx-activityExt = { group = "androidx.activity", name = "activity", version.ref = "androidx_activity" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx_activity" }
-
-androidx-recyclerviewExt = { group = "androidx.recyclerview", name = "recyclerview", version = "1.3.2" }
-# For control over item selection of both touch and mouse driven selection
-androidx-recyclerview-selection = "androidx.recyclerview:recyclerview-selection:1.1.0"
-
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
 androidx-cardview = "androidx.cardview:cardview:1.0.0"
-
 androidx-coreExt = "androidx.core:core-ktx:1.12.0"
+androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "androidx_navigation" }
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "androidx_navigation" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx_navigation" }
+androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "androidx_navigation" }
+androidx-navigation-dff = { module = "androidx.navigation:navigation-dynamic-features-fragment", version.ref = "androidx_navigation"}
+androidx-recyclerviewExt = { group = "androidx.recyclerview", name = "recyclerview", version = "1.3.2" }
+androidx-recyclerview-selection = "androidx.recyclerview:recyclerview-selection:1.1.0" # For control over item selection of both touch and mouse driven selection
+androidx-slidingpanelayout = "androidx.slidingpanelayout:slidingpanelayout:1.2.0"
+
 androidx-annotation = "androidx.annotation:annotation:1.7.1"
 androidx-fragment = "androidx.fragment:fragment-ktx:1.6.2"
 androidx-exifinterface = "androidx.exifinterface:exifinterface:1.3.7"
 androidx-transition = "androidx.transition:transition-ktx:1.5.0-alpha06"
-androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "androidx_navigation" }
-androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx_navigation" }
-androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "androidx_navigation" }
-androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "androidx_navigation" }
 androidx-lifecycle-viewmodel-compose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0"
 androidx-viewpager2 = "androidx.viewpager2:viewpager2:1.0.0"
-
 androidx-work-runtime-ktx = "androidx.work:work-runtime-ktx:2.9.0"
 androidx-core-remoteviews = "androidx.core:core-remoteviews:1.0.0"
 androidx-glance-appwidget = "androidx.glance:glance-appwidget:1.0.0"
@@ -107,7 +104,6 @@ androidx-window-java = { module = "androidx.window:window-java", version.ref = "
 androidx-window-rxjava2 = { module = "androidx.window:window-rxjava2", version.ref = "androidx_window" }
 androidx-window-core = { module = "androidx.window:window-core", version.ref = "androidx_window" }
 androidx-media = "androidx.media:media:1.7.0"
-androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
 androidx-draganddrop = "androidx.draganddrop:draganddrop:1.0.0"
 androidx-dynamicanimation = "androidx.dynamicanimation:dynamicanimation-ktx:1.0.0-alpha03"
 
