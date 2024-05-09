@@ -16,6 +16,7 @@
 
 package com.wintmain.basic.prejob.uiDemo
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -23,6 +24,8 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.os.Bundle
+import android.os.SystemClock
+import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -32,7 +35,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.Chronometer
 import android.widget.CompoundButton
+import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.LinearLayout
@@ -40,6 +45,7 @@ import android.widget.ListView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.TimePicker
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
@@ -47,9 +53,10 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.google.android.catalog.framework.annotations.Sample
 import com.wintmain.basic.R
+import java.util.Calendar
 
 @Sample(
-    name = "1. xml Layout",
+    name = "01. xml Layout",
     description = "利用 xml 文件设置布局文件",
     documentation = "",
     tags = ["A-Self_demos"],
@@ -57,7 +64,7 @@ import com.wintmain.basic.R
 class XmlToLayout : Fragment(R.layout.ep1_1)
 
 @Sample(
-    name = "2. code Layout",
+    name = "02. code Layout",
     description = "利用 code 设置布局文件",
     documentation = "",
     tags = ["A-Self_demos"],
@@ -65,6 +72,7 @@ class XmlToLayout : Fragment(R.layout.ep1_1)
 class CodeToLayout : Fragment() {
     private var textView: TextView? = null
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -148,7 +156,7 @@ public class EpOne_1 extends AppCompatActivity {
 */
 
 @Sample(
-    name = "3. Rabbit Listener",
+    name = "03. Rabbit Listener",
     description = "兔子布局 & 监听器",
     documentation = "",
     tags = ["A-Self_demos"],
@@ -179,9 +187,10 @@ class RabbitLayout : AppCompatActivity() {
 }
 
 class RabbitView(context: Context) : View(context) {
-    var bitmapX = 0f
-    var bitmapY = 0f
+    private var bitmapX = 0f
+    private var bitmapY = 0f
 
+    @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val paint = Paint()
@@ -245,7 +254,7 @@ class RabbitView extends View {
 */
 
 @Sample(
-    name = "4. Register Member",
+    name = "04. Register Member",
     description = "信息录入",
     documentation = "",
     tags = ["A-Self_demos"],
@@ -266,7 +275,7 @@ class RegisterMember : AppCompatActivity() {
             val confirmpwdET =
                 findViewById<View>(R.id.confirmpwd) as EditText // 获取确认密码编辑框组件
             val confirmpwd = confirmpwdET.getText().toString()
-            if (!confirmpwd.isEmpty() && confirmpwd == pwd) {
+            if (confirmpwd.isNotEmpty() && confirmpwd == pwd) {
                 Toast.makeText(
                     applicationContext,
                     "会员昵称:" + nickname + " 密码:" + pwd +
@@ -351,7 +360,7 @@ public class EpOne_12 extends AppCompatActivity {
 */
 
 @Sample(
-    name = "5. RadioGroup",
+    name = "05. RadioGroup",
     description = "单选框",
     documentation = "",
     tags = ["A-Self_demos"],
@@ -427,7 +436,7 @@ public class EpOne_14 extends AppCompatActivity {
 
 
 @Sample(
-    name = "6. CheckBox",
+    name = "06. CheckBox",
     description = "复选框",
     documentation = "",
     tags = ["A-Self_demos"],
@@ -520,37 +529,60 @@ public class EpOne_15 extends AppCompatActivity {
 * */
 
 @Sample(
-    name = "7. CodeToCreateView",
+    name = "07. CodeToCreateView",
     description = "利用 code 创建视图。",
     documentation = "",
     tags = ["A-Self_demos"],
 )
+@Suppress("DEPRECATION")
+// 将同一个View line添加为ListView的头部和尾部，这可能会导致显示问题。
+// 通常情况下，ListView的头部和尾部应该是不同的View。
 class CodeToCreateView : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         // 布局
         super.onCreate(savedInstanceState)
         val linearLayout = LinearLayout(this)
+        linearLayout.layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.MATCH_PARENT
+        )
+        linearLayout.orientation = LinearLayout.VERTICAL
+        linearLayout.setBackgroundColor(getResources().getColor(R.color.color5))
+
         // listview
         val listView = ListView(this)
+        listView.layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.MATCH_PARENT
+        )
+
         // 配置分割线
         val line = View.inflate(this, R.layout.ep1_19, null)
+
         // 设置头部线
         listView.addHeaderView(line)
+
         // 创建适配器
         val ad = ArrayAdapter.createFromResource(
             this,
             R.array.ep1_19_listview, android.R.layout.simple_list_item_checked
         )
-        listView.setAdapter(ad)
-        listView.addFooterView(line)
+        listView.adapter = ad
+
+        // 设置尾部线
+        val footerLine = View.inflate(this, R.layout.ep1_19, null)
+        listView.addFooterView(footerLine)
+
         // 放进去
         linearLayout.addView(listView)
+
         // 设置内容视图
         setContentView(linearLayout)
+
         listView.onItemClickListener =
             AdapterView.OnItemClickListener { parent, _, position, _ ->
                 val s = parent.getItemAtPosition(position).toString()
-                Toast.makeText(this@CodeToCreateView, s, LENGTH_SHORT).show()
+                Toast.makeText(this, s, LENGTH_SHORT).show()
             }
     }
 }
@@ -586,6 +618,225 @@ public class EpOne_19 extends AppCompatActivity {
                 Toast.makeText(EpOne_19.this, s, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+}
+*/
+
+@Sample(
+    name = "08. ArrayAdapter",
+    description = "适配器",
+    documentation = "",
+    tags = ["A-Self_demos"],
+)
+class ListDemo : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_list_demo)
+
+        var strings = arrayOf("测试 1")
+        for (i in 2 until 50) {
+            strings += "测试 $i"
+        }
+        val ad = ArrayAdapter(this, android.R.layout.simple_list_item_1, strings)
+
+        val listView = findViewById<ListView>(R.id.listView)
+        listView.adapter = ad
+
+        listView.setOnItemClickListener { parent, _, position, _ ->
+            val s = parent.getItemAtPosition(position).toString()
+            Toast.makeText(this, "选择了：$s", LENGTH_SHORT).show()
+        }
+    }
+}
+
+// 'ListActivity' is deprecated. Deprecated in Java
+// 在kt里似乎避免不了，即使用了@Suppress("DEPRECATION")
+/*
+* Java
+public class ep1_20 extends ListActivity {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        String[] strings = new String[]{"测试1", "测试2", "测试3"};
+        ArrayAdapter<String> ad =
+                new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, strings);
+        // 该方法相对简单，直接通过this.setListAdapter(ad);配置适配器即可
+        this.setListAdapter(ad);
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        String s = l.getItemAtPosition(position).toString();
+        Toast.makeText(this, "选择了：" + s, Toast.LENGTH_SHORT).show();
+    }
+}
+*/
+
+@Sample(
+    name = "09. TimeGetDemo",
+    description = "获取日期 & 时间",
+    documentation = "",
+    tags = ["A-Self_demos"],
+)
+class TimeGetDemo : AppCompatActivity() {
+    private var year = 0
+    private var month = 0
+    private var day = 0
+    private var hour = 0
+    private var minute = 0
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.ep1_21)
+        val datePicker = findViewById<DatePicker>(R.id.date)
+        val timePicker = findViewById<TimePicker>(R.id.time)
+        timePicker.setIs24HourView(true)
+        val instance = Calendar.getInstance()
+        year = instance[Calendar.YEAR]
+        month = instance[Calendar.MONTH]
+        day = instance[Calendar.DAY_OF_MONTH]
+        hour = instance[Calendar.HOUR_OF_DAY]
+        minute = instance[Calendar.MINUTE]
+        datePicker.init(
+            year,
+            month,
+            day
+        ) { _, year, month, day ->
+            this@TimeGetDemo.year = year
+            this@TimeGetDemo.month = month
+            this@TimeGetDemo.day = day
+            show(year, month, day, hour, minute) // 通过消息框显示日期和时间
+        }
+        timePicker.setOnTimeChangedListener { _, hour, minute ->
+            this@TimeGetDemo.hour = hour
+            month = minute
+            Log.i("time", "时间：$hour$minute")
+        }
+    }
+
+    private fun show(year: Int, month: Int, day: Int, hour: Int, minute: Int) {
+        val str = (year.toString() + "年" + (month + 1) + "月" + day + "日" + hour + ":"
+            + minute) // 获取拾取器设置的日期和时间
+        Toast.makeText(this, str, LENGTH_SHORT).show() // 显示消息提示框
+    }
+}
+
+/*
+* Java
+public class ep1_21 extends Activity {
+
+    int year;
+    int month;
+    int day;
+    int hour;
+    int minute;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.ep1_21);
+        DatePicker datePicker = findViewById(R.id.date);
+        TimePicker timePicker = findViewById(R.id.time);
+        timePicker.setIs24HourView(true);
+        Calendar instance = Calendar.getInstance();
+        year = instance.get(Calendar.YEAR);
+        month = instance.get(Calendar.MONTH);
+        day = instance.get(Calendar.DAY_OF_MONTH);
+        hour = instance.get(Calendar.HOUR_OF_DAY);
+        minute = instance.get(Calendar.MINUTE);
+        datePicker.init(
+                year,
+                month,
+                day,
+                new DatePicker.OnDateChangedListener() {
+                    @Override
+                    public void onDateChanged(DatePicker view, int year, int month, int day) {
+                        ep1_21.this.year = year;
+                        ep1_21.this.month = month;
+                        ep1_21.this.day = day;
+                        show(year, month, day, hour, minute); // 通过消息框显示日期和时间
+                    }
+                });
+        timePicker.setOnTimeChangedListener(
+                new TimePicker.OnTimeChangedListener() {
+                    @Override
+                    public void onTimeChanged(TimePicker view, int hour, int minute) {
+                        ep1_21.this.hour = hour;
+                        ep1_21.this.month = minute;
+                        Log.i("time", "时间：" + hour + minute);
+                    }
+                });
+    }
+
+    private void show(int year, int month, int day, int hour, int minute) {
+        String str =
+                year + "年" + (month + 1) + "月" + day + "日" + hour + ":"
+                        + minute; // 获取拾取器设置的日期和时间
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show(); // 显示消息提示框
+    }
+}
+*/
+
+@Sample(
+    name = "10. TimeGetDemoExt",
+    description = "计时器",
+    documentation = "",
+    tags = ["A-Self_demos"],
+)
+class TimeGetDemoExt : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.ep1_22)
+        val chronometer = findViewById<Chronometer>(R.id.chro)
+        // 设置起始时间
+        chronometer.setBase(SystemClock.elapsedRealtime())
+        // 设置格式
+        chronometer.setFormat("已用时间:%s")
+        val start = findViewById<Button>(R.id.startbutton)
+        val end = findViewById<Button>(R.id.endbutton)
+        val for0 = findViewById<Button>(R.id.for0)
+        start.setOnClickListener { chronometer.start() }
+        end.setOnClickListener { chronometer.stop() }
+        for0.setOnClickListener { chronometer.setBase(SystemClock.elapsedRealtime()) }
+    }
+}
+
+/*
+* Java
+public class ep1_22 extends Activity {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.ep1_22);
+        Chronometer chronometer = findViewById(R.id.chro);
+        //        设置起始时间
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        //        设置格式
+        chronometer.setFormat("已用时间:%s");
+        Button start = findViewById(R.id.startbutton);
+        Button end = findViewById(R.id.endbutton);
+        Button for0 = findViewById(R.id.for0);
+        start.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        chronometer.start();
+                    }
+                });
+        end.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        chronometer.stop();
+                    }
+                });
+        for0.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        chronometer.setBase(SystemClock.elapsedRealtime());
+                    }
+                });
     }
 }
 */

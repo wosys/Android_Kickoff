@@ -15,18 +15,14 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sample_main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- android:entries="@array/ep1_19_listview" -->
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="#f00"
-        android:dividerHeight="10px"
-        android:footerDividersEnabled="false"
-        android:headerDividersEnabled="false" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

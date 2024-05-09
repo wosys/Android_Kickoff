@@ -80,6 +80,21 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
+        <activity
+            android:name=".prejob.uiDemo.ListDemo"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.TimeGetDemo"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.TimeGetDemoExt"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
         <!--        <activity android:name=".ep3_1second"-->
         <!--            android:icon="@drawable/rabbit"-->
         <!--            android:label="关于"-->
