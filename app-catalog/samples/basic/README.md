@@ -5,7 +5,6 @@
 
 原Link：
 
-* NA
 * https://github.com/getActivity/AndroidProject
 
 [回到主页](../../../README.md)
