@@ -13,7 +13,7 @@ For personal study use only.
 
 一款以Google/casa-log为框架来学习Android基础的App，在学习其他优秀的三方库中进行集成开发。仅供个人学习使用。
 
-## Topics List[update here]
+## Topics[update here]
 
 * [AndroidRes](app-catalog/samples/androidres)
 * [Basic](app-catalog/samples/basic)
