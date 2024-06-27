@@ -1,0 +1,38 @@
+name: Issue Manager
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  issue-close-require:
+    permissions:
+      issues: write  # for actions-cool/issues-helper to update issues
+      pull-requests: write  # for actions-cool/issues-helper to update PRs
+    runs-on: ubuntu-latest
+    steps:
+      - name: check-inactive
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'check-inactive'
+          inactive-label: 'inactive'
+          inactive-day: 3
+          body: |
+            This issue has not received any updates for 3 consecutive days. Please track it in time.
+
+            该 issue 已经连续 3 天未收到任何更新，请及时关注进展。
+
+      - name: inactive
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'close-issues'
+          labels: 'inactive'
+          inactive-day: 1
+          body: |
+            Since this issue has not received any updates in 1 days after be added inactive tag.
+            Close it. Any concerns, you could comment and reply.
+
+            由于该 issue 在被标记为 inactive 后 1 天仍未收到回应。现关闭 issue，任何问题请留言。
