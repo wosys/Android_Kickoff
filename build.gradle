@@ -42,8 +42,8 @@ buildscript {
 }
 
 plugins {
-    id "com.diffplug.spotless" version "5.9.0"
-    id 'org.jetbrains.kotlin.android' version '1.8.10' apply false
+    alias(libs.plugins.diffplug.spotless)
+    alias(libs.plugins.kotlin.android) apply false
 }
 
 
