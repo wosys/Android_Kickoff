@@ -36,6 +36,9 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
+      - name: Check lint
+        run: ./gradlew lintDebug
+
       - name: Build debug
         run: ./gradlew assembleDebug
 

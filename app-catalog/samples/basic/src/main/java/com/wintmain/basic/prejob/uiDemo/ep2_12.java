@@ -90,7 +90,8 @@ public class ep2_12 extends Activity {
 
                         Intent intent = new Intent(ep2_12.this, NotificationActivity.class);
                         PendingIntent pendingIntent =
-                                PendingIntent.getActivity(ep2_12.this, 0, intent, 0);
+                                PendingIntent.getActivity(ep2_12.this, 0, intent,
+                                        PendingIntent.FLAG_IMMUTABLE);
                         Notification builder2 =
                                 new Notification.Builder(ep2_12.this, id)
                                         .setContentTitle("通知标题2") // 设置通知标题

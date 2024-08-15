@@ -384,7 +384,7 @@ class RadioGroupDemo : AppCompatActivity() {
     }
 
     // 配合xml文件里的属性 android:onClick="selectClick"（kt有问题）
-    fun selectClick() {
+    private fun selectClick() {
         val sex2 = findViewById<RadioGroup>(R.id.radiogroup1)
         for (i in 0 until sex2.childCount) {
             val r = sex2.getChildAt(i) as RadioButton // 根据索引值获取单选按钮的值
