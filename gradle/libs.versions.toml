@@ -1,4 +1,3 @@
-#
 # Copyright 2022 Google LLC
 # Copyright 2023-2024 wintmain
 #
@@ -16,7 +15,6 @@
 #
 # NOTE: This file has been modified by wintmain
 # Modifications are licensed under the License.
-#
 
 [versions]
 compose-bom = "2024.02.00"
@@ -28,6 +26,7 @@ hilt = "2.48.1"
 casa = "0.5.1"
 agp = "8.2.2"
 ksp = "1.9.22-1.0.17" # Should be updated when kotlin version is updated
+coreExt = "1.12.0"
 androidx_activity = "1.8.2"
 androidx_appcompat = "1.6.1"
 androidx_navigation = "2.7.7"
@@ -36,7 +35,6 @@ androidx_window = "1.2.0"
 [libraries]
 # Core dependencies
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
-
 # CASA框架依赖
 casa-ui = { module = "com.google.android.catalog.framework:casa-ui", version.ref = "casa" }
 casa-base = { module = "com.google.android.catalog.framework:casa-base", version.ref = "casa" }
@@ -51,73 +49,65 @@ hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", ver
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 
-# [customize] - 将模块需要的库放到这里
-    # https://developer.android.google.cn/jetpack/androidx/versions?hl=zh-cn
-    # 具体的版本号用version = xxx，其他的是 version.ref = xxx
 androidx-activityExt = { group = "androidx.activity", name = "activity", version.ref = "androidx_activity" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx_activity" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx_appcompat" }
-androidx-coreExt = "androidx.core:core-ktx:1.12.0"
+androidx-coreExt = { group = "androidx.core", name = "core", version.ref = "coreExt" }
+androidx-coreExtkt = { group = "androidx.core", name = "core-ktx", version.ref = "coreExt" }
 
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
-compose-ui-ui = { module = "androidx.compose.ui:ui" }
-compose-foundation-foundation = { module = "androidx.compose.foundation:foundation" }
 compose-material-material3 = { module = "androidx.compose.material3:material3" }
-compose-material-iconsext = { module = "androidx.compose.material:material-icons-extended" }
-compose-material-window3 = { module = "androidx.compose.material3:material3-window-size-class" }
 compose-animation-animation = { module = "androidx.compose.animation:animation" }
+compose-foundation-foundation = { module = "androidx.compose.foundation:foundation" }
 compose-foundation-layout = { module = "androidx.compose.foundation:layout" }
 compose-material-material = { module = "androidx.compose.material:material" }
+compose-material-iconsext = { module = "androidx.compose.material:material-icons-extended" }
+compose-material-window3 = { module = "androidx.compose.material3:material3-window-size-class" }
 compose-runtime-runtime = { module = "androidx.compose.runtime:runtime" }
 compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata" }
+compose-ui-ui = { module = "androidx.compose.ui:ui" }
+compose-ui-util = { module = "androidx.compose.ui:util" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
-compose-ui-util = { module = "androidx.compose.ui:util" }
 
-# 测试依赖
-androidx-test-runner = "androidx.test:runner:1.5.2"
-androidx-testext = "androidx.test.ext:junit:1.1.5"
-androidx-test-core = "androidx.test:core-ktx:1.5.0"
-androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.5.1"
-androidx-test-ext-junit = "androidx.test.ext:junit-ktx:1.1.5"
-androidx-test-ext-truth = "androidx.test.ext:truth:1.5.0"
-androidx-test-rules = "androidx.test:rules:1.5.0"
-androidx-test-uiautomator = "androidx.test.uiautomator:uiautomator:2.3.0"
-
-# Sample specific dependencies
+# [Sample specific dependencies] - 将模块需要的库放到这里
+    # https://developer.android.google.cn/jetpack/androidx/versions?hl=zh-cn
+    # 具体的版本号用version = xxx，其他的是 version.ref = xxx
 androidx-cardview = "androidx.cardview:cardview:1.0.0"
 androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
+androidx-recyclerviewExt = { group = "androidx.recyclerview", name = "recyclerview", version = "1.3.2" }
+    # For control over item selection of both touch and mouse driven selection
+androidx-recyclerview-selection = "androidx.recyclerview:recyclerview-selection:1.1.0"
+androidx-slidingpanelayout = "androidx.slidingpanelayout:slidingpanelayout:1.2.0"
+androidx-annotation = "androidx.annotation:annotation:1.8.2"
+androidx-fragment = "androidx.fragment:fragment-ktx:1.8.2"
+androidx-exifinterface = "androidx.exifinterface:exifinterface:1.3.7"
+androidx-transition = "androidx.transition:transition-ktx:1.5.1"
+androidx-lifecycle-viewmodel-compose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.8.4"
+androidx-viewpager2 = "androidx.viewpager2:viewpager2:1.1.0"
+androidx-work-runtime-ktx = "androidx.work:work-runtime-ktx:2.9.1"
+androidx-core-remoteviews = "androidx.core:core-remoteviews:1.1.0"
+androidx-glance-appwidget = "androidx.glance:glance-appwidget:1.1.0"
+androidx-glance-material3 = "androidx.glance:glance-material3:1.1.0"
+androidx-graphics-core = "androidx.graphics:graphics-core:1.0.0"
+androidx-startup = 'androidx.startup:startup-runtime:1.1.1'
+androidx-media = "androidx.media:media:1.7.0"
+androidx-draganddrop = "androidx.draganddrop:draganddrop:1.0.0"
+androidx-dynamicanimation = "androidx.dynamicanimation:dynamicanimation-ktx:1.0.0-alpha03"
+
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "androidx_navigation" }
 androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "androidx_navigation" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx_navigation" }
 androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "androidx_navigation" }
 androidx-navigation-dff = { module = "androidx.navigation:navigation-dynamic-features-fragment", version.ref = "androidx_navigation"}
-androidx-recyclerviewExt = { group = "androidx.recyclerview", name = "recyclerview", version = "1.3.2" }
-    # For control over item selection of both touch and mouse driven selection
-androidx-recyclerview-selection = "androidx.recyclerview:recyclerview-selection:1.1.0"
-androidx-slidingpanelayout = "androidx.slidingpanelayout:slidingpanelayout:1.2.0"
-androidx-annotation = "androidx.annotation:annotation:1.7.1"
-androidx-fragment = "androidx.fragment:fragment-ktx:1.6.2"
-androidx-exifinterface = "androidx.exifinterface:exifinterface:1.3.7"
-androidx-transition = "androidx.transition:transition-ktx:1.5.0-alpha06"
-androidx-lifecycle-viewmodel-compose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0"
-androidx-viewpager2 = "androidx.viewpager2:viewpager2:1.0.0"
-androidx-work-runtime-ktx = "androidx.work:work-runtime-ktx:2.9.0"
-androidx-core-remoteviews = "androidx.core:core-remoteviews:1.0.0"
-androidx-glance-appwidget = "androidx.glance:glance-appwidget:1.0.0"
-androidx-glance-material3 = "androidx.glance:glance-material3:1.0.0"
-androidx-graphics-core = { group = "androidx.graphics", name = "graphics-core", version = "1.0.0-beta01" }
-androidx-startup = 'androidx.startup:startup-runtime:1.1.1'
 androidx-window = { module = "androidx.window:window", version.ref = "androidx_window" }
 androidx-window-java = { module = "androidx.window:window-java", version.ref = "androidx_window" }
 androidx-window-rxjava2 = { module = "androidx.window:window-rxjava2", version.ref = "androidx_window" }
 androidx-window-core = { module = "androidx.window:window-core", version.ref = "androidx_window" }
-androidx-media = "androidx.media:media:1.7.0"
-androidx-draganddrop = "androidx.draganddrop:draganddrop:1.0.0"
-androidx-dynamicanimation = "androidx.dynamicanimation:dynamicanimation-ktx:1.0.0-alpha03"
 
+codelocator-core = "com.bytedance.tools.codelocator:codelocator-core:2.0.3"
 google-ksp-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 google-ksp-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
 metalavaGradle = "me.tylerbwong.gradle:metalava-gradle:0.1.9"
@@ -127,6 +117,22 @@ affectedmoduledetector = "com.dropbox.affectedmoduledetector:affectedmoduledetec
 glide = "com.github.bumptech.glide:glide:4.15.1"
 material = "com.google.android.material:material:1.11.0"
 accompanist-permissions = "com.google.accompanist:accompanist-permissions:0.32.0"
+
+# 测试依赖
+    # To use the androidx.test.runner APIs
+androidx-test-runner = "androidx.test:runner:1.6.2"
+    # To use the androidx.test.core APIs
+androidx-test-core = "androidx.test:core:1.6.1"
+androidx-test-corekt = "androidx.test:core-ktx:1.6.1"
+    # To use the androidx.test.espresso
+androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.6.1"
+    # To use the JUnit Extension APIs
+androidx-test-ext-junit = "androidx.test.ext:junit:1.2.1"
+androidx-test-ext-junitkt = "androidx.test.ext:junit-ktx:1.2.1"
+    # To use the Truth Extension APIs
+androidx-test-ext-truth = "androidx.test.ext:truth:1.6.0"
+    #To use android test orchestrator
+androidx-test-orchestrator = "androidx.test:orchestrator:1.5.0"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
