@@ -95,9 +95,9 @@ dependencies {
     androidTestImplementation libs.androidx.test.runner
     testImplementation libs.androidx.test.runner
     // libs.androidx.testext 必须和上面的 runner 一起；AS自动创建的'androidTest'会用到
-    androidTestImplementation libs.androidx.testext
-    testImplementation libs.androidx.testext
+    androidTestImplementation libs.androidx.test.ext.junit
+    testImplementation libs.androidx.test.ext.junit
 
     // App中集成CodeLocator: https://github.com/bytedance/CodeLocator
-    debugImplementation "com.bytedance.tools.codelocator:codelocator-core:2.0.3"
+    debugImplementation libs.codelocator.core
 }
