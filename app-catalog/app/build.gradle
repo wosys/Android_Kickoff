@@ -99,5 +99,6 @@ dependencies {
     testImplementation libs.androidx.test.ext.junit
 
     // App中集成CodeLocator: https://github.com/bytedance/CodeLocator
-    debugImplementation libs.codelocator.core
+    // 暂时禁用
+//    debugImplementation libs.codelocator.core
 }
