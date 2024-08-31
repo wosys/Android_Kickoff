@@ -18,13 +18,21 @@
  * Modifications are licensed under the License.
  */
 
-import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
+    // 这里与settings.graddle保持一致，不可缺少（google、maven）
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
+
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        // JitPack 远程仓库：https://jitpack.io, 用来解析Github上的三方库
+        maven { url 'https://jitpack.io' }
+        // Uncomment this to use a snapshot version of casa-android.
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     }
 
     dependencies {
@@ -32,107 +40,15 @@ buildscript {
         classpath libs.hilt.plugin
         classpath libs.google.ksp.plugin
         classpath libs.kotlin.gradlePlugin
-
-        classpath libs.dokka
-
-        classpath libs.metalavaGradle
-
-        classpath libs.affectedmoduledetector
-    }
-}
-
-plugins {
-    alias(libs.plugins.diffplug.spotless)
-    alias(libs.plugins.kotlin.android) apply false
-}
-
-
-apply plugin: 'org.jetbrains.dokka'
-apply plugin: 'com.dropbox.affectedmoduledetector'
-
-tasks.withType(DokkaMultiModuleTask).configureEach {
-    outputDirectory = rootProject.file('docs/api')
-    failOnWarning = true
-}
-
-affectedModuleDetector {
-    baseDir = "${project.rootDir}"
-    pathsAffectingAllModules = [
-            "gradle/libs.versions.toml",
-    ]
-    excludedModules = [
-    ]
-
-    logFilename = "output.log"
-    logFolder = "${rootProject.buildDir}/affectedModuleDetector"
-
-    String baseRef = findProperty("affected_base_ref")
-    // If we have a base ref to diff against, extract the branch name and use it
-    if (baseRef != null && !baseRef.isEmpty()) {
-        // Remove the prefix from the head.
-        // TODO: need to support other types of git refs
-        specifiedBranch = baseRef.replace('refs/heads/', '')
-        compareFrom = "SpecifiedBranchCommit"
-    } else {
-        // Otherwise we use the previous commit. This is mostly used for commits to main.
-        compareFrom = "PreviousCommit"
     }
 }
 
 allprojects {
-    repositories {
-        // 在settings.gradle里添加
-        // Build was configured to prefer settings repositories over project repositories
-        // but repository 'Google' was added by build file 'build.gradle'
-//        google()
-//        mavenCentral()
-
-        def composeSnapshot = libs.versions.composesnapshot.get()
-        if (composeSnapshot.length() > 1) {
-            maven { url "https://androidx.dev/snapshots/builds/$composeSnapshot/artifacts/repository/" }
-        }
-    }
-
     // 将构建文件统一输出到项目根目录下的 build 文件夹
     setBuildDir(new File(rootDir, "build/${path.replaceAll(':', '/')}"))
 }
 
 subprojects {
-    apply plugin: 'com.diffplug.spotless'
-    spotless {
-        kotlin {
-            target "**/*.kt"
-            ktlint(libs.versions.ktlint.get())
-            licenseHeaderFile rootProject.file('spotless/copyright.txt')
-        }
-
-        groovyGradle {
-            target '**/*.gradle'
-            greclipse().configFile(rootProject.file('spotless/greclipse.properties'))
-            licenseHeaderFile rootProject.file('spotless/copyright.txt'),
-                    '(buildscript|apply|import|plugins)'
-        }
-    }
-
-    // Remove all test apps after running UI tests.
-    // This is specially important in CI so that test emulators don't run out of space.
-    tasks.whenTaskAdded { task ->
-        if (task.name == 'connectedDebugAndroidTest') {
-            task.finalizedBy 'uninstallDebugAndroidTest'
-        }
-    }
-
-    configurations.configureEach {
-        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-            // Make sure that we're using the Android version of Guava
-            if (details.requested.group == 'com.google.guava'
-                    && details.requested.module.name == 'guava'
-                    && details.requested.version.contains('jre')) {
-                details.useVersion details.requested.version.replace('jre', 'android')
-            }
-        }
-    }
-
     tasks.withType(KotlinCompile).configureEach { compile ->
         kotlinOptions {
             // Treat all Kotlin warnings as errors
@@ -143,74 +59,6 @@ subprojects {
             freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
             // Enable default methods in interfaces
             freeCompilerArgs += "-Xjvm-default=all"
-        }
-    }
-
-    // Read in the signing.properties file if it is exists
-    def signingPropsFile = rootProject.file('release/signing.properties')
-    if (signingPropsFile.exists()) {
-        def localProperties = new Properties()
-        signingPropsFile.withInputStream { is -> localProperties.load(is) }
-        localProperties.each { prop ->
-            if (prop.key == "signing.secretKeyRingFile") {
-                // If this is the key ring, treat it as a relative path
-                project.ext.set(prop.key, rootProject.file(prop.value).absolutePath)
-            } else {
-                project.ext.set(prop.key, prop.value)
-            }
-        }
-    }
-
-    // If we have a POM Artifact ID, we should generate API files
-    if (project.hasProperty('POM_ARTIFACT_ID')) {
-        apply plugin: 'me.tylerbwong.gradle.metalava'
-
-        metalava {
-            filename = "api/current.api"
-            reportLintsAsErrors = true
-        }
-    }
-
-    // Must be afterEvaluate or else com.vanniktech.maven.publish will overwrite our
-    // dokka and version configuration.
-    afterEvaluate {
-        if (tasks.findByName('dokkaHtmlPartial') == null) {
-            // If dokka isn't enabled on this module, skip
-            return
-        }
-
-        tasks.named('dokkaHtmlPartial') {
-            dokkaSourceSets.configureEach {
-                reportUndocumented.set(true)
-                skipEmptyPackages.set(true)
-                skipDeprecated.set(true)
-                jdkVersion.set(8)
-
-                // Add Android SDK packages
-                noAndroidSdkLink.set(false)
-
-                // Add samples from :sample module
-                samples.from(rootProject.file("sample/src/main/java/"))
-
-                // AndroidX + Compose docs
-                externalDocumentationLink {
-                    url.set(new URL("https://developer.android.com/reference/"))
-                    packageListUrl.set(new URL("https://developer.android.com/reference/androidx/package-list"))
-                }
-                externalDocumentationLink {
-                    url.set(new URL("https://developer.android.com/reference/kotlin/"))
-                    packageListUrl.set(new URL("https://developer.android.com/reference/kotlin/androidx/package-list"))
-                }
-
-                sourceLink {
-                    localDirectory.set(project.file("src/main/java"))
-                    // URL showing where the source code can be accessed through the web browser
-                    remoteUrl.set(new URL("https://github.com/wosys/Android_Kickoff/tree/sync-dev/" +
-                            "${project.name}/src/main/java"))
-                    // Suffix which is used to append the line number to the URL. Use #L for GitHub
-                    remoteLineSuffix.set("#L")
-                }
-            }
         }
     }
 }

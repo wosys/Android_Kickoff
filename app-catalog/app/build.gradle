@@ -33,8 +33,8 @@ android {
         applicationId "com.wintmain.catalog.app"
         minSdk 26
         targetSdk 34
-        versionCode 20240811
-        versionName 'V20240811'
+        versionCode 20240831
+        versionName 'V20240831'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,14 +45,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = '17'
-    }
-
     buildFeatures {
         buildConfig false
         compose true
@@ -60,9 +52,17 @@ android {
         aidl true
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
     composeOptions {
         kotlinCompilerExtensionVersion libs.versions.composeCompiler.get()
     }
+
     lint {
         checkReleaseBuilds false
         textOutput file('stdout')
@@ -71,13 +71,15 @@ android {
 }
 
 dependencies {
+    // Include all available samples dynamically imported in settings.gradle
+    gradle.ext.samples.each {
+        implementation project("$it")
+    }
+
     def composeBom = platform(libs.compose.bom)
     implementation composeBom
     androidTestImplementation composeBom
     implementation libs.material
-
-    // CASA UI dependency for the app-module
-//    implementation(project(":framework:ui"))
 
     // Replace with remote.
     implementation(libs.casa.ui)
@@ -85,11 +87,6 @@ dependencies {
     // Required by CASA to generate the wiring logic
     implementation libs.hilt.android
     ksp libs.hilt.compiler
-
-    // Include all available samples dynamically imported in settings.gradle
-    gradle.ext.samples.each {
-        implementation project("$it")
-    }
 
     // 测试依赖
     androidTestImplementation libs.androidx.test.runner

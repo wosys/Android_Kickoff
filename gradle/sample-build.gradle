@@ -71,9 +71,6 @@ dependencies {
     androidTestImplementation composeBom
 
     // CASA dependencies for sample-modules
-//    implementation(project(":framework:base"))
-//    ksp(project(":framework:processor"))
-    // Replace with remote.
     implementation libs.casa.base
     ksp libs.casa.processor
 
