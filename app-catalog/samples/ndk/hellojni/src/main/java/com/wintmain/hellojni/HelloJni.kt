@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2016 The Android Open Source Project
  * Copyright 2023-2024 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -65,9 +66,8 @@ class HelloJni : AppCompatActivity() {
 
     companion object {
         /*
-         * this is used to load the 'hello-jni' library on application
-         * startup. The library has already been unpacked into
-         * /data/data/com.example.hellojni/lib/libhello-jni.so
+         * This is used to load the 'hello-jni' library on application startup.
+         * The library has already been unpacked into xxx/libhello-jni.so
          * at the installation time by the package manager.
          */
         init {

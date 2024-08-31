@@ -20,8 +20,7 @@
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_wintmain_hellojni_HelloJni_stringFromJNI(JNIEnv* env,
-                                                 jobject /* this */) {
+Java_com_wintmain_hellojni_HelloJni_stringFromJNI(JNIEnv* env, jobject /* this */) {
     std::string hello = "Hello from JNI.";
     return env->NewStringUTF(hello.c_str());
 }
