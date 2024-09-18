@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.deviceinfo;
+package com.wintmain.xtele.deviceinfo;
 
 import static android.telephony.SubscriptionManager.INVALID_SIM_SLOT_INDEX;
 import static android.telephony.UiccSlotInfo.CARD_STATE_INFO_PRESENT;

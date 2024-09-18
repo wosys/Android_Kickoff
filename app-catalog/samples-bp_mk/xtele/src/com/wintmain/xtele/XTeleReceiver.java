@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain;
+package com.wintmain.xtele;
 
 import static com.android.internal.telephony.TelephonyIntents.SECRET_CODE_ACTION;
 

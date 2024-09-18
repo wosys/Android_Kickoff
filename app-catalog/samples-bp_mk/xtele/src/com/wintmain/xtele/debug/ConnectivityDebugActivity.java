@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.xtelephony;
+package com.wintmain.xtele.debug;
 
 import static android.net.NetworkCapabilities.NET_CAPABILITY_NOT_RESTRICTED;
 import static android.net.NetworkCapabilities.TRANSPORT_CELLULAR;
@@ -35,7 +35,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.wintmain.R;
+import com.wintmain.xtele.R;
 
 public class ConnectivityDebugActivity extends Activity {
 

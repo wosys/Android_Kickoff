@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.xtelephony;
+package com.wintmain.xtele.debug;
 
 import static android.provider.Telephony.Carriers.APN;
 import static android.provider.Telephony.Carriers.AUTH_TYPE;
@@ -53,7 +53,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.wintmain.R;
+import com.wintmain.xtele.R;
 
 import java.util.ArrayList;
 import java.util.List;

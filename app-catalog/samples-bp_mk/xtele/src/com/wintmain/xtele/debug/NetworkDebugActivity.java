@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.xtelephony;
+package com.wintmain.xtele.debug;
 
 import android.content.Context;
 import android.content.Intent;
@@ -29,6 +29,7 @@ import android.preference.PreferenceActivity;
 import android.telephony.AccessNetworkConstants;
 import android.telephony.NetworkRegistrationInfo;
 import android.telephony.ServiceState;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -36,7 +37,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.wintmain.R;
+import com.wintmain.xtele.R;
 
 public class NetworkDebugActivity extends PreferenceActivity
         implements Preference.OnPreferenceChangeListener {
@@ -46,6 +47,7 @@ public class NetworkDebugActivity extends PreferenceActivity
     private static final boolean VOICE_DATE_MERGED =
             SystemProperties.getBoolean("persist.debug.merge_voice_data", true);
 
+    private static final String PHONE_ID_KEY = "phone_id";
     private static final String NETWORK_MCC_MNC_KEY = "mcc_mnc";
     private static final String NETWORK_NAME_KEY = "network_name";
     private static final String VOICE_RAT_KEY = "voice_rat";
@@ -58,6 +60,7 @@ public class NetworkDebugActivity extends PreferenceActivity
     private static final String NR_FREQUENCY_KEY = "nr_frequency_range";
     private static final String OPERATOR_KEY = "operator";
     private static final int MSG_RESET_NETWORK_DONE = 1;
+    private ListPreference mSim;
     private EditTextPreference mNetworkMccMnc;
     private EditTextPreference mNetworkName;
     private ListPreference mVoiceRat;
@@ -168,6 +171,7 @@ public class NetworkDebugActivity extends PreferenceActivity
         Log.i(TAG, "initPreferences");
         addPreferencesFromResource(R.xml.network_preference);
 
+        mSim = (ListPreference) findPreference(PHONE_ID_KEY);
         mNetworkMccMnc = (EditTextPreference) findPreference(NETWORK_MCC_MNC_KEY);
         mNetworkName = (EditTextPreference) findPreference(NETWORK_NAME_KEY);
 
@@ -218,6 +222,7 @@ public class NetworkDebugActivity extends PreferenceActivity
         String operator = telMgr.getNetworkOperatorName();
         Log.i(TAG, "initPreferenceValues operator: " + operator);
         updatePreference(mNetworkName, operator);
+        updateSimPreference();
 
         ServiceState ss = telMgr.getServiceState();
         if (ss != null) {
@@ -270,6 +275,18 @@ public class NetworkDebugActivity extends PreferenceActivity
             int nrFrequency = ss.getNrFrequencyRange();
             Log.i(TAG, "initPreferenceValues nrFrequency: " + nrFrequency);
             updatePreference(mNrFrequency, String.valueOf(nrFrequency));
+        }
+    }
+
+    private void updateSimPreference() {
+        int[] subIds = ((SubscriptionManager) getSystemService(
+                Context.TELEPHONY_SUBSCRIPTION_SERVICE)).getActiveSubscriptionIdList();
+        if (subIds.length == 1) {
+            updatePreference(mSim, String.valueOf(SubscriptionManager.getSlotIndex(subIds[0])));
+            mSim.setEnabled(false);
+        } else if (subIds.length == 2) {
+            // -1 means SIM1+SIM2, the mock network is for both SIMs
+            updatePreference(mSim, String.valueOf(-1));
         }
     }
 

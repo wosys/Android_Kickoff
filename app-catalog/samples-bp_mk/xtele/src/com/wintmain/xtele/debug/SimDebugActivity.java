@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.xtelephony;
+package com.wintmain.xtele.debug;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -34,7 +34,7 @@ import android.widget.Button;
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneFactory;
 
-import com.wintmain.R;
+import com.wintmain.xtele.R;
 
 public class SimDebugActivity extends PreferenceActivity
         implements Preference.OnPreferenceChangeListener {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.deviceinfo;
+package com.wintmain.xtele.deviceinfo;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -51,7 +51,7 @@ import com.android.internal.telephony.uicc.UiccController;
 import com.qti.extphone.ExtTelephonyManager;
 import com.qti.extphone.QtiImeiInfo;
 import com.qti.extphone.ServiceCallback;
-import com.wintmain.R;
+import com.wintmain.xtele.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -70,8 +70,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 /**
- * Display the following information # Battery Strength : TODO # Uptime # Awake Time #
- * XMPP/buzz/tickle status : TODO
+ * Display the information of device
  */
 public class DeviceInfoActivity extends PreferenceActivity {
     // Please get these values from IccConstants
@@ -120,7 +119,6 @@ public class DeviceInfoActivity extends PreferenceActivity {
     private int mNumPhone = 1;
     private ServiceCallback mServiceCallback =
             new ServiceCallback() {
-
                 @Override
                 public void onConnected() {
                     Log.d(TAG, "ExtTelephony Service connected");
@@ -355,7 +353,6 @@ public class DeviceInfoActivity extends PreferenceActivity {
     }
 
     private void setPreferenceSummary() {
-
         final PreferenceScreen prefSet = getPreferenceScreen();
         // get hardware
         String hwVersion = null;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain;
+package com.wintmain.xtele;
 
 import android.app.ActionBar;
 import android.content.Intent;
@@ -25,7 +25,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.view.MenuItem;
 
-import com.wintmain.R;
+import com.wintmain.xtele.R;
 
 public class XTeleActivity extends PreferenceActivity {
     @Override
@@ -56,7 +56,6 @@ public class XTeleActivity extends PreferenceActivity {
     public static class XTeleFragment extends PreferenceFragment
             implements Preference.OnPreferenceChangeListener {
 
-        /** Called when the activity is first created. */
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -67,11 +66,8 @@ public class XTeleActivity extends PreferenceActivity {
                                 ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_TITLE);
             }
 
-            final Preference readConfigPreference;
-            final Preference callScreeningPreference;
-
             // Set Preference
-            addPreferencesFromResource(R.xml.debug_menu);
+            addPreferencesFromResource(R.xml.xtele_menu);
         }
 
         @Override
