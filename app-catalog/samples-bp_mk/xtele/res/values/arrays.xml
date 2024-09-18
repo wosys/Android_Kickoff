@@ -156,12 +156,15 @@
     <string-array name="sim_entries">
         <item>SLOT1</item>
         <item>SLOT2</item>
+        <item>SLOT1+SLOT2</item>
     </string-array>
     <string-array name="sim_values" translatable="false">
         <!-- SIM1's number -->
         <item>0</item>
         <!-- SIM2's number -->
         <item>1</item>
+        <!-- SIM1 and SIM2 -->
+        <item>-1</item>
     </string-array>
 
     <string-array name="apn_mvno_type_entries">

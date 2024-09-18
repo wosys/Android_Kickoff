@@ -60,10 +60,10 @@
         </activity>
 
         <activity
-            android:name=".xtelephony.ConnectivityDebugActivity"
+            android:name=".debug.CarrierConfigDebugActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
-            android:label="@string/connectivity_debug_title"
+            android:label="@string/config_title"
             android:launchMode="singleTop"
             android:resizeableActivity="true">
             <intent-filter>

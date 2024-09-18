@@ -45,6 +45,13 @@
     <string name="imei2">IMEI2</string>
     <string name="meta_info">Meta version</string>
 
+    <!-- string for carrierconfig -->
+    <string name="category_carrierconfig">Carrier Config</string>
+    <string name="current_volte_status">VoLTE Status</string>
+    <string name="current_vilte_status">ViLTE Status</string>
+    <string name="current_wificall_status">Wi-Fi Call Status</string>
+    <string name="config_confirm">Config Confirm</string>
+    <string name="config_title">Read Config</string>
 
     <!-- string for apn -->
     <string name="apn_query_title">APN Query</string>

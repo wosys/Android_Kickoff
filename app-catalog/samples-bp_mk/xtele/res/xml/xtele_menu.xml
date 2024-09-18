@@ -30,6 +30,20 @@
         </PreferenceScreen>
     </PreferenceCategory>
 
+    <!--For CarrierConfig-->
+    <PreferenceCategory
+        android:textStyle="bold"
+        android:title="@string/config_title">
+        <PreferenceScreen
+            android:key="@string/config_confirm"
+            android:title="@string/config_confirm">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.wintmain.xtele.debug.CarrierConfigDebugActivity"
+                android:targetPackage="com.wintmain.xtele" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+
     <!--For APN-->
     <PreferenceCategory
         android:textStyle="bold"
