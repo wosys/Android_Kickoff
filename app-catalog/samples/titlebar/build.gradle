@@ -5,5 +5,5 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':app-catalog:samples:titlebar:libs')
+    implementation project(path: ':app-catalog:samples:titlebar:libtitlebar')
 }
