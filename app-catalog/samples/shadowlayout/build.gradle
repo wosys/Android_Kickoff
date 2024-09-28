@@ -10,6 +10,6 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':app-catalog:samples:shadowlayout:libs:shadowlib')
+    implementation project(path: ':app-catalog:samples:shadowlayout:libshadowlayout')
     implementation "androidx.databinding:databinding-runtime:8.1.4"
 }
