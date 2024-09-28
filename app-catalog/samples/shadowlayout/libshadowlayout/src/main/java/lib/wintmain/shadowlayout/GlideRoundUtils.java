@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package lib.wintmain.shadowlib;
+package lib.wintmain.shadowlayout;
 
 import android.graphics.drawable.Drawable;
 import android.view.View;

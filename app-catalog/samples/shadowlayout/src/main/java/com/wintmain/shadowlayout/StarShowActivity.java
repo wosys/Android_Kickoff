@@ -22,7 +22,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import androidx.appcompat.app.AppCompatActivity;
-import lib.wintmain.shadowlib.ShadowLayout;
+import lib.wintmain.shadowlayout.ShadowLayout;
 
 public class StarShowActivity extends AppCompatActivity implements View.OnClickListener {
     private ShadowLayout ShadowLayout;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package lib.wintmain.shadowlib;
+package lib.wintmain.shadowlayout;
 
 import android.content.Context;
 import android.graphics.*;
