@@ -5,6 +5,6 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':app-catalog:samples:xpermissions:libs:xpermissions')
-    implementation project(path: ':app-catalog:samples:toaster:libs:toaster')
+    implementation project(path: ':app-catalog:samples:xpermissions:libxpermissions')
+    implementation project(path: ':app-catalog:samples:toaster:libtoaster')
 }
