@@ -112,6 +112,11 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
+        <activity
+            android:name=".job.DbEntryActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
         <!--        <activity android:name=".ep3_1second"-->
         <!--            android:icon="@drawable/rabbit"-->
         <!--            android:label="关于"-->
