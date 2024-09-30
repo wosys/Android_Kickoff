@@ -102,6 +102,16 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
+        <activity
+            android:name=".prejob.uiDemo.ep2_1"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_2"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
         <!--        <activity android:name=".ep3_1second"-->
         <!--            android:icon="@drawable/rabbit"-->
         <!--            android:label="关于"-->
