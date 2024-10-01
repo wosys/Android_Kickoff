@@ -113,6 +113,66 @@
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
+            android:name=".prejob.uiDemo.ep2_3"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_4"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_5"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_6"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_7"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_8"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_10"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_11"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_12"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_13"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_14"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep2_15"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
             android:name=".job.DbEntryActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
