@@ -173,28 +173,63 @@
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <activity
-            android:name=".job.DbEntryActivity"
+            android:name=".prejob.uiDemo.ep3_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
-        <!--        <activity android:name=".ep3_1second"-->
-        <!--            android:icon="@drawable/rabbit"-->
-        <!--            android:label="关于"-->
-        <!--            android:theme="@android:style/Theme.Dialog"/>-->
+        <activity
+            android:name=".prejob.uiDemo.ep3_1second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
 
-        <!--        <activity android:name=".ep3_3second"/>-->
+        <activity
+            android:name=".prejob.uiDemo.ep3_2"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
 
-        <!--        <activity android:name=".ep3_5second" />-->
+        <activity
+            android:name=".prejob.uiDemo.ep3_3"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
 
-        <activity android:name=".prejob.uiDemo.ep3_6second" />
-        <!--        ep3_7-->
-        <!--        <activity android:name=".ep3_7$DetailActivity"-->
-        <!--            android:label="详细内容"></activity>-->
+        <activity
+            android:name=".prejob.uiDemo.ep3_3second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
 
-        <!--        ep2_12-->
-        <!--        <activity android:name=".NotificationActivity"-->
-        <!--            android:label="详细内容"-->
-        <!--            android:theme="@android:style/Theme.Dialog"/>-->
+        <activity
+            android:name=".prejob.uiDemo.ep3_5"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep3_5second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep3_6"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep3_6second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".prejob.uiDemo.ep3_7"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.uiDemo.ep3_7$DetailActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".job.DbEntryActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
 
         <!--        <activity-->
         <!--            android:name=".ep7_2"-->

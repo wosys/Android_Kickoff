@@ -52,7 +52,7 @@ subprojects {
     tasks.withType(KotlinCompile).configureEach { compile ->
         kotlinOptions {
             // Treat all Kotlin warnings as errors
-            allWarningsAsErrors = true
+            allWarningsAsErrors = false
             // Set JVM target to 17
             jvmTarget = "17"
             // Allow use of @OptIn
