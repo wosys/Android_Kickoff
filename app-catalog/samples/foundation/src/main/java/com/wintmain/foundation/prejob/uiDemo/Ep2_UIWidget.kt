@@ -200,7 +200,6 @@ class ep2_4 : AppCompatActivity() {
     }
 }
 
-@Suppress("DEPRECATION")
 @Deprecated("通过添加上面的suppress允许调用")
 @Sample(name = "TabHost", description = "选项卡展示", tags = ["A-Self_demos"])
 class ep2_5 : AppCompatActivity() {
@@ -320,7 +319,6 @@ class ep2_7 : AppCompatActivity() {
     }
 }
 
-@Suppress("DEPRECATION")
 @Sample(name = "Gallery", description = "画廊展示", tags = ["A-Self_demos"])
 class ep2_8 : AppCompatActivity() {
     private val imageId = intArrayOf(
@@ -389,7 +387,6 @@ class ep2_8 : AppCompatActivity() {
     }
 }
 
-@Suppress("DEPRECATION")
 @Sample(name = "GalleryEXt", description = "画廊展示", tags = ["A-Self_demos"])
 class ep2_10 : AppCompatActivity() {
     private val imageId = intArrayOf(
@@ -476,7 +473,6 @@ class ep2_10 : AppCompatActivity() {
     }
 }
 
-@Suppress("DEPRECATION")
 @Sample(name = "Toast", description = "吐司展示", tags = ["A-Self_demos"])
 class ep2_11 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -615,7 +611,7 @@ class ep2_13 : AppCompatActivity() {
 
         button1.setOnClickListener {
             val alertDialog = AlertDialog.Builder(this@ep2_13).create()
-            alertDialog.setIcon(R.drawable.img01)
+            alertDialog.setIcon(R.drawable.icon_swimming)
             alertDialog.setTitle("提示一：")
             alertDialog.setMessage("取消、中立和确定")
             // 消极的
@@ -697,7 +693,7 @@ class ep2_14 : AppCompatActivity() {
 
         button.setOnClickListener {
             val builder = AlertDialog.Builder(this@ep2_14)
-            builder.setIcon(R.drawable.img01)
+            builder.setIcon(R.drawable.icon_soccer)
             builder.setTitle("是否退出？")
             builder.setMessage("是否真的要退出码？")
             builder.setNegativeButton(

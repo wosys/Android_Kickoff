@@ -194,7 +194,7 @@ class RabbitView(context: Context) : View(context) {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val paint = Paint()
-        val bitmap: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.img06)
+        val bitmap: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.icon_badminton)
         canvas.drawBitmap(bitmap, bitmapX, bitmapY, paint)
         if (bitmap.isRecycled) {
             bitmap.recycle()
