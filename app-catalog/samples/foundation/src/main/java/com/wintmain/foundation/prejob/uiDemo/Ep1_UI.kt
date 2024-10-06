@@ -166,6 +166,10 @@ class RabbitLayout : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep1_4)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         val frameLayout: FrameLayout = findViewById(R.id.mylayout)
         // Attention here.
@@ -183,6 +187,12 @@ class RabbitLayout : AppCompatActivity() {
             true
         }
         frameLayout.addView(rabbit)
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 }
 
@@ -263,6 +273,11 @@ class RegisterMember : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep1_12)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val button1 = findViewById<View>(R.id.button1) as Button
         button1.setOnClickListener {
             val nicknameET =
@@ -302,6 +317,12 @@ class RegisterMember : AppCompatActivity() {
             emailET.setText("")
             Toast.makeText(applicationContext, "Reset success...", Toast.LENGTH_LONG).show()
         }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 }
 
@@ -369,6 +390,11 @@ class RadioGroupDemo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep1_14)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val sex = findViewById<RadioGroup>(R.id.radiogroup1)
         // Parameter 'radioGroup' is never used, could be renamed to _
         sex.setOnCheckedChangeListener { _, i -> // i -> checkedId
@@ -381,6 +407,12 @@ class RadioGroupDemo : AppCompatActivity() {
 
         val button1: Button = findViewById(R.id.button1)
         button1.setOnClickListener { selectClick() }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 
     // 配合xml文件里的属性 android:onClick="selectClick"（kt有问题）
@@ -454,6 +486,11 @@ class CheckBoxDemo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep1_15)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val c1 = findViewById<CheckBox>(R.id.c1)
         val c2 = findViewById<CheckBox>(R.id.c2)
         val c3 = findViewById<CheckBox>(R.id.c3)
@@ -475,6 +512,12 @@ class CheckBoxDemo : AppCompatActivity() {
             val toast = Toast.makeText(this@CheckBoxDemo, "选中$answer", LENGTH_SHORT)
             toast.show()
         }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 }
 
@@ -578,12 +621,22 @@ class CodeToCreateView : AppCompatActivity() {
 
         // 设置内容视图
         setContentView(linearLayout)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         listView.onItemClickListener =
             AdapterView.OnItemClickListener { parent, _, position, _ ->
                 val s = parent.getItemAtPosition(position).toString()
                 Toast.makeText(this, s, LENGTH_SHORT).show()
             }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 }
 
@@ -632,6 +685,10 @@ class ListDemo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_demo)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         var strings = arrayOf("测试 1")
         for (i in 2 until 50) {
@@ -646,6 +703,12 @@ class ListDemo : AppCompatActivity() {
             val s = parent.getItemAtPosition(position).toString()
             Toast.makeText(this, "选择了：$s", LENGTH_SHORT).show()
         }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 }
 
@@ -688,6 +751,11 @@ class TimeGetDemo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep1_21)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val datePicker = findViewById<DatePicker>(R.id.date)
         val timePicker = findViewById<TimePicker>(R.id.time)
         timePicker.setIs24HourView(true)
@@ -712,6 +780,12 @@ class TimeGetDemo : AppCompatActivity() {
             month = minute
             Log.i("time", "时间：$hour$minute")
         }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 
     private fun show(year: Int, month: Int, day: Int, hour: Int, minute: Int) {
@@ -787,6 +861,11 @@ class TimeGetDemoExt : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep1_22)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val chronometer = findViewById<Chronometer>(R.id.chro)
         // 设置起始时间
         chronometer.setBase(SystemClock.elapsedRealtime())
@@ -798,6 +877,12 @@ class TimeGetDemoExt : AppCompatActivity() {
         start.setOnClickListener { chronometer.start() }
         end.setOnClickListener { chronometer.stop() }
         for0.setOnClickListener { chronometer.setBase(SystemClock.elapsedRealtime()) }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 }
 
