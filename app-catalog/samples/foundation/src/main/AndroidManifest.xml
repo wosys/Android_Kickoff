@@ -226,6 +226,40 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
+        <activity android:name=".prejob.extDemo.ep4_1"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.extDemo.ep4_1second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.extDemo.ep4_2"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.extDemo.ep4_3"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.extDemo.ep4_3second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" >
+            <intent-filter>
+                <!--<action android:name="android.intent.action.VIEW"/>-->
+                <action android:name="test_action"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".prejob.extDemo.ep4_5"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.extDemo.ep4_6"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
         <activity
             android:name=".job.DbEntryActivity"
             android:exported="true"
@@ -273,19 +307,6 @@
         <!--                <action android:name="android.intent.action.MAIN" />-->
 
         <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-        <!--            </intent-filter>-->
-        <!--        </activity>-->
-        <!--        ep4_1注释-->
-        <!--        <activity android:name=".ep4_1second"></activity>-->
-
-
-        <!--    ep4_3,ep4_4注释    -->
-        <!--        <activity android:name=".ep4_3second"-->
-        <!--            android:exported="true">-->
-        <!--            <intent-filter>-->
-        <!--&lt;!&ndash;                <action android:name="android.intent.action.VIEW"/>&ndash;&gt;-->
-        <!--                <action android:name="test_action"/>-->
-        <!--                <category android:name="android.intent.category.DEFAULT"/>-->
         <!--            </intent-filter>-->
         <!--        </activity>-->
     </application>
