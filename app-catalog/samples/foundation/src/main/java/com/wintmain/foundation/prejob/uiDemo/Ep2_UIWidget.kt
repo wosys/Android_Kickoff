@@ -64,6 +64,10 @@ class ep2_1 : AppCompatActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example2_1)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         // 获取自动完成文本框
         val textView =
@@ -82,6 +86,12 @@ class ep2_1 : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
         }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 
     companion object {
@@ -115,6 +125,10 @@ class ep2_2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example2_2)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         horizonP = findViewById(R.id.progressBar1) // 获取进度条
         circleP = findViewById(R.id.progressBar2)
@@ -133,6 +147,12 @@ class ep2_2 : AppCompatActivity() {
                 }
             }
         }.start() // 开启一个线程
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 
     // 模拟一个耗时操作
@@ -154,6 +174,11 @@ class ep2_3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example2_3)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val result = findViewById<View>(R.id.textView1) as TextView // 获取文本视图
         seekbar = findViewById<View>(R.id.seekBar1) as SeekBar // 获取拖动条
         seekbar!!.setOnSeekBarChangeListener(
@@ -171,6 +196,12 @@ class ep2_3 : AppCompatActivity() {
                 }
             })
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Sample(name = "RatingBar", description = "星级评分条展示", tags = ["A-Self_demos"])
@@ -180,6 +211,10 @@ class ep2_4 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example2_4)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         ratingbar = findViewById<View>(R.id.ratingBar1) as RatingBar // 获取星级评分条
         val button = findViewById<View>(R.id.button1) as Button // 获取“提交”按钮
@@ -198,6 +233,12 @@ class ep2_4 : AppCompatActivity() {
             ).show()
         }
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Deprecated("通过添加上面的suppress允许调用")
@@ -208,6 +249,11 @@ class ep2_5 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example2_5)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         tabHost = findViewById<View>(android.R.id.tabhost) as android.widget.TabHost // 获取TabHost对象
         tabHost!!.setup() // 初始化TabHost组件
 
@@ -224,6 +270,12 @@ class ep2_5 : AppCompatActivity() {
                 .setIndicator("智慧城市")
                 .setContent(R.id.linearlayout02)
         ) // 添加第二个标签页
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 }
 
@@ -243,6 +295,11 @@ class ep2_6 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example2_6)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         imageSwitcher = findViewById<View>(R.id.imageSwitcher1) as ImageSwitcher // 获取图像切换器
         // 设置动画效果
         imageSwitcher!!.inAnimation =
@@ -279,6 +336,12 @@ class ep2_6 : AppCompatActivity() {
             imageSwitcher!!.setImageResource(imageId[index]) // 显示当前图片
         }
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Sample(name = "GridView", description = "网格视图展示", tags = ["A-Self_demos"])
@@ -286,6 +349,10 @@ class ep2_7 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example2_7)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         val gridview = findViewById<View>(R.id.gridView1) as GridView // 获取GridView组件
         val imageId = intArrayOf(
@@ -317,6 +384,12 @@ class ep2_7 : AppCompatActivity() {
         ) // 创建适配器
         gridview.adapter = adapter // 将适配器与GridView关联
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Sample(name = "Gallery", description = "画廊展示", tags = ["A-Self_demos"])
@@ -333,6 +406,10 @@ class ep2_8 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example2_8)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         val gallery = findViewById<View>(R.id.gallery1) as android.widget.Gallery
 
@@ -385,6 +462,12 @@ class ep2_8 : AppCompatActivity() {
                 ).show()
             }
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Sample(name = "GalleryEXt", description = "画廊展示", tags = ["A-Self_demos"])
@@ -402,6 +485,10 @@ class ep2_10 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example2_10)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         val gallery = findViewById<View>(R.id.galleryy10) as android.widget.Gallery // 获取Gallery组件
         imageSwitcher = findViewById<View>(R.id.imageSwitcherr10) as ImageSwitcher
@@ -471,6 +558,12 @@ class ep2_10 : AppCompatActivity() {
             }
         }
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Sample(name = "Toast", description = "吐司展示", tags = ["A-Self_demos"])
@@ -478,6 +571,11 @@ class ep2_11 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example2_11)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         Toast.makeText(this, "Toast的第一种创建方式，通过makeText()", Toast.LENGTH_SHORT).show()
 
         val toast = Toast(this)
@@ -496,6 +594,12 @@ class ep2_11 : AppCompatActivity() {
         toast.view = ll
         toast.show() // 显示消息提示框
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Sample(name = "Notification Demo", description = "通知展示", tags = ["A-Self_demos"])
@@ -505,6 +609,10 @@ class ep2_12 : AppCompatActivity() {
 
         val linearLayout = LinearLayout(this)
         setContentView(linearLayout)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         val button = Button(this)
         button.text = "生成通知"
@@ -578,6 +686,12 @@ class ep2_12 : AppCompatActivity() {
             manager.cancelAll() // 清除全部通知
         }
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 class NotificationActivity : AppCompatActivity() {
@@ -585,8 +699,19 @@ class NotificationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val linearLayout = LinearLayout(this)
         setContentView(linearLayout)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val tv = TextView(this)
         linearLayout.addView(tv)
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 }
 
@@ -596,6 +721,11 @@ class ep2_13 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val linearLayout = LinearLayout(this)
         setContentView(linearLayout)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val button1 = Button(this)
         val button2 = Button(this)
         val button3 = Button(this)
@@ -678,6 +808,12 @@ class ep2_13 : AppCompatActivity() {
             alertDialog.create().show()
         }
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Sample(name = "AlertDialogExt", description = "弹框展示", tags = ["A-Self_demos"])
@@ -686,6 +822,10 @@ class ep2_14 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val linearLayout = LinearLayout(this)
         setContentView(linearLayout)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         val button = Button(this)
         button.text = "点击退出"
@@ -705,6 +845,12 @@ class ep2_14 : AppCompatActivity() {
             builder.create().show()
         }
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Sample(name = "AlertDialogExt", description = "弹框展示", tags = ["A-Self_demos"])
@@ -712,7 +858,12 @@ class ep2_15 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example2_15)
-        Log.d("ep2_15", "on Create")
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
+        Toast.makeText(this, "ep2_15 make...", Toast.LENGTH_LONG).show()
         // 定义并初始化保存图片id的数组
         val imageId = intArrayOf(
             R.drawable.icon_cycling,
@@ -753,5 +904,11 @@ class ep2_15 : AppCompatActivity() {
                 builder.create().show()
             }
         }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 }

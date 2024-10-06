@@ -50,11 +50,22 @@ class ep3_1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep3_1)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val button = findViewById<Button>(R.id.button1)
         button.setOnClickListener {
             val intent = Intent(this@ep3_1, ep3_1second::class.java)
             startActivity(intent) // 启动Activity
         }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 }
 
@@ -62,10 +73,21 @@ class ep3_1second : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep3_1second)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val button = findViewById<Button>(R.id.button2)
         val tv = findViewById<TextView>(R.id.textv)
         tv.text = "详细内容。。。"
         button.setOnClickListener { finish() }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 }
 
@@ -75,6 +97,11 @@ class ep3_2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val linearLayout = LinearLayout(this)
         setContentView(linearLayout)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val button = Button(this)
         button.text = "获取对话框"
         linearLayout.addView(button)
@@ -84,6 +111,12 @@ class ep3_2 : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Sample(name = "startActivityForResult", description = "跳转示例", tags = ["A-Self_demos"])
@@ -91,6 +124,10 @@ class ep3_3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep3_3)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         val reg = findViewById<Button>(R.id.reg)
         val re = findViewById<Button>(R.id.re)
@@ -135,6 +172,12 @@ class ep3_3 : AppCompatActivity() {
             }
         }
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 class ep3_3second : AppCompatActivity() {
@@ -142,6 +185,10 @@ class ep3_3second : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val linearLayout = LinearLayout(this)
         setContentView(linearLayout)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         linearLayout.orientation = LinearLayout.VERTICAL
         val intent = intent
@@ -169,6 +216,12 @@ class ep3_3second : AppCompatActivity() {
         linearLayout.addView(textView3)
         linearLayout.addView(button)
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Sample(name = "3_5startActivity", description = "跳转示例", tags = ["A-Self_demos"])
@@ -177,6 +230,11 @@ class ep3_5 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val linearLayout = LinearLayout(this)
         setContentView(linearLayout)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         linearLayout.orientation = LinearLayout.VERTICAL
 
         val group = RadioGroup(this)
@@ -220,6 +278,12 @@ class ep3_5 : AppCompatActivity() {
                 startActivity(intent)
             })
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 class Person : Serializable {
@@ -236,6 +300,11 @@ class ep3_5second : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val linearLayout = LinearLayout(this)
         setContentView(linearLayout)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         linearLayout.orientation = LinearLayout.VERTICAL
 
         val textView = TextView(this)
@@ -245,6 +314,12 @@ class ep3_5second : AppCompatActivity() {
         textView.text = person!!.sex + getWeight(person.sex, person.height.toFloat())
 
         linearLayout.addView(textView)
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 
     private fun getWeight(sex: String, height: Float): String {
@@ -264,6 +339,10 @@ class ep3_6 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep3_6)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
 
         val choose = findViewById<Button>(R.id.button1)
 
@@ -271,6 +350,12 @@ class ep3_6 : AppCompatActivity() {
             val intent = Intent(this@ep3_6, ep3_6second::class.java)
             startActivityForResult(intent, 0x777)
         }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -295,6 +380,11 @@ class ep3_6second : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep3_6second)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+
         val gridView = findViewById<GridView>(R.id.gridview)
         val baseAdapter: BaseAdapter =
             object : BaseAdapter() {
@@ -338,6 +428,12 @@ class ep3_6second : AppCompatActivity() {
                 finish()
             }
     }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
+    }
 }
 
 @Sample(name = "Fragment", description = "fragment示例", tags = ["A-Self_demos"])
@@ -345,16 +441,29 @@ class ep3_7 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ep3_7)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+            supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+        }
+    }
+
+    // 处理返回键事件
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // 或者你可以 finish() 当前 Activity
+        return true
     }
 
     class DetailActivity : AppCompatActivity() {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.ep3_7_detail)
+            if (supportActionBar != null) {
+                supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 显示返回箭头
+                supportActionBar!!.setHomeButtonEnabled(true) // 设置返回键可点击
+            }
+
             // 如果为横屏，结束当前Activity，准备使用Fragment显示内容
-            if (resources.configuration.orientation
-                == Configuration.ORIENTATION_LANDSCAPE
-            ) {
+            if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 finish() // 结束当前Activity
                 return
             }
@@ -368,6 +477,12 @@ class ep3_7 : AppCompatActivity() {
                     .add(android.R.id.content, detailFragment)
                     .commit() // 添加一个显示详细内容的Fragment
             }
+        }
+
+        // 处理返回键事件
+        override fun onSupportNavigateUp(): Boolean {
+            onBackPressed() // 或者你可以 finish() 当前 Activity
+            return true
         }
     }
 }
