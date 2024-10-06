@@ -260,6 +260,34 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
+        <activity android:name=".prejob.extDemo.ep5_1"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.extDemo.ep5_2"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.extDemo.ep5_4"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.extDemo.ep5_5"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.extDemo.ep5_6"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.extDemo.ep5_7"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.extDemo.ep5_10"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
         <activity
             android:name=".job.DbEntryActivity"
             android:exported="true"
@@ -296,19 +324,6 @@
         <!--                <action android:name="com.android.brocasttest.MY_BROADCAST"/>-->
         <!--            </intent-filter>-->
         <!--        </receiver>-->
-
-
-        <!--        <activity-->
-        <!--            android:name=".ep5_9"-->
-        <!--            android:exported="true"-->
-        <!--            android:theme="@style/Theme.Translucent"-->
-        <!--            tools:ignore="MissingClass">-->
-        <!--            <intent-filter>-->
-        <!--                <action android:name="android.intent.action.MAIN" />-->
-
-        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-        <!--            </intent-filter>-->
-        <!--        </activity>-->
     </application>
 
 </manifest>
