@@ -318,32 +318,52 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
+        <activity android:name=".prejob.upDemo.LocalBroadcastActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.upDemo.ep9_1"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.upDemo.ep9_3"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity android:name=".prejob.upDemo.ep9_4"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
         <activity
             android:name=".job.DbEntryActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
-        <!--        <receiver android:name=".BootCompleteReceiver"-->
-        <!--            android:exported="false">-->
-        <!--            <intent-filter>-->
-        <!--                <action android:name="android.intent.action.BOOT_COMPLETED"/>-->
-        <!--            </intent-filter>-->
-        <!--        </receiver>-->
-        <!--&lt;!&ndash;        静态注册一个广播接收者&ndash;&gt;-->
-        <!--        <receiver android:name=".MyBroadcastReceiver"-->
-        <!--            android:exported="false">-->
-        <!--&lt;!&ndash;            定义一个意图过滤器来接收（监听）指定的action&ndash;&gt;-->
-        <!--            <intent-filter>-->
-        <!--                <action android:name="com.android.MY_BROADCAST" />-->
-        <!--            </intent-filter>-->
-        <!--        </receiver>-->
+        <receiver
+            android:name=".prejob.upDemo.BootCompleteReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
-        <!--        <receiver android:name=".AnotherBroadcastReceiver"-->
-        <!--            android:exported="false">-->
-        <!--            <intent-filter>-->
-        <!--                <action android:name="com.android.brocasttest.MY_BROADCAST"/>-->
-        <!--            </intent-filter>-->
-        <!--        </receiver>-->
+        <!--静态注册一个广播接收者-->
+        <receiver
+            android:name=".prejob.upDemo.MyBroadcastReceiver"
+            android:exported="false">
+            <!--定义一个意图过滤器来接收（监听）指定的action-->
+            <intent-filter>
+                <action android:name="com.android.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".prejob.upDemo.AnotherBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.android.MY_BROADCAST_EXT" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
