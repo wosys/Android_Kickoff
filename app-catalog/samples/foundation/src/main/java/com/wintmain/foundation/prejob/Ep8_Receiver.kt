@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.prejob.upDemo
+package com.wintmain.foundation.prejob
 
-import android.app.Activity
 import android.content.BroadcastReceiver
 import android.content.ComponentName
 import android.content.Context
@@ -141,7 +140,7 @@ class ep9_3 : AppCompatActivity() {
             intent1.setComponent(
                 ComponentName(
                     "com.wintmain.foundation",
-                    "com.wintmain.foundation.prejob.upDemo.MyBroadcastReceiver"
+                    "com.wintmain.foundation.prejob.MyBroadcastReceiver"
                 )
             )
             sendBroadcast(intent1)
@@ -152,7 +151,7 @@ class ep9_3 : AppCompatActivity() {
             intent2.setComponent(
                 ComponentName(
                     "com.wintmain.foundation",
-                    "com.wintmain.foundation.prejob.upDemo.AnotherBroadcastReceiver"
+                    "com.wintmain.foundation.prejob.AnotherBroadcastReceiver"
                 )
             )
             sendBroadcast(intent2)

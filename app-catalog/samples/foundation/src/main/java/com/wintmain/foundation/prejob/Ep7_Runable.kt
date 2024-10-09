@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.prejob.upDemo
+package com.wintmain.foundation.prejob
 
 import android.media.MediaPlayer
 import android.os.Bundle
