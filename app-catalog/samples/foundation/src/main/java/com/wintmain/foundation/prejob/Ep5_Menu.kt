@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.prejob.extDemo
+package com.wintmain.foundation.prejob
 
 import android.content.res.XmlResourceParser
 import android.graphics.Color
