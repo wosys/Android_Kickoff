@@ -15,6 +15,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.wintmain.foundation">
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
@@ -32,10 +33,12 @@
             android:name=".telephony.callnotification.CallNotificationSample"
             android:exported="true"
             android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.DayNight" />
+            android:theme="@style/Theme.AppCompat.DayNight"
+            tools:targetApi="28" />
         <receiver
             android:name=".telephony.callnotification.CallNotificationSample$NotificationReceiver"
-            android:exported="false" />
+            android:exported="false"
+            tools:targetApi="28" />
         <!-- callnotification END-->
 
         <!-- networkConnectivity START-->

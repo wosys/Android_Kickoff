@@ -22,21 +22,17 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wintmain.foundation.R
-import com.wintmain.foundation.views.recyclerview.logger.Log
+import lib.wintmain.foundation.logger.Log
 
-class CustomAdapter(private val dataSet: Array<String>) :
+class CustomAdapter(private val dataSet: Array<String?>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder)
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView
-
-        init {
-            // Define click listener for the ViewHolder's View
-            textView = view.findViewById(R.id.textView)
-        }
+        // Define click listener for the ViewHolder's View
+        val textView: TextView = view.findViewById(R.id.textView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

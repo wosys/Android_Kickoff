@@ -43,7 +43,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/log_fragment"
-            android:name="com.wintmain.foundation.views.recyclerview.logger.LogFragment"
+            android:name="lib.wintmain.foundation.logger.LogFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
