@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wintmain.foundation.views.recyclerview.logger;
+package lib.wintmain.foundation.logger;
 
 import android.app.Activity;
 import android.content.Context;

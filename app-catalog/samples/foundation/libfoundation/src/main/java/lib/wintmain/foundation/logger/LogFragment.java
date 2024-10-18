@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.views.recyclerview.logger;
+package lib.wintmain.foundation.logger;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
