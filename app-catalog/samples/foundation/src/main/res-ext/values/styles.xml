@@ -39,4 +39,14 @@
         <item name="android:shadowRadius">2</item>
     </style>
 
+    <style name="Widget.SampleOutput">
+        <item name="android:padding">16dp</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="Log" parent="Widget.SampleOutput">
+        <item name="android:typeface">monospace</item>
+    </style>
+
 </resources>
