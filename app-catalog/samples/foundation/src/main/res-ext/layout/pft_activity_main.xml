@@ -38,13 +38,13 @@
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp">
 
-                <com.hjq.bar.TitleBar
+                <lib.wintmain.titlebar.TitleBarExt
                     android:id="@+id/tb_main_bar_click"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/shape_gradient"
-                    app:barStyle="transparent"
+                    app:barStyleExt="transparent"
                     app:leftTitle="返回"
                     app:rightTitle="设置"
                     app:title="监听标题栏点击事件" />
