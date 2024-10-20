@@ -22,10 +22,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
-import com.hjq.bar.OnTitleBarListener;
-import com.hjq.bar.TitleBar;
-import com.hjq.bar.style.LightBarStyle;
-import com.hjq.toast.Toaster;
+import lib.wintmain.titlebar.OnTitleBarListener;
+import lib.wintmain.titlebar.TitleBarExt;
+import lib.wintmain.titlebar.style.LightBarStyle;
+import lib.wintmain.toaster.toast.ToastUtils;
 
 //@Sample(
 //        name = "Android PfT",
@@ -43,30 +43,30 @@ public class PlaceHolderActivity extends AppCompatActivity {
         // 初始化一些三方库
         initLibs(getApplication());
 
-        TitleBar titleBar = findViewById(R.id.tb_main_bar_click);
+        TitleBarExt titleBar = findViewById(R.id.tb_main_bar_click);
         titleBar.setOnTitleBarListener(
                 new OnTitleBarListener() {
 
                     @Override
-                    public void onLeftClick(TitleBar titleBar) {
-                        Toaster.show("你点击了返回");
+                    public void onLeftClick(TitleBarExt titleBar) {
+                        ToastUtils.show("你点击了返回");
                     }
 
                     @Override
-                    public void onTitleClick(TitleBar titleBar) {
-                        Toaster.show("你点击了中间");
+                    public void onTitleClick(TitleBarExt titleBar) {
+                        ToastUtils.show("你点击了中间");
                     }
 
                     @Override
-                    public void onRightClick(TitleBar titleBar) {
-                        Toaster.show("你点击了设置");
+                    public void onRightClick(TitleBarExt titleBar) {
+                        ToastUtils.show("你点击了设置");
                     }
                 });
     }
 
     private void initLibs(Application application) {
         // 初始化 TitleBar 默认样式
-        TitleBar.setDefaultStyle(
+        TitleBarExt.setDefaultStyle(
                 new LightBarStyle() {
                     @Override
                     public TextView newTitleView(Context context) {
@@ -85,6 +85,6 @@ public class PlaceHolderActivity extends AppCompatActivity {
                 });
 
         // 初始化 Toast
-        Toaster.init(this.getApplication());
+        ToastUtils.init(this.getApplication());
     }
 }

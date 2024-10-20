@@ -17,6 +17,7 @@
 # Modifications are licensed under the License.
 
 [versions]
+coil = "2.6.0"
 compose-bom = "2024.09.02"
 composeCompiler = "1.5.9"
 kotlin = "1.9.22"
@@ -38,6 +39,7 @@ casa-ui = { module = "com.google.android.catalog.framework:casa-ui", version.ref
 casa-base = { module = "com.google.android.catalog.framework:casa-base", version.ref = "casa" }
 casa-processor = { module = "com.google.android.catalog.framework:casa-processor", version.ref = "casa" }
 
+coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-core = { module = "com.google.dagger:hilt-core", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
