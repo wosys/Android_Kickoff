@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ Copyright 2023-2024 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -54,6 +55,13 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <!-- recyclerview END-->
+
+        <!-- gesture detect START-->
+        <activity
+            android:name=".views.gesture.GestureDetectActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <!-- gesture detect END-->
 
         <!-- slidingpanelayout START-->
         <activity android:name=".views.layout.slidingpanelayout.SlidingPaneLayoutMain"
