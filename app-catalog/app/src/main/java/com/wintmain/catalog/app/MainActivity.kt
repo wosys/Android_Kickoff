@@ -40,7 +40,7 @@ class MainActivity : CatalogActivity() {
      * You can optionally modify certain aspects of the catalog
      */
     override val settings = CatalogSettings(
-        filters = listOf(CatalogFilter.Path(), CatalogFilter.Tag),
+        filters = listOf(CatalogFilter.Tag),
         order = CatalogOrder.Name(),
         alwaysShowToolbar = true,
         cardAppearance = CatalogCardAppearance(
