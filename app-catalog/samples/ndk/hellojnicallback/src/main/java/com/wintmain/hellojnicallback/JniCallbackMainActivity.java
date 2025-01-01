@@ -24,7 +24,7 @@ import com.google.android.catalog.framework.annotations.Sample;
 
 @Sample(name = "JniCallback",
         description = "JNI执行逻辑在C里面",
-        tags = {"android-samples", "NDK"})
+        tags = {"android-samples", "jni"})
 public class JniCallbackMainActivity extends AppCompatActivity {
 
     String hour = "00";

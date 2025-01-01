@@ -22,7 +22,7 @@ import com.google.android.catalog.framework.annotations.Sample
 import com.wintmain.hellojni.databinding.ActivityHelloJniBinding
 
 @Sample(name = "hellojni", description = "JNI第一个demo示例",
-    documentation = "", tags = ["android-samples", "NDK"])
+    documentation = "", tags = ["android-samples", "jni"])
 class HelloJni : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
