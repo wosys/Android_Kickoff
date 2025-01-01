@@ -32,6 +32,7 @@ androidx_appcompat = "1.7.0"
 androidx_navigation = "2.8.1"
 androidx_window = "1.3.0"
 lifecycleExtensions = "2.2.0"
+lifecycleRuntimeKtx = "2.8.7"
 multidex = "1.0.3"
 roomRuntime = "2.6.1"
 smartrefresh = "1.1.2"
@@ -143,3 +144,5 @@ androidx-test-ext-junitkt = "androidx.test.ext:junit-ktx:1.2.1"
 androidx-test-ext-truth = "androidx.test.ext:truth:1.6.0"
     #To use android test orchestrator
 androidx-test-orchestrator = "androidx.test:orchestrator:1.5.0"
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
