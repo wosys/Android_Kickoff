@@ -1,5 +1,5 @@
 /*
- * Copyright 2023-2024 wintmain
+ * Copyright 2023-2025 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.views.gesture
+package com.wintmain.foundation.ui.views.gesture
 
 import android.os.Build.VERSION
 import android.view.GestureDetector.SimpleOnGestureListener

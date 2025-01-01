@@ -1,5 +1,5 @@
 /*
- * Copyright 2023-2024 wintmain
+ * Copyright 2023-2025 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.views.recyclerview
+package com.wintmain.foundation.ui.views.recyclerview
 
 import android.view.LayoutInflater
 import android.view.View
@@ -22,10 +22,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wintmain.foundation.R
+import com.wintmain.foundation.ui.views.recyclerview.CustomAdapter.ViewHolder
 import lib.wintmain.foundation.logger.Log
 
 class CustomAdapter(private val dataSet: Array<String?>) :
-    RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+    RecyclerView.Adapter<ViewHolder>() {
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder)

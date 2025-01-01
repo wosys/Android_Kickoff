@@ -1,11 +1,11 @@
 /*
- * Copyright (c) 2021 The Android Open Source Project
+ * Copyright 2023-2025 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.views.layout.slidingpanelayout
+package com.wintmain.foundation.ui.views.layout.slidingpanelayout
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -24,9 +24,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.wintmain.foundation.databinding.SportsListItemBinding
+import com.wintmain.foundation.ui.views.layout.slidingpanelayout.SportsAdapter.SportsViewHolder
 
 class SportsAdapter(private val onItemClicked: (Sport) -> Unit) :
-    ListAdapter<Sport, SportsAdapter.SportsViewHolder>(DiffCallback) {
+    ListAdapter<Sport, SportsViewHolder>(DiffCallback) {
 
     private lateinit var context: Context
 

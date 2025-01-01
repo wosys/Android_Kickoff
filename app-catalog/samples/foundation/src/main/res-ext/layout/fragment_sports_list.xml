@@ -22,7 +22,7 @@
     android:id="@+id/sliding_pane_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.layout.slidingpanelayout.SportsListFragment">
+    tools:context=".ui.views.layout.slidingpanelayout.SportsListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -42,5 +42,5 @@
         android:layout_width="300dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
-        android:name="com.wintmain.foundation.views.layout.slidingpanelayout.NewsDetailsFragment" />
+        android:name="com.wintmain.foundation.ui.views.layout.slidingpanelayout.NewsDetailsFragment" />
 </androidx.slidingpanelayout.widget.SlidingPaneLayout>

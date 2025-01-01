@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wintmain.foundation.views.layout.slidingpanelayout
+package com.wintmain.foundation.ui.views.layout.slidingpanelayout
 
 import com.wintmain.foundation.R
 

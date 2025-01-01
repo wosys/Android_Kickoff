@@ -1,5 +1,5 @@
 /*
- * Copyright 2023-2024 wintmain
+ * Copyright 2023-2025 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.views.layout.slidingpanelayout
+package com.wintmain.foundation.ui.views.layout.slidingpanelayout
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -37,7 +37,7 @@ import com.wintmain.foundation.databinding.SlidingPanelMainBinding
     name = "SlidingPanelayout",
     description = "创建双窗格布局",
     documentation = "",
-    tags = ["android-samples"],
+    tags = ["android-samples", "layout"],
 )
 class SlidingPaneLayoutMain : AppCompatActivity() {
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023-2024 wintmain
+ * Copyright 2023-2025 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wintmain.foundation.views.recyclerview
+package com.wintmain.foundation.ui.views.recyclerview
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -26,8 +26,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.wintmain.foundation.R
-import com.wintmain.foundation.views.recyclerview.RecyclerViewFragment.LayoutManagerType.GRID_LAYOUT_MANAGER
-import com.wintmain.foundation.views.recyclerview.RecyclerViewFragment.LayoutManagerType.LINEAR_LAYOUT_MANAGER
+import com.wintmain.foundation.ui.views.recyclerview.RecyclerViewFragment.LayoutManagerType.GRID_LAYOUT_MANAGER
+import com.wintmain.foundation.ui.views.recyclerview.RecyclerViewFragment.LayoutManagerType.LINEAR_LAYOUT_MANAGER
 import java.util.Objects
 
 /**
