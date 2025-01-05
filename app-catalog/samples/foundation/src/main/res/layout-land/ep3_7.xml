@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/titles"
-        android:name="com.wintmain.foundation.prejob.ListFragment"
+        android:name="com.wintmain.foundation.overview.ListFragment"
         android:layout_width="0px"
         android:layout_height="match_parent"
         android:layout_weight="1"

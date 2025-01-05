@@ -84,155 +84,155 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.RabbitLayout"
+            android:name=".overview.RabbitLayout"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.RegisterMember"
+            android:name=".overview.RegisterMember"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.RadioGroupDemo"
+            android:name=".overview.RadioGroupDemo"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.CheckBoxDemo"
+            android:name=".overview.CheckBoxDemo"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.CodeToCreateView"
+            android:name=".overview.CodeToCreateView"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ListDemo"
+            android:name=".overview.ListDemo"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.TimeGetDemo"
+            android:name=".overview.TimeGetDemo"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.TimeGetDemoExt"
+            android:name=".overview.TimeGetDemoExt"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_1"
+            android:name=".overview.ep2_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_2"
+            android:name=".overview.ep2_2"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_3"
+            android:name=".overview.ep2_3"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_4"
+            android:name=".overview.ep2_4"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_5"
+            android:name=".overview.ep2_5"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_6"
+            android:name=".overview.ep2_6"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_7"
+            android:name=".overview.ep2_7"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_8"
+            android:name=".overview.ep2_8"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_10"
+            android:name=".overview.ep2_10"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_11"
+            android:name=".overview.ep2_11"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_12"
+            android:name=".overview.ep2_12"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_13"
+            android:name=".overview.ep2_13"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_14"
+            android:name=".overview.ep2_14"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep2_15"
+            android:name=".overview.ep2_15"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep3_1"
+            android:name=".overview.ep3_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep3_1second"
+            android:name=".overview.ep3_1second"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep3_2"
+            android:name=".overview.ep3_2"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep3_3"
+            android:name=".overview.ep3_3"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep3_3second"
+            android:name=".overview.ep3_3second"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep3_5"
+            android:name=".overview.ep3_5"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep3_5second"
+            android:name=".overview.ep3_5second"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep3_6"
+            android:name=".overview.ep3_6"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep3_6second"
+            android:name=".overview.ep3_6second"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep3_7"
+            android:name=".overview.ep3_7"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep3_7$DetailActivity"
+            android:name=".overview.ep3_7$DetailActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep4_1"
+            android:name=".overview.ep4_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep4_1second"
+            android:name=".overview.ep4_1second"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep4_2"
+            android:name=".overview.ep4_2"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep4_3"
+            android:name=".overview.ep4_3"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep4_3second"
+            android:name=".overview.ep4_3second"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight">
             <intent-filter>
@@ -244,92 +244,92 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".prejob.ep4_5"
+            android:name=".overview.ep4_5"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep4_6"
+            android:name=".overview.ep4_6"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep5_1"
+            android:name=".overview.ep5_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep5_2"
+            android:name=".overview.ep5_2"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep5_4"
+            android:name=".overview.ep5_4"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep5_5"
+            android:name=".overview.ep5_5"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep5_6"
+            android:name=".overview.ep5_6"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep5_7"
+            android:name=".overview.ep5_7"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep5_10"
+            android:name=".overview.ep5_10"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep6_1"
+            android:name=".overview.ep6_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep6_2"
+            android:name=".overview.ep6_2"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep6_3"
+            android:name=".overview.ep6_3"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep7_1"
+            android:name=".overview.ep7_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep7_2"
+            android:name=".overview.ep7_2"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep7_3"
+            android:name=".overview.ep7_3"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep7_6"
+            android:name=".overview.ep7_6"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.LocalBroadcastActivity"
+            android:name=".overview.LocalBroadcastActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep9_1"
+            android:name=".overview.ep9_1"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep9_3"
+            android:name=".overview.ep9_3"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".prejob.ep9_4"
+            android:name=".overview.ep9_4"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".job.DbEntryActivity"
+            android:name=".overview.DbEntryActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
 
         <receiver
-            android:name=".prejob.BootCompleteReceiver"
+            android:name=".overview.BootCompleteReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -338,7 +338,7 @@
 
         <!--静态注册一个广播接收者-->
         <receiver
-            android:name=".prejob.MyBroadcastReceiver"
+            android:name=".overview.MyBroadcastReceiver"
             android:exported="false">
             <!--定义一个意图过滤器来接收（监听）指定的action-->
             <intent-filter>
@@ -346,7 +346,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".prejob.AnotherBroadcastReceiver"
+            android:name=".overview.AnotherBroadcastReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.android.MY_BROADCAST_EXT" />

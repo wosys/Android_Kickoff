@@ -1,5 +1,5 @@
 /*
- * Copyright 2023-2024 wintmain
+ * Copyright 2023-2025 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.job
+package com.wintmain.foundation.overview
 
 import android.os.Bundle
 import android.widget.Button
@@ -37,10 +37,10 @@ class DbEntryActivity : AppCompatActivity(R.layout.activity_db_entry) {
         // Initialize DbHelper
         dbHelper = DbHelper(applicationContext)
         dbHelper.writableDatabase // Ensure database is created
-        addlisteners()
+        addListeners()
     }
 
-    private fun addlisteners() {
+    private fun addListeners() {
         findViewById<Button>(R.id.button_create).setOnClickListener {
             // You may not need to do anything here as the database is already created in onCreate
             Toast.makeText(applicationContext, "Create success.", Toast.LENGTH_LONG).show()

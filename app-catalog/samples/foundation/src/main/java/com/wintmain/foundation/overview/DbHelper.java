@@ -1,5 +1,5 @@
 /*
- * Copyright 2023-2024 wintmain
+ * Copyright 2023-2025 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.job;
+package com.wintmain.foundation.overview;
 
 import android.content.ContentValues;
 import android.content.Context;

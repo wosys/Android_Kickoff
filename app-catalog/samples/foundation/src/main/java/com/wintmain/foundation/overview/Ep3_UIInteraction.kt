@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.prejob
+package com.wintmain.foundation.overview
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -41,7 +41,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.catalog.framework.annotations.Sample
 import com.wintmain.foundation.R
-import com.wintmain.foundation.prejob.ep3_7.DetailActivity
+import com.wintmain.foundation.overview.ep3_7.DetailActivity
 import java.io.Serializable
 import java.text.DecimalFormat
 

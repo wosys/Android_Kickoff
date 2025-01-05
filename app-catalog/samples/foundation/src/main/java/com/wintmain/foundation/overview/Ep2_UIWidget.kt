@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation.prejob
+package com.wintmain.foundation.overview
 
 import android.app.AlertDialog
 import android.app.Notification.Builder
