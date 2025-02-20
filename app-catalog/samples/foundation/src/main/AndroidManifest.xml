@@ -352,6 +352,12 @@
                 <action android:name="com.android.MY_BROADCAST_EXT" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name=".PeopleRemoteService"
+            android:process=":remote"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
