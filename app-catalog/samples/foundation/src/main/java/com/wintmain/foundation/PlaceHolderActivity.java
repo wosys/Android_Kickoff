@@ -20,10 +20,7 @@ import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.os.RemoteException;
 import android.provider.AlarmClock;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,18 +36,11 @@ import lib.wintmain.toaster.toast.ToastUtils;
         description = "一个为了测试API调用的入口",
         tags = "A-Self_demos")
 public class PlaceHolderActivity extends AppCompatActivity {
-    private static final String TAG = PlaceHolderActivity.class.getSimpleName();
-    IPeopleManager peopleManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pft_activity_main);
-
-        // AIDL示例 S
-        Intent intent = new Intent(this, PeopleRemoteService.class);
-        bindService(intent, mConnection, BIND_AUTO_CREATE);
-        // AIDL示例 E
 
         // 初始化一些三方库
         initLibs(getApplication());
@@ -87,20 +77,6 @@ public class PlaceHolderActivity extends AppCompatActivity {
                 });
     }
 
-    @Override
-    protected void onDestroy() {
-        // 移除监听
-        if (peopleManager != null && peopleManager.asBinder().isBinderAlive()) {
-            try {
-                peopleManager.unregisterListener(mNewPeopleListener);
-            } catch (RemoteException e) {
-                android.util.Log.d(TAG, "catch：" + e.getMessage());
-            }
-        }
-        unbindService(mConnection);
-        super.onDestroy();
-    }
-
     private void initLibs(Application application) {
         // 初始化 TitleBar 默认样式
         TitleBarExt.setDefaultStyle(
@@ -124,34 +100,4 @@ public class PlaceHolderActivity extends AppCompatActivity {
         // 初始化 Toast
         ToastUtils.init(this.getApplication());
     }
-
-
-    private final ServiceConnection mConnection = new ServiceConnection() {
-        public void onServiceConnected(ComponentName className, IBinder service) {
-            android.util.Log.d(TAG, "onServiceConnected...");
-            peopleManager = IPeopleManager.Stub.asInterface(service);
-            try {
-                People people = new People(1000, "wintmain");
-                // 注册监听
-                peopleManager.registerListener(mNewPeopleListener);
-                peopleManager.addPeople(people);
-            } catch (RemoteException e) {
-                android.util.Log.d(TAG, "catch：" + e.getMessage());
-            }
-        }
-        public void onServiceDisconnected(ComponentName className) {
-            android.util.Log.d(TAG, "onServiceDisconnected!!!");
-            ToastUtils.show("onServiceDisconnected!!!");
-            peopleManager = null;
-        }
-    };
-
-
-    // 定义监听接口
-    private final INewPeopleListener mNewPeopleListener = new INewPeopleListener.Stub() {
-        @Override
-        public void onNewPeople(People newPeople) {
-            ToastUtils.show("onNewPeople: " + newPeople);
-        }
-    };
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation;
+package com.wintmain.foundation.aidl;
 
 import android.os.Parcel;
 import android.os.Parcelable;

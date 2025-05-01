@@ -1,5 +1,7 @@
 apply from: "$rootDir/gradle/sample-build.gradle"
 
+apply plugin: 'kotlin-parcelize'
+
 android {
     sourceSets {
         main {

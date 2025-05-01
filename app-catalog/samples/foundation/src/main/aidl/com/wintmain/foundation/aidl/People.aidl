@@ -1,5 +1,5 @@
 // People.aidl
-package com.wintmain.foundation;
+package com.wintmain.foundation.aidl;
 
 // Declare any non-default types here with import statements
 
@@ -14,7 +14,7 @@ package com.wintmain.foundation;
 // Parcelable的作用是序列化对象，因为跨进程通信传输对象必须是以序列化和反序列化的方式进行。
 // Parcelable的实现有些繁琐，但性能效率很高。
 
-import com.wintmain.foundation.People;
+import com.wintmain.foundation.aidl.People;
 
-// People should be declared in a file called com/wintmain/foundation/People.aidl
+// People should be declared in a file called com/wintmain/foundation/aidl/People.aidl
 parcelable People;

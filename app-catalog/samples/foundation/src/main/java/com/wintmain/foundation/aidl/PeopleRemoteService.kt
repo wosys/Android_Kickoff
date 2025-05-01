@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-package com.wintmain.foundation
+package com.wintmain.foundation.aidl
 
 import android.app.Service
 import android.content.Intent
 import android.os.Binder
 import android.os.IBinder
 import android.os.RemoteCallbackList
+import android.util.Log
 import java.util.concurrent.CopyOnWriteArrayList
 
-// 服务端代码，客户端见[PlaceHoldActivity.java]
+// 服务端代码，客户端见[AidlSampleActivity.java]
 class PeopleRemoteService : Service() {
     val mPeopleList = CopyOnWriteArrayList<People>()
     // 客户端注册和移除注册过程中使用的虽是同一个客户端对象，
@@ -45,6 +46,10 @@ class PeopleRemoteService : Service() {
                 listener.onNewPeople(people)
             }
             mListenList.finishBroadcast()
+        }
+
+        override fun addPeopleAndBook(people: People, book: Book) {
+            Log.d("wintmain", "addPeopleAndBook: people = $people, book = $book")
         }
 
         // RemoteCallbackList是系统专门提供的用于删除跨进程listener接口，它是一个泛型，支持管理任意AIDL接口。
