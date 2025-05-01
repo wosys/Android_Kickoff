@@ -363,6 +363,11 @@
             android:name=".aidl.AidlSampleActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".webview.CustomActionWebViewActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
     </application>
 
 </manifest>
