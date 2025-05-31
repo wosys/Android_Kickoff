@@ -13,12 +13,13 @@ For personal study use only.
 
 一款以Google/casa-log为框架来学习Android基础的App，在学习其他优秀的三方库中进行集成开发。仅供个人学习使用。
 
-## Topics List[update here]
+## Topics List
 
 * [AndroidRes](app-catalog/samples/androidres)
-* [Foundation](app-catalog/samples/foundation)
-* [ShadowLayout](app-catalog/samples/shadowlayout)
-* [Titlebar](app-catalog/samples/titlebar)
-* [Toaster](app-catalog/samples/toaster)
-* [Xperimissions](app-catalog/samples/xpermissions)
-* [Xplayer](app-catalog/samples/xplayer)
+* [wBasis](app-catalog/samples/wBasis)
+* [wNdk](app-catalog/samples/wNdk)
+* [wPermission](app-catalog/samples/wPermission)
+* [wPlayer](app-catalog/samples/wPlayer)
+* [wShadowLayout](app-catalog/samples/wShadowLayout)
+* [wTitlebar](app-catalog/samples/wTitlebar)
+* [wToaster](app-catalog/samples/wToaster)

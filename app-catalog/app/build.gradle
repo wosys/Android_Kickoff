@@ -1,6 +1,6 @@
 /*
  * Copyright 2022 Google LLC
- * Copyright 2023-2024 wintmain
+ * Copyright 2023-2025 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,21 +27,24 @@ plugins {
 
 android {
     namespace 'com.wintmain.catalog.app'
-    compileSdk 34
+    compileSdk 35
 
+    // target -> Platform that needs to be adapted; compileSdk above can be ignored
+    // Intuitive example, edge-to-edge starting from 35
     defaultConfig {
         applicationId "com.wintmain.catalog.app"
         minSdk 26
         targetSdk 34
-        versionCode 20250101
-        versionName 'V20250101'
+        versionCode 20250601
+        versionName 'V20250601'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        release {
-            minifyEnabled false
+        debug {
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -92,7 +95,6 @@ dependencies {
     androidTestImplementation libs.androidx.test.ext.junit
     testImplementation libs.androidx.test.ext.junit
 
-    // App中集成CodeLocator: https://github.com/bytedance/CodeLocator
-    // 暂时禁用
-//    debugImplementation libs.codelocator.core
+    // 暂时禁用 App中集成CodeLocator: https://github.com/bytedance/CodeLocator
+    // debugImplementation libs.codelocator.core
 }
