@@ -1,0 +1,29 @@
+apply from: "$rootDir/gradle/sample-build.gradle"
+
+android {
+    namespace 'com.wintmain.wPlayer'
+
+    buildFeatures {
+        // 模块不加这个，会导致编译报错，找不到import
+        // 但是不在app层面加这个，会导致启动activity的时候crash
+        aidl = true
+    }
+
+    sourceSets {
+        main {
+            // res 资源目录配置
+            res.srcDirs(
+                    'src/main/res',
+                    'src/main/res-ext',
+            )
+        }
+    }
+}
+
+dependencies {
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation 'com.karumi:dexter:5.0.0'
+    implementation project(path: ':app-catalog:samples:wToaster:libwToaster')
+}
