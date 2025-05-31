@@ -38,7 +38,7 @@
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp">
 
-                <lib.wintmain.titlebar.TitleBarExt
+                <lib.wintmain.wTitlebar.TitleBarExt
                     android:id="@+id/tb_main_bar_click"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

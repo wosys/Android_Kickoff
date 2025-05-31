@@ -1,9 +1,0 @@
-apply from: "$rootDir/gradle/sample-build.gradle"
-
-android {
-    namespace 'com.wintmain.titlebar'
-}
-
-dependencies {
-    implementation project(path: ':app-catalog:samples:titlebar:libtitlebar')
-}

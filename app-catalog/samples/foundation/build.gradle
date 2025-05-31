@@ -23,7 +23,7 @@ dependencies {
     implementation project(path: ':app-catalog:samples:wPermission:libwPermission')
     implementation project(path: ':app-catalog:samples:foundation:libfoundation')
     implementation project(path: ':app-catalog:samples:wToaster:libwToaster')
-    implementation project(path: ':app-catalog:samples:titlebar:libtitlebar')
+    implementation project(path: ':app-catalog:samples:wTitlebar:libwTitlebar')
 
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.activity.compose

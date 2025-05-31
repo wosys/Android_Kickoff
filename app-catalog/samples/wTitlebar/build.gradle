@@ -1,0 +1,9 @@
+apply from: "$rootDir/gradle/sample-build.gradle"
+
+android {
+    namespace 'com.wintmain.wTitlebar'
+}
+
+dependencies {
+    implementation project(path: ':app-catalog:samples:wTitlebar:libwTitlebar')
+}

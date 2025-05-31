@@ -26,9 +26,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 import com.google.android.catalog.framework.annotations.Sample;
-import lib.wintmain.titlebar.OnTitleBarListener;
-import lib.wintmain.titlebar.TitleBarExt;
-import lib.wintmain.titlebar.style.LightBarStyle;
+import lib.wintmain.wTitlebar.OnTitleBarListener;
+import lib.wintmain.wTitlebar.TitleBarExt;
+import lib.wintmain.wTitlebar.style.LightBarStyle;
 import lib.wintmain.wToaster.toast.ToastUtils;
 
 @Sample(
