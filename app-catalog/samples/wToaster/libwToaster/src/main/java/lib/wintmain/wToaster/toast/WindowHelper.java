@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package lib.wintmain.toaster.toast;
+package lib.wintmain.wToaster.toast;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

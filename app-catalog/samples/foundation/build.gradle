@@ -22,7 +22,7 @@ android {
 dependencies {
     implementation project(path: ':app-catalog:samples:xpermissions:libxpermissions')
     implementation project(path: ':app-catalog:samples:foundation:libfoundation')
-    implementation project(path: ':app-catalog:samples:toaster:libtoaster')
+    implementation project(path: ':app-catalog:samples:wToaster:libwToaster')
     implementation project(path: ':app-catalog:samples:titlebar:libtitlebar')
 
     implementation libs.androidx.constraintlayout

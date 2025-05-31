@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package lib.wintmain.toaster.style;
+package lib.wintmain.wToaster.style;
 
 import android.view.Gravity;
-import lib.wintmain.toaster.toast.IToastStyle;
+import lib.wintmain.wToaster.toast.IToastStyle;
 
 /** desc : 默认黑色样式实现 */
 public class ToastBlackStyle implements IToastStyle {

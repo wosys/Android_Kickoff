@@ -21,8 +21,8 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import androidx.appcompat.app.AppCompatActivity;
-import lib.wintmain.toaster.style.ToastBlackStyle;
-import lib.wintmain.toaster.toast.ToastUtils;
+import lib.wintmain.wToaster.style.ToastBlackStyle;
+import lib.wintmain.wToaster.toast.ToastUtils;
 
 /**
  * @Description

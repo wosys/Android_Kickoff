@@ -39,8 +39,8 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.single.PermissionListener;
 import com.wintmain.xplayer.*;
-import lib.wintmain.toaster.style.ToastBlackStyle;
-import lib.wintmain.toaster.toast.ToastUtils;
+import lib.wintmain.wToaster.style.ToastBlackStyle;
+import lib.wintmain.wToaster.toast.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -30,7 +30,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import lib.wintmain.toaster.toast.ToastUtils;
+import lib.wintmain.wToaster.toast.ToastUtils;
 import lib.wintmain.xpermissions.*;
 
 import java.util.ArrayList;

@@ -38,7 +38,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.catalog.framework.annotations.Sample;
-import lib.wintmain.toaster.toast.ToastUtils;
+import lib.wintmain.wToaster.toast.ToastUtils;
 import lib.wintmain.xpermissions.OnPermissionCallback;
 import lib.wintmain.xpermissions.Permission;
 import lib.wintmain.xpermissions.XPermissions;

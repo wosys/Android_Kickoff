@@ -20,7 +20,7 @@ import android.app.Notification;
 import android.os.Bundle;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
-import lib.wintmain.toaster.toast.ToastUtils;
+import lib.wintmain.wToaster.toast.ToastUtils;
 
 /**
  * 通知消息监控服务

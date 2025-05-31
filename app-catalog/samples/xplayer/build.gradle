@@ -25,5 +25,5 @@ dependencies {
     implementation libs.androidx.lifecycle.livedata.ktx
     implementation libs.androidx.lifecycle.viewmodel.ktx
     implementation 'com.karumi:dexter:5.0.0'
-    implementation project(path: ':app-catalog:samples:toaster:libtoaster')
+    implementation project(path: ':app-catalog:samples:wToaster:libwToaster')
 }

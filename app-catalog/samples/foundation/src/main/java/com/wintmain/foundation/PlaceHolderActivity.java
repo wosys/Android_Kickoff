@@ -29,7 +29,7 @@ import com.google.android.catalog.framework.annotations.Sample;
 import lib.wintmain.titlebar.OnTitleBarListener;
 import lib.wintmain.titlebar.TitleBarExt;
 import lib.wintmain.titlebar.style.LightBarStyle;
-import lib.wintmain.toaster.toast.ToastUtils;
+import lib.wintmain.wToaster.toast.ToastUtils;
 
 @Sample(
         name = "0-Android-Demo",

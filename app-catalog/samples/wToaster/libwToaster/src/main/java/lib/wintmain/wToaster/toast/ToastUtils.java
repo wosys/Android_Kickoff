@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package lib.wintmain.toaster.toast;
+package lib.wintmain.wToaster.toast;
 
 import android.app.AppOpsManager;
 import android.app.Application;
@@ -29,8 +29,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import lib.wintmain.toaster.R;
-import lib.wintmain.toaster.style.ToastBlackStyle;
+import lib.wintmain.wToaster.R;
+import lib.wintmain.wToaster.style.ToastBlackStyle;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

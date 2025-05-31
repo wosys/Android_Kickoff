@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package lib.wintmain.toaster.style;
+package lib.wintmain.wToaster.style;
 
 /** desc : 默认白色样式实现 */
 public class ToastWhiteStyle extends ToastBlackStyle {

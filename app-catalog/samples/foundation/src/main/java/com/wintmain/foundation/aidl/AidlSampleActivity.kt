@@ -25,7 +25,7 @@ import android.os.RemoteException
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.catalog.framework.annotations.Sample
-import lib.wintmain.toaster.toast.ToastUtils
+import lib.wintmain.wToaster.toast.ToastUtils
 
 @Sample(name = "AIDL-SampleActivity", description = "AIDL简单示例", tags =["A-Self_demos"])
 class AidlSampleActivity: AppCompatActivity() {

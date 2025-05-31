@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package lib.wintmain.toaster.toast;
+package lib.wintmain.wToaster.toast;
 
 import android.app.Application;
 import android.os.Handler;
@@ -23,7 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import lib.wintmain.toaster.R;
+import lib.wintmain.wToaster.R;
 
 /**
  * @Description @Author wintmain

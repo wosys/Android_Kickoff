@@ -26,7 +26,7 @@ import com.google.android.catalog.framework.annotations.Sample;
 import com.wintmain.xplayer.app.InternetActivity;
 import com.wintmain.xplayer.app.LocalActivity;
 import com.wintmain.xplayer.app.StartActivity;
-import lib.wintmain.toaster.toast.ToastUtils;
+import lib.wintmain.wToaster.toast.ToastUtils;
 
 /**
  * @Description 选择本地音乐播放器和还是在线音乐播放器，本地播放器会依赖MediaPlayer类读取本机的音频文件进行播放

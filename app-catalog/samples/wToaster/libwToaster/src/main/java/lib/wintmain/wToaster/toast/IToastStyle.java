@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package lib.wintmain.toaster.toast;
+package lib.wintmain.wToaster.toast;
 
 /** desc : 默认样式接口 */
 public interface IToastStyle {
