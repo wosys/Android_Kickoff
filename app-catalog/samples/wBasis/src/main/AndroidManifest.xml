@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2023-2024 wintmain
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wintmain.wBasis">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <!--为了能操作闹钟相关，这个权限是必须的-->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+        <activity
+            android:name=".ui.compose.ComposeActivity"
+            android:exported="false"
+            android:label="title_activity_main2"
+            android:theme="@style/Theme.Android_Kickoff" />
+
+        <!-- callnotification START -->
+        <activity
+            android:name=".telephony.callnotification.CallNotificationSample"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            tools:targetApi="28" />
+        <receiver
+            android:name=".telephony.callnotification.CallNotificationSample$NotificationReceiver"
+            android:exported="false"
+            tools:targetApi="28" />
+        <!-- callnotification END-->
+
+        <!-- networkConnectivity START-->
+        <activity
+            android:name=".telephony.networkconnectivity.NetworkConnActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <!-- networkConnectivity END-->
+
+        <!-- recyclerview START-->
+        <activity
+            android:name=".ui.views.recyclerview.RecyclerViewActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <!-- recyclerview END-->
+
+        <!-- gesture detect START-->
+        <activity
+            android:name=".ui.views.gesture.GestureDetectActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <!-- gesture detect END-->
+
+        <!-- slidingpanelayout START-->
+        <activity android:name=".ui.views.layout.slidingpanelayout.SlidingPaneLayoutMain"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:exported="true">
+        </activity>
+        <!-- slidingpanelayout END-->
+
+        <activity
+            android:name=".PlaceHolderActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.RabbitLayout"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.RegisterMember"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.RadioGroupDemo"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.CheckBoxDemo"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.CodeToCreateView"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ListDemo"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.TimeGetDemo"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.TimeGetDemoExt"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_1"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_2"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_3"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_4"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_5"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_6"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_7"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_8"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_10"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_11"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_12"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_13"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_14"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep2_15"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep3_1"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep3_1second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep3_2"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep3_3"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep3_3second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep3_5"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep3_5second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep3_6"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep3_6second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep3_7"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep3_7$DetailActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep4_1"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep4_1second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep4_2"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep4_3"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep4_3second"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight">
+            <intent-filter>
+
+                <!-- <action android:name="android.intent.action.VIEW"/> -->
+                <action android:name="test_action" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".overview.ep4_5"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep4_6"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep5_1"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep5_2"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep5_4"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep5_5"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep5_6"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep5_7"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep5_10"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep6_1"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep6_2"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep6_3"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep7_1"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep7_2"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep7_3"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep7_6"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.LocalBroadcastActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep9_1"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep9_3"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.ep9_4"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity
+            android:name=".overview.DbEntryActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <receiver
+            android:name=".overview.BootCompleteReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!--静态注册一个广播接收者-->
+        <receiver
+            android:name=".overview.MyBroadcastReceiver"
+            android:exported="false">
+            <!--定义一个意图过滤器来接收（监听）指定的action-->
+            <intent-filter>
+                <action android:name="com.android.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".overview.AnotherBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.android.MY_BROADCAST_EXT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".aidl.PeopleRemoteService"
+            android:process=":remote"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".aidl.AidlSampleActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".webview.CustomActionWebViewActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
+    </application>
+
+</manifest>
