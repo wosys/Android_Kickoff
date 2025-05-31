@@ -1,0 +1,10 @@
+apply from: "$rootDir/gradle/sample-build.gradle"
+
+android {
+    namespace 'com.wintmain.wPermission'
+}
+
+dependencies {
+    implementation project(path: ':app-catalog:samples:wPermission:libwPermission')
+    implementation project(path: ':app-catalog:samples:wToaster:libwToaster')
+}

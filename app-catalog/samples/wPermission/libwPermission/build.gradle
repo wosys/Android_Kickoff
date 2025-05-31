@@ -1,0 +1,11 @@
+apply from: "$rootDir/gradle/sample-build.gradle"
+
+android {
+    namespace 'lib.wintmain.wPermission'
+}
+
+dependencies {
+    // Can't useful as we set android.useAndroidX=true
+    // implementation 'com.android.support:support-v4:28.0.0'
+    implementation libs.accompanist.permissions
+}
