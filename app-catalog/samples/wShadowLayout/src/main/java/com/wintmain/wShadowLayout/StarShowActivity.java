@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.shadowlayout;
+package com.wintmain.wShadowLayout;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -22,7 +22,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import androidx.appcompat.app.AppCompatActivity;
-import lib.wintmain.shadowlayout.ShadowLayout;
+import lib.wintmain.wShadowLayout.ShadowLayout;
 
 public class StarShowActivity extends AppCompatActivity implements View.OnClickListener {
     private ShadowLayout ShadowLayout;

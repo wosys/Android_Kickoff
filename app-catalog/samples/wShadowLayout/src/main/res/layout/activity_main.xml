@@ -27,7 +27,7 @@
         android:orientation="vertical">
 
 
-        <lib.wintmain.shadowlayout.ShadowLayout
+        <lib.wintmain.wShadowLayout.ShadowLayout
             android:id="@+id/ShadowLayoutHead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,10 +48,10 @@
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-        </lib.wintmain.shadowlayout.ShadowLayout>
+        </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
-        <lib.wintmain.shadowlayout.ShadowLayout
+        <lib.wintmain.wShadowLayout.ShadowLayout
             android:id="@+id/ShadowLayout_shadow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,9 +76,9 @@
                 android:textColor="#000" />
 
 
-        </lib.wintmain.shadowlayout.ShadowLayout>
+        </lib.wintmain.wShadowLayout.ShadowLayout>
 
-        <lib.wintmain.shadowlayout.ShadowLayout
+        <lib.wintmain.wShadowLayout.ShadowLayout
             android:id="@+id/ShadowLayout_shape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,9 +99,9 @@
                 android:text="shape功能的各项使用"
                 android:textColor="#fff1" />
 
-        </lib.wintmain.shadowlayout.ShadowLayout>
+        </lib.wintmain.wShadowLayout.ShadowLayout>
 
-        <lib.wintmain.shadowlayout.ShadowLayout
+        <lib.wintmain.wShadowLayout.ShadowLayout
             android:id="@+id/ShadowLayout_wiki"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -125,6 +125,6 @@
                 android:text="PlaceHolder Webview"
                 android:textColor="#fff" />
 
-        </lib.wintmain.shadowlayout.ShadowLayout>
+        </lib.wintmain.wShadowLayout.ShadowLayout>
     </LinearLayout>
 </layout>

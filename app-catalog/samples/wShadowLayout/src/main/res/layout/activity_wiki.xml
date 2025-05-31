@@ -40,7 +40,7 @@
             android:max="100"
             android:progress="5" />
 
-        <lib.wintmain.shadowlayout.ShadowLayout
+        <lib.wintmain.wShadowLayout.ShadowLayout
             android:id="@+id/ShadowLayoutHead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp">
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:id="@+id/shadowLayout_bar_left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
                         android:padding="@dimen/dp_5"
                         android:src="@mipmap/back_icon_black" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -85,6 +85,6 @@
                     android:textStyle="bold" />
 
             </RelativeLayout>
-        </lib.wintmain.shadowlayout.ShadowLayout>
+        </lib.wintmain.wShadowLayout.ShadowLayout>
     </RelativeLayout>
 </layout>

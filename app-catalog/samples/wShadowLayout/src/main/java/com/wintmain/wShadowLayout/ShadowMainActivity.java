@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.shadowlayout;
+package com.wintmain.wShadowLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +22,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import com.google.android.catalog.framework.annotations.Sample;
-import com.wintmain.shadowlayout.databinding.ActivityMainBinding;
+import com.wintmain.wShadowLayout.databinding.ActivityMainBinding;
 
 @Sample(
         name = "shadowlayout",

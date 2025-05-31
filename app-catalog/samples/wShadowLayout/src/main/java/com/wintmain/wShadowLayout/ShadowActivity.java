@@ -14,33 +14,28 @@
  * limitations under the License.
  */
 
-package com.wintmain.shadowlayout;
+package com.wintmain.wShadowLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import com.wintmain.shadowlayout.databinding.ActivityShapeBinding;
+import com.wintmain.wShadowLayout.databinding.ActivityShadowBinding;
 
-public class ShapeActivity extends AppCompatActivity {
-    ActivityShapeBinding binding;
+public class ShadowActivity extends AppCompatActivity {
+    ActivityShadowBinding binding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_shape);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_shadow);
 
-        binding.ShadowLayoutImage.setOnClickListener(v -> {
-            binding.ShadowLayoutImage.setSelected(!binding.ShadowLayoutImage.isSelected());
-        });
         binding.shadowLayoutBarLeft.setOnClickListener(v -> {
             finish();
         });
-        binding.shadowLayoutSelect.setOnClickListener(v -> {
-            binding.shadowLayoutSelect.setSelected(!binding.shadowLayoutSelect.isSelected());
-        });
-        binding.shadowLayoutBindView.setOnClickListener(v -> {
-            binding.shadowLayoutBindView.setSelected(!binding.shadowLayoutBindView.isSelected());
+        binding.ShadowLayoutIntent.setOnClickListener(v -> {
+            startActivity(new Intent(ShadowActivity.this, StarShowActivity.class));
         });
     }
 }

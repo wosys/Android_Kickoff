@@ -27,7 +27,7 @@
         android:orientation="vertical">
 
 
-        <lib.wintmain.shadowlayout.ShadowLayout
+        <lib.wintmain.wShadowLayout.ShadowLayout
             android:id="@+id/ShadowLayoutHead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                 android:layout_height="45dp">
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:id="@+id/shadowLayout_bar_left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
                         android:padding="@dimen/dp_5"
                         android:src="@mipmap/back_icon_black" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
                 <TextView
@@ -77,7 +77,7 @@
             </RelativeLayout>
 
 
-        </lib.wintmain.shadowlayout.ShadowLayout>
+        </lib.wintmain.wShadowLayout.ShadowLayout>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -99,7 +99,7 @@
                     android:textColor="@color/title_color"
                     android:textSize="15sp" />
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:id="@+id/shadowLayout_corner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -117,9 +117,9 @@
                         android:paddingRight="10dp"
                         android:text="圆角边框"
                         android:textColor="#000" />
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -137,9 +137,9 @@
                         android:paddingRight="10dp"
                         android:text="不规则边框"
                         android:textColor="#000" />
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:id="@+id/ShadowLayout_my_test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -159,7 +159,7 @@
                         android:paddingRight="10dp"
                         android:text="边框press样式，点击"
                         android:textColor="#000" />
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -171,7 +171,7 @@
                     android:textColor="@color/title_color"
                     android:textSize="15sp" />
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -187,10 +187,10 @@
                         android:paddingRight="10dp"
                         android:text="圆角填充色"
                         android:textColor="#fff" />
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -207,10 +207,10 @@
                         android:paddingRight="10dp"
                         android:text="不规则圆角填充色"
                         android:textColor="#fff" />
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:id="@+id/ShadowLayout_press"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -230,10 +230,10 @@
                         android:paddingRight="10dp"
                         android:text="selector的pressed用法，请点击"
                         android:textColor="#fff" />
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:id="@+id/shadowLayout_select"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -252,10 +252,10 @@
                         android:paddingRight="10dp"
                         android:text="selector的selected用法，请点击"
                         android:textColor="#fff" />
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -272,9 +272,9 @@
                         android:paddingRight="10dp"
                         android:text="圆角图片背景"
                         android:textColor="#ff0000" />
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -292,7 +292,7 @@
                         android:paddingRight="10dp"
                         android:text="不规则圆角图片背景"
                         android:textColor="#ff0000" />
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
                 <TextView
@@ -303,7 +303,7 @@
                     android:text="selected用法,请点击下图：" />
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:id="@+id/ShadowLayout_image"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -314,7 +314,7 @@
                     app:hl_shapeMode="selected" />
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:id="@+id/ShadowLayout_Clickable"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -337,7 +337,7 @@
                         android:text="设置ClickableFalse"
                         android:textColor="#fff" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
                 <TextView
@@ -351,7 +351,7 @@
                     android:textSize="15sp" />
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -369,10 +369,10 @@
                         android:text="渐变色"
                         android:textColor="#fff" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -396,7 +396,7 @@
                         android:text="渐变色的selector，点我"
                         android:textColor="#fff" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
                 <TextView
@@ -410,7 +410,7 @@
                     android:textSize="15sp" />
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -432,10 +432,10 @@
                         android:text="点我，水波纹"
                         android:textColor="#000" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -458,7 +458,7 @@
                         android:text="渐变色的selector，点我"
                         android:textColor="#fff" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
                 <TextView
@@ -471,7 +471,7 @@
                     android:textColor="@color/title_color"
                     android:textSize="15sp" />
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:id="@+id/shadowLayout_bindView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -499,10 +499,10 @@
                         android:text="关注"
                         android:textSize="16sp" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -526,10 +526,10 @@
                         android:text="点我，press样式"
                         android:textColor="#000" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -557,7 +557,7 @@
                         android:paddingRight="10dp"
                         android:text="点我，改变文字颜色及文案" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
                 <TextView
@@ -572,7 +572,7 @@
                     android:textSize="15sp" />
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:id="@+id/ShadowLayout_Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -599,9 +599,9 @@
                         android:text="填充 + 阴影 + 边框，请点击"
                         android:textColor="#000" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -622,10 +622,10 @@
                         android:text="填充 + 边框，请点击"
                         android:textColor="#fff" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
-                <lib.wintmain.shadowlayout.ShadowLayout
+                <lib.wintmain.wShadowLayout.ShadowLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -651,7 +651,7 @@
                         android:text="填充 + 阴影 + 边框 + 不规则圆角，请点击"
                         android:textColor="#000" />
 
-                </lib.wintmain.shadowlayout.ShadowLayout>
+                </lib.wintmain.wShadowLayout.ShadowLayout>
 
 
             </LinearLayout>

@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp">
 
-        <lib.wintmain.shadowlayout.ShadowLayout
+        <lib.wintmain.wShadowLayout.ShadowLayout
             android:id="@+id/ShadowLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                 android:text="圆角"
                 android:textColor="#000" />
 
-        </lib.wintmain.shadowlayout.ShadowLayout>
+        </lib.wintmain.wShadowLayout.ShadowLayout>
 
     </RelativeLayout>
 

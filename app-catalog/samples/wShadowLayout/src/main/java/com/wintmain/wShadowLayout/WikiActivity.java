@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.shadowlayout;
+package com.wintmain.wShadowLayout;
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,7 +28,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import com.wintmain.shadowlayout.databinding.ActivityWikiBinding;
+import com.wintmain.wShadowLayout.databinding.ActivityWikiBinding;
 
 
 public class WikiActivity extends AppCompatActivity {
