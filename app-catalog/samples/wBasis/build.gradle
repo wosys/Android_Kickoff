@@ -28,7 +28,7 @@ dependencies {
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.activity.compose
     implementation libs.casa.ui
-    implementation libs.androidx.recyclerviewExt
+    implementation libs.androidx.recyclerview
     implementation libs.androidx.cardview
     implementation libs.androidx.navigation.fragment
     implementation libs.androidx.navigation.ui
