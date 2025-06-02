@@ -16,6 +16,7 @@
 
 package lib.wintmain.libwNet.cookie
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -62,6 +63,7 @@ class PersistentCookieJar(
     /**
      * 获取指定域名下的所有Cookie
      */
+    @SuppressLint("Range")
     fun getAll(url: HttpUrl): List<Cookie> {
         val db = sqlHelper.writableDatabase
         db.rawQuery("SELECT * FROM cookies WHERE url = ?", arrayOf(url.host)).use { cursor ->

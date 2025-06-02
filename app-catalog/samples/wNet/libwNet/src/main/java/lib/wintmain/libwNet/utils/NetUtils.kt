@@ -16,18 +16,22 @@
 
 package lib.wintmain.libwNet.utils
 
+import android.Manifest.permission
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.os.Build
+import android.os.Build.VERSION
+import android.os.Build.VERSION_CODES
+import androidx.annotation.RequiresPermission
 
 /**
  * 是否处于联网中
  */
+@RequiresPermission(permission.ACCESS_NETWORK_STATE)
 fun Context.isNetworking(): Boolean {
     val connectivityManager =
         applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+    return if (VERSION.SDK_INT >= VERSION_CODES.M) {
         val networkCapabilities = connectivityManager.activeNetwork ?: return false
         val actNw = connectivityManager.getNetworkCapabilities(networkCapabilities) ?: return false
         when {
