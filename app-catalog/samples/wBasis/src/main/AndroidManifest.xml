@@ -368,6 +368,11 @@
             android:name=".webview.CustomActionWebViewActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".transition.BasicTransitionActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
     </application>
 
 </manifest>

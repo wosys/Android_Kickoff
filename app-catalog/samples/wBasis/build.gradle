@@ -9,6 +9,7 @@ android {
             res.srcDirs(
                     'src/main/res',
                     'src/main/res-ext',
+                    'src/main/res-transition',
             )
         }
     }
