@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.wBasis.ui.views.layout.slidingpanelayout
+package com.wintmain.wBasis.ui.layout.slidingpanelayout
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -29,7 +29,7 @@ import com.wintmain.wBasis.databinding.FragmentSportsListBinding
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class SportsListFragment : Fragment() {
+class SportsListFragment : androidx.fragment.app.Fragment() {
 
     private val sportsViewModel: SportsViewModel by activityViewModels()
 

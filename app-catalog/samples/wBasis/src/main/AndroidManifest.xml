@@ -60,20 +60,20 @@
 
         <!-- recyclerview START-->
         <activity
-            android:name=".ui.views.recyclerview.RecyclerViewActivity"
+            android:name=".ui.recyclerview.RecyclerViewActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <!-- recyclerview END-->
 
         <!-- gesture detect START-->
         <activity
-            android:name=".ui.views.gesture.GestureDetectActivity"
+            android:name=".gesture.GestureDetectActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <!-- gesture detect END-->
 
         <!-- slidingpanelayout START-->
-        <activity android:name=".ui.views.layout.slidingpanelayout.SlidingPaneLayoutMain"
+        <activity android:name=".ui.layout.slidingpanelayout.SlidingPaneLayoutMain"
             android:theme="@style/Theme.AppCompat.DayNight"
             android:exported="true">
         </activity>

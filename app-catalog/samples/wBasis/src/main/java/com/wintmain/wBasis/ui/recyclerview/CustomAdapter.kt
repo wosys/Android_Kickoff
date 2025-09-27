@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.wBasis.ui.views.recyclerview
+package com.wintmain.wBasis.ui.recyclerview
 
 import android.view.LayoutInflater
 import android.view.View
@@ -22,7 +22,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wintmain.wBasis.R
-import com.wintmain.wBasis.ui.views.recyclerview.CustomAdapter.ViewHolder
+import com.wintmain.wBasis.ui.recyclerview.CustomAdapter.ViewHolder
 import lib.wintmain.wBasis.logger.Log
 
 class CustomAdapter(private val dataSet: Array<String?>) :

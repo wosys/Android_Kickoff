@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.wBasis.ui.views.layout.slidingpanelayout
+package com.wintmain.wBasis.ui.layout.slidingpanelayout
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -39,7 +39,7 @@ import com.wintmain.wBasis.databinding.SlidingPanelMainBinding
     documentation = "",
     tags = ["android-samples", "layout"],
 )
-class SlidingPaneLayoutMain : AppCompatActivity() {
+class SlidingPaneLayoutMain : androidx.appcompat.app.AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 

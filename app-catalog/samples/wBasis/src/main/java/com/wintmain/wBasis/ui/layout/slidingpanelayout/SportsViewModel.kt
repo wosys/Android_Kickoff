@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.wBasis.ui.views.layout.slidingpanelayout
+package com.wintmain.wBasis.ui.layout.slidingpanelayout
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

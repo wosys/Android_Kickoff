@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.wBasis.ui.views.layout.slidingpanelayout
+package com.wintmain.wBasis.ui.layout.slidingpanelayout
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -24,10 +24,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.wintmain.wBasis.databinding.SportsListItemBinding
-import com.wintmain.wBasis.ui.views.layout.slidingpanelayout.SportsAdapter.SportsViewHolder
+import com.wintmain.wBasis.ui.layout.slidingpanelayout.SportsAdapter.SportsViewHolder
 
 class SportsAdapter(private val onItemClicked: (Sport) -> Unit) :
-    ListAdapter<Sport, SportsViewHolder>(DiffCallback) {
+    androidx.recyclerview.widget.ListAdapter<Sport, SportsViewHolder>(DiffCallback) {
 
     private lateinit var context: Context
 

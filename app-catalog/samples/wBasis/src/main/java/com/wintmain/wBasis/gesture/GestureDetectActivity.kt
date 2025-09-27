@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.wBasis.ui.views.gesture
+package com.wintmain.wBasis.gesture
 
 import android.graphics.Color
 import android.os.Bundle

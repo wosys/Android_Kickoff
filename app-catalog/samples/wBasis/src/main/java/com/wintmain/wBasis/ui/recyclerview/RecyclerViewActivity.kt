@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wintmain.wBasis.ui.views.recyclerview
+package com.wintmain.wBasis.ui.recyclerview
 
 import android.os.Bundle
 import android.view.Menu

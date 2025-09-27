@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wintmain.wBasis.ui.views.recyclerview
+package com.wintmain.wBasis.ui.recyclerview
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -26,8 +26,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.wintmain.wBasis.R
-import com.wintmain.wBasis.ui.views.recyclerview.RecyclerViewFragment.LayoutManagerType.GRID_LAYOUT_MANAGER
-import com.wintmain.wBasis.ui.views.recyclerview.RecyclerViewFragment.LayoutManagerType.LINEAR_LAYOUT_MANAGER
+import com.wintmain.wBasis.ui.recyclerview.RecyclerViewFragment.LayoutManagerType.GRID_LAYOUT_MANAGER
+import com.wintmain.wBasis.ui.recyclerview.RecyclerViewFragment.LayoutManagerType.LINEAR_LAYOUT_MANAGER
 import java.util.Objects
 
 /**

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright 2023-2024 wintmain
+  ~ Copyright 2023-2025 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="@string/intro_message_gesture"
+        android:text="@string/gesture_intro_message"
         android:padding="16dp" />
     <View
         android:layout_width="fill_parent"

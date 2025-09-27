@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wintmain.wBasis.ui.views.layout
+package com.wintmain.wBasis.ui.layout
 
 import android.os.Bundle
 import android.view.View
