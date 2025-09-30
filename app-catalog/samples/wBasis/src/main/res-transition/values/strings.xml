@@ -27,6 +27,16 @@
         ]]>
     </string>
 
+    <string name="custom_transition_intro_message">
+        <![CDATA[
+
+
+            This sample demonstrates how to create and use a custom Transition.
+
+
+        ]]>
+    </string>
+
     <string name="scene">Scene</string>
     <string name="scene_1">1</string>
     <string name="scene_2">2</string>

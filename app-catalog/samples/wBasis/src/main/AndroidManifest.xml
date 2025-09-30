@@ -373,6 +373,11 @@
             android:name=".transition.BasicTransitionActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".transition.CustomTransitionActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight" />
     </application>
 
 </manifest>
