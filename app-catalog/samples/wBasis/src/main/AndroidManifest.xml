@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2023-2024 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -73,10 +72,10 @@
         <!-- gesture detect END-->
 
         <!-- slidingpanelayout START-->
-        <activity android:name=".ui.layout.slidingpanelayout.SlidingPaneLayoutMain"
-            android:theme="@style/Theme.AppCompat.DayNight"
-            android:exported="true">
-        </activity>
+        <activity
+            android:name=".ui.layout.slidingpanelayout.SlidingPaneLayoutMain"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight"></activity>
         <!-- slidingpanelayout END-->
 
         <activity
@@ -355,9 +354,9 @@
 
         <service
             android:name=".aidl.PeopleRemoteService"
-            android:process=":remote"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            android:process=":remote" />
 
         <activity
             android:name=".aidl.AidlSampleActivity"

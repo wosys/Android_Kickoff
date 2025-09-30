@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2021 The Android Open Source Project
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,7 @@
   ~ limitations under the License.
   -->
 
-<androidx.slidingpanelayout.widget.SlidingPaneLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.slidingpanelayout.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sliding_pane_layout"
@@ -26,12 +24,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
-        android:padding="8dp"
         android:layout_width="550dp"
         android:layout_height="match_parent"
+        android:layout_gravity="start"
         android:clipToPadding="false"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_gravity="start"/>
+        android:padding="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <!-- The second child becomes the right (content) pane. In this
          example, android:layout_weight is used to expand this detail pane
@@ -39,8 +37,8 @@
          the entire window is wide enough to fit both the left and right pane.-->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/detail_container"
+        android:name="com.wintmain.wBasis.ui.layout.slidingpanelayout.NewsDetailsFragment"
         android:layout_width="300dp"
-        android:layout_weight="1"
         android:layout_height="match_parent"
-        android:name="com.wintmain.wBasis.ui.layout.slidingpanelayout.NewsDetailsFragment" />
+        android:layout_weight="1" />
 </androidx.slidingpanelayout.widget.SlidingPaneLayout>

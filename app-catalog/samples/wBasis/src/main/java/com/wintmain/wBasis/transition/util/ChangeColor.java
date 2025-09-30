@@ -43,6 +43,7 @@ public class ChangeColor extends Transition {
     }
 
     // BEGIN_INCLUDE (capture_values)
+
     /**
      * Convenience method: Add the background Drawable property value
      * to the TransitionsValues.value Map for a target.
@@ -75,7 +76,8 @@ public class ChangeColor extends Transition {
         Drawable endBackground = (Drawable) endValues.values.get(PROPNAME_BACKGROUND);
         // This transition changes background colors for a target. It doesn't animate any other
         // background changes. If the property isn't a ColorDrawable, ignore the target.
-        if (startBackground instanceof ColorDrawable startColor && endBackground instanceof ColorDrawable endColor) {
+        if (startBackground instanceof ColorDrawable startColor
+                && endBackground instanceof ColorDrawable endColor) {
             // If the background color for the target in the starting and ending layouts is
             // different, create an animation.
             if (startColor.getColor() != endColor.getColor()) {

@@ -39,14 +39,15 @@ public class BasicTransitionFragment extends Fragment
     /** A custom TransitionManager */
     private TransitionManager mTransitionManagerForScene3;
 
-    /** Transitions take place in this ViewGroup. We retain this for the dynamic transition on scene 4. */
+    /** Transitions take place in this ViewGroup. We retain this for the dynamic transition on
+     * scene 4. */
     private ViewGroup mSceneRoot;
+
+    public BasicTransitionFragment() {
+    }
 
     public static BasicTransitionFragment newInstance() {
         return new BasicTransitionFragment();
-    }
-
-    public BasicTransitionFragment() {
     }
 
     @Override

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2023-2025 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,28 +13,30 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sample_main_layout_gesture"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:id="@+id/sample_main_layout_gesture">
+    android:orientation="vertical">
+
     <TextView
         android:id="@+id/sample_output_gesture"
         style="@style/Widget.SampleMessage"
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="@string/gesture_intro_message"
-        android:padding="16dp" />
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:text="@string/gesture_intro_message" />
+
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray" />
+
     <androidx.fragment.app.FragmentContainerView
-        android:name="lib.wintmain.wBasis.logger.LogFragment"
         android:id="@+id/log_fragment_gesture"
-        android:layout_weight="1"
+        android:name="lib.wintmain.wBasis.logger.LogFragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 </LinearLayout>

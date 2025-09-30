@@ -21,7 +21,7 @@ import com.wintmain.wBasis.R
 /**
  * Sports data
  */
-object SportsData{
+object SportsData {
     fun getSportsData(): ArrayList<Sport> {
         return arrayListOf(
             Sport(

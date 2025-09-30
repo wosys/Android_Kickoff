@@ -34,19 +34,14 @@ public class SlidingTabStrip extends LinearLayout {
     private static final int DEFAULT_DIVIDER_THICKNESS_DIPS = 1;
     private static final byte DEFAULT_DIVIDER_COLOR_ALPHA = 0x20;
     private static final float DEFAULT_DIVIDER_HEIGHT = 0.5f;
-
-    private SlidingTabLayout.TabColorizer mCustomTabColorizer;
     private final SimpleTabColorizer mDefaultTabColorizer;
-
     private final int mBottomBorderThickness;
     private final Paint mBottomBorderPaint;
-
     private final int mSelectedIndicatorThickness;
     private final Paint mSelectedIndicatorPaint;
-
     private final Paint mDividerPaint;
     private final float mDividerHeight;
-
+    private SlidingTabLayout.TabColorizer mCustomTabColorizer;
     private int mSelectedPosition;
     private float mSelectionOffset;
 
@@ -90,6 +85,20 @@ public class SlidingTabStrip extends LinearLayout {
      */
     private static int setColorAlpha(int color, byte alpha) {
         return Color.argb(alpha, Color.red(color), Color.green(color), Color.blue(color));
+    }
+
+    /**
+     * Blend {@code color1} and {@code color2} using the given ratio.
+     *
+     * @param ratio of which to blend. 1.0 will return {@code color1}, 0.5 will give an even blend,
+     *              0.0 will return {@code color2}.
+     */
+    private static int blendColors(int color1, int color2, float ratio) {
+        final float inverseRation = 1f - ratio;
+        float r = (Color.red(color1) * ratio) + (Color.red(color2) * inverseRation);
+        float g = (Color.green(color1) * ratio) + (Color.green(color2) * inverseRation);
+        float b = (Color.blue(color1) * ratio) + (Color.blue(color2) * inverseRation);
+        return Color.rgb((int) r, (int) g, (int) b);
     }
 
     void setCustomTabColorizer(SlidingTabLayout.TabColorizer customTabColorizer) {
@@ -164,20 +173,6 @@ public class SlidingTabStrip extends LinearLayout {
             canvas.drawLine(child.getRight(), separatorTop, child.getRight(),
                     separatorTop + dividerHeightPx, mDividerPaint);
         }
-    }
-
-    /**
-     * Blend {@code color1} and {@code color2} using the given ratio.
-     *
-     * @param ratio of which to blend. 1.0 will return {@code color1}, 0.5 will give an even blend,
-     *              0.0 will return {@code color2}.
-     */
-    private static int blendColors(int color1, int color2, float ratio) {
-        final float inverseRation = 1f - ratio;
-        float r = (Color.red(color1) * ratio) + (Color.red(color2) * inverseRation);
-        float g = (Color.green(color1) * ratio) + (Color.green(color2) * inverseRation);
-        float b = (Color.blue(color1) * ratio) + (Color.blue(color2) * inverseRation);
-        return Color.rgb((int) r, (int) g, (int) b);
     }
 
     private static class SimpleTabColorizer implements SlidingTabLayout.TabColorizer {

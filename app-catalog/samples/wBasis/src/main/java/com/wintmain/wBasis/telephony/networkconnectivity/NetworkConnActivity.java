@@ -57,7 +57,7 @@ public class NetworkConnActivity extends AppCompatActivity implements DownloadCa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.conn_main);
+        setContentView(R.layout.activity_connectivity_main);
         mDataText = findViewById(R.id.data_text);
         // 这里的网站换成国内的，便于访问
         mNetworkFragment =

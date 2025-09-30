@@ -45,7 +45,8 @@ public class CustomTransitionFragment extends Fragment implements View.OnClickLi
     private Transition mTransition;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_custom_transition, container, false);
     }
 
@@ -58,7 +59,7 @@ public class CustomTransitionFragment extends Fragment implements View.OnClickLi
             mCurrentScene = savedInstanceState.getInt(STATE_CURRENT_SCENE);
         }
         // We set up the Scenes here.
-        mScenes = new Scene[] {
+        mScenes = new Scene[]{
                 Scene.getSceneForLayout(container, R.layout.custom_scene1, context),
                 Scene.getSceneForLayout(container, R.layout.custom_scene2, context),
                 Scene.getSceneForLayout(container, R.layout.custom_scene3, context),

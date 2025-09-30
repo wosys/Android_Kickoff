@@ -117,43 +117,43 @@ class CodeToLayout : Fragment() {
  * Java
 public class EpOne_1 extends AppCompatActivity {
 
-    public TextView text2;
+public TextView text2;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // 1. xml方式
+@Override
+protected void onCreate(@Nullable Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+// 1. xml方式
 //        setContentView(R.layout.ep1_1);
 
-        // 2. code方式
-        // 创建帧布局管理器
-        FrameLayout frameLayout = new FrameLayout(this);
-        // 设置背景
-        frameLayout.setBackground(
-                ResourcesCompat.getDrawable(this.getResources(), R.drawable.ic_launcher_foreground,
-                        null));
-        // 设置在Activity中显示frameLayout
-        setContentView(frameLayout);
-        // 创建一个TextView组件text1,设置其文字大小和颜色，并将其添加到布局管理器中
-        TextView text1 = new TextView(this);
-        text1.setText("在代码中控制UI界面"); // 设置显示的文字
-        text1.setTextSize(TypedValue.COMPLEX_UNIT_PX, 24); // 设置文字大小，单位为像素
-        text1.setTextColor(Color.rgb(1, 1, 1)); // 设置文字的颜色
-        frameLayout.addView(text1); // 将 text1添加到布局管理器中
+// 2. code方式
+// 创建帧布局管理器
+FrameLayout frameLayout = new FrameLayout(this);
+// 设置背景
+frameLayout.setBackground(
+ResourcesCompat.getDrawable(this.getResources(), R.drawable.ic_launcher_foreground,
+null));
+// 设置在Activity中显示frameLayout
+setContentView(frameLayout);
+// 创建一个TextView组件text1,设置其文字大小和颜色，并将其添加到布局管理器中
+TextView text1 = new TextView(this);
+text1.setText("在代码中控制UI界面"); // 设置显示的文字
+text1.setTextSize(TypedValue.COMPLEX_UNIT_PX, 24); // 设置文字大小，单位为像素
+text1.setTextColor(Color.rgb(1, 1, 1)); // 设置文字的颜色
+frameLayout.addView(text1); // 将 text1添加到布局管理器中
 
-        // 实例化text2组件，设置其显示文字、文字大小、颜色和布局
-        text2 = new TextView(this);
-        text2.setText("单击进入Android…"); // 设置显示文字
-        text2.setTextSize(TypedValue.COMPLEX_UNIT_PX, 24); // 设置文字大小，单位为像素
-        text2.setTextColor(Color.rgb(1, 1, 1)); // 设置文字的颜色
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT); // 创建保存布局参数的对象
-        params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL; // 设置居中显示
-        text2.setLayoutParams(params); // 设置布局参数
-    }
+// 实例化text2组件，设置其显示文字、文字大小、颜色和布局
+text2 = new TextView(this);
+text2.setText("单击进入Android…"); // 设置显示文字
+text2.setTextSize(TypedValue.COMPLEX_UNIT_PX, 24); // 设置文字大小，单位为像素
+text2.setTextColor(Color.rgb(1, 1, 1)); // 设置文字的颜色
+FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+ViewGroup.LayoutParams.WRAP_CONTENT,
+ViewGroup.LayoutParams.WRAP_CONTENT); // 创建保存布局参数的对象
+params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL; // 设置居中显示
+text2.setLayoutParams(params); // 设置布局参数
 }
-*/
+}
+ */
 
 @Sample(
     name = "03. Rabbit Listener",
@@ -174,15 +174,15 @@ class RabbitLayout : AppCompatActivity() {
         val frameLayout: FrameLayout = findViewById(R.id.mylayout)
         // Attention here.
         val rabbit = RabbitView(this@RabbitLayout)
-/*        rabbit.setOnTouchListener { _, event ->
-            rabbit.bitmapX = event.x
-            rabbit.bitmapY = event.y
-            rabbit.invalidate()
-            Toast.makeText(baseContext, "You touch this rabbit.", LENGTH_SHORT).show()
-            true
-        }*/
+        /*        rabbit.setOnTouchListener { _, event ->
+                    rabbit.bitmapX = event.x
+                    rabbit.bitmapY = event.y
+                    rabbit.invalidate()
+                    Toast.makeText(baseContext, "You touch this rabbit.", LENGTH_SHORT).show()
+                    true
+                }*/
 
-        rabbit.setOnLongClickListener{
+        rabbit.setOnLongClickListener {
             Toast.makeText(baseContext, "Long click.", LENGTH_SHORT).show()
             true
         }
@@ -213,55 +213,55 @@ class RabbitView(context: Context) : View(context) {
 }
 
 /**
-* Java
+ * Java
 public class EpOne_4 extends Activity {
-    // AppCompatActivity -> 会有title bar，还有其他的一些
+// AppCompatActivity -> 会有title bar，还有其他的一些
 
-    @SuppressLint("ClickableViewAccessibility")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.ep1_4);
+@SuppressLint("ClickableViewAccessibility")
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.ep1_4);
 
-        FrameLayout frameLayout = findViewById(R.id.mylayout); // 获取帧布局管理器
-        final RabbitView rabbit = new RabbitView(EpOne_4.this); // 创建并实例化RabbitView类
-        // 为小兔子添加触摸事件监听器
-        rabbit.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                rabbit.bitmapX = event.getX(); // 设置小兔子显示位置的X坐标
-                rabbit.bitmapY = event.getY(); // 设置小兔子显示位置的Y坐标
-                rabbit.invalidate(); // 重绘rabbit组件
-                Toast.makeText(getBaseContext(), "You touch this rabbit.", LENGTH_SHORT).show();
-                return true;
-            }
-        });
-        frameLayout.addView(rabbit); // 将rabbit添加到布局管理器中
-    }
+FrameLayout frameLayout = findViewById(R.id.mylayout); // 获取帧布局管理器
+final RabbitView rabbit = new RabbitView(EpOne_4.this); // 创建并实例化RabbitView类
+// 为小兔子添加触摸事件监听器
+rabbit.setOnTouchListener(new View.OnTouchListener() {
+@Override
+public boolean onTouch(View v, MotionEvent event) {
+rabbit.bitmapX = event.getX(); // 设置小兔子显示位置的X坐标
+rabbit.bitmapY = event.getY(); // 设置小兔子显示位置的Y坐标
+rabbit.invalidate(); // 重绘rabbit组件
+Toast.makeText(getBaseContext(), "You touch this rabbit.", LENGTH_SHORT).show();
+return true;
+}
+});
+frameLayout.addView(rabbit); // 将rabbit添加到布局管理器中
+}
 }
 
 class RabbitView extends View {
-    public float bitmapX; // 小兔子显示位置的X坐标
-    public float bitmapY; // 小兔子显示位置的Y坐标
+public float bitmapX; // 小兔子显示位置的X坐标
+public float bitmapY; // 小兔子显示位置的Y坐标
 
-    public RabbitView(Context context) { // 重写构造方法
-        super(context);
-        bitmapX = 0;
-        bitmapY = 0;
-    }
-
-    @Override
-    protected void onDraw(@NonNull Canvas canvas) {
-        super.onDraw(canvas);
-        Paint paint = new Paint(); // 创建并实例化Paint的对象
-        Bitmap bitmap = decodeResource(this.getResources(), R.drawable.img06); // 根据图片生成位图对象
-        canvas.drawBitmap(bitmap, bitmapX, bitmapY, paint); // 绘制小兔子
-        if (bitmap.isRecycled()) { // 判断图片是否回收
-            bitmap.recycle(); // 强制回收图片
-        }
-    }
+public RabbitView(Context context) { // 重写构造方法
+super(context);
+bitmapX = 0;
+bitmapY = 0;
 }
-*/
+
+@Override
+protected void onDraw(@NonNull Canvas canvas) {
+super.onDraw(canvas);
+Paint paint = new Paint(); // 创建并实例化Paint的对象
+Bitmap bitmap = decodeResource(this.getResources(), R.drawable.img06); // 根据图片生成位图对象
+canvas.drawBitmap(bitmap, bitmapX, bitmapY, paint); // 绘制小兔子
+if (bitmap.isRecycled()) { // 判断图片是否回收
+bitmap.recycle(); // 强制回收图片
+}
+}
+}
+ */
 
 @Sample(
     name = "04. Register Member",
@@ -421,8 +421,10 @@ class RadioGroupDemo : AppCompatActivity() {
         for (i in 0 until sex2.childCount) {
             val r = sex2.getChildAt(i) as RadioButton // 根据索引值获取单选按钮的值
             if (r.isChecked) { // 判断是否选中
-                Toast.makeText(this@RadioGroupDemo, "你选择的是：" + r.getText(),
-                    LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@RadioGroupDemo, "你选择的是：" + r.getText(),
+                    LENGTH_SHORT
+                ).show()
                 break // 跳出循环，单选
             }
         }

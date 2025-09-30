@@ -45,7 +45,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.recyclerview_activity_main)
+        setContentView(R.layout.activity_recyclerview_main)
 
         if (savedInstanceState == null) {
             val transaction = supportFragmentManager.beginTransaction()

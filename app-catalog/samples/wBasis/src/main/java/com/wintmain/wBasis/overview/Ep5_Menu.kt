@@ -233,15 +233,19 @@ class ep5_6 : AppCompatActivity() {
             R.id.color1 -> {
                 textView!!.setTextColor(Color.rgb(255, 0, 0))
             }
+
             R.id.color2 -> {
                 textView!!.setTextColor(Color.rgb(0, 255, 0))
             }
+
             R.id.color3 -> {
                 textView!!.setTextColor(Color.rgb(0, 0, 255))
             }
+
             R.id.color4 -> {
                 textView!!.setTextColor(Color.rgb(255, 180, 0))
             }
+
             else -> {
                 textView!!.setTextColor(Color.rgb(255, 255, 255))
             }

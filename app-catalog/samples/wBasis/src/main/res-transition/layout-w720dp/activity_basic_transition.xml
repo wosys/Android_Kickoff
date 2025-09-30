@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<!--
   Copyright 2013 The Android Open Source Project
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
   limitations under the License.
   -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/sample_main_layout"
+    android:id="@+id/transition_sample_main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -39,7 +39,7 @@
                 android:paddingLeft="@dimen/margin_medium"
                 android:paddingRight="@dimen/margin_medium"
                 android:paddingTop="@dimen/margin_large"
-                android:text="@string/custom_transition_intro_message" />
+                android:text="@string/transition_intro_message" />
         </FrameLayout>
 
         <View
@@ -68,3 +68,5 @@
         android:layout_weight="2" />
 
 </LinearLayout>
+
+

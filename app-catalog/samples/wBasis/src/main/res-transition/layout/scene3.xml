@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  Copyright 2014 The Android Open Source Project
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -26,14 +24,14 @@
         android:layout_height="@dimen/square_size_normal"
         android:layout_centerHorizontal="true"
         android:background="#990000"
-        android:gravity="center"/>
+        android:gravity="center" />
 
     <ImageView
         android:id="@+id/transition_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/transition_ic_launcher"/>
+        android:src="@drawable/transition_ic_launcher" />
 
     <ImageView
         android:id="@+id/transition_oval"
@@ -41,7 +39,7 @@
         android:layout_height="32dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/oval"/>
+        android:src="@drawable/oval" />
 
     <TextView
         android:id="@+id/transition_title"
@@ -49,6 +47,6 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="@string/additional_message"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

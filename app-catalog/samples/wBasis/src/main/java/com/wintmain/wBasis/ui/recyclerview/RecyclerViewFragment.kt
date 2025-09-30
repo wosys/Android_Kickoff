@@ -66,7 +66,7 @@ class RecyclerViewFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(R.layout.recycler_view_frag, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_recyclerview, container, false)
         rootView.tag = TAG
 
         mRecyclerView = rootView.findViewById(R.id.recyclerView)

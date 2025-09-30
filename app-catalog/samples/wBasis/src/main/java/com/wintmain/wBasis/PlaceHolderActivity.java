@@ -40,7 +40,7 @@ public class PlaceHolderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pft_activity_main);
+        setContentView(R.layout.activity_pft_main);
 
         // 初始化一些三方库
         initLibs(getApplication());
@@ -61,7 +61,8 @@ public class PlaceHolderActivity extends AppCompatActivity {
                         newIntent.putExtra(AlarmClock.EXTRA_MINUTES, 30);
                         newIntent.setAction(AlarmClock.ACTION_SET_ALARM);
                         newIntent.putExtra(AlarmClock.EXTRA_SKIP_UI, true);
-                        newIntent.setComponent(new ComponentName("com.android.deskclock", "com.android.deskclock.HandleApiCalls"));
+                        newIntent.setComponent(new ComponentName("com.android.deskclock",
+                                "com.android.deskclock.HandleApiCalls"));
                         try {
                             startActivity(newIntent);
                             ToastUtils.show("你点击了中间，并且新建了一个9：30的闹钟");

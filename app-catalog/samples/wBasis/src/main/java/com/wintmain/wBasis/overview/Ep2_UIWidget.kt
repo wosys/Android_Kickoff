@@ -167,7 +167,7 @@ class ep2_2 : AppCompatActivity() {
     }
 }
 
-@Sample(name = "SeekBar", description = "拖动条展示", tags = ["A-Self_demos"],)
+@Sample(name = "SeekBar", description = "拖动条展示", tags = ["A-Self_demos"])
 class ep2_3 : AppCompatActivity() {
     private var seekbar: SeekBar? = null // 拖动条
 

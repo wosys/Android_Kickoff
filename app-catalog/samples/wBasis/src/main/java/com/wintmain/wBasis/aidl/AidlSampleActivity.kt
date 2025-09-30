@@ -27,11 +27,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.catalog.framework.annotations.Sample
 import lib.wintmain.wToaster.toast.ToastUtils
 
-@Sample(name = "AIDL-SampleActivity", description = "AIDL简单示例", tags =["A-Self_demos"])
-class AidlSampleActivity: AppCompatActivity() {
+@Sample(name = "AIDL-SampleActivity", description = "AIDL简单示例", tags = ["A-Self_demos"])
+class AidlSampleActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "AidlSampleActivity"
     }
+
     var peopleManager: IPeopleManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

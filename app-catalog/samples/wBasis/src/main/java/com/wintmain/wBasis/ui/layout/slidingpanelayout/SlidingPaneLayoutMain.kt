@@ -17,7 +17,6 @@
 package com.wintmain.wBasis.ui.layout.slidingpanelayout
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -61,5 +60,4 @@ class SlidingPaneLayoutMain : androidx.appcompat.app.AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
             || super.onSupportNavigateUp()
     }
-
 }

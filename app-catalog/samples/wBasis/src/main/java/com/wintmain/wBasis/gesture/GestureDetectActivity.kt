@@ -40,7 +40,7 @@ class GestureDetectActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.gesture_detect_main)
+        setContentView(R.layout.activity_gesture_detect_main)
 
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(GestureDetectFragment(), FRAG).commit()

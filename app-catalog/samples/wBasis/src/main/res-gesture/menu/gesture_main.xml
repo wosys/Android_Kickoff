@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2023-2024 wintmain
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,6 +18,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/sample_action_gesture"
-        app:showAsAction="ifRoom|withText"
-        android:title="Clear" />
+        android:title="Clear"
+        app:showAsAction="ifRoom|withText" />
 </menu>

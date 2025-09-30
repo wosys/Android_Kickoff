@@ -30,31 +30,14 @@ import java.util.List;
 public class DbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "demo_whitelist.db";
     private static final int DATABASE_VERSION = 1;
-
-    public static class WhitelistEntry implements BaseColumns {
-        public static final String TABLE_NAME = "whitelist";
-        public static final String COLUMN_PACKAGE_NAME = "package_name";
-    }
-
     private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " + WhitelistEntry.TABLE_NAME
-            + " (" + WhitelistEntry._ID + " INTEGER PRIMARY KEY," + WhitelistEntry.COLUMN_PACKAGE_NAME
+            + " (" + WhitelistEntry._ID + " INTEGER PRIMARY KEY,"
+            + WhitelistEntry.COLUMN_PACKAGE_NAME
             + " TEXT)";
-    private static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + WhitelistEntry.TABLE_NAME;
-
+    private static final String SQL_DELETE_ENTRIES =
+            "DROP TABLE IF EXISTS " + WhitelistEntry.TABLE_NAME;
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL(SQL_CREATE_ENTRIES);
-        Log.d("DbHelper", "Database created");
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL(SQL_DELETE_ENTRIES);
-        onCreate(db);
     }
 
     public static void addToWhitelist(Context context, String packageName) {
@@ -80,7 +63,7 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         String selection = WhitelistEntry.COLUMN_PACKAGE_NAME + " = ?";
-        String[] selectionArgs = { packageName };
+        String[] selectionArgs = {packageName};
 
         db.delete(WhitelistEntry.TABLE_NAME, selection, selectionArgs);
         db.close();
@@ -91,7 +74,7 @@ public class DbHelper extends SQLiteOpenHelper {
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        String[] projection = { WhitelistEntry.COLUMN_PACKAGE_NAME };
+        String[] projection = {WhitelistEntry.COLUMN_PACKAGE_NAME};
 
         Cursor cursor = db.query(
                 WhitelistEntry.TABLE_NAME,
@@ -114,5 +97,22 @@ public class DbHelper extends SQLiteOpenHelper {
         db.close();
 
         return whitelist;
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(SQL_CREATE_ENTRIES);
+        Log.d("DbHelper", "Database created");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL(SQL_DELETE_ENTRIES);
+        onCreate(db);
+    }
+
+    public static class WhitelistEntry implements BaseColumns {
+        public static final String TABLE_NAME = "whitelist";
+        public static final String COLUMN_PACKAGE_NAME = "package_name";
     }
 }

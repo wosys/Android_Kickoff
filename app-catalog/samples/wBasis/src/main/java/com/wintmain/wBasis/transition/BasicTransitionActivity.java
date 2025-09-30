@@ -51,7 +51,7 @@ public class BasicTransitionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.basic_transition_activity);
+        setContentView(R.layout.activity_basic_transition);
 
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -99,6 +99,7 @@ public class BasicTransitionActivity extends AppCompatActivity {
     }
 
     // Set up targets to receive log data
+
     /** Create a chain of targets that will receive log data */
     public void initializeLogging() {
         // Wraps Android's native log framework.

@@ -60,6 +60,7 @@ public class CustomTransitionActivity extends AppCompatActivity {
     }
 
     // Set up targets to receive log data
+
     /** Create a chain of targets that will receive log data */
     public void initializeLogging() {
         // Wraps Android's native log framework.
@@ -107,7 +108,7 @@ public class CustomTransitionActivity extends AppCompatActivity {
             supportInvalidateOptionsMenu();
             return true;
         } else if (item.getItemId() == R.id.clear_action) {
-            TextView tv = (TextView)findViewById(R.id.custom_clear_tv);
+            TextView tv = (TextView) findViewById(R.id.custom_clear_tv);
             tv.setText("");
             return true;
         }

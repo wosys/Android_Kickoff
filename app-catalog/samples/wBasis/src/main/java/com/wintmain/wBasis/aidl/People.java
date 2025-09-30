@@ -22,6 +22,17 @@ import androidx.annotation.NonNull;
 
 public class People implements Parcelable {
 
+    // 反序列化功能由CREATOR来完成，其内部标明了如何创建序列化对象和数组，
+    // 并通过Parcel的一系列read方法来完成反序列化过程。
+    public static final Parcelable.Creator<People> CREATOR = new Parcelable.Creator<>() {
+        public People createFromParcel(Parcel in) {
+            return new People(in);
+        }
+
+        public People[] newArray(int size) {
+            return new People[size];
+        }
+    };
     public int pId;
     public String pName;
 
@@ -64,19 +75,6 @@ public class People implements Parcelable {
         dest.writeInt(pId);
         dest.writeString(pName);
     }
-
-    // 反序列化功能由CREATOR来完成，其内部标明了如何创建序列化对象和数组，
-    // 并通过Parcel的一系列read方法来完成反序列化过程。
-    public static final Parcelable.Creator<People> CREATOR = new Parcelable.Creator<>() {
-        public People createFromParcel(Parcel in) {
-            return new People(in);
-        }
-
-        public People[] newArray(int size) {
-            return new People[size];
-        }
-    };
-
 
     @NonNull
     @Override

@@ -30,7 +30,7 @@ class CustomActionWebViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.custom_action_webview_activity)
+        setContentView(R.layout.activity_custom_action_webview)
         mWebView = findViewById(R.id.webview)
 
         val list: MutableList<String> = ArrayList()

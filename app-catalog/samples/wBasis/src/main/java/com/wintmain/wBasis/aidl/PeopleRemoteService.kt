@@ -27,6 +27,7 @@ import java.util.concurrent.CopyOnWriteArrayList
 // 服务端代码，客户端见[AidlSampleActivity.java]
 class PeopleRemoteService : Service() {
     val mPeopleList = CopyOnWriteArrayList<People>()
+
     // 客户端注册和移除注册过程中使用的虽是同一个客户端对象，
     // 但通过Binder传递到服务端后，产生了两个不同的对象。
     // 因为对象是不能跨进程直接传输的，对象的跨进程传输本质上都是反序列化的过程
