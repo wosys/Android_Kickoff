@@ -55,7 +55,6 @@ dependencies {
     implementation libs.androidx.lifecycle.runtime.ktx
     implementation libs.androidx.ui.graphics
     implementation libs.compose.ui.tooling.preview
-    androidTestImplementation libs.compose.ui.test.junit4
-    debugImplementation libs.compose.ui.tooling
-    debugImplementation libs.compose.ui.test.manifest
+
+    implementation 'com.squareup.picasso:picasso:2.4.0'
 }

@@ -377,6 +377,16 @@
             android:name=".transition.CustomTransitionActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
+
+        <activity
+            android:name=".transition.SceneTransitionBasicMainActivity"
+            android:exported="true"
+            android:theme="@style/Scene_Activity_AppTheme" />
+
+        <activity
+            android:name=".transition.SceneTransitionBasicDetailActivity"
+            android:exported="true"
+            android:theme="@style/Scene_Activity_AppTheme" />
     </application>
 
 </manifest>

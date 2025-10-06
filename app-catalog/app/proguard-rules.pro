@@ -49,3 +49,7 @@
 -dontwarn org.joda.time.format.DateTimeFormat
 -dontwarn org.joda.time.format.DateTimeFormatter
 -dontwarn springfox.documentation.spring.web.json.Json
+
+-dontwarn com.squareup.okhttp.Cache
+-dontwarn com.squareup.okhttp.OkHttpClient
+-dontwarn com.squareup.okhttp.OkUrlFactory
