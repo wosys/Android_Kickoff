@@ -21,6 +21,7 @@ import java.util.regex.Matcher
  */
 
 include ':app-catalog:app'
+include ':app-catalog:androidres'
 // Dynamically include samples under /app-catalog/samples/ folder
 def samples = []
 // Find all build.gradle files under samples folder
