@@ -37,7 +37,7 @@
             android:label="title_activity_main2"
             android:theme="@style/Theme.Android_Kickoff" />
 
-        <!-- callnotification START -->
+        <!-- call notification START -->
         <activity
             android:name=".telephony.callnotification.CallNotificationSample"
             android:exported="true"
@@ -48,21 +48,21 @@
             android:name=".telephony.callnotification.CallNotificationSample$NotificationReceiver"
             android:exported="false"
             tools:targetApi="28" />
-        <!-- callnotification END-->
+        <!-- call notification END-->
 
-        <!-- networkConnectivity START-->
+        <!-- network connectivity START-->
         <activity
             android:name=".telephony.networkconnectivity.NetworkConnActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
-        <!-- networkConnectivity END-->
+        <!-- network connectivity END-->
 
-        <!-- recyclerview START-->
+        <!-- recycler view START-->
         <activity
             android:name=".ui.recyclerview.RecyclerViewActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight" />
-        <!-- recyclerview END-->
+        <!-- recycler view END-->
 
         <!-- gesture detect START-->
         <activity
@@ -71,12 +71,12 @@
             android:theme="@style/Theme.AppCompat.DayNight" />
         <!-- gesture detect END-->
 
-        <!-- slidingpanelayout START-->
+        <!-- sliding panel layout START-->
         <activity
             android:name=".ui.layout.slidingpanelayout.SlidingPaneLayoutMain"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight"></activity>
-        <!-- slidingpanelayout END-->
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <!-- sliding panel layout END-->
 
         <activity
             android:name=".PlaceHolderActivity"
@@ -235,10 +235,8 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight">
             <intent-filter>
-
                 <!-- <action android:name="android.intent.action.VIEW"/> -->
                 <action android:name="test_action" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -356,6 +354,7 @@
             android:name=".aidl.PeopleRemoteService"
             android:enabled="true"
             android:exported="true"
+            android:permission="TODO"
             android:process=":remote" />
 
         <activity
@@ -387,6 +386,11 @@
             android:name=".transition.SceneTransitionBasicDetailActivity"
             android:exported="true"
             android:theme="@style/Scene_Activity_AppTheme" />
+
+        <activity
+            android:name=".transition.GridToPagerMainActivity"
+            android:exported="true"
+            android:theme="@style/GridToPager_Activity_Theme" />
     </application>
 
 </manifest>
