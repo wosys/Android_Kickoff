@@ -24,6 +24,7 @@ android {
             // res 资源目录配置
             res.srcDirs(
                     'src/main/res',
+                    'src/main/res-animation',
                     'src/main/res-ext',
                     'src/main/res-gesture',
                     'src/main/res-transition',
