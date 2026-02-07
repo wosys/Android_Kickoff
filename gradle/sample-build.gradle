@@ -1,6 +1,6 @@
 /*
  * Copyright 2022 Google LLC
- * Copyright 2023-2024 wintmain
+ * Copyright 2023-2026 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: "com.google.devtools.ksp"
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'org.jetbrains.kotlin.plugin.compose'
 
 android {
     compileSdk 35
@@ -58,9 +59,10 @@ android {
         compose true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion libs.versions.composeCompiler.get()
-    }
+    // Compose Compiler plugin replaces composeOptions
+    // composeOptions {
+    //     kotlinCompilerExtensionVersion libs.versions.composeCompiler.get()
+    // }
 }
 
 dependencies {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023-2025 wintmain
+ * Copyright 2023-2026 wintmain
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("kotlin-kapt")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
@@ -32,6 +33,7 @@ android {
 
     buildFeatures {
         dataBinding = true
+        compose = true
     }
 
     compileOptions {
@@ -42,9 +44,10 @@ android {
         jvmTarget = "17"
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
-    }
+    // Compose Compiler plugin replaces composeOptions
+    // composeOptions {
+    //     kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+    // }
 }
 
 dependencies {
@@ -58,7 +61,6 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
-    implementation(libs.androidx.coreExtkt)
     implementation(libs.compose.foundation.foundation)
     implementation(libs.compose.ui.ui)
     implementation(libs.compose.material.material3)

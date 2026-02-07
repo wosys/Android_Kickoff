@@ -1,5 +1,5 @@
 # Copyright 2022 Google LLC
-# Copyright 2023-2025 wintmain
+# Copyright 2023-2026 wintmain
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,12 +25,12 @@ composeCompiler = "1.5.9"
 documentfile = "1.0.1"
 glide = "4.11.0"
 gson = "2.10.1"
-kotlin = "1.9.22"
+kotlin = "2.0.21"
 hilt = "2.48.1"
 kotlinReflect = "2.0.21"
 kotlinxCoroutines = "1.7.3"
 kotlinxSerialization = "1.6.3"
-ksp = "1.9.22-1.0.17" # Should be updated when kotlin version is updated
+ksp = "2.0.21-1.0.25" # Updated to match Kotlin 2.0.21
 coreExt = "1.13.1"
 androidx_activity = "1.9.2"
 androidx_appcompat = "1.7.0"
@@ -61,6 +61,7 @@ hilt-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version
 hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-compose-compiler-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 
 androidx-legacy-support-v4 = { module = "androidx.legacy:legacy-support-v4", version.ref = "legacySupportV4" }
