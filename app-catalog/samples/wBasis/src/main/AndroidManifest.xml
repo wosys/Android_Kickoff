@@ -391,6 +391,11 @@
             android:name=".transition.GridToPagerMainActivity"
             android:exported="true"
             android:theme="@style/GridToPager_Activity_Theme" />
+
+        <activity
+            android:name=".animation.RevealEffectBasicActivity"
+            android:exported="true"
+            android:theme="@style/GridToPager_Activity_Theme" />
     </application>
 
 </manifest>
